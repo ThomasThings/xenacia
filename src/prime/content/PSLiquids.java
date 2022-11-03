@@ -12,13 +12,13 @@ public class PSLiquids{
             gas = true;
             barColor = Color.valueOf("84e4ea");
         }};
-        magma = new Liquid("magma", Color.valueOf("db7448")){{
+        magma = new Liquid("magma", Color.valueOf("df6936")){{
             temperature = 3f;
             viscosity = 0.8f;
             incinerable = false;
             gasColor = Color.valueOf("ffcb89");
         }};
-        voltike = new Liquid("voltike", Color.valueOf("7480c3")){{
+        voltike = new Liquid("voltike", Color.valueOf("c4cbf9")){{
            temperature = 0.6f;
            flammability = 2f;
            explosiveness = 3f;
