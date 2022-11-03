@@ -8,7 +8,6 @@ public class PSItems{
             iron, aluminum, stone, peat, bismuth, lithium, amethyst, polonium, meteorFragment,
             neodymium, cobalt, volcrite, lunarRegolith, lunarAlloy;
 
-
     public static void load(){
         iron = new Item("iron", Color.valueOf("9d8e8e")){{
             explosiveness = 0f;

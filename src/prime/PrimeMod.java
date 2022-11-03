@@ -10,6 +10,7 @@ public class PrimeMod extends Mod{
     @Override
     public void loadContent(){
         PSItems.load();
+        PSLiquids.load();
     }
 
 }
