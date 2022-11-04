@@ -3,8 +3,8 @@ A mod made by me, Thomas, for several reasons, cheif among them being my desire 
 
 ## Current Content
 The current version (0.0) contains:
-Items
-Liquids
+Items,
+Liquids,
 Some Walls
 
 ## Future Plans:
