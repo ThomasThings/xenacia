@@ -45,7 +45,7 @@ public class PSWalls{
         bulkIronWallHuge = new Wall("bulk-iron-wall-huge"){{
             requirements(Category.defense, with(PSItems.iron, 9 * 16));
             health = 400 * 2 * 16;
-            size = 5;
+            size = 4;
             researchCostMultiplier = 0.1f;
             envDisabled |= Env.scorching;
         }};
@@ -80,7 +80,7 @@ public class PSWalls{
         bulkGraphiteWallHuge = new Wall("bulk-graphite-wall-huge"){{
             requirements(Category.defense, with(Items.graphite, 6 * 16, PSItems.aluminum, 6 * 16));
             health = 450 * 2 * 16;
-            size = 5;
+            size = 4;
             researchCostMultiplier = 0.1f;
             envDisabled |= Env.scorching;
         }};
