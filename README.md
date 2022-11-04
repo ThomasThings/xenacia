@@ -2,7 +2,7 @@
 A mod made by me, Thomas, for several reasons, cheif among them being my desire to create something to put out into the world.
 
 ## Current Content
-## The current version (0.0) contains:
+The current version (0.0) contains:
 Items
 Liquids
 Some Walls
