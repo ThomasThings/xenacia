@@ -12,7 +12,7 @@ description: "A Test."
 
 version: 0.0
 
-minGameVersion: 139
+minGameVersion: 140
 
 #this is a java mod
 java: true
