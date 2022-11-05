@@ -110,11 +110,11 @@ public class PSEnvironment{
             itemDrop = PSItems.lunarRegolith;
             playerUnmineable = true;
         }};
-        lunarCraters = new Floor("lunar-craters"){{
+        lunarRegolithWall = new StaticWall("lunar-regolith-wall"){{
             itemDrop = PSItems.lunarRegolith;
             playerUnmineable = true;
         }};
-        lunarRegolithWall = new StaticWall("lunar-regolith-wall"){{
+        lunarCraters = new Floor("lunar-craters"){{
             itemDrop = PSItems.lunarRegolith;
             playerUnmineable = true;
         }};
