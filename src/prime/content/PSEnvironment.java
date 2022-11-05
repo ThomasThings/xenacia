@@ -67,11 +67,11 @@ public class PSEnvironment{
             playerUnmineable = true;
         }};
         //Walls
-        lunarRegolithWall = new Floor("lunar-regolith-wall"){{
+        lunarRegolithWall = new StaticWall("lunar-regolith-wall"){{
             itemDrop = PSItems.lunarRegolith;
             playerUnmineable = true;
         }};
-        lunarCratersWall = new Floor("lunar-craters-wall"){{
+        lunarCratersWall = new StaticWall("lunar-craters-wall"){{
             itemDrop = PSItems.lunarRegolith;
             playerUnmineable = true;
         }};
