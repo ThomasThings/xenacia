@@ -12,6 +12,7 @@ public class PrimeMod extends Mod{
         PSItems.load();
         PSLiquids.load();
         PSWalls.load();
+        PSEnvironment.load();
     }
 
 }
