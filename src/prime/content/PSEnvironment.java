@@ -62,11 +62,11 @@ public class PSEnvironment{
         //scorched
         scorchedSoil = new Floor("scorched-soil"){{
         }};
-        scorchedSoilWall = new Floor("scorched-soil-wall"){{
+        scorchedSoilWall = new StaticWall("scorched-soil-wall"){{
         }};
         scorchedSand = new Floor("scorched-sand"){{
         }};
-        scorchedSandWall = new Floor("scorched-sand-wall"){{
+        scorchedSandWall = new StaticWall("scorched-sand-wall"){{
         }};
         //marsh
         wetMarsh = new Floor("wet-marsh"){{

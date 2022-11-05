@@ -46,6 +46,7 @@ public class PSItems{
             charge = 0f;
 
             buildable = false;
+            hardness = 2;
             cost = 1f;
         }};
         bismuth = new Item("bismuth", Color.valueOf("567fd2")){{
@@ -90,7 +91,7 @@ public class PSItems{
             radioactivity = 0f;
             charge = 0f;
 
-            hardness = 3;
+            hardness = 34;
             buildable = false;
         }};
         neodymium = new Item("neodymium", Color.valueOf("434445")){{
@@ -123,7 +124,7 @@ public class PSItems{
             flammability = 0f;
             radioactivity = 0f;
             charge = 0f;
-
+            lowPriority = true;
             hardness = 1;
             buildable = false;
         }};
