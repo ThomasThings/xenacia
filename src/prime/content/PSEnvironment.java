@@ -9,13 +9,15 @@ import mindustry.content.*;
 
 public class PSEnvironment{
     public static Block
-            magmaFloor, magmaRock, magmaticCrack, lunarRegolith, lunarCraters, lunarRegolithWall, lunarCratersWall;
-
+            magmaFloor, magmaRock, magmaticCrack, volcanicRock, volcanicRockWall,
+            scorchedSoil, scorchedSoilWall, scorchedSand, scorchedSandWall,
+            wetMarsh, marsh, marshWall,
+            ash, ashWall, pumice, pumiceWall, meteor, meteorWall,
+            lunarRegolith, lunarRegolithWall, lunarCraters, lunarCratersWall;
     public static void load(){
-        //Liquids and Liquid Floors
+        //volcanic
         magmaFloor = new Floor("magma-floor"){{
             speedMultiplier = 0.2f;
-            variants = 3;
             liquidDrop = PSLiquids.magma;
             liquidMultiplier = 1f;
             isLiquid = true;
@@ -26,12 +28,11 @@ public class PSEnvironment{
             attributes.set(Attribute.heat, 2f);
 
             emitLight = true;
-            lightRadius = 40f;
+            lightRadius = 80f;
             lightColor = Color.orange.cpy().a(0.5f);
         }};
         magmaRock = new Floor("magma-rock"){{
             speedMultiplier = 0.8f;
-            variants = 3;
             liquidDrop = PSLiquids.magma;
             liquidMultiplier = 0.7f;
             status = StatusEffects.melting;
@@ -40,11 +41,10 @@ public class PSEnvironment{
             attributes.set(Attribute.heat, 1.5f);
 
             emitLight = true;
-            lightRadius = 40f;
+            lightRadius = 55f;
             lightColor = Color.orange.cpy().a(0.35f);
         }};
         magmaticCrack = new Floor("magmatic-crack"){{
-            variants = 3;
             liquidDrop = PSLiquids.magma;
             liquidMultiplier = 0.4f;
             status = StatusEffects.burning;
@@ -52,21 +52,68 @@ public class PSEnvironment{
             attributes.set(Attribute.heat, 0.8f);
 
             emitLight = true;
-            lightRadius = 40f;
+            lightRadius = 25f;
             lightColor = Color.orange.cpy().a(0.2f);
         }};
-        //Floors
-        lunarRegolith = new Floor("lunar-regolith-floor"){{
+        volcanicRock = new Floor("volcanic-rock"){{
+        }};
+        volcanicRockWall = new StaticWall("volcanic-rock-wall"){{
+        }};
+        //scorched
+        scorchedSoil = new Floor("scorched-soil"){{
+        }};
+        scorchedSoilWall = new Floor("scorched-soil-wall"){{
+        }};
+        scorchedSand = new Floor("scorched-sand"){{
+        }};
+        scorchedSandWall = new Floor("scorched-sand-wall"){{
+        }};
+        //marsh
+        wetMarsh = new Floor("wet-marsh"){{
+            speedMultiplier = 0.9f;
             variants = 3;
+            liquidDrop = Liquids.water;
+            liquidMultiplier = 0.7f;
+            status = StatusEffects.melting;
+            statusDuration = 180f;
+            cacheLayer = CacheLayer.water;
+            attributes.set(Attribute.water, 1f);
+        }};
+        marsh = new Floor("marsh"){{
+            itemDrop = PSItems.peat;
+            playerUnmineable = true;
+            attributes.set(Attribute.water, 0.5f);
+        }};
+        marshWall = new StaticWall("marsh-wall"){{
+            itemDrop = PSItems.peat;
+            playerUnmineable = true;
+        }};
+        //misc
+        ash = new Floor("ash"){{
+        }};
+        ashWall = new StaticWall("ash-wall"){{
+        }};
+        pumice = new Floor("pumice"){{
+        }};
+        pumiceWall = new StaticWall("pumice-wall"){{
+        }};
+        meteor = new Floor("meteor"){{
+            itemDrop = PSItems.meteorFragment;
+            playerUnmineable = true;
+        }};
+        meteorWall = new StaticWall("meteor-wall"){{
+            itemDrop = PSItems.meteorFragment;
+            playerUnmineable = true;
+        }};
+        //lunar
+        lunarRegolith = new Floor("lunar-regolith-floor"){{
             itemDrop = PSItems.lunarRegolith;
             playerUnmineable = true;
         }};
         lunarCraters = new Floor("lunar-craters"){{
-            variants = 3;
             itemDrop = PSItems.lunarRegolith;
             playerUnmineable = true;
         }};
-        //Walls
         lunarRegolithWall = new StaticWall("lunar-regolith-wall"){{
             itemDrop = PSItems.lunarRegolith;
             playerUnmineable = true;
