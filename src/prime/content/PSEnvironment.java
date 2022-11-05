@@ -62,7 +62,7 @@ public class PSEnvironment{
             lightColor = Color.orange.cpy().a(0.2f);
         }};
         //Floors
-        lunarRegolith = new Floor("lunar-regolith"){{
+        lunarRegolith = new Floor("lunar-regolith-floor"){{
             itemDrop = PSItems.lunarRegolith;
             playerUnmineable = true;
         }};
