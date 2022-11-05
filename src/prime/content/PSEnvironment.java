@@ -25,7 +25,7 @@ public class PSEnvironment{
             status = StatusEffects.melting;
             statusDuration = 300f;
             drownTime = 300f;
-            cacheLayer = CacheLayer.slag;
+            cacheLayer = CacheLayer.water;
             supportsOverlay = true;
             attributes.set(Attribute.heat, 2f);
 
@@ -40,8 +40,7 @@ public class PSEnvironment{
             liquidMultiplier = 0.7f;
             status = StatusEffects.melting;
             statusDuration = 180f;
-            drownTime = 660f;
-            cacheLayer = CacheLayer.slag;
+            cacheLayer = CacheLayer.water;
             supportsOverlay = true;
             attributes.set(Attribute.heat, 1.5f);
 
@@ -55,7 +54,6 @@ public class PSEnvironment{
             liquidMultiplier = 0.2f;
             status = StatusEffects.burning;
             statusDuration = 120f;
-            cacheLayer = CacheLayer.slag;
             supportsOverlay = true;
             attributes.set(Attribute.heat, 0.8f);
 
