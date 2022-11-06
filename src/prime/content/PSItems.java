@@ -91,7 +91,7 @@ public class PSItems{
             radioactivity = 0f;
             charge = 0f;
 
-            hardness = 34;
+            hardness = 4;
             buildable = false;
         }};
         neodymium = new Item("neodymium", Color.valueOf("434445")){{
