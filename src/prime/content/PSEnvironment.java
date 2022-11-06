@@ -74,7 +74,7 @@ public class PSEnvironment{
             variants = 3;
             liquidDrop = Liquids.water;
             liquidMultiplier = 0.7f;
-            status = StatusEffects.melting;
+            status = StatusEffects.wet;
             statusDuration = 180f;
             cacheLayer = CacheLayer.water;
             attributes.set(Attribute.water, 1f);
