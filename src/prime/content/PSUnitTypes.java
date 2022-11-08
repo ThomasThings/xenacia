@@ -21,5 +21,5 @@ public class PSUnitTypes{
             legExtension = 1.5f;
             legBaseOffset = 0.5f;
             legStraightness = 0.5f;
-    }
+    }};
 }
