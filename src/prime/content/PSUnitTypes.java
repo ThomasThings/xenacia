@@ -19,7 +19,7 @@ public class PSUnitTypes {
             outlineColor = Color.valueOf("242125");
             health = 80f;
             armor = 0f;
-            speed = 1f;
+            speed = 0.9f;
             drag = 0.11f;
 
             useUnitCap = false;
@@ -38,13 +38,13 @@ public class PSUnitTypes {
 
             weapons.add(new Weapon("assault-mite-weapon"){{
                 x = 0f;
-                y = 1f;
+                y = 0f;
                 rotate = false;
                 mirror = false;
                 reload = 30f;
                 bullet = new BasicBulletType(3.5f, 9){{
-                    width = 3f;
-                    height = 5f;
+                    width = 5f;
+                    height = 7f;
                     lifetime = 30f;
                 }};
                 ejectEffect = Fx.none;
@@ -55,7 +55,7 @@ public class PSUnitTypes {
             outlineColor = Color.valueOf("242125");
             health = 80f;
             armor = 0f;
-            speed = 1f;
+            speed = 0.9f;
             drag = 0.11f;
 
             useUnitCap = false;
@@ -74,12 +74,12 @@ public class PSUnitTypes {
 
             weapons.add(new Weapon("bolt-mite-weapon"){{
                 x = 0f;
-                y = 1f;
+                y = 0f;
                 rotate = false;
                 mirror = false;
                 reload = 30f;
                 bullet = new LaserBoltBulletType(3.5f, 9){{
-                    width = 3f;
+                    width = 0.15f;
                     height = 5f;
                     lifetime = 30f;
 
@@ -98,7 +98,7 @@ public class PSUnitTypes {
             outlineColor = Color.valueOf("242125");
             health = 65f;
             armor = 0f;
-            speed = 1f;
+            speed = 0.9f;
             drag = 0.11f;
 
             useUnitCap = false;
@@ -117,13 +117,13 @@ public class PSUnitTypes {
 
             weapons.add(new Weapon("sap-mite-weapon"){{
                 x = 0f;
-                y = 1f;
+                y = 0f;
                 rotate = false;
                 mirror = false;
                 reload = 15f;
                 bullet = new SapBulletType(){{
                     damage = 2;
-                    sapStrength = 0.5f;
+                    sapStrength = 1f;
                     length = 25f;
                     width = 0.5f;
                     lifetime = 25f;
@@ -177,7 +177,7 @@ public class PSUnitTypes {
                     speed = 0f;
                     splashDamageRadius = 24f;
                     instantDisappear = true;
-                    splashDamage = 80f;
+                    splashDamage = 100f;
                     killShooter = true;
                     hittable = false;
                     collidesAir = true;
