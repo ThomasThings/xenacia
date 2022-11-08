@@ -3,12 +3,12 @@ package prime.content;
 import mindustry.type.*;
 import mindustry.gen.*;
 
-public class PSUnitTypes{
+public class PSUnitTypes {
     public static UnitType
-    assaultMite;
+            assaultMite;
 
 
-    public static void load(){
+    public static void load() {
         assaultMite = new UnitType("assault-mite") {{
             constructor = LegsUnit::create;
             health = 100f;
@@ -21,5 +21,6 @@ public class PSUnitTypes{
             legExtension = 1.5f;
             legBaseOffset = 0.5f;
             legStraightness = 0.5f;
-    }};
+        }};
+    }
 }
