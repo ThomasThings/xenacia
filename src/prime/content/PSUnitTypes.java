@@ -18,7 +18,7 @@ public class PSUnitTypes {
             speed = 1f;
             drag = 0.11f;
 
-            legForwardScl = 2f,
+            legForwardScl = 2f;
             legContinuousMove = true;
             legCount = 4;
             legGroupSize = 1;
