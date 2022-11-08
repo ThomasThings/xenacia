@@ -123,9 +123,9 @@ public class PSUnitTypes {
                 reload = 15f;
                 bullet = new SapBulletType(){{
                     damage = 2;
-                    sapStrength = 0.5
+                    sapStrength = 0.5;
                     length = 25f;
-                    width = 0.5
+                    width = 0.5;
                     lifetime = 25f;
                     knockback = -0.2f;
 
