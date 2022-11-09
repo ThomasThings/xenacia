@@ -153,7 +153,7 @@ public class PSUnitTypes {
             legGroupSize = 1;
             legLength = 6f;
             legExtension = 1f;
-            legBaseOffset = 0f;
+            legBaseOffset = 0.5f;
             legStraightness = 0.5f;
             rippleScale = 0.1f;
             legMaxLength = 1f;
