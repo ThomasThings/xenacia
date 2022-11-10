@@ -1,6 +1,7 @@
 package prime.content;
 
 import arc.graphics.Color;
+import mindustry.ai.types.SuicideAI;
 import mindustry.content.Fx;
 import mindustry.entities.bullet.*;
 import mindustry.graphics.Pal;
@@ -80,7 +81,6 @@ public class PSUnitTypes {
             rippleScale = 0.1f;
             legMaxLength = 1f;
             legMinLength = 1f;
-            legPhysicsLayer = false;
 
             weapons.add(new Weapon("bolt-mite-weapon"){{
                 x = 0f;
@@ -163,6 +163,8 @@ public class PSUnitTypes {
 
             useUnitCap = false;
             itemCapacity = 0;
+
+            aiController = SuicideAI::new;
 
             legForwardScl = 5f;
             legContinuousMove = true;
