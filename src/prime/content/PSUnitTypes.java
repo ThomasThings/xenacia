@@ -41,7 +41,6 @@ public class PSUnitTypes {
             rippleScale = 0.1f;
             legMaxLength = 1f;
             legMinLength = 1f;
-            allowLegStep = false;
 
             weapons.add(new Weapon("assault-mite-weapon"){{
                 x = 0f;
@@ -127,7 +126,6 @@ public class PSUnitTypes {
             rippleScale = 0.1f;
             legMaxLength = 1f;
             legMinLength = 1f;
-            allowLegStep = false;
 
             weapons.add(new Weapon("sap-mite-weapon"){{
                 x = 0f;
@@ -177,7 +175,6 @@ public class PSUnitTypes {
             rippleScale = 0.1f;
             legMaxLength = 1f;
             legMinLength = 1f;
-            allowLegStep = false;
 
             weapons.add(new Weapon(){{
                 shootOnDeath = true;
