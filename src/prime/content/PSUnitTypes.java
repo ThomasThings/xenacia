@@ -89,7 +89,7 @@ public class PSUnitTypes {
                 mirror = false;
                 reload = 30f;
                 bullet = new LaserBoltBulletType(3.5f, 9){{
-                    width = 0.15f;
+                    width = 1.5f;
                     height = 5f;
                     lifetime = 30f;
 
@@ -216,8 +216,8 @@ public class PSUnitTypes {
             itemCapacity = 5;
             isEnemy = false;
 
-            mechFrontSway = 0f;
-            mechSideSway = 0.1f;
+            mechFrontSway = 0.2f;
+            mechSideSway = 0.3f;
         }};
 
     }
