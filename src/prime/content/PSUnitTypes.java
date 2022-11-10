@@ -9,8 +9,10 @@ import mindustry.gen.*;
 
 public class PSUnitTypes {
     public static UnitType
-            assaultMite, boltMite, sapMite, coreMite;
-
+            //mites
+            assaultMite, boltMite, sapMite, coreMite,
+            //seeds
+            mech, aircraft, polyped, ship, tank;
 
     public static void load() {
         //mites
@@ -19,10 +21,13 @@ public class PSUnitTypes {
             outlineColor = Color.valueOf("242125");
             health = 80f;
             armor = 0f;
+            hitSize = 6f;
             speed = 0.9f;
+            rotateSpeed = 8f;
             drag = 0.11f;
 
             useUnitCap = false;
+            itemCapacity = 0;
 
             legForwardScl = 5f;
             legContinuousMove = true;
@@ -35,6 +40,7 @@ public class PSUnitTypes {
             rippleScale = 0.1f;
             legMaxLength = 1f;
             legMinLength = 1f;
+            allowLegStep = false;
 
             weapons.add(new Weapon("assault-mite-weapon"){{
                 x = 0f;
@@ -55,10 +61,13 @@ public class PSUnitTypes {
             outlineColor = Color.valueOf("242125");
             health = 80f;
             armor = 0f;
+            hitSize = 6f;
             speed = 0.9f;
+            rotateSpeed = 8f;
             drag = 0.11f;
 
             useUnitCap = false;
+            itemCapacity = 0;
 
             legForwardScl = 5f;
             legContinuousMove = true;
@@ -71,6 +80,7 @@ public class PSUnitTypes {
             rippleScale = 0.1f;
             legMaxLength = 1f;
             legMinLength = 1f;
+            allowLegStep = false;
 
             weapons.add(new Weapon("bolt-mite-weapon"){{
                 x = 0f;
@@ -98,10 +108,13 @@ public class PSUnitTypes {
             outlineColor = Color.valueOf("242125");
             health = 65f;
             armor = 0f;
+            hitSize = 6f;
             speed = 0.9f;
+            rotateSpeed = 8f;
             drag = 0.11f;
 
             useUnitCap = false;
+            itemCapacity = 0;
 
             legForwardScl = 5f;
             legContinuousMove = true;
@@ -114,6 +127,7 @@ public class PSUnitTypes {
             rippleScale = 0.1f;
             legMaxLength = 1f;
             legMinLength = 1f;
+            allowLegStep = false;
 
             weapons.add(new Weapon("sap-mite-weapon"){{
                 x = 0f;
@@ -142,10 +156,13 @@ public class PSUnitTypes {
             outlineColor = Color.valueOf("242125");
             health = 100f;
             armor = 0f;
+            hitSize = 6f;
             speed = 1f;
+            rotateSpeed = 8f;
             drag = 0.11f;
 
             useUnitCap = false;
+            itemCapacity = 0;
 
             legForwardScl = 5f;
             legContinuousMove = true;
@@ -158,6 +175,7 @@ public class PSUnitTypes {
             rippleScale = 0.1f;
             legMaxLength = 1f;
             legMinLength = 1f;
+            allowLegStep = false;
 
             weapons.add(new Weapon(){{
                 shootOnDeath = true;
@@ -184,5 +202,23 @@ public class PSUnitTypes {
                 }};
             }});
         }};
+        //seeds
+        mech = new UnitType("mech") {{
+            constructor = MechUnit::create;
+            outlineColor = Color.valueOf("242125");
+            mechLegColor = Color.valueOf("242125");
+            health = 250f;
+            armor = 0f;
+            hitSize = 10f;
+            speed = 0.8f;
+            rotateSpeed = 5f;
+
+            itemCapacity = 5;
+            isEnemy = false;
+
+            mechFrontSway = 0f;
+            mechSideSway = 0.1f;
+        }};
+
     }
 }
