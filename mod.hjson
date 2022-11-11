@@ -1,18 +1,15 @@
 displayName: "Project-Prime-Singularity"
 
-#the internal name of your mod
 name: "prime-mod"
 
 author: "Thomas"
 
-#the fully qualified main class of the mod
 main: "prime.PrimeMod"
 
 description: "A Test."
 
-version: 0.0
+version: 0.1
 
-minGameVersion: 140
+minGameVersion: 140.2
 
-#this is a java mod
 java: true
