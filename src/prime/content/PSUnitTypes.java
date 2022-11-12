@@ -213,7 +213,7 @@ public class PSUnitTypes {
             health = 250f;
             armor = 0f;
             hitSize = 10f;
-            speed = 0.8f;
+            speed = 0.6f;
             rotateSpeed = 5f;
 
             itemCapacity = 5;
@@ -221,6 +221,25 @@ public class PSUnitTypes {
 
             mechFrontSway = 0.2f;
             mechSideSway = 0.3f;
+        }};
+        aircraft = new UnitType("aircraft") {{
+            constructor = UnitEntity::create;
+            outlineColor = Color.valueOf("242125");
+            health = 250f;
+            armor = 0f;
+            hitSize = 10f;
+            speed = 2f;
+            rotateSpeed = 5f;
+            flying = true;
+            lowAltitude = true;
+            accel = 0.1f;
+            drag = 0.05f;
+
+            itemCapacity = 5;
+            isEnemy = false;
+
+            engineSize = 3f;
+            engineOffset = 5.5f;
         }};
 
     }
