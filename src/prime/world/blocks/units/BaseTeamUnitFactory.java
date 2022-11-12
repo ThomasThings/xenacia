@@ -1,9 +1,11 @@
 package prime.world.blocks.units;
 
-import arc.graphics.g2d.*;
-import arc.util.*;
-import mindustry.entities.units.*;
+import arc.graphics.g2d.Draw;
+import arc.graphics.g2d.TextureRegion;
+import arc.util.Eachable;
+import mindustry.entities.units.BuildPlan;
 import mindustry.world.blocks.units.UnitFactory;
+import mindustry.world.blocks.units.UnitFactory.UnitFactoryBuild;
 
 public class BaseTeamUnitFactory extends UnitFactory{
     @Override
@@ -21,5 +23,14 @@ public class BaseTeamUnitFactory extends UnitFactory{
 
     public BaseTeamUnitFactory(String name){
         super(name);
+    }
+    public class BaseTeamUnitFactoryBuild extends UnitFactoryBuild{
+        @Override
+        public void drawTeam(){
+            Draw.rect(region, x, y);
+            Draw.rect(teamRegion, x, y);
+            Draw.rect(outRegion, x, y, rotdeg());
+            Draw.rect(topRegion, x, y);
+        }
     }
 }
