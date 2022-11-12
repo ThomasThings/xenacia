@@ -2,6 +2,7 @@ package prime;
 
 import mindustry.mod.*;
 import prime.content.*;
+import prime.world.blocks.units.BaseTeamUnitFactory;
 
 public class PrimeMod extends Mod{
 
@@ -12,7 +13,7 @@ public class PrimeMod extends Mod{
         PSWalls.load();
         PSEnvironment.load();
         PSUnitTypes.load();
-        prime.BaseTeamUnitFactory.load();
+        BaseTeamUnitFactory.load();
         PSUnitFactories.load();
     }
 
