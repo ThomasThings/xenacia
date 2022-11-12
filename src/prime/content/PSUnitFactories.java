@@ -32,9 +32,11 @@ public class PSUnitFactories{
         unitSeedConstructor = new BaseTeamUnitFactory("unit-seed-constructor"){{
             requirements(Category.units, with( PSItems.aluminum, 100, Items.silicon, 80, PSItems.iron, 80));
             plans = Seq.with(
-                    new UnitPlan(PSUnitTypes.mech, 60f * 15, with(Items.silicon, 10, PSItems.iron, 15)),
+                    new UnitPlan(PSUnitTypes.mech, 60f * 15, with(Items.silicon, 10, PSItems.iron, 15, PSItems.aluminum, 5)),
                     new UnitPlan(PSUnitTypes.aircraft, 60f * 15, with(Items.silicon, 10, PSItems.iron, 5, PSItems.aluminum, 10)),
-                    new UnitPlan(PSUnitTypes.polyped, 60f * 15, with(Items.silicon, 10, PSItems.iron, 10, PSItems.aluminum, 5))
+                    new UnitPlan(PSUnitTypes.polyped, 60f * 15, with(Items.silicon, 15, PSItems.iron, 10, PSItems.aluminum, 5)),
+                    new UnitPlan(PSUnitTypes.ship, 60f * 15, with(Items.silicon, 10, PSItems.aluminum, 15)),
+                    new UnitPlan(PSUnitTypes.tank, 60f * 15, with(Items.silicon, 10, PSItems.iron, 15, PSItems.aluminum, 10))
             );
             size = 3;
             consumePower(1.2f);
