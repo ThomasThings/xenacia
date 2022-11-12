@@ -27,7 +27,7 @@ public class PSUnitFactories{
             consumePower(0.8f);
         }};
         unitSeedConstructor = new UnitFactory("unit-seed-constructor"){{
-            requirements(Category.units, with(PSItems.iron, 80, PSItems.aluminum, 100 Items.silicon, 80));
+            requirements(Category.units, with(PSItems.iron, 80, PSItems.aluminum, 100, Items.silicon, 80));
             plans = Seq.with(
                     new UnitPlan(PSUnitTypes.mech, 60f * 15, with(Items.silicon, 10, PSItems.iron, 15)),
                     new UnitPlan(PSUnitTypes.aircraft, 60f * 15, with(Items.silicon, 10, PSItems.iron, 5, PSItems.aluminum, 10)),
