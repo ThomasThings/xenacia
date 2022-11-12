@@ -26,7 +26,6 @@ public class PSUnitFactories{
             );
             size = 2;
             consumePower(0.8f);
-            DrawBlock
         }};
         unitSeedConstructor = new BaseTeamUnitFactory("unit-seed-constructor"){{
             requirements(Category.units, with(PSItems.iron, 80, PSItems.aluminum, 100, Items.silicon, 80));
