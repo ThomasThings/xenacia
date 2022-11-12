@@ -6,27 +6,27 @@ import arc.util.Eachable;
 import mindustry.entities.units.BuildPlan;
 import mindustry.graphics.Drawf;
 import mindustry.graphics.Layer;
-import mindustry.world.blocks.units.UnitFactory;
-import mindustry.world.blocks.units.UnitFactory.UnitFactoryBuild;
+import mindustry.world.blocks.units.Reconstructor;
 
-public class BaseTeamUnitFactory extends UnitFactory{
+public class BaseTeamReconstructor extends Reconstructor{
     @Override
     public TextureRegion[] icons(){
-        return new TextureRegion[]{region, teamRegion, outRegion, topRegion};
+        return new TextureRegion[]{region, teamRegion, inRegion, outRegion, topRegion};
     }
 
     @Override
     public void drawPlanRegion(BuildPlan plan, Eachable<BuildPlan> list){
         Draw.rect(region, plan.drawx(), plan.drawy());
         Draw.rect(teamRegion, plan.drawx(), plan.drawy());
+        Draw.rect(inRegion, plan.drawx(), plan.drawy(), plan.rotation * 90);
         Draw.rect(outRegion, plan.drawx(), plan.drawy(), plan.rotation * 90);
         Draw.rect(topRegion, plan.drawx(), plan.drawy());
     }
 
-    public BaseTeamUnitFactory(String name){
+    public BaseTeamReconstructor(String name){
         super(name);
     }
-    public class BaseTeamUnitFactoryBuild extends UnitFactoryBuild{
+    public class BaseTeamReconstructorBuild extends ReconstructorBuild {
         @Override
 
         public void draw(){
@@ -42,11 +42,20 @@ public class BaseTeamUnitFactory extends UnitFactory{
 
             Draw.z(Layer.blockOver - 0.1f);
 
+            Draw.rect(inRegion, x, y, rotdeg());
             Draw.rect(outRegion, x, y, rotdeg());
 
-            if(currentPlan != -1){
-                UnitPlan plan = plans.get(currentPlan);
-                Draw.draw(Layer.blockOver, () -> Drawf.construct(this, plan.unit, rotdeg() - 90f, progress / plan.time, speedScl, time));
+            if(constructing() && hasArrived()){
+                Draw.draw(Layer.blockOver, () -> {
+                    Draw.alpha(1f - progress/ constructTime);
+                    Draw.rect(payload.unit.type.fullIcon, x, y, payload.rotation() - 90);
+                    Draw.reset();
+                    Drawf.construct(this, upgrade(payload.unit.type), payload.rotation() - 90f, progress / constructTime, speedScl, time);
+                });
+            }else{
+                Draw.z(Layer.blockOver);
+
+                drawPayload();
             }
 
             Draw.z(Layer.blockOver);
