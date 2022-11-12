@@ -12,7 +12,7 @@ public class PrimeMod extends Mod{
         PSWalls.load();
         PSEnvironment.load();
         PSUnitTypes.load();
-        BaseTeamUnitFactory.load();
+        prime.BaseTeamUnitFactory.load();
         PSUnitFactories.load();
     }
 
