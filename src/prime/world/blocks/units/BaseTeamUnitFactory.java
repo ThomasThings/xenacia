@@ -33,11 +33,7 @@ public class BaseTeamUnitFactory extends UnitFactory{
             Draw.rect(region, x, y);
 
             Draw.z(Layer.blockOver - 0.2f);
-
-            /*Draw.color(team.color);
-            Draw.rect(teamRegion, x, y);
-            Draw.color();*/
-
+            
             if(teamRegion.found()){
                 if(teamRegions[team.id] == teamRegion) Draw.color(team.color);
                 Draw.rect(teamRegions[team.id], x, y);
