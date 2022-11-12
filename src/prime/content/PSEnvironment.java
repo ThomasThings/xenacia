@@ -55,19 +55,13 @@ public class PSEnvironment{
             lightRadius = 25f;
             lightColor = Color.orange.cpy().a(0.2f);
         }};
-        volcanicRock = new Floor("volcanic-rock"){{
-        }};
-        volcanicRockWall = new StaticWall("volcanic-rock-wall"){{
-        }};
+        volcanicRock = new Floor("volcanic-rock");
+        volcanicRockWall = new StaticWall("volcanic-rock-wall");
         //scorched
-        scorchedSoil = new Floor("scorched-soil"){{
-        }};
-        scorchedSoilWall = new StaticWall("scorched-soil-wall"){{
-        }};
-        scorchedSand = new Floor("scorched-sand"){{
-        }};
-        scorchedSandWall = new StaticWall("scorched-sand-wall"){{
-        }};
+        scorchedSoil = new Floor("scorched-soil");
+        scorchedSoilWall = new StaticWall("scorched-soil-wall");
+        scorchedSand = new Floor("scorched-sand");
+        scorchedSandWall = new StaticWall("scorched-sand-wall");
         //marsh
         wetMarsh = new ShallowLiquid("wet-marsh"){{
             speedMultiplier = 0.9f;
@@ -78,6 +72,7 @@ public class PSEnvironment{
             statusDuration = 180f;
             cacheLayer = CacheLayer.water;
             attributes.set(Attribute.water, 1f);
+            albedo= 0.9f;
             supportsOverlay = true;
         }};
         marsh = new Floor("marsh"){{
@@ -90,14 +85,10 @@ public class PSEnvironment{
             playerUnmineable = true;
         }};
         //misc
-        ash = new Floor("ash"){{
-        }};
-        ashWall = new StaticWall("ash-wall"){{
-        }};
-        pumice = new Floor("pumice"){{
-        }};
-        pumiceWall = new StaticWall("pumice-wall"){{
-        }};
+        ash = new Floor("ash");
+        ashWall = new StaticWall("ash-wall");
+        pumice = new Floor("pumice");
+        pumiceWall = new StaticWall("pumice-wall");
         meteor = new Floor("meteor"){{
             itemDrop = PSItems.meteorFragment;
             playerUnmineable = true;
