@@ -259,6 +259,23 @@ public class PSUnitTypes {
             legLength = 9f;
             rippleScale = 0.1f;
         }};
+        ship = new UnitType("ship") {{
+            constructor = UnitWaterMove::create;
+            outlineColor = Color.valueOf("242125");
+            health = 250f;
+            armor = 0f;
+            hitSize = 10f;
+            speed = 0.8f;
+            rotateSpeed = 5f;
+
+            itemCapacity = 5;
+            isEnemy = false;
+
+            trailLength = 15;
+            waveTrailX = 5.5f;
+            waveTrailY = -1f;
+            trailScl = 1f;
+        }};
 
     }
 }
