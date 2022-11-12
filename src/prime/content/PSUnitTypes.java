@@ -241,6 +241,24 @@ public class PSUnitTypes {
             engineSize = 3f;
             engineOffset = 5.5f;
         }};
+        polyped = new UnitType("polyped") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("242125");
+            health = 250f;
+            armor = 0f;
+            hitSize = 10f;
+            speed = 0.8f;
+            rotateSpeed = 5f;
+
+            itemCapacity = 5;
+            isEnemy = false;
+
+            legContinuousMove = false;
+            legCount = 3;
+            legGroupSize = 1;
+            legLength = 9f;
+            rippleScale = 0.1f;
+        }};
 
     }
 }
