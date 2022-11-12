@@ -34,9 +34,11 @@ public class BaseTeamUnitFactory extends UnitFactory{
 
             Draw.z(Layer.blockOver - 0.2f);
 
-            Draw.color(team.color);
+            /*Draw.color(team.color);
             Draw.rect(teamRegion, x, y);
             Draw.color();
+            */
+            drawTeamTop();
 
             Draw.z(Layer.blockOver - 0.1f);
 
