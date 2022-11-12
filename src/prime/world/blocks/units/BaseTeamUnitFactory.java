@@ -28,18 +28,17 @@ public class BaseTeamUnitFactory extends UnitFactory{
     }
     public class BaseTeamUnitFactoryBuild extends UnitFactoryBuild{
         @Override
-
+        
         public void draw(){
-            super.draw();
+            Draw.rect(region, x, y);
 
-            Draw.z(Layer.blockOver - 2f);
+            Draw.z(Layer.blockOver - 0.2f);
 
             Draw.color(team.color);
             Draw.rect(teamRegion, x, y);
-        }
-        /*public void draw(){
-            Draw.rect(region, x, y);
-            Draw.rect(teamRegion, x, y);
+
+            Draw.z(Layer.blockOver - 0.1f);
+
             Draw.rect(outRegion, x, y, rotdeg());
 
             if(currentPlan != -1){
@@ -55,6 +54,6 @@ public class BaseTeamUnitFactory extends UnitFactory{
             Draw.z(Layer.blockOver + 0.1f);
 
             Draw.rect(topRegion, x, y);
-        }*/
+        }
     }
 }
