@@ -1,6 +1,7 @@
 package prime.content;
 
 import arc.graphics.Color;
+import arc.math.geom.Rect;
 import mindustry.ai.types.SuicideAI;
 import mindustry.content.Fx;
 import mindustry.entities.bullet.*;
@@ -265,16 +266,34 @@ public class PSUnitTypes {
             health = 250f;
             armor = 0f;
             hitSize = 10f;
-            speed = 0.8f;
+            speed = 1f;
             rotateSpeed = 5f;
 
             itemCapacity = 5;
             isEnemy = false;
 
             trailLength = 15;
-            waveTrailX = 5.5f;
+            waveTrailX = 4.5f;
             waveTrailY = -1f;
-            trailScl = 1f;
+            trailScl = 1.2f;
+        }};
+        tank = new UnitType("tank") {{
+            constructor = TankUnit::create;
+            outlineColor = Color.valueOf("242125");
+            health = 250f;
+            armor = 0f;
+            hitSize = 10f;
+            speed = 0.8f;
+            rotateSpeed = 5f;
+            omniMovement = false;
+
+            itemCapacity = 5;
+            isEnemy = false;
+
+            treadFrames = 8;
+            treadRects = new Rect[]{
+                    new Rect(12, -25, 11, 48)
+            };
         }};
 
     }
