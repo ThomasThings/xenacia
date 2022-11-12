@@ -52,6 +52,6 @@ public class BaseTeamUnitFactory extends UnitFactory{
             Draw.z(Layer.blockOver + 0.1f);
 
             Draw.rect(topRegion, x, y);
-        */}
+        }*/
     }
 }
