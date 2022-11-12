@@ -4,6 +4,8 @@ import arc.graphics.g2d.Draw;
 import arc.graphics.g2d.TextureRegion;
 import arc.util.Eachable;
 import mindustry.entities.units.BuildPlan;
+import mindustry.graphics.Drawf;
+import mindustry.graphics.Layer;
 import mindustry.world.blocks.units.UnitFactory;
 import mindustry.world.blocks.units.UnitFactory.UnitFactoryBuild;
 
@@ -27,10 +29,23 @@ public class BaseTeamUnitFactory extends UnitFactory{
     public class BaseTeamUnitFactoryBuild extends UnitFactoryBuild{
         @Override
 
-        public void draw(){
+        public void drawTeam(){
             Draw.rect(region, x, y);
             Draw.rect(teamRegion, x, y);
             Draw.rect(outRegion, x, y, rotdeg());
+
+            if(currentPlan != -1){
+                UnitPlan plan = plans.get(currentPlan);
+                Draw.draw(Layer.blockOver, () -> Drawf.construct(this, plan.unit, rotdeg() - 90f, progress / plan.time, speedScl, time));
+            }
+
+            Draw.z(Layer.blockOver);
+
+            payRotation = rotdeg();
+            drawPayload();
+
+            Draw.z(Layer.blockOver + 0.1f);
+
             Draw.rect(topRegion, x, y);
         }
     }
