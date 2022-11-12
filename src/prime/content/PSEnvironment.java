@@ -31,7 +31,7 @@ public class PSEnvironment{
             lightRadius = 80f;
             lightColor = Color.orange.cpy().a(0.5f);
         }};
-        magmaRock = new Floor("magma-rock"){{
+        magmaRock = new ShallowLiquid("magma-rock"){{
             speedMultiplier = 0.8f;
             liquidDrop = PSLiquids.magma;
             liquidMultiplier = 0.7f;
@@ -69,7 +69,7 @@ public class PSEnvironment{
         scorchedSandWall = new StaticWall("scorched-sand-wall"){{
         }};
         //marsh
-        wetMarsh = new Floor("wet-marsh"){{
+        wetMarsh = new ShallowLiquid("wet-marsh"){{
             speedMultiplier = 0.9f;
             variants = 3;
             liquidDrop = Liquids.water;
