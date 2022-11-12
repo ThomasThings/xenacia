@@ -30,6 +30,11 @@ public class BaseTeamUnitFactory extends UnitFactory{
         @Override
 
         public void draw(){
+            super.draw();
+            Draw.color(team.color);
+            Draw.rect(teamRegion, x, y);
+        }
+        /*public void draw(){
             Draw.rect(region, x, y);
             Draw.rect(teamRegion, x, y);
             Draw.rect(outRegion, x, y, rotdeg());
@@ -47,6 +52,6 @@ public class BaseTeamUnitFactory extends UnitFactory{
             Draw.z(Layer.blockOver + 0.1f);
 
             Draw.rect(topRegion, x, y);
-        }
+        */}
     }
 }
