@@ -32,7 +32,7 @@ public class BaseTeamUnitFactory extends UnitFactory{
         public void draw(){
             super.draw();
 
-            Draw.z(Layer.blockOver - 1f);
+            Draw.z(Layer.blockOver - 2f);
 
             Draw.color(team.color);
             Draw.rect(teamRegion, x, y);
