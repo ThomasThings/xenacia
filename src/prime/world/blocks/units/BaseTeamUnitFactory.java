@@ -29,7 +29,7 @@ public class BaseTeamUnitFactory extends UnitFactory{
     public class BaseTeamUnitFactoryBuild extends UnitFactoryBuild{
         @Override
 
-        public void drawTeam(){
+        public void draw(){
             Draw.rect(region, x, y);
             Draw.rect(teamRegion, x, y);
             Draw.rect(outRegion, x, y, rotdeg());
