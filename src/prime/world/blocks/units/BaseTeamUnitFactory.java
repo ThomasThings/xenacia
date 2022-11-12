@@ -28,14 +28,14 @@ public class BaseTeamUnitFactory extends UnitFactory{
     }
     public class BaseTeamUnitFactoryBuild extends UnitFactoryBuild{
         @Override
-        
+
         public void draw(){
             Draw.rect(region, x, y);
 
             Draw.z(Layer.blockOver - 0.2f);
-
-            Draw.color(team.color);
+            
             Draw.rect(teamRegion, x, y);
+            Draw.color(team.color);
 
             Draw.z(Layer.blockOver - 0.1f);
 
