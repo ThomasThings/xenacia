@@ -31,14 +31,16 @@ public class PSEnvironment{
             lightRadius = 80f;
             lightColor = Color.orange.cpy().a(0.5f);
         }};
-        magmaRock = new ShallowLiquid("magma-rock"){{
-            speedMultiplier = 0.8f;
-            liquidDrop = PSLiquids.magma;
-            liquidMultiplier = 0.7f;
+        magmaRock = new Floor("magma-rock"){{
+            speedMultiplier = 0.9f;
+            variants = 3;
             status = StatusEffects.melting;
-            statusDuration = 180f;
+            statusDuration = 120f;
+            liquidDrop = PSLiquids.magma;
+            isLiquid = true;
             cacheLayer = CacheLayer.water;
-            attributes.set(Attribute.heat, 1.5f);
+            albedo = 0.9f;
+            supportsOverlay = true;
 
             emitLight = true;
             lightRadius = 55f;
@@ -63,16 +65,16 @@ public class PSEnvironment{
         scorchedSand = new Floor("scorched-sand");
         scorchedSandWall = new StaticWall("scorched-sand-wall");
         //marsh
-        wetMarsh = new ShallowLiquid("wet-marsh"){{
-            speedMultiplier = 0.9f;
-            variants = 3;
-            liquidDrop = Liquids.water;
-            liquidMultiplier = 0.7f;
+        wetMarsh = new Floor("wet-marsh"){{
+            speedMultiplier = 0.85f;
+            variants = 0;
             status = StatusEffects.wet;
-            statusDuration = 180f;
-            cacheLayer = CacheLayer.water;
-            attributes.set(Attribute.water, 1f);
+            statusDuration = 90f;
+            liquidDrop = Liquids.water;
             isLiquid = true;
+            cacheLayer = CacheLayer.water;
+            albedo = 0.9f;
+            supportsOverlay = true;
         }};
         marsh = new Floor("marsh"){{
             itemDrop = PSItems.peat;
