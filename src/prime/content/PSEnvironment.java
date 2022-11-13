@@ -72,8 +72,7 @@ public class PSEnvironment{
             statusDuration = 180f;
             cacheLayer = CacheLayer.water;
             attributes.set(Attribute.water, 1f);
-            albedo= 0.9f;
-            supportsOverlay = true;
+            isLiquid = true;
         }};
         marsh = new Floor("marsh"){{
             itemDrop = PSItems.peat;
