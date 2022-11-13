@@ -67,7 +67,7 @@ public class PSEnvironment{
         //marsh
         wetMarsh = new Floor("wet-marsh"){{
             speedMultiplier = 0.85f;
-            variants = 1;
+            variants = 3;
             status = StatusEffects.wet;
             statusDuration = 90f;
             liquidDrop = Liquids.water;
