@@ -14,6 +14,7 @@ public class PrimeMod extends Mod{
         PSEnvironment.load();
         PSUnitTypes.load();
         PSUnitFactories.load();
+        PSTurrets.load();
     }
 
 }
