@@ -1,14 +1,14 @@
-displayName: "Project-Prime-Singularity"
+displayName: "Xenacia"
 
-name: "prime-mod"
+name: "xenacia-mod"
 
 author: "Thomas"
 
-main: "prime.PrimeMod"
+main: "xenacia.XenaciaMod"
 
 description: "A Test."
 
-version: 0.1
+version: 0.2
 
 minGameVersion: 140.3
 

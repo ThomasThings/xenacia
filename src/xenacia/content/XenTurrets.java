@@ -1,4 +1,4 @@
-package prime.content;
+package xenacia.content;
 
 import arc.graphics.Color;
 import mindustry.entities.bullet.BasicBulletType;
@@ -11,7 +11,7 @@ import mindustry.world.draw.DrawTurret;
 
 import static mindustry.type.ItemStack.*;
 
-public class PSTurrets{
+public class XenTurrets{
     public static Block
             repeater;
 
@@ -19,9 +19,9 @@ public class PSTurrets{
         repeater = new ItemTurret("repeater"){{
             outlineColor = Color.valueOf("292729");
             drawer = new DrawTurret("xenacia-");
-            requirements(Category.turret, with(PSItems.iron, 25, PSItems.aluminum, 15));
+            requirements(Category.turret, with(XenItems.iron, 25, XenItems.aluminum, 15));
             ammo(
-                    PSItems.iron,  new BasicBulletType(4f, 15){{
+                    XenItems.iron,  new BasicBulletType(4f, 15){{
                         width = 7f;
                         height = 9f;
                         lifetime = 60f;
@@ -32,7 +32,7 @@ public class PSTurrets{
                         trailLength = 3;
                         hitEffect = despawnEffect = Fx.hitBulletColor;
                     }},
-                    PSItems.aluminum,  new BasicBulletType(4f, 15){{
+                    XenItems.aluminum,  new BasicBulletType(4f, 15){{
                         width = 7f;
                         height = 9f;
                         lifetime = 90f;
@@ -55,7 +55,7 @@ public class PSTurrets{
             inaccuracy = 2f;
             rotateSpeed = 10f;
             coolant = consumeCoolant(0.1f);
-            researchCost = with(PSItems.iron, 100, PSItems.aluminum, 50);
+            researchCost = with(XenItems.iron, 100, XenItems.aluminum, 50);
 
             limitRange();
         }};

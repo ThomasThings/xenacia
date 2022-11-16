@@ -1,4 +1,4 @@
-package prime.content;
+package xenacia.content;
 
 import arc.graphics.*;
 import mindustry.graphics.*;
@@ -7,7 +7,7 @@ import mindustry.world.blocks.environment.*;
 import mindustry.world.meta.*;
 import mindustry.content.*;
 
-public class PSEnvironment{
+public class XenEnvironmentTiles{
     public static Block
             magmaFloor, magmaRock, magmaticCrack, volcanicRock, volcanicRockWall,
             scorchedSoil, scorchedSoilWall, scorchedSand, scorchedSandWall,
@@ -18,7 +18,7 @@ public class PSEnvironment{
         //volcanic
         magmaFloor = new Floor("magma-floor"){{
             speedMultiplier = 0.2f;
-            liquidDrop = PSLiquids.magma;
+            liquidDrop = XenLiquids.magma;
             liquidMultiplier = 1f;
             isLiquid = true;
             status = StatusEffects.melting;
@@ -36,7 +36,7 @@ public class PSEnvironment{
             variants = 3;
             status = StatusEffects.melting;
             statusDuration = 120f;
-            liquidDrop = PSLiquids.magma;
+            liquidDrop = XenLiquids.magma;
             isLiquid = true;
             cacheLayer = CacheLayer.water;
             albedo = 0.9f;
@@ -47,7 +47,7 @@ public class PSEnvironment{
             lightColor = Color.orange.cpy().a(0.35f);
         }};
         magmaticCrack = new Floor("magmatic-crack"){{
-            liquidDrop = PSLiquids.magma;
+            liquidDrop = XenLiquids.magma;
             liquidMultiplier = 0.4f;
             status = StatusEffects.burning;
             statusDuration = 120f;
@@ -77,12 +77,12 @@ public class PSEnvironment{
             supportsOverlay = true;
         }};
         marsh = new Floor("marsh"){{
-            itemDrop = PSItems.peat;
+            itemDrop = XenItems.peat;
             playerUnmineable = true;
             attributes.set(Attribute.water, 0.5f);
         }};
         marshWall = new StaticWall("marsh-wall"){{
-            itemDrop = PSItems.peat;
+            itemDrop = XenItems.peat;
             playerUnmineable = true;
         }};
         //misc
@@ -91,28 +91,28 @@ public class PSEnvironment{
         pumice = new Floor("pumice");
         pumiceWall = new StaticWall("pumice-wall");
         meteor = new Floor("meteor"){{
-            itemDrop = PSItems.meteorFragment;
+            itemDrop = XenItems.meteorFragment;
             playerUnmineable = true;
         }};
         meteorWall = new StaticWall("meteor-wall"){{
-            itemDrop = PSItems.meteorFragment;
+            itemDrop = XenItems.meteorFragment;
             playerUnmineable = true;
         }};
         //lunar
         lunarRegolith = new Floor("lunar-regolith-floor"){{
-            itemDrop = PSItems.lunarRegolith;
+            itemDrop = XenItems.lunarRegolith;
             playerUnmineable = true;
         }};
         lunarRegolithWall = new StaticWall("lunar-regolith-wall"){{
-            itemDrop = PSItems.lunarRegolith;
+            itemDrop = XenItems.lunarRegolith;
             playerUnmineable = true;
         }};
         lunarCraters = new Floor("lunar-craters"){{
-            itemDrop = PSItems.lunarRegolith;
+            itemDrop = XenItems.lunarRegolith;
             playerUnmineable = true;
         }};
         lunarCratersWall = new StaticWall("lunar-craters-wall"){{
-            itemDrop = PSItems.lunarRegolith;
+            itemDrop = XenItems.lunarRegolith;
             playerUnmineable = true;
         }};
 

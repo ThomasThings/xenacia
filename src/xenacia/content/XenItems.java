@@ -1,9 +1,9 @@
-package prime.content;
+package xenacia.content;
 
 import arc.graphics.*;
 import mindustry.type.*;
 
-public class PSItems{
+public class XenItems{
     public static Item
             iron, aluminum, stone, peat, bismuth, lithium, amethyst, polonium, meteorFragment,
             neodymium, cobalt, volcrite, lunarRegolith, lunarAlloy;

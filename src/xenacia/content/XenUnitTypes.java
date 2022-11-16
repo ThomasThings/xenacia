@@ -1,4 +1,4 @@
-package prime.content;
+package xenacia.content;
 
 import arc.graphics.Color;
 import arc.math.geom.Rect;
@@ -9,7 +9,7 @@ import mindustry.graphics.Pal;
 import mindustry.type.*;
 import mindustry.gen.*;
 
-public class PSUnitTypes {
+public class XenUnitTypes {
     public static UnitType
             //mites
             assaultMite, boltMite, sapMite, coreMite,

@@ -1,4 +1,4 @@
-package prime.world.blocks.units;
+package xenacia.world.blocks.units;
 
 import arc.graphics.g2d.Draw;
 import arc.graphics.g2d.TextureRegion;

@@ -1,9 +1,9 @@
-package prime.content;
+package xenacia.content;
 
 import arc.graphics.*;
 import mindustry.type.*;
 
-public class PSLiquids{
+public class XenLiquids{
     public static Liquid
             steam, magma, voltike;
 
