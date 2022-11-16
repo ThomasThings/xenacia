@@ -7,6 +7,7 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.defense.turrets.ItemTurret;
 import mindustry.content.*;
+import mindustry.world.draw.DrawTurret;
 
 import static mindustry.type.ItemStack.*;
 
@@ -16,6 +17,8 @@ public class PSTurrets{
 
     public static void load(){
         repeater = new ItemTurret("repeater"){{
+            outlineColor = Color.valueOf("292729");
+            drawer = new DrawTurret("xenacia-");
             requirements(Category.turret, with(PSItems.iron, 25, PSItems.aluminum, 15));
             ammo(
                     PSItems.iron,  new BasicBulletType(4f, 15){{
