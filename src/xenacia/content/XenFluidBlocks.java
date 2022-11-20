@@ -35,6 +35,8 @@ public class XenFluidBlocks{
             requirements(Category.liquid, with(XenItems.aluminum, 2, Items.graphite, 3));
             solid = false;
 
+            ((Conduit)fluidPipe).junctionReplacement = this;
+
             researchCost = with(XenItems.aluminum, 100, Items.graphite, 100);
         }};
         bridgePipe = new DirectionLiquidBridge("bridge-pipe"){{
