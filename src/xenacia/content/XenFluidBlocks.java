@@ -4,6 +4,7 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.liquid.*;
 import mindustry.content.*;
+import xenacia.world.blocks.units.TeamLiquidRouter;
 
 import static mindustry.type.ItemStack.*;
 
@@ -35,7 +36,7 @@ public class XenFluidBlocks{
 
             researchCost = with(XenItems.aluminum, 100, Items.graphite, 100);
         }};
-        bridgePipe = new LiquidBridge("bridgePipe"){{
+        bridgePipe = new LiquidBridge("bridge-pipe"){{
             requirements(Category.liquid, with(XenItems.aluminum, 4, Items.graphite, 4));
             fadeIn = moveArrows = false;
             arrowSpacing = 6f;
@@ -64,7 +65,7 @@ public class XenFluidBlocks{
 
             researchCostMultiplier = 1f;
         }};
-        bulkFluidTank = new LiquidRouter("bulk-fluid-tank"){{
+        bulkFluidTank = new TeamLiquidRouter("bulk-fluid-tank"){{
             requirements(Category.liquid, with(Items.titanium, 200, XenItems.aluminum, 250, Items.graphite, 100));
             health = 3000;
             size = 5;
@@ -74,7 +75,7 @@ public class XenFluidBlocks{
 
             researchCostMultiplier = 1f;
         }};
-        fluidPayloadTransportTank = new LiquidRouter("fluid-payload-transport-tank"){{
+        fluidPayloadTransportTank = new TeamLiquidRouter("fluid-payload-transport-tank"){{
             requirements(Category.liquid, with(XenItems.cobalt, 800, Items.titanium, 1000, XenItems.aluminum, 1500, Items.graphite, 800));
             health = 6000;
             size = 7;
