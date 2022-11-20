@@ -1,4 +1,4 @@
-package xenacia.world.blocks.units;
+package xenacia.world.blocks.fluids;
 
 import arc.graphics.g2d.Draw;
 import arc.graphics.g2d.TextureRegion;

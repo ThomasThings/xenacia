@@ -4,7 +4,7 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.liquid.*;
 import mindustry.content.*;
-import xenacia.world.blocks.units.TeamLiquidRouter;
+import xenacia.world.blocks.fluids.TeamLiquidRouter;
 
 import static mindustry.type.ItemStack.*;
 
@@ -50,6 +50,7 @@ public class XenFluidBlocks{
             health = 480;
             size = 2;
             liquidCapacity = 500f;
+            liquidPadding = 2f;
             underBullets = false;
             solid = true;
 
@@ -60,6 +61,7 @@ public class XenFluidBlocks{
             health = 1080;
             size = 3;
             liquidCapacity = 2000f;
+            liquidPadding = 2f;
             underBullets = false;
             solid = true;
 
@@ -69,17 +71,19 @@ public class XenFluidBlocks{
             requirements(Category.liquid, with(Items.titanium, 200, XenItems.aluminum, 250, Items.graphite, 100));
             health = 3000;
             size = 5;
-            liquidCapacity = 8000f;
+            liquidCapacity = 10000f;
+            liquidPadding = 4f;
             underBullets = false;
             solid = true;
 
             researchCostMultiplier = 1f;
         }};
         fluidPayloadTransportTank = new TeamLiquidRouter("fluid-payload-transport-tank"){{
-            requirements(Category.liquid, with(XenItems.cobalt, 800, Items.titanium, 1000, XenItems.aluminum, 1500, Items.graphite, 800));
+            requirements(Category.liquid, with(XenItems.cobalt, 800, Items.titanium, 1200, XenItems.aluminum, 1500, Items.graphite, 1000));
             health = 6000;
             size = 7;
-            liquidCapacity = 25000f;
+            liquidCapacity = 30000f;
+            liquidPadding = 8f;
             underBullets = false;
             solid = true;
 
