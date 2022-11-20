@@ -29,6 +29,7 @@ public class XenFluidBlocks{
             health = 80;
             liquidCapacity = 20f;
             underBullets = true;
+            squareSprite = false;
             solid = false;
 
             researchCost = with(XenItems.aluminum, 100, Items.graphite, 100);
@@ -46,6 +47,7 @@ public class XenFluidBlocks{
             range = 6;
             hasPower = false;
             underBullets = true;
+            squareSprite = false;
 
             ((Conduit)fluidPipe).rotBridgeReplacement = this;
 
