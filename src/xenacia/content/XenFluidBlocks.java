@@ -19,6 +19,7 @@ public class XenFluidBlocks{
         fluidPipe = new Conduit("fluid-pipe"){{
             requirements(Category.liquid, with(XenItems.aluminum, 1, Items.graphite, 1));
             health = 80;
+            botColor = color.valueOf(ffffff);
 
             researchCost = with(XenItems.aluminum, 80, Items.graphite, 80);
         }};
