@@ -2,6 +2,7 @@ package xenacia.content;
 
 import mindustry.type.*;
 import mindustry.world.*;
+import mindustry.world.blocks.distribution.DirectionLiquidBridge;
 import mindustry.world.blocks.liquid.*;
 import mindustry.content.*;
 import xenacia.world.blocks.fluids.TeamLiquidRouter;
@@ -36,7 +37,7 @@ public class XenFluidBlocks{
 
             researchCost = with(XenItems.aluminum, 100, Items.graphite, 100);
         }};
-        bridgePipe = new LiquidBridge("bridge-pipe"){{
+        bridgePipe = new DirectionLiquidBridge("bridge-pipe"){{
             requirements(Category.liquid, with(XenItems.aluminum, 4, Items.graphite, 4));
             fadeIn = moveArrows = false;
             arrowSpacing = 6f;
