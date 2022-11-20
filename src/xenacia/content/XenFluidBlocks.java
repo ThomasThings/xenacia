@@ -72,7 +72,7 @@ public class XenFluidBlocks{
             health = 3000;
             size = 5;
             liquidCapacity = 10000f;
-            liquidPadding = 4f;
+            liquidPadding = 3.5f;
             underBullets = false;
             solid = true;
 
