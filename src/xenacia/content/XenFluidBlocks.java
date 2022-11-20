@@ -58,6 +58,7 @@ public class XenFluidBlocks{
             liquidCapacity = 500f;
             liquidPadding = 2f;
             underBullets = false;
+            squareSprite = false;
             solid = true;
 
             researchCostMultiplier = 1f;
@@ -69,6 +70,7 @@ public class XenFluidBlocks{
             liquidCapacity = 2000f;
             liquidPadding = 2f;
             underBullets = false;
+            squareSprite = false;
             solid = true;
 
             researchCostMultiplier = 1f;
@@ -80,6 +82,7 @@ public class XenFluidBlocks{
             liquidCapacity = 10000f;
             liquidPadding = 3.5f;
             underBullets = false;
+            squareSprite = false;
             solid = true;
 
             researchCostMultiplier = 1f;
@@ -91,6 +94,7 @@ public class XenFluidBlocks{
             liquidCapacity = 30000f;
             liquidPadding = 8f;
             underBullets = false;
+            squareSprite = false;
             solid = true;
 
             researchCostMultiplier = 1.5f;
