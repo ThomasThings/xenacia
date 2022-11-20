@@ -1,5 +1,6 @@
 package xenacia.content;
 
+import arc.graphics.Color;
 import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.distribution.DirectionLiquidBridge;
@@ -19,7 +20,7 @@ public class XenFluidBlocks{
         fluidPipe = new Conduit("fluid-pipe"){{
             requirements(Category.liquid, with(XenItems.aluminum, 1, Items.graphite, 1));
             health = 80;
-            botColor = color.valueOf(ffffff);
+            botColor = Color.valueOf("2d282e");
 
             researchCost = with(XenItems.aluminum, 80, Items.graphite, 80);
         }};
