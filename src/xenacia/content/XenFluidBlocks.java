@@ -38,11 +38,12 @@ public class XenFluidBlocks{
             researchCost = with(XenItems.aluminum, 100, Items.graphite, 100);
         }};
         bridgePipe = new DirectionLiquidBridge("bridge-pipe"){{
-            requirements(Category.liquid, with(XenItems.aluminum, 4, Items.graphite, 4));
-            fadeIn = moveArrows = false;
-            arrowSpacing = 6f;
+            requirements(Category.liquid, with(XenItems.aluminum, 5, Items.graphite, 5));
             range = 6;
             hasPower = false;
+            underBullets = true;
+
+            ((Conduit)fluidPipe).rotBridgeReplacement = this;
 
             researchCost = with(XenItems.aluminum, 150, Items.graphite, 150);
         }};
