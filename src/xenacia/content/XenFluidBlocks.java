@@ -27,6 +27,7 @@ public class XenFluidBlocks{
         armoredFluidPipe = new Conduit("armored-fluid-pipe"){{
             requirements(Category.liquid, with(XenItems.cobalt, 2, XenItems.aluminum, 3, Items.graphite, 2));
             health = 200;
+            leaks = false;
             botColor = Color.valueOf("2d282e");
 
             researchCost = with(XenItems.cobalt, 200, XenItems.aluminum, 150, Items.graphite, 150);
