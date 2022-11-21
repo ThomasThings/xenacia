@@ -12,7 +12,7 @@ import static mindustry.type.ItemStack.*;
 
 public class XenFluidBlocks{
     public static Block
-            fluidPipe, fluidRouter, fluidJunction, bridgePipe,
+            fluidPipe, armoredFluidPipe, fluidRouter, fluidJunction, bridgePipe,
             smallFluidTank, largeFluidTank, bulkFluidTank,
             fluidPayloadTransportTank;
 
@@ -23,6 +23,13 @@ public class XenFluidBlocks{
             botColor = Color.valueOf("2d282e");
 
             researchCost = with(XenItems.aluminum, 80, Items.graphite, 80);
+        }};
+        armoredFluidPipe = new Conduit("armored-fluid-pipe"){{
+            requirements(Category.liquid, with(XenItems.cobalt, 2, XenItems.aluminum, 3, Items.graphite, 2));
+            health = 200;
+            botColor = Color.valueOf("2d282e");
+
+            researchCost = with(XenItems.cobalt, 200, XenItems.aluminum, 150, Items.graphite, 150);
         }};
         fluidRouter = new LiquidRouter("fluid-router"){{
             requirements(Category.liquid, with(XenItems.aluminum, 2, Items.graphite, 3));
