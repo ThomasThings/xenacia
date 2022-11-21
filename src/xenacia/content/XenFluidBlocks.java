@@ -35,6 +35,7 @@ public class XenFluidBlocks{
             requirements(Category.liquid, with(XenItems.aluminum, 2, Items.graphite, 3));
             health = 80;
             liquidCapacity = 20f;
+            liquidPadding = 1.5f;
             underBullets = true;
             squareSprite = false;
             solid = false;
