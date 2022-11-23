@@ -45,20 +45,24 @@ public class XenFluidBlocks{
         }};
         fluidJunction = new LiquidJunction("fluid-junction"){{
             requirements(Category.liquid, with(XenItems.aluminum, 2, Items.graphite, 3));
+            health = 80;
             solid = false;
 
             ((Conduit)fluidPipe).junctionReplacement = this;
+            ((Conduit)armoredFluidPipe).junctionReplacement = this;
 
             researchCost = with(XenItems.aluminum, 100, Items.graphite, 100);
         }};
         bridgePipe = new DirectionLiquidBridge("bridge-pipe"){{
             requirements(Category.liquid, with(XenItems.aluminum, 5, Items.graphite, 5));
+            health = 80;
             range = 6;
             hasPower = false;
             underBullets = true;
             squareSprite = false;
 
             ((Conduit)fluidPipe).rotBridgeReplacement = this;
+            ((Conduit)armoredFluidPipe).junctionReplacement = this;
 
             researchCost = with(XenItems.aluminum, 150, Items.graphite, 150);
         }};
