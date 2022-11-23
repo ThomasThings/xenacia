@@ -91,7 +91,7 @@ public class XenDistribution{
             solid = false;
             researchCost = with(XenItems.iron, 250, Items.titanium, 250, Items.silicon, 250);
         }};
-        railJunction = new Junction("junction"){{
+        railJunction = new Junction("rail-junction"){{
             requirements(Category.distribution, with(XenItems.iron, 2, XenItems.aluminum, 2));
             speed = 50;
             capacity = 10;
