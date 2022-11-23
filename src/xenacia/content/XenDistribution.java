@@ -59,7 +59,6 @@ public class XenDistribution{
             requirements(Category.distribution, with(XenItems.iron, 2, XenItems.cobalt, 2, Items.silicon, 2));
             health = 180;
             speed = 5f;
-            itemCapacity = 5;
             researchCost = with(XenItems.iron, 250, Items.titanium, 250, Items.silicon, 250);
         }};
         railRouter = new StackRouter("rail-router"){{
