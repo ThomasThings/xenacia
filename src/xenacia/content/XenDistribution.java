@@ -66,18 +66,19 @@ public class XenDistribution{
             requirements(Category.distribution, with(XenItems.iron, 2, XenItems.aluminum, 2));
             health = 80;
             speed = 5f;
-            regionRotated1 = 1;
-            itemCapacity = 5;
+
+            hasPower = true;
+            consumesPower = false;
+            conductivePower = true;
+
+            underBullets = true;
             solid = false;
             researchCost = with(XenItems.iron, 20, XenItems.aluminum, 20);
         }};
         bulkRailRouter = new StackRouter("rail-router"){{
-            requirements(Category.distribution, with(XenItems.iron, 2, XenItems.aluminum, 2));
+            requirements(Category.distribution, with(XenItems.iron, 4, Items.titanium, 4, Items.silicon, 2));
             health = 100;
             speed = 5f;
-            regionRotated1 = 1;
-            itemCapacity = 20;
-            solid = false;
 
             hasPower = true;
             consumesPower = true;
@@ -86,7 +87,9 @@ public class XenDistribution{
             baseEfficiency = 1f;
             consumePower(1.5f / 60f);
 
-            researchCost = with(XenItems.iron, 100, XenItems.aluminum, 100);
+            underBullets = true;
+            solid = false;
+            researchCost = with(XenItems.iron, 250, Items.titanium, 250, Items.silicon, 250);
         }};
         railJunction = new Junction("junction"){{
             requirements(Category.distribution, with(XenItems.iron, 2, XenItems.aluminum, 2));
