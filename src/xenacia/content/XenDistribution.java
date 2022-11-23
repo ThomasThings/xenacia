@@ -75,7 +75,7 @@ public class XenDistribution{
             solid = false;
             researchCost = with(XenItems.iron, 20, XenItems.aluminum, 20);
         }};
-        bulkRailRouter = new StackRouter("rail-router"){{
+        bulkRailRouter = new StackRouter("bulk-rail-router"){{
             requirements(Category.distribution, with(XenItems.iron, 4, Items.titanium, 4, Items.silicon, 2));
             health = 100;
             speed = 5f;
