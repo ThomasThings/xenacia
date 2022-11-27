@@ -4,6 +4,7 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.distribution.*;
 import mindustry.content.*;
+import xenacia.world.blocks.distribution.ReplaceableStackConveyor;
 
 import static mindustry.type.ItemStack.*;
 
@@ -13,13 +14,16 @@ public class XenDistribution{
             railRouter, bulkRailRouter, railJunction, railBridge;
 
     public static void load(){
-        rail = new StackConveyor("rail"){{
+        rail = new ReplaceableStackConveyor("rail"){{
             requirements(Category.distribution, with(XenItems.iron, 1, XenItems.aluminum, 1));
             health = 80;
             speed = 2.5f / 60f;
             itemCapacity = 5;
 
             outputRouter = false;
+
+            junctionReplacement = XenDistribution.railJunction;
+            bridgeReplacement = XenDistribution.railBridge;
 
             researchCost = with(XenItems.iron, 20, XenItems.aluminum, 20);
         }};
