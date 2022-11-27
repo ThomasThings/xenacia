@@ -12,12 +12,12 @@ import mindustry.entities.units.BuildPlan;
 import mindustry.gen.Sounds;
 import mindustry.input.Placement;
 import mindustry.world.Block;
-import mindustry.world.blocks.distribution.Conveyor;
 import mindustry.world.blocks.distribution.ItemBridge;
 import mindustry.world.blocks.distribution.Junction;
 import mindustry.world.blocks.distribution.StackConveyor;
 
 import mindustry.world.meta.BlockGroup;
+import xenacia.content.XenDistribution;
 
 public class ReplaceableStackConveyor extends StackConveyor {
 
@@ -34,6 +34,9 @@ public class ReplaceableStackConveyor extends StackConveyor {
         conveyorPlacement = true;
         underBullets = true;
         priority = TargetPriority.transport;
+
+        junctionReplacement = XenDistribution.railJunction;
+        bridgeReplacement = XenDistribution.railBridge;
 
         ambientSound = Sounds.conveyor;
         ambientSoundVolume = 0.004f;
