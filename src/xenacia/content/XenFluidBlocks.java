@@ -62,12 +62,12 @@ public class XenFluidBlocks{
             squareSprite = false;
 
             ((Conduit)fluidPipe).rotBridgeReplacement = this;
-            ((Conduit)armoredFluidPipe).junctionReplacement = this;
+            ((Conduit)armoredFluidPipe).rotBridgeReplacement = this;
 
             researchCost = with(XenItems.aluminum, 150, Items.graphite, 150);
         }};
         smallFluidTank = new LiquidRouter("small-fluid-tank"){{
-            requirements(Category.liquid, with(XenItems.iron, 20, XenItems.aluminum, 25, Items.graphite, 15));
+            requirements(Category.liquid, with(XenItems.iron, 80, XenItems.aluminum, 30));
             health = 480;
             size = 2;
             liquidCapacity = 500f;
@@ -79,7 +79,7 @@ public class XenFluidBlocks{
             researchCostMultiplier = 1f;
         }};
         largeFluidTank = new LiquidRouter("large-fluid-tank"){{
-            requirements(Category.liquid, with(XenItems.iron, 50, XenItems.aluminum, 80, Items.graphite, 30));
+            requirements(Category.liquid, with(XenItems.iron, 200, Items.titanium, 100, XenItems.aluminum, 100));
             health = 1080;
             size = 3;
             liquidCapacity = 2000f;
@@ -91,7 +91,7 @@ public class XenFluidBlocks{
             researchCostMultiplier = 1f;
         }};
         bulkFluidTank = new TeamLiquidRouter("bulk-fluid-tank"){{
-            requirements(Category.liquid, with(Items.titanium, 200, XenItems.aluminum, 250, Items.graphite, 100));
+            requirements(Category.liquid, with(XenItems.cobalt, 500, XenItems.aluminum, 400, Items.graphite, 400));
             health = 3000;
             size = 5;
             liquidCapacity = 10000f;
@@ -103,7 +103,7 @@ public class XenFluidBlocks{
             researchCostMultiplier = 1f;
         }};
         fluidPayloadTransportTank = new TeamLiquidRouter("fluid-payload-transport-tank"){{
-            requirements(Category.liquid, with(XenItems.cobalt, 800, Items.titanium, 1200, XenItems.aluminum, 1500, Items.graphite, 1000));
+            requirements(Category.liquid, with(XenItems.volcrite, 1000, XenItems.cobalt, 800, XenItems.aluminum, 1000, Items.graphite, 800));
             health = 6000;
             size = 7;
             liquidCapacity = 30000f;

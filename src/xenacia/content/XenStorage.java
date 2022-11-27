@@ -16,12 +16,27 @@ public class XenStorage{
             smallVault, largeVault, bulkVault, resourcePayloadTransportVault;
     public static void load(){
         smallVault = new StorageBlock("small-vault"){{
-            requirements(Category.effect, with(Items.titanium, 100));
-            size = 2;
-            itemCapacity = 300;
+            requirements(Category.effect, with(XenItems.iron, 100, Items.graphite, 50));
             health = 480;
+            size = 2;
+            itemCapacity = 500;
 
-            researchCost = with(XenItems.aluminum, 100, Items.graphite, 100);
+            researchCostMultiplier = 1f;
         }};
-    }
+        largeVault = new StorageBlock("large-vault"){{
+            requirements(Category.effect, with(XenItems.iron, 300, Items.titanium, 250));
+            health = 1080;
+            size = 3;
+            itemCapacity = 1500;
+
+            researchCostMultiplier = 1f;
+        }};
+        bulkVault = new StorageBlock("large-vault"){{
+            requirements(Category.effect, with(XenItems.iron, 300, Items.titanium, 250));
+            health = 1080;
+            size = 3;
+            itemCapacity = 1500;
+
+            researchCostMultiplier = 1f;
+        }};
 }
