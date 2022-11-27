@@ -6,6 +6,7 @@ import arc.math.geom.Geometry;
 import arc.math.geom.Point2;
 import arc.struct.Seq;
 import arc.util.Nullable;
+import mindustry.content.Blocks;
 import mindustry.entities.TargetPriority;
 import mindustry.entities.units.BuildPlan;
 import mindustry.gen.Sounds;
@@ -17,7 +18,6 @@ import mindustry.world.blocks.distribution.Junction;
 import mindustry.world.blocks.distribution.StackConveyor;
 
 import mindustry.world.meta.BlockGroup;
-import xenacia.content.XenDistribution;
 
 public class ReplaceableStackConveyor extends StackConveyor {
 
@@ -43,14 +43,14 @@ public class ReplaceableStackConveyor extends StackConveyor {
     public void init(){
         super.init();
 
-        if(junctionReplacement == null) junctionReplacement = XenDistribution.railJunction;
-        if(bridgeReplacement == null || !(bridgeReplacement instanceof ItemBridge)) bridgeReplacement = XenDistribution.railBridge;
+        if(junctionReplacement == null) junctionReplacement = Blocks.junction;
+        if(bridgeReplacement == null || !(bridgeReplacement instanceof ItemBridge)) bridgeReplacement = Blocks.itemBridge;
     }
     @Override
     public Block getReplacement(BuildPlan req, Seq<BuildPlan> plans){
         if(junctionReplacement == null) return this;
 
-        Boolf<Point2> cont = p -> plans.contains(o -> o.x == req.x + p.x && o.y == req.y + p.y && (req.block instanceof StackConveyor || req.block instanceof Junction));
+        Boolf<Point2> cont = p -> plans.contains(o -> o.x == req.x + p.x && o.y == req.y + p.y && (req.block instanceof ReplaceableStackConveyor || req.block instanceof Junction));
         return cont.get(Geometry.d4(req.rotation)) &&
                 cont.get(Geometry.d4(req.rotation - 2)) &&
                 req.tile() != null &&
