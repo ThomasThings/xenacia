@@ -32,8 +32,16 @@ public class XenStorage{
             researchCostMultiplier = 1f;
         }};
         bulkVault = new StorageBlock("large-vault"){{
-            requirements(Category.effect, with(XenItems.iron, 300, Items.titanium, 250));
-            health = 1080;
+            requirements(Category.effect, with(XenItems.cobalt, 500, XenItems.iron, 500, Items.titanium, 350));
+            health = 3000;
+            size = 5;
+            itemCapacity = 5000;
+
+            researchCostMultiplier = 1f;
+        }};
+        resourcePayloadTransportVault = new StorageBlock("resource-payload-transport-vault"){{
+            requirements(Category.effect, with(XenItems.cobalt, 500, XenItems.iron, 500, Items.titanium, 350));
+            health = 6400;
             size = 3;
             itemCapacity = 1500;
 
