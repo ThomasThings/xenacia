@@ -54,7 +54,7 @@ public class ReplaceableStackConveyor extends StackConveyor {
         return cont.get(Geometry.d4(req.rotation)) &&
                 cont.get(Geometry.d4(req.rotation - 2)) &&
                 req.tile() != null &&
-                req.tile().block() instanceof Conveyor &&
+                req.tile().block() instanceof ReplaceableStackConveyor &&
                 Mathf.mod(req.tile().build.rotation - req.rotation, 2) == 1 ? junctionReplacement : this;
     }
     @Override
