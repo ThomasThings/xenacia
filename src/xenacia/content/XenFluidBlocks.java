@@ -91,7 +91,7 @@ public class XenFluidBlocks{
             researchCostMultiplier = 1f;
         }};
         bulkFluidTank = new TeamLiquidRouter("bulk-fluid-tank"){{
-            requirements(Category.liquid, with(XenItems.cobalt, 500, XenItems.aluminum, 400, Items.graphite, 400));
+            requirements(Category.liquid, with(XenItems.aluminum, 400, Items.graphite, 400, XenItems.cobalt, 500));
             health = 3000;
             size = 5;
             liquidCapacity = 10000f;
@@ -103,7 +103,7 @@ public class XenFluidBlocks{
             researchCostMultiplier = 1f;
         }};
         fluidPayloadTransportTank = new TeamLiquidRouter("fluid-payload-transport-tank"){{
-            requirements(Category.liquid, with(XenItems.volcrite, 1000, XenItems.cobalt, 800, XenItems.aluminum, 1000, Items.graphite, 800));
+            requirements(Category.liquid, with(XenItems.aluminum, 1000, Items.graphite, 800, XenItems.cobalt, 800, XenItems.volcrite, 1000));
             health = 6400;
             size = 7;
             liquidCapacity = 30000f;
