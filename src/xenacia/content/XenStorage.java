@@ -27,7 +27,7 @@ public class XenStorage{
 
             researchCostMultiplier = 1f;
         }};
-        bulkVault = new StorageBlock("large-vault") {{
+        bulkVault = new StorageBlock("bulk-vault") {{
             requirements(Category.effect, with(XenItems.iron, 500, Items.titanium, 350, XenItems.cobalt, 500));
             health = 3000;
             size = 5;
