@@ -28,7 +28,7 @@ public class XenDistribution{
 
             researchCost = with(XenItems.iron, 20, XenItems.aluminum, 20);
         }};
-        poweredRail = new StackConveyor("powered-rail"){{
+        poweredRail = new ReplaceableStackConveyor("powered-rail"){{
             requirements(Category.distribution, with(XenItems.iron, 2, Items.silicon, 2));
             health = 100;
             speed = 5f / 60f;
@@ -44,7 +44,7 @@ public class XenDistribution{
 
             researchCost = with(XenItems.iron, 200, Items.silicon, 200);
         }};
-        bulkRail = new StackConveyor("bulk-rail"){{
+        bulkRail = new ReplaceableStackConveyor("bulk-rail"){{
             requirements(Category.distribution, with(XenItems.iron, 3, Items.titanium, 2, Items.silicon, 2));
             health = 100;
             speed = 5f / 60f;
@@ -106,6 +106,9 @@ public class XenDistribution{
             conductivePower = true;
 
             ((ReplaceableStackConveyor)rail).junctionReplacement = this;
+            ((ReplaceableStackConveyor)poweredRail).junctionReplacement = this;
+            ((ReplaceableStackConveyor)bulkRail).junctionReplacement = this;
+            ((ReplaceableStackConveyor)armoredRail).junctionReplacement = this;
 
             researchCost = with(XenItems.iron, 100, XenItems.aluminum, 100);
         }};
@@ -118,6 +121,11 @@ public class XenDistribution{
             hasPower = true;
             consumesPower = false;
             conductivePower = true;
+
+            ((ReplaceableStackConveyor)rail).junctionReplacement = this;
+            ((ReplaceableStackConveyor)poweredRail).junctionReplacement = this;
+            ((ReplaceableStackConveyor)bulkRail).junctionReplacement = this;
+            ((ReplaceableStackConveyor)armoredRail).junctionReplacement = this;
 
             researchCost = with(XenItems.iron, 150, XenItems.aluminum, 200);
         }};
