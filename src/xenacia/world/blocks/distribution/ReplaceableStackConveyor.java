@@ -12,7 +12,6 @@ import mindustry.entities.units.BuildPlan;
 import mindustry.gen.Sounds;
 import mindustry.input.Placement;
 import mindustry.world.Block;
-import mindustry.world.blocks.distribution.DuctBridge;
 import mindustry.world.blocks.distribution.ItemBridge;
 import mindustry.world.blocks.distribution.Junction;
 import mindustry.world.blocks.distribution.StackConveyor;
@@ -47,8 +46,8 @@ public class ReplaceableStackConveyor extends StackConveyor {
     public void init(){
         super.init();
 
-        if(junctionReplacement == null) junctionReplacement = XenDistribution.railJunction;
-        if(bridgeReplacement == null || !(bridgeReplacement instanceof DuctBridge)) bridgeReplacement = XenDistribution.railBridge;
+        if(junctionReplacement == null) junctionReplacement = Blocks.junction;
+        if(bridgeReplacement == null || !(bridgeReplacement instanceof ItemBridge)) bridgeReplacement = Blocks.itemBridge;
     }
     @Override
     public Block getReplacement(BuildPlan req, Seq<BuildPlan> plans){

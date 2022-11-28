@@ -4,6 +4,7 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.distribution.*;
 import mindustry.content.*;
+import mindustry.world.blocks.liquid.Conduit;
 import xenacia.world.blocks.distribution.ReplaceableStackConveyor;
 
 import static mindustry.type.ItemStack.*;
@@ -103,6 +104,8 @@ public class XenDistribution{
             hasPower = true;
             consumesPower = false;
             conductivePower = true;
+
+            ((ReplaceableStackConveyor)rail).junctionReplacement = this;
 
             researchCost = with(XenItems.iron, 100, XenItems.aluminum, 100);
         }};
