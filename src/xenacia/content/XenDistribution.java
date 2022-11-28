@@ -4,7 +4,6 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.distribution.*;
 import mindustry.content.*;
-import mindustry.world.blocks.liquid.Conduit;
 import xenacia.world.blocks.distribution.ReplaceableStackConveyor;
 
 import static mindustry.type.ItemStack.*;
@@ -60,12 +59,12 @@ public class XenDistribution{
 
             researchCost = with(XenItems.iron, 250, Items.titanium, 250, Items.silicon, 250);
         }};
-        armoredRail = new Duct("armored-rail"){{
+        /*armoredRail = new CoveredReplaceableStackConveyor("armored-rail"){{
             requirements(Category.distribution, with(XenItems.iron, 2, XenItems.cobalt, 2, Items.silicon, 2));
             health = 180;
             speed = 5f;
             researchCost = with(XenItems.iron, 250, Items.titanium, 250, Items.silicon, 250);
-        }};
+        }};*/
         railRouter = new StackRouter("rail-router"){{
             requirements(Category.distribution, with(XenItems.iron, 2, XenItems.aluminum, 2));
             health = 80;
@@ -108,7 +107,7 @@ public class XenDistribution{
             ((ReplaceableStackConveyor)rail).junctionReplacement = this;
             ((ReplaceableStackConveyor)poweredRail).junctionReplacement = this;
             ((ReplaceableStackConveyor)bulkRail).junctionReplacement = this;
-            ((ReplaceableStackConveyor)armoredRail).junctionReplacement = this;
+            /*((CoveredReplaceableStackConveyor)armoredRail).junctionReplacement = this;*/
 
             researchCost = with(XenItems.iron, 100, XenItems.aluminum, 100);
         }};
@@ -125,7 +124,7 @@ public class XenDistribution{
             ((ReplaceableStackConveyor)rail).bridgeReplacement = this;
             ((ReplaceableStackConveyor)poweredRail).bridgeReplacement = this;
             ((ReplaceableStackConveyor)bulkRail).bridgeReplacement = this;
-            ((ReplaceableStackConveyor)armoredRail).bridgeReplacement = this;
+            /*((CoveredReplaceableStackConveyor)armoredRail).bridgeReplacement = this;*/
 
             researchCost = with(XenItems.iron, 150, XenItems.aluminum, 200);
         }};
