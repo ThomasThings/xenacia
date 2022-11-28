@@ -46,8 +46,8 @@ public class ReplaceableStackConveyor extends StackConveyor {
     public void init(){
         super.init();
 
-        if(junctionReplacement == null) junctionReplacement = XenDistribution.railJunction;
-        if(bridgeReplacement == null || !(bridgeReplacement instanceof ItemBridge)) bridgeReplacement = XenDistribution.railBridge;
+        if(junctionReplacement == null) junctionReplacement = Blocks.junction;
+        if(bridgeReplacement == null || !(bridgeReplacement instanceof ItemBridge)) bridgeReplacement = Blocks.itemBridge;
     }
     @Override
     public Block getReplacement(BuildPlan req, Seq<BuildPlan> plans){
