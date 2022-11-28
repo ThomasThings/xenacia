@@ -122,10 +122,10 @@ public class XenDistribution{
             consumesPower = false;
             conductivePower = true;
 
-            ((ReplaceableStackConveyor)rail).junctionReplacement = this;
-            ((ReplaceableStackConveyor)poweredRail).junctionReplacement = this;
-            ((ReplaceableStackConveyor)bulkRail).junctionReplacement = this;
-            ((ReplaceableStackConveyor)armoredRail).junctionReplacement = this;
+            ((ReplaceableStackConveyor)rail).bridgeReplacement = this;
+            ((ReplaceableStackConveyor)poweredRail).bridgeReplacement = this;
+            ((ReplaceableStackConveyor)bulkRail).bridgeReplacement = this;
+            ((ReplaceableStackConveyor)armoredRail).bridgeReplacement = this;
 
             researchCost = with(XenItems.iron, 150, XenItems.aluminum, 200);
         }};
