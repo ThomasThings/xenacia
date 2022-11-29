@@ -20,7 +20,7 @@ import mindustry.world.meta.BlockGroup;
 
 public class ReplaceableStackConveyor extends StackConveyor {
 
-    public @Nullable Block junctionReplacement, bridgeReplacement;
+    public @Nullable Block junctionReplacement, rotBridgeReplacement;
 
     public ReplaceableStackConveyor(String name){
         super(name);
@@ -43,7 +43,7 @@ public class ReplaceableStackConveyor extends StackConveyor {
         super.init();
 
         if(junctionReplacement == null) junctionReplacement = Blocks.junction;
-        if(bridgeReplacement == null || !(bridgeReplacement instanceof ItemBridge)) bridgeReplacement = Blocks.itemBridge;
+        if(rotBridgeReplacement == null || !(rotBridgeReplacement instanceof ItemBridge)) rotBridgeReplacement = Blocks.itemBridge;
     }
     @Override
     public Block getReplacement(BuildPlan req, Seq<BuildPlan> plans){
@@ -58,9 +58,9 @@ public class ReplaceableStackConveyor extends StackConveyor {
     }
     @Override
     public void handlePlacementLine(Seq<BuildPlan> plans){
-        if(bridgeReplacement == null) return;
+        if(rotBridgeReplacement == null) return;
 
-        Placement.calculateBridges(plans, (ItemBridge)bridgeReplacement);
+        Placement.calculateBridges(plans, (ItemBridge)rotBridgeReplacement);
     }
     public class ReplaceableStackConveyorBuild extends StackConveyorBuild {
     }

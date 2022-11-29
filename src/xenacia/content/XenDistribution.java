@@ -22,9 +22,6 @@ public class XenDistribution{
 
             outputRouter = false;
 
-            junctionReplacement = XenDistribution.railJunction;
-            bridgeReplacement = XenDistribution.railBridge;
-
             researchCost = with(XenItems.iron, 20, XenItems.aluminum, 20);
         }};
         poweredRail = new ReplaceableStackConveyor("powered-rail"){{
@@ -121,9 +118,9 @@ public class XenDistribution{
             consumesPower = false;
             conductivePower = true;
 
-            ((ReplaceableStackConveyor)rail).bridgeReplacement = this;
-            ((ReplaceableStackConveyor)poweredRail).bridgeReplacement = this;
-            ((ReplaceableStackConveyor)bulkRail).bridgeReplacement = this;
+            ((ReplaceableStackConveyor)rail).rotBridgeReplacement = this;
+            ((ReplaceableStackConveyor)poweredRail).rotBridgeReplacement = this;
+            ((ReplaceableStackConveyor)bulkRail).rotBridgeReplacement = this;
             /*((CoveredReplaceableStackConveyor)armoredRail).bridgeReplacement = this;*/
 
             researchCost = with(XenItems.iron, 150, XenItems.aluminum, 200);
