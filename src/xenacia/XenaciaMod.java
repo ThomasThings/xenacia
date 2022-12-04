@@ -14,6 +14,7 @@ public class XenaciaMod extends Mod{
         XenEnvironmentTiles.load();
         XenUnitTypes.load();
         XenUnitFactories.load();
+        XenPayloadBlocks.load();
         XenFluidBlocks.load();
         XenDistribution.load();
         XenStorage.load();
