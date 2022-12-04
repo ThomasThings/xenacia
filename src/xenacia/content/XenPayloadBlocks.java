@@ -59,7 +59,7 @@ public class XenPayloadBlocks{
         largePayloadConstructor = new Constructor("large-payload-constructor"){{
             requirements(Category.units, with(XenItems.cobalt, 250, XenItems.iron, 200, Items.silicon, 150));
             health = 2500;
-            size = 5;
+            size = 7;
             hasPower = true;
             buildSpeed = 1f;
             consumePower(3f);
@@ -75,7 +75,7 @@ public class XenPayloadBlocks{
         largePayloadLoader = new PayloadLoader("large-payload-loader"){{
             requirements(Category.units, with(XenItems.cobalt, 150, XenItems.aluminum, 100, Items.graphite, 200, Items.silicon, 200));
             health = 2500;
-            size = 5;
+            size = 7;
             hasPower = true;
             consumePower(3f);
         }};
@@ -111,7 +111,7 @@ public class XenPayloadBlocks{
         largePayloadUnloader = new PayloadUnloader("large-payload-unloader"){{
             requirements(Category.units, with(XenItems.cobalt, 150, XenItems.aluminum, 100, Items.graphite, 200, Items.silicon, 200));
             health = 2500;
-            size = 5;
+            size = 7;
             hasPower = true;
             consumePower(3f);
         }};
@@ -127,7 +127,7 @@ public class XenPayloadBlocks{
         largePayloadDeconstructor = new PayloadDeconstructor("large-payload-deconstructor"){{
             requirements(Category.units, with(XenItems.cobalt, 250, XenItems.aluminum, 200, Items.silicon, 150));
             health = 2500;
-            size = 5;
+            size = 7;
             itemCapacity = 300;
             consumePower(3f);
             deconstructSpeed = 2.5f;
