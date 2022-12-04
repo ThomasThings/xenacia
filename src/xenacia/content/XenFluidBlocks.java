@@ -67,7 +67,7 @@ public class XenFluidBlocks{
             researchCost = with(XenItems.aluminum, 150, Items.graphite, 150);
         }};
         smallFluidTank = new LiquidRouter("small-fluid-tank"){{
-            requirements(Category.liquid, with(XenItems.iron, 80, XenItems.aluminum, 30));
+            requirements(Category.liquid, with(XenItems.iron, 60, XenItems.aluminum, 30));
             health = 560;
             size = 2;
             liquidCapacity = 500f;
