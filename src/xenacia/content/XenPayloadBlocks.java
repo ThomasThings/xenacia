@@ -22,6 +22,7 @@ public class XenPayloadBlocks{
             requirements(Category.units, with(XenItems.iron, 10, Items.graphite, 10, Items.silicon, 5));
             health = 900;
             size = 3;
+            payloadLimit = 3f;
             canOverdrive = true;
             moveTime = 30f;
         }};
@@ -29,6 +30,7 @@ public class XenPayloadBlocks{
             requirements(Category.units, with(XenItems.neodymium, 40, Items.graphite, 30, Items.silicon, 30));
             health = 2500;
             size = 5;
+            payloadLimit = 5.5f;
             canOverdrive = true;
             moveTime = 60f;
         }};
@@ -37,6 +39,7 @@ public class XenPayloadBlocks{
             requirements(Category.units, with(XenItems.iron, 15, Items.graphite, 10, Items.silicon, 10));
             health = 900;
             size = 3;
+            payloadLimit = 3f;
             canOverdrive = true;
             moveTime = 30f;
         }};
@@ -44,6 +47,7 @@ public class XenPayloadBlocks{
             requirements(Category.units, with(XenItems.neodymium, 50, Items.graphite, 30, Items.silicon, 40));
             health = 2500;
             size = 5;
+            payloadLimit = 5.5f;
             canOverdrive = true;
             moveTime = 60f;
         }};
