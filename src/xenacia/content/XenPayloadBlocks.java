@@ -96,6 +96,7 @@ public class XenPayloadBlocks{
             range = 640f;
             maxPayloadSize = 2.5f;
             consumePower(2f);
+            outlineIcon = false;
         }};
         largePayloadLaunchTower = new PayloadMassDriver("large-payload-launch-tower"){{
             requirements(Category.units, with(XenItems.iron, 500, XenItems.aluminum, 550, Items.silicon, 450, XenItems.cobalt, 250));
@@ -106,6 +107,7 @@ public class XenPayloadBlocks{
             range = 960f;
             maxPayloadSize = 6.5f;
             consumePower(5f);
+            outlineIcon = false;
         }};
 
         smallPayloadUnloader = new PayloadUnloader("small-payload-unloader"){{
