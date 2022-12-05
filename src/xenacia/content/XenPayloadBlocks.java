@@ -82,6 +82,7 @@ public class XenPayloadBlocks{
             requirements(Category.units, with(XenItems.cobalt, 150, XenItems.aluminum, 100, Items.graphite, 200, Items.silicon, 200));
             health = 2500;
             size = 7;
+            maxBlockSize = 6;
             hasPower = true;
             consumePower(3f);
         }};
@@ -118,6 +119,7 @@ public class XenPayloadBlocks{
             requirements(Category.units, with(XenItems.cobalt, 150, XenItems.aluminum, 100, Items.graphite, 200, Items.silicon, 200));
             health = 2500;
             size = 7;
+            maxBlockSize = 6;
             hasPower = true;
             consumePower(3f);
         }};
@@ -134,6 +136,7 @@ public class XenPayloadBlocks{
             requirements(Category.units, with(XenItems.cobalt, 250, XenItems.aluminum, 200, Items.silicon, 150));
             health = 2500;
             size = 7;
+            maxPayloadSize = 6;
             itemCapacity = 300;
             consumePower(3f);
             deconstructSpeed = 2.5f;
