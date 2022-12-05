@@ -64,6 +64,8 @@ public class XenPayloadBlocks{
             requirements(Category.units, with(XenItems.cobalt, 250, XenItems.iron, 200, Items.silicon, 150));
             health = 2500;
             size = 7;
+            minBlockSize = 2;
+            maxBlockSize = 5;
             hasPower = true;
             buildSpeed = 1f;
             consumePower(3f);
