@@ -334,12 +334,14 @@ public class XenUnitTypes {
 
             weapons.add(new Weapon("gale-missiles") {{
                 x = 4.5f;
-                y = 3.5f;
+                y = 0f;
+                top = false;
                 rotate = false;
                 reload = 30f;
                 inaccuracy = 2.5f;
                 velocityRnd = 0.2f;
                 shootSound = Sounds.missile;
+                shootY = 3.5f;
 
                 bullet = new MissileBulletType(2.8f, 20) {{
                     width = 6f;
@@ -367,27 +369,28 @@ public class XenUnitTypes {
             health = 300f;
             armor = 1f;
             hitSize = 10f;
-            speed = 1.5f;
+            speed = 2f;
             rotateSpeed = 4f;
             flying = true;
-            lowAltitude = true;
+            lowAltitude = false;
             accel = 0.1f;
             drag = 0.15f;
 
             itemCapacity = 15;
 
-            engineSize = 3f;
-            engineOffset = 5f;
+            engineSize = 1.5f;
+            engineOffset = 7f;
 
             circleTarget = true;
             targetFlags = new BlockFlag[]{BlockFlag.battery, null};
 
             weapons.add(new Weapon() {{
                 minShootVelocity = 0.75f;
-                x = 3f;
+                x = 0f;
+                y = 0f;
                 shootY = 0f;
                 reload = 30f;
-                shootCone = 180f;
+                shootCone = 360f;
                 ejectEffect = Fx.none;
                 inaccuracy = 15f;
                 ignoreRotation = true;
@@ -465,9 +468,11 @@ public class XenUnitTypes {
             trailScl = 1.2f;
 
             weapons.add(new Weapon("shif-missiles") {{
+                top = true;
                 x = 4.5f;
                 y = 3.5f;
-                rotate = false;
+                mirror = false;
+                rotate = true;
                 reload = 20f;
                 inaccuracy = 2.5f;
                 velocityRnd = 0.2f;
@@ -516,7 +521,10 @@ public class XenUnitTypes {
             };
 
             weapons.add(new Weapon("tack-beam"){{
+                x = 0f;
+                y = 0f;
                 top = true;
+                mirror = false;
                 reload = 60f;
                 recoil = 4f;
                 shootSound = Sounds.laser;
