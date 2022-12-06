@@ -374,7 +374,7 @@ public class XenUnitTypes {
             flying = true;
             lowAltitude = false;
             accel = 0.1f;
-            drag = 0.15f;
+            drag = 0.8f;
 
             itemCapacity = 15;
 
@@ -420,10 +420,10 @@ public class XenUnitTypes {
 
             itemCapacity = 5;
 
-            legContinuousMove = false;
+            legContinuousMove = true;
             legCount = 4;
             legGroupSize = 1;
-            legLength = 17f;
+            legLength = 8.5f;
             rippleScale = 0.1f;
 
             weapons.add(new Weapon("explore-cannon") {{
@@ -434,7 +434,6 @@ public class XenUnitTypes {
                 velocityRnd = 0.4f;
                 shootSound = Sounds.artillery;
 
-                shoot.shots = 3;
                 shootY = 4.5f;
                 bullet = new ArtilleryBulletType(2.8f, 10, "shell") {{
                     hitEffect = Fx.blastExplosion;
@@ -505,7 +504,7 @@ public class XenUnitTypes {
             health = 300f;
             armor = 1f;
             hitSize = 10f;
-            speed = 0.5f;
+            speed = 0.8f;
             rotateSpeed = 4f;
             omniMovement = false;
 
