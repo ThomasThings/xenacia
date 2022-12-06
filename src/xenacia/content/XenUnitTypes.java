@@ -323,8 +323,8 @@ public class XenUnitTypes {
             mechLegColor = Color.valueOf("242125");
             health = 300f;
             armor = 1f;
-            hitSize = 10f;
-            speed = 0.4f;
+            hitSize = 15f;
+            speed = 0.6f;
             rotateSpeed = 5f;
 
             itemCapacity = 5;
@@ -368,7 +368,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("242125");
             health = 300f;
             armor = 1f;
-            hitSize = 10f;
+            hitSize = 18f;
             speed = 2f;
             rotateSpeed = 4f;
             flying = true;
@@ -414,7 +414,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("242125");
             health = 300f;
             armor = 1f;
-            hitSize = 10f;
+            hitSize = 16f;
             speed = 0.8f;
             rotateSpeed = 5f;
 
@@ -455,7 +455,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("242125");
             health = 300f;
             armor = 1f;
-            hitSize = 10f;
+            hitSize = 14f;
             speed = 0.9f;
             rotateSpeed = 4f;
 
