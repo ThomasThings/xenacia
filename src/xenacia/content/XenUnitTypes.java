@@ -474,7 +474,7 @@ public class XenUnitTypes {
             weapons.add(new Weapon("xenacia-shif-missiles") {{
                 top = true;
                 x = 0f;
-                y = 1.5f;
+                y = 1.75f;
                 mirror = false;
                 rotate = true;
                 reload = 20f;
@@ -526,11 +526,11 @@ public class XenUnitTypes {
 
             weapons.add(new Weapon("xenacia-tack-beam"){{
                 x = 0f;
-                y = 0f;
+                y = -1.75f;
                 top = true;
                 mirror = false;
                 rotate = true;
-                rotateSpeed =
+                rotateSpeed = 3.5f;
                 reload = 60f;
                 recoil = 2f;
                 shootSound = Sounds.laser;
@@ -547,7 +547,7 @@ public class XenUnitTypes {
                 parts.addAll(
                         new RegionPart("-jaw"){{
                             x = 0f;
-                            y = 0f;
+                            y = 2.5f;
                             progress = PartProgress.warmup;
                             mirror = true;
                             under = true;
