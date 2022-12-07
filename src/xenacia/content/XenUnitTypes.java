@@ -336,7 +336,7 @@ public class XenUnitTypes {
                 x = 4.75f;
                 y = 0f;
                 top = false;
-                layerOffset = -0.001f;
+                layerOffset = -0.0001f;
                 rotate = false;
                 reload = 30f;
                 inaccuracy = 2.5f;
@@ -391,7 +391,7 @@ public class XenUnitTypes {
                 x = 0f;
                 y = 0f;
                 shootY = 0f;
-                reload = 30f;
+                reload = 20f;
                 shootCone = 180f;
                 ejectEffect = Fx.none;
                 inaccuracy = 15f;
@@ -431,7 +431,7 @@ public class XenUnitTypes {
 
             weapons.add(new Weapon("xenacia-explore-cannon") {{
                 x = 0f;
-                y = -2.5f;
+                y = -3.25f;
                 mirror = false;
                 rotate = true;
                 reload = 60f;
@@ -474,7 +474,7 @@ public class XenUnitTypes {
             weapons.add(new Weapon("xenacia-shif-missiles") {{
                 top = true;
                 x = 0f;
-                y = 3.5f;
+                y = 1.5f;
                 mirror = false;
                 rotate = true;
                 reload = 20f;
@@ -532,12 +532,11 @@ public class XenUnitTypes {
                 rotate = true;
                 rotateSpeed =
                 reload = 60f;
-                recoil = 4f;
+                recoil = 2f;
                 shootSound = Sounds.laser;
 
                 bullet = new LaserBulletType(){{
                     damage = 45f;
-                    recoil = 1f;
                     sideAngle = 65f;
                     sideWidth = 0.5f;
                     sideLength = 15f;
@@ -547,13 +546,13 @@ public class XenUnitTypes {
 
                 parts.addAll(
                         new RegionPart("-jaw"){{
+                            x = 0f;
+                            y = 0f;
                             progress = PartProgress.warmup;
                             mirror = true;
                             under = true;
                             moveX = 1f;
-                            moveRot = 82f;
-                            x = 37 / 4f;
-                            y = 8 / 4f;
+                            moveRot = 0f;
                             moves.add(new PartMove(PartProgress.recoil, 0f, 0f, -5f));
                         }});
             }});
