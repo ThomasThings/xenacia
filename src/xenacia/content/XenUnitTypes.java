@@ -323,7 +323,7 @@ public class XenUnitTypes {
             mechLegColor = Color.valueOf("242125");
             health = 300f;
             armor = 1f;
-            hitSize = 15f;
+            hitSize = 12f;
             speed = 0.6f;
             rotateSpeed = 5f;
 
