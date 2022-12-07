@@ -551,7 +551,6 @@ public class XenUnitTypes {
                             y = 2.5f;
                             progress = PartProgress.warmup;
                             mirror = true;
-                            under = true;
                             moveX = 1f;
                             moveRot = 0f;
                             moves.add(new PartMove(PartProgress.recoil, 0f, 0f, -5f));
