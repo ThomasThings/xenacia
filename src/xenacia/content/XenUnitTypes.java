@@ -528,6 +528,7 @@ public class XenUnitTypes {
             weapons.add(new Weapon("xenacia-tack-beam"){{
                 x = 0f;
                 y = -1.75f;
+                layerOffset = 0.1f;
                 top = true;
                 mirror = false;
                 rotate = true;
