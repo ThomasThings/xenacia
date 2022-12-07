@@ -333,7 +333,7 @@ public class XenUnitTypes {
             mechSideSway = 0.4f;
 
             weapons.add(new Weapon("xenacia-gale-missiles") {{
-                x = 4f;
+                x = 4.75f;
                 y = 0f;
                 top = false;
                 layerOffset = -0.001f;
