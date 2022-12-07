@@ -373,16 +373,17 @@ public class XenUnitTypes {
             rotateSpeed = 4f;
             flying = true;
             lowAltitude = false;
-            accel = 0.1f;
-            drag = 0.8f;
+            accel = 0.09f;
+            drag = 0.02f;
 
             itemCapacity = 15;
 
-            engineSize = 1.5f;
+            engineSize = 3f;
             engineOffset = 7f;
 
             circleTarget = true;
             targetFlags = new BlockFlag[]{BlockFlag.battery, null};
+            faceTarget = false;
 
             weapons.add(new Weapon() {{
                 minShootVelocity = 0.75f;
@@ -390,7 +391,7 @@ public class XenUnitTypes {
                 y = 0f;
                 shootY = 0f;
                 reload = 30f;
-                shootCone = 360f;
+                shootCone = 180f;
                 ejectEffect = Fx.none;
                 inaccuracy = 15f;
                 ignoreRotation = true;
@@ -414,7 +415,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("242125");
             health = 300f;
             armor = 1f;
-            hitSize = 16f;
+            hitSize = 12f;
             speed = 0.8f;
             rotateSpeed = 5f;
 
@@ -423,11 +424,14 @@ public class XenUnitTypes {
             legContinuousMove = true;
             legCount = 4;
             legGroupSize = 1;
-            legLength = 8.5f;
+            legLength = 14.5f;
             rippleScale = 0.1f;
+            stepShake = 0f;
 
             weapons.add(new Weapon("explore-cannon") {{
+                x = 0f;
                 y = -2.5f;
+                mirror = false;
                 rotate = true;
                 reload = 60f;
                 inaccuracy = 0f;
@@ -461,14 +465,14 @@ public class XenUnitTypes {
 
             itemCapacity = 5;
 
-            trailLength = 15;
+            trailLength = 20;
             waveTrailX = 4f;
             waveTrailY = -1f;
             trailScl = 1.2f;
 
             weapons.add(new Weapon("shif-missiles") {{
                 top = true;
-                x = 4.5f;
+                x = 0f;
                 y = 3.5f;
                 mirror = false;
                 rotate = true;
@@ -487,7 +491,7 @@ public class XenUnitTypes {
                     keepVelocity = false;
                     splashDamageRadius = 20f;
                     splashDamage = 15f;
-                    lifetime = 90f;
+                    lifetime = 50f;
                     trailColor = Color.valueOf("d06b53");
                     backColor = Color.valueOf("d06b53");
                     frontColor = Color.valueOf("ffa665");
@@ -503,7 +507,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("242125");
             health = 300f;
             armor = 1f;
-            hitSize = 10f;
+            hitSize = 16f;
             speed = 0.8f;
             rotateSpeed = 4f;
             omniMovement = false;
@@ -524,6 +528,7 @@ public class XenUnitTypes {
                 y = 0f;
                 top = true;
                 mirror = false;
+                rotate = true;
                 reload = 60f;
                 recoil = 4f;
                 shootSound = Sounds.laser;
