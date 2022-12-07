@@ -321,7 +321,7 @@ public class XenUnitTypes {
             constructor = MechUnit::create;
             outlineColor = Color.valueOf("242125");
             mechLegColor = Color.valueOf("242125");
-            health = 300f;
+            health = 650f;
             armor = 1f;
             hitSize = 12f;
             speed = 0.6f;
@@ -344,7 +344,7 @@ public class XenUnitTypes {
                 shootSound = Sounds.missile;
                 shootY = 3.5f;
 
-                bullet = new MissileBulletType(2.8f, 20) {{
+                bullet = new MissileBulletType(2.8f, 25) {{
                     width = 6f;
                     height = 6f;
                     shrinkY = 0f;
@@ -367,7 +367,7 @@ public class XenUnitTypes {
         anax = new UnitType("anax") {{
             constructor = UnitEntity::create;
             outlineColor = Color.valueOf("242125");
-            health = 300f;
+            health = 600f;
             armor = 1f;
             hitSize = 18f;
             speed = 2f;
@@ -397,7 +397,7 @@ public class XenUnitTypes {
                 inaccuracy = 15f;
                 ignoreRotation = true;
                 shootSound = Sounds.none;
-                bullet = new BombBulletType(55f, 24f) {{
+                bullet = new BombBulletType(65f, 24f) {{
                     width = 10f;
                     height = 10f;
                     backColor = Color.valueOf("d06b53");
@@ -414,7 +414,7 @@ public class XenUnitTypes {
         explore = new UnitType("explore") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("242125");
-            health = 300f;
+            health = 550f;
             armor = 1f;
             hitSize = 12f;
             speed = 0.8f;
@@ -441,7 +441,7 @@ public class XenUnitTypes {
                 shootSound = Sounds.artillery;
 
                 shootY = 4.5f;
-                bullet = new ArtilleryBulletType(2.8f, 10, "shell") {{
+                bullet = new ArtilleryBulletType(2.8f, 20, "shell") {{
                     hitEffect = Fx.blastExplosion;
                     knockback = 0.5f;
                     lifetime = 120f;
@@ -449,7 +449,7 @@ public class XenUnitTypes {
                     collides = true;
                     collidesTiles = true;
                     splashDamageRadius = 32f;
-                    splashDamage = 50f;
+                    splashDamage = 60f;
                     trailColor = Color.valueOf("d06b53");
                     backColor = Color.valueOf("d06b53");
                     frontColor = Color.valueOf("ffa665");
@@ -459,7 +459,7 @@ public class XenUnitTypes {
         shif = new UnitType("shif") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("242125");
-            health = 300f;
+            health = 600f;
             armor = 1f;
             hitSize = 14f;
             speed = 0.9f;
@@ -478,13 +478,13 @@ public class XenUnitTypes {
                 y = 1.75f;
                 mirror = false;
                 rotate = true;
-                reload = 20f;
+                reload = 15f;
                 inaccuracy = 2.5f;
                 velocityRnd = 0.2f;
                 shootSound = Sounds.missile;
                 recoil = 2f;
 
-                bullet = new MissileBulletType(2.8f, 25) {{
+                bullet = new MissileBulletType(2.8f, 35) {{
                     width = 6f;
                     height = 6f;
                     shrinkY = 0f;
@@ -507,7 +507,7 @@ public class XenUnitTypes {
         tack = new UnitType("tack") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("242125");
-            health = 300f;
+            health = 650f;
             armor = 1f;
             hitSize = 16f;
             speed = 0.8f;
@@ -533,12 +533,12 @@ public class XenUnitTypes {
                 mirror = false;
                 rotate = true;
                 rotateSpeed = 3.5f;
-                reload = 60f;
+                reload = 45f;
                 recoil = 2f;
                 shootSound = Sounds.laser;
 
                 bullet = new LaserBulletType(){{
-                    damage = 45f;
+                    damage = 75f;
                     sideAngle = 65f;
                     sideWidth = 0.5f;
                     sideLength = 15f;
@@ -554,7 +554,7 @@ public class XenUnitTypes {
                             mirror = true;
                             under = true;
                             outline = true;
-                            moveX = 1f;
+                            moveX = 0.75f;
                             moveRot = 0f;
                             moves.add(new PartMove(PartProgress.recoil, 0.5f, 0f, -8f));
                         }});
