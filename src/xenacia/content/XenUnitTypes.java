@@ -332,7 +332,7 @@ public class XenUnitTypes {
             mechFrontSway = 0.2f;
             mechSideSway = 0.4f;
 
-            weapons.add(new Weapon("gale-missiles") {{
+            weapons.add(new Weapon("xenacia-gale-missiles") {{
                 x = 4.5f;
                 y = 0f;
                 top = false;
@@ -378,8 +378,8 @@ public class XenUnitTypes {
 
             itemCapacity = 15;
 
-            engineSize = 3f;
-            engineOffset = 7f;
+            engineSize = 3.3f;
+            engineOffset = 7.5f;
 
             circleTarget = true;
             targetFlags = new BlockFlag[]{BlockFlag.battery, null};
@@ -424,7 +424,7 @@ public class XenUnitTypes {
             legContinuousMove = true;
             legCount = 4;
             legGroupSize = 1;
-            legLength = 14.5f;
+            legLength = 12.5f;
             rippleScale = 0.1f;
             stepShake = 0f;
 
@@ -529,6 +529,7 @@ public class XenUnitTypes {
                 top = true;
                 mirror = false;
                 rotate = true;
+                rotateSpeed =
                 reload = 60f;
                 recoil = 4f;
                 shootSound = Sounds.laser;
