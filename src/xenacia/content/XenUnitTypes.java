@@ -333,9 +333,10 @@ public class XenUnitTypes {
             mechSideSway = 0.4f;
 
             weapons.add(new Weapon("xenacia-gale-missiles") {{
-                x = 4.5f;
+                x = 4f;
                 y = 0f;
                 top = false;
+                layerOffset = -0.001f;
                 rotate = false;
                 reload = 30f;
                 inaccuracy = 2.5f;
@@ -428,7 +429,7 @@ public class XenUnitTypes {
             rippleScale = 0.1f;
             stepShake = 0f;
 
-            weapons.add(new Weapon("explore-cannon") {{
+            weapons.add(new Weapon("xenacia-explore-cannon") {{
                 x = 0f;
                 y = -2.5f;
                 mirror = false;
@@ -470,7 +471,7 @@ public class XenUnitTypes {
             waveTrailY = -1f;
             trailScl = 1.2f;
 
-            weapons.add(new Weapon("shif-missiles") {{
+            weapons.add(new Weapon("xenacia-shif-missiles") {{
                 top = true;
                 x = 0f;
                 y = 3.5f;
@@ -523,7 +524,7 @@ public class XenUnitTypes {
                     56)
             };
 
-            weapons.add(new Weapon("tack-beam"){{
+            weapons.add(new Weapon("xenacia-tack-beam"){{
                 x = 0f;
                 y = 0f;
                 top = true;
