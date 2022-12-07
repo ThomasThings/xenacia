@@ -552,7 +552,7 @@ public class XenUnitTypes {
                             progress = PartProgress.warmup;
                             mirror = true;
                             under = true;
-                            outile = true;
+                            outline = true;
                             moveX = 1f;
                             moveRot = 0f;
                             moves.add(new PartMove(PartProgress.recoil, 0.5f, 0f, -8f));
