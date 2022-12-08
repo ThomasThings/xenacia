@@ -320,7 +320,7 @@ public class XenUnitTypes {
         //terrestrial assault
         gale = new UnitType("gale") {{
             constructor = MechUnit::create;
-            outlineColor = Color.valueOf("242125");
+            outlines = false;
             mechLegColor = Color.valueOf("242125");
             health = 650f;
             armor = 1f;
