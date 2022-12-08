@@ -5,7 +5,7 @@ import mindustry.type.*;
 
 public class XenItems{
     public static Item
-            iron, aluminum, stone, peat, bismuth, lithium, amethyst, polonium, meteorFragment,
+            iron, aluminum, stone, peat, lithium, amethyst, polonium, meteorFragment,
             neodymium, cobalt, volcrite, lunarRegolith, lunarAlloy;
 
     public static void load(){
@@ -48,15 +48,6 @@ public class XenItems{
             buildable = false;
             hardness = 2;
             cost = 1f;
-        }};
-        bismuth = new Item("bismuth", Color.valueOf("567fd2")){{
-            explosiveness = 0f;
-            flammability = 0f;
-            radioactivity = 0f;
-            charge = 0f;
-
-            hardness = 3;
-            cost = 2f;
         }};
         lithium = new Item("lithium", Color.valueOf("a3aaa4")){{
             explosiveness = 0f;

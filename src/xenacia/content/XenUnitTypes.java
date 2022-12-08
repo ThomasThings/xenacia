@@ -429,7 +429,7 @@ public class XenUnitTypes {
             legLength = 12.5f;
             rippleScale = 0.1f;
             stepShake = 0f;
-            groundLayer = Layer.legUnit;
+            hovering = true;
 
             weapons.add(new Weapon("xenacia-explore-cannon") {{
                 x = 0f;
