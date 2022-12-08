@@ -7,6 +7,7 @@ import mindustry.content.Fx;
 import mindustry.content.StatusEffects;
 import mindustry.entities.bullet.*;
 import mindustry.entities.part.RegionPart;
+import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
 import mindustry.type.*;
 import mindustry.gen.*;
@@ -428,6 +429,7 @@ public class XenUnitTypes {
             legLength = 12.5f;
             rippleScale = 0.1f;
             stepShake = 0f;
+            groundLayer = Layer.legUnit;
 
             weapons.add(new Weapon("xenacia-explore-cannon") {{
                 x = 0f;
@@ -482,7 +484,7 @@ public class XenUnitTypes {
                 inaccuracy = 2.5f;
                 velocityRnd = 0.2f;
                 shootSound = Sounds.missile;
-                recoil = 2f;
+                recoil = 1f;
 
                 bullet = new MissileBulletType(2.8f, 35) {{
                     width = 6f;
@@ -509,7 +511,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("242125");
             health = 650f;
             armor = 1f;
-            hitSize = 16f;
+            hitSize = 12f;
             speed = 0.8f;
             rotateSpeed = 4f;
             omniMovement = false;
