@@ -15,8 +15,8 @@ import mindustry.world.meta.BlockFlag;
 
 public class XenUnitTypes {
     public static UnitType
-            //mites
-            assaultMite, boltMite, sapMite, coreMite,
+    //mites
+    coreMite, assaultMite, boltMite, sapMite,
     //seeds
     mech, aircraft, polyped, ship, tank,
     //terrestrial assault
@@ -40,6 +40,59 @@ public class XenUnitTypes {
 
     public static void load() {
         //mites
+        coreMite = new UnitType("core-mite") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("242125");
+            health = 110f;
+            armor = 0f;
+            hitSize = 6f;
+            speed = 1f;
+            rotateSpeed = 8f;
+            drag = 0.11f;
+
+            useUnitCap = false;
+            itemCapacity = 0;
+
+            aiController = SuicideAI::new;
+
+            legForwardScl = 5f;
+            legContinuousMove = true;
+            legCount = 4;
+            legGroupSize = 1;
+            legLength = 6f;
+            legExtension = 1f;
+            legBaseOffset = 0.5f;
+            legStraightness = 0.5f;
+            rippleScale = 0.1f;
+            legMaxLength = 1f;
+            legMinLength = 1f;
+            allowLegStep = false;
+
+            weapons.add(new Weapon() {{
+                shootOnDeath = true;
+                reload = 24f;
+                shootCone = 180f;
+                ejectEffect = Fx.none;
+                shootSound = Sounds.explosion;
+                x = shootY = 0f;
+                mirror = false;
+                bullet = new BulletType() {{
+                    collidesTiles = false;
+                    collides = false;
+                    hitSound = Sounds.explosion;
+
+                    rangeOverride = 30f;
+                    hitEffect = Fx.pulverize;
+                    speed = 0f;
+                    splashDamageRadius = 24f;
+                    instantDisappear = true;
+                    splashDamage = 100f;
+                    killShooter = true;
+                    hittable = false;
+                    collidesAir = true;
+                }};
+            }});
+        }};
         assaultMite = new UnitType("assault-mite") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("242125");
@@ -173,59 +226,6 @@ public class XenUnitTypes {
                 }};
                 shootSound = Sounds.sap;
                 ejectEffect = Fx.none;
-            }});
-        }};
-        coreMite = new UnitType("core-mite") {{
-            constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("242125");
-            health = 110f;
-            armor = 0f;
-            hitSize = 6f;
-            speed = 1f;
-            rotateSpeed = 8f;
-            drag = 0.11f;
-
-            useUnitCap = false;
-            itemCapacity = 0;
-
-            aiController = SuicideAI::new;
-
-            legForwardScl = 5f;
-            legContinuousMove = true;
-            legCount = 4;
-            legGroupSize = 1;
-            legLength = 6f;
-            legExtension = 1f;
-            legBaseOffset = 0.5f;
-            legStraightness = 0.5f;
-            rippleScale = 0.1f;
-            legMaxLength = 1f;
-            legMinLength = 1f;
-            allowLegStep = false;
-
-            weapons.add(new Weapon() {{
-                shootOnDeath = true;
-                reload = 24f;
-                shootCone = 180f;
-                ejectEffect = Fx.none;
-                shootSound = Sounds.explosion;
-                x = shootY = 0f;
-                mirror = false;
-                bullet = new BulletType() {{
-                    collidesTiles = false;
-                    collides = false;
-                    hitSound = Sounds.explosion;
-
-                    rangeOverride = 30f;
-                    hitEffect = Fx.pulverize;
-                    speed = 0f;
-                    splashDamageRadius = 24f;
-                    instantDisappear = true;
-                    splashDamage = 100f;
-                    killShooter = true;
-                    hittable = false;
-                    collidesAir = true;
-                }};
             }});
         }};
         //seeds
