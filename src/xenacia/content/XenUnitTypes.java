@@ -2,16 +2,20 @@ package xenacia.content;
 
 import arc.graphics.Color;
 import arc.math.geom.Rect;
+import mindustry.ai.UnitCommand;
 import mindustry.ai.types.SuicideAI;
 import mindustry.content.Fx;
 import mindustry.content.StatusEffects;
+import mindustry.entities.abilities.EnergyFieldAbility;
+import mindustry.entities.abilities.RepairFieldAbility;
 import mindustry.entities.bullet.*;
 import mindustry.entities.part.RegionPart;
-import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
 import mindustry.type.*;
 import mindustry.gen.*;
 import mindustry.world.meta.BlockFlag;
+
+//payloadCapacity = ((1.5 * 8) ^ 2);
 
 public class XenUnitTypes {
     public static UnitType
@@ -314,7 +318,12 @@ public class XenUnitTypes {
 
             treadFrames = 8;
             treadRects = new Rect[]{
-                    new Rect(12, -25, 11, 48)
+                new Rect(
+                    12,
+                    -25,
+                    11,
+                    48
+                )
             };
         }};
         //terrestrial assault
@@ -328,7 +337,7 @@ public class XenUnitTypes {
             speed = 0.6f;
             rotateSpeed = 5f;
 
-            itemCapacity = 5;
+            itemCapacity = 10;
 
             mechFrontSway = 0.2f;
             mechSideSway = 0.4f;
@@ -351,7 +360,6 @@ public class XenUnitTypes {
                     shrinkY = 0f;
                     drag = -0.003f;
                     homingRange = 30f;
-                    keepVelocity = false;
                     splashDamageRadius = 20f;
                     splashDamage = 15f;
                     lifetime = 60f;
@@ -378,7 +386,7 @@ public class XenUnitTypes {
             accel = 0.09f;
             drag = 0.02f;
 
-            itemCapacity = 15;
+            itemCapacity = 25;
 
             engineSize = 3.3f;
             engineOffset = 7.5f;
@@ -421,13 +429,13 @@ public class XenUnitTypes {
             speed = 0.8f;
             rotateSpeed = 5f;
 
-            itemCapacity = 5;
+            itemCapacity = 10;
 
             legContinuousMove = true;
             legCount = 4;
             legGroupSize = 1;
-            legLength = 12.5f;
-            rippleScale = 0.1f;
+            legLength = 11f;
+            rippleScale = 0.2f;
             stepShake = 0f;
             hovering = true;
 
@@ -467,7 +475,7 @@ public class XenUnitTypes {
             speed = 0.9f;
             rotateSpeed = 4f;
 
-            itemCapacity = 5;
+            itemCapacity = 10;
 
             trailLength = 20;
             waveTrailX = 4f;
@@ -516,7 +524,7 @@ public class XenUnitTypes {
             rotateSpeed = 4f;
             omniMovement = false;
 
-            itemCapacity = 5;
+            itemCapacity = 10;
 
             treadFrames = 10;
             treadRects = new Rect[]{
@@ -560,6 +568,251 @@ public class XenUnitTypes {
                             moveRot = 0f;
                             moves.add(new PartMove(PartProgress.recoil, 0.5f, 0f, -8f));
                         }});
+            }});
+        }};
+        //terrestrial support
+        elementary = new UnitType("elementary") {{
+            constructor = MechUnit::create;
+            outlineColor = Color.valueOf("242125");
+            mechLegColor = Color.valueOf("242125");
+            health = 600f;
+            armor = 0f;
+            hitSize = 8f;
+            speed = 0.7f;
+            rotateSpeed = 3.5f;
+
+            itemCapacity = 10;
+
+            mechFrontSway = 0f;
+            mechSideSway = 0.1f;
+
+            weapons.add(new Weapon("xenacia-tack-beam"){{
+                x = 0f;
+                y = 0.25f;
+                mirror = false;
+                rotate = false;
+                parentizeEffects = true;
+                continuous = true;
+                alwaysContinuous = true;
+
+                shootSound = Sounds.techloop;
+                shootStatus = StatusEffects.slow;
+                shootStatusDuration = 5;
+
+                bullet = new ContinuousFlameBulletType(){{
+                    damage = 5f;
+                    buildingDamageMultiplier = 1.5f;
+
+                    pierce = true;
+                    pierceBuilding = false;
+                    pierceCap = 3;
+
+                    collidesTeam = true;
+                    healPercent = 0.5f;
+
+                    status = StatusEffects.burning;
+                    statusDuration = 30f;
+
+                    length = 35f;
+                    width = 2f;
+
+                    colors = new Color[]{
+                            Color.valueOf("c6ffdc").cpy().a(0.15f),
+                            Color.valueOf("c6ffdc").cpy().a(0.35f),
+                            Color.valueOf("c6ffdc").cpy().a(0.6f),
+                            Color.valueOf("c6ffdc").cpy().a(0.8f),
+                            Color.white
+                    };
+
+                    flareColor = Color.valueOf("c6ffdc");
+                    flareLength = 5f;
+                    flareRotSpeed = 1.5f;
+                    hitColor = Color.valueOf("c6ffdc");
+
+                    shootEffect = Fx.none;
+                    smokeEffect = Fx.none;
+                }};
+            }});
+
+        }};
+        lug = new UnitType("lug") {{
+            constructor = UnitEntity::create;
+            outlineColor = Color.valueOf("242125");
+            defaultCommand = UnitCommand.rebuildCommand;
+
+            health = 650f;
+            armor = 1f;
+            hitSize = 12f;
+
+            speed = 2f;
+            rotateSpeed = 10f;
+
+            flying = true;
+            lowAltitude = true;
+            accel = 0.1f;
+            drag = 0.05f;
+            engineSize = 3f;
+            engineOffset = 5.5f;
+
+            itemCapacity = 15;
+            payloadCapacity = 144;
+
+            abilities.add(new RepairFieldAbility(5f, 45, 55f));
+        }};
+        tick = new UnitType("tick") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("242125");
+            defaultCommand = UnitCommand.repairCommand;
+            health = 750f;
+            armor = 1f;
+            hitSize = 10f;
+            speed = 0.6f;
+            rotateSpeed = 3f;
+
+            itemCapacity = 10;
+
+            legContinuousMove = false;
+            legCount = 4;
+            legGroupSize = 1;
+            legLength = 11f;
+            rippleScale = 0.2f;
+            stepShake = 0f;
+
+            abilities.add(new EnergyFieldAbility(6f, 35f, 60f){{
+                status = StatusEffects.shocked;
+                statusDuration = 60f;
+                maxTargets = 5;
+                healPercent = 2;
+
+                sectors = 3;
+                sectorRad = 0.1f;
+                rotateSpeed = -0.8f;
+                effectRadius = 4f;
+            }});
+        }};
+        natuon = new UnitType("natuon") {{
+            constructor = UnitWaterMove::create;
+            outlineColor = Color.valueOf("242125");
+            health = 650f;
+            armor = 1f;
+            hitSize = 16f;
+            speed = 0.6f;
+            rotateSpeed = 3f;
+
+            itemCapacity = 15;
+
+            trailLength = 15;
+            waveTrailX = 3f;
+            waveTrailY = -2f;
+            trailScl = 1f;
+
+            faceTarget = false;
+            weapons.add(new Weapon("natuon-mine"){{
+                top = false;
+                x = 0f;
+                y = 0f;
+                mirror = false;
+
+                shootCone = 180f;
+                reload = 45f;
+                shootY = -5f;
+                ignoreRotation = true;
+
+                shootSound = Sounds.mineDeploy;
+
+                bullet = new BasicBulletType(){{
+                    damage = 30f;
+                    splashDamage = 60f;
+                    splashDamageRadius = 16f;
+                    healPercent = 10f;
+                    lifetime = 1200f;
+                    speed = 0f;
+                    keepVelocity = false;
+
+                    collidesAir = false;
+                    collideFloor = true;
+                    collidesTeam = true;
+
+                    hitSound = Sounds.plasmaboom;
+
+                    shootEffect = Fx.none;
+                    smokeEffect = Fx.none;
+                    sprite = "mine-bullet";
+                    layer = 10;
+                    height = 10;
+                    width = 10;
+                    shrinkX = 0.5f;
+                    shrinkY = 0.5f;
+                    frontColor = Color.valueOf("ffffff");
+                    backColor = Color.valueOf("98ffa9");
+                    mixColorTo = Color.valueOf("ffffff");
+                }};
+
+            }});
+            abilities.add(new RepairFieldAbility(8f, 120, 100f));
+        }};
+        assist = new UnitType("assist") {{
+            constructor = TankUnit::create;
+            outlineColor = Color.valueOf("242125");
+            health = 550f;
+            armor = 0f;
+            hitSize = 12f;
+            speed = 0.8f;
+            rotateSpeed = 3f;
+            omniMovement = false;
+
+            itemCapacity = 15;
+
+            treadFrames = 12;
+            treadRects = new Rect[]{
+                new Rect(
+                    -28,
+                    -25,
+                    13,
+                    49
+                )
+            };
+
+            faceTarget = false;
+
+            weapons.add(new Weapon("assist-missiles"){{
+                top = true;
+                rotate = true;
+                rotateSpeed = 3f;
+                x = 0f;
+                y = 1.5f;
+                mirror = false;
+                inaccuracy = 4f;
+                reload = 20f;
+                shootY = 1.75f;
+                shootSound = Sounds.missile;
+                recoil = 0.8f;
+
+                bullet = new MissileBulletType(2.8f, 5) {{
+                    width = 6f;
+                    height = 6f;
+                    shrinkY = 0f;
+                    drag = -0.003f;
+                    homingRange = 35f;
+                    splashDamageRadius = 8f;
+                    splashDamage = 15f;
+                    lifetime = 45f;
+                    weaveScale = 1.5f;
+                    weaveMag = 3f;
+
+                    collidesTeam = true;
+                    healPercent = 3f;
+
+                    trailColor = Color.valueOf("98ffa9");
+                    backColor = Color.valueOf("98ffa9");
+                    frontColor = Color.valueOf("ffffff");
+
+                    shootEffect = Fx.shootHeal;
+                    smokeEffect = Fx.hitLaser;
+                    hitEffect = Fx.hitLaser;
+                    hitSound = Sounds.none;
+                    despawnEffect = Fx.hitLaser;
+                }};
             }});
         }};
     }
