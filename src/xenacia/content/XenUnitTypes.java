@@ -1029,7 +1029,7 @@ public class XenUnitTypes {
             treadRects = new Rect[]{
                     new Rect(
                             -31,
-                            -20,
+                            -27,
                             16,
                             51
                     )
