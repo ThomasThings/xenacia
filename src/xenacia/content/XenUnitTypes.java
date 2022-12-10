@@ -783,7 +783,7 @@ public class XenUnitTypes {
 
             faceTarget = false;
 
-            weapons.add(new Weapon("assist-missiles"){{
+            weapons.add(new Weapon("xenacia-assist-missiles"){{
                 top = true;
                 rotate = true;
                 rotateSpeed = 3f;
