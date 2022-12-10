@@ -73,6 +73,8 @@ public class XenUnitTypes {
             legMinLength = 1f;
             allowLegStep = false;
 
+            range = 40f;
+
             weapons.add(new Weapon() {{
                 shootOnDeath = true;
                 reload = 24f;
@@ -86,7 +88,7 @@ public class XenUnitTypes {
                     collides = false;
                     hitSound = Sounds.explosion;
 
-                    rangeOverride = 30f;
+                    rangeOverride = 12f;
                     hitEffect = Fx.pulverize;
                     speed = 0f;
                     splashDamageRadius = 24f;
@@ -448,7 +450,6 @@ public class XenUnitTypes {
                 rotateSpeed = 4f;
                 reload = 60f;
                 inaccuracy = 0f;
-                velocityRnd = 0.4f;
                 shootSound = Sounds.artillery;
 
                 shootY = 4.5f;
@@ -705,16 +706,16 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("2b262d");
             health = 650f;
             armor = 1f;
-            hitSize = 16f;
+            hitSize = 14f;
             speed = 0.6f;
             rotateSpeed = 3f;
 
             itemCapacity = 10;
 
-            trailLength = 15;
+            trailLength = 25;
             waveTrailX = 3f;
-            waveTrailY = -2f;
-            trailScl = 1f;
+            waveTrailY = -1f;
+            trailScl = 3f;
 
             buildSpeed = 0.5f;
 
@@ -727,7 +728,7 @@ public class XenUnitTypes {
 
                 shootCone = 180f;
                 reload = 45f;
-                shootY = -5f;
+                shootY = -6.5f;
                 ignoreRotation = true;
 
                 shootSound = Sounds.mineDeploy;
@@ -878,7 +879,7 @@ public class XenUnitTypes {
             hitSize = 12f;
 
             speed = 2f;
-            rotateSpeed = 10f;
+            rotateSpeed = 5f;
 
             flying = true;
             lowAltitude = false;
@@ -886,8 +887,8 @@ public class XenUnitTypes {
             drag = 0.05f;
             engineSize = 0f;
             setEnginesMirror(
-                    new UnitEngine(20 / 4f, -17 / 4f, 1.8f, 45f),
-                    new UnitEngine(20 / 4f, 17 / 4f, 1.8f, 315f)
+                    new UnitEngine(20 / 4f, 17 / 4f, 1.8f, 45f),
+                    new UnitEngine(20 / 4f, -17 / 4f, 1.8f, 315f)
             );
 
             itemCapacity = 20;
@@ -941,12 +942,13 @@ public class XenUnitTypes {
                 x = 0f;
                 y = 5.5f;
                 reload = 5f;
+                inaccuracy = 5f;
                 ejectEffect = Fx.none;
                 recoil = 1f;
                 shootSound = Sounds.spray;
 
                 bullet = new LiquidBulletType(Liquids.oil){{
-                    damage = 2;
+                    damage = 0.5f;
                     puddleSize = 4f;
                     orbSize = 2f;
                     speed = 6f;
@@ -964,16 +966,16 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("2b262d");
             health = 650f;
             armor = 1f;
-            hitSize = 16f;
-            speed = 0.6f;
+            hitSize = 12f;
+            speed = 0.8f;
             rotateSpeed = 2.5f;
 
             itemCapacity = 10;
 
-            trailLength = 15;
-            waveTrailX = 3f;
-            waveTrailY = -2f;
-            trailScl = 1f;
+            trailLength = 25;
+            waveTrailX = 5f;
+            waveTrailY = -1f;
+            trailScl = 3f;
 
             faceTarget = false;
             weapons.add(new Weapon("xenacia-mount-cannon") {{
@@ -987,7 +989,7 @@ public class XenUnitTypes {
                 shootSound = Sounds.artillery;
 
                 bullet = new ArtilleryBulletType(2.8f, 20) {{
-                    hitEffect = Fx.sapExplosion;
+                    hitEffect = Fx.flakExplosion;
                     knockback = 0.5f;
                     lifetime = 100f;
                     width = height = 10f;
@@ -1025,9 +1027,9 @@ public class XenUnitTypes {
             treadRects = new Rect[]{
                     new Rect(
                             -31,
-                            -24,
+                            -25,
                             16,
-                            50
+                            52
                     )
             };
 
