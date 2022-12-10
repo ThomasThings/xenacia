@@ -952,11 +952,11 @@ public class XenUnitTypes {
                     damage = 0.5f;
                     puddleSize = 4f;
                     orbSize = 2f;
-                    speed = 4f;
+                    speed = 2f;
                     drag = 0.011f;
                     knockback = 0.1f;
                     shootEffect = Fx.none;
-                    lifetime = 57f;
+                    lifetime = 65f;
                     collidesAir = false;
                     statusDuration = 300f;
                     layer = Layer.bullet - 2f;
@@ -1029,7 +1029,7 @@ public class XenUnitTypes {
             treadRects = new Rect[]{
                     new Rect(
                             -31,
-                            -23,
+                            -20,
                             16,
                             51
                     )
