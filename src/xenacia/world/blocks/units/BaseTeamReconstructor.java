@@ -45,6 +45,17 @@ public class BaseTeamReconstructor extends Reconstructor{
             Draw.rect(inRegion, x, y, rotdeg());
             Draw.rect(outRegion, x, y, rotdeg());
 
+            boolean fallback = true;
+            for(int i = 0; i < 4; i++){
+                if(blends(i) && i != rotation){
+                    Draw.rect(inRegion, x, y, (i * 90) - 180);
+                    fallback = false;
+                }
+            }
+            if(fallback) Draw.rect(inRegion, x, y, rotation * 90);
+
+            Draw.rect(outRegion, x, y, rotdeg());
+
             if(constructing() && hasArrived()){
                 Draw.draw(Layer.blockOver, () -> {
                     Draw.alpha(1f - progress/ constructTime);
