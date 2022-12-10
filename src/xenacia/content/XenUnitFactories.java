@@ -68,6 +68,11 @@ public class XenUnitFactories{
             constructTime = 60f * 10f;
 
             upgrades.addAll(
+                    new UnitType[]{XenUnitTypes.mech, XenUnitTypes.elementary},
+                    new UnitType[]{XenUnitTypes.aircraft, XenUnitTypes.lug},
+                    new UnitType[]{XenUnitTypes.polyped, XenUnitTypes.tick},
+                    new UnitType[]{XenUnitTypes.ship, XenUnitTypes.natuon},
+                    new UnitType[]{XenUnitTypes.tank, XenUnitTypes.assist}
             );
         }};
         specialistTranstructor = new BaseTeamReconstructor("specialist-transtructor"){{
@@ -80,6 +85,11 @@ public class XenUnitFactories{
             constructTime = 60f * 10f;
 
             upgrades.addAll(
+                    new UnitType[]{XenUnitTypes.mech, XenUnitTypes.erode},
+                    new UnitType[]{XenUnitTypes.aircraft, XenUnitTypes.ryher},
+                    new UnitType[]{XenUnitTypes.polyped, XenUnitTypes.spritz},
+                    new UnitType[]{XenUnitTypes.ship, XenUnitTypes.mount},
+                    new UnitType[]{XenUnitTypes.tank, XenUnitTypes.link}
             );
         }};
     }

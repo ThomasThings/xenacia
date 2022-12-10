@@ -904,7 +904,7 @@ public class XenUnitTypes {
                 reload = 10f;
 
                 bullet = new SapBulletType() {{
-                    damage = 3;
+                    damage = 5;
                     sapStrength = 1.5f;
                     length = 50f;
                     width = 0.4f;
