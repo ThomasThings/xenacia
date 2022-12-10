@@ -857,8 +857,8 @@ public class XenUnitTypes {
                     damage = 5;
                     sapStrength = 2.5f;
                     length = 45f;
-                    width = 0.2f;
-                    lifetime = 15f;
+                    width = 0.4f;
+                    lifetime = 25f;
                     knockback = -0.2f;
 
                     shootEffect = Fx.shootSmall;
@@ -906,8 +906,8 @@ public class XenUnitTypes {
                     damage = 3;
                     sapStrength = 1.5f;
                     length = 50f;
-                    width = 0.2f;
-                    lifetime = 10f;
+                    width = 0.4f;
+                    lifetime = 25f;
                     knockback = -0.2f;
 
                     shootEffect = Fx.none;
