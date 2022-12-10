@@ -684,6 +684,7 @@ public class XenUnitTypes {
             legLength = 11f;
             rippleScale = 0.2f;
             stepShake = 0f;
+            hovering = true;
 
             buildSpeed = 0.5f;
 
@@ -854,8 +855,8 @@ public class XenUnitTypes {
                 bullet = new SapBulletType() {{
                     damage = 5;
                     sapStrength = 2.5f;
-                    length = 50f;
-                    width = 1f;
+                    length = 45f;
+                    width = 0.2f;
                     lifetime = 15f;
                     knockback = -0.2f;
 
@@ -885,8 +886,8 @@ public class XenUnitTypes {
             drag = 0.05f;
             engineSize = 0f;
             setEnginesMirror(
-                    new UnitEngine(18 / 4f, -15 / 4f, 1.8f, 45f),
-                    new UnitEngine(18 / 4f, -15 / 4f, 1.8f, -45f)
+                    new UnitEngine(20 / 4f, -17 / 4f, 1.8f, 45f),
+                    new UnitEngine(20 / 4f, 17 / 4f, 1.8f, 315f)
             );
 
             itemCapacity = 20;
@@ -904,7 +905,7 @@ public class XenUnitTypes {
                     damage = 3;
                     sapStrength = 1.5f;
                     length = 50f;
-                    width = 1f;
+                    width = 0.2f;
                     lifetime = 10f;
                     knockback = -0.2f;
 
@@ -933,6 +934,7 @@ public class XenUnitTypes {
             legLength = 11f;
             rippleScale = 0.2f;
             stepShake = 0f;
+            hovering = true;
 
             weapons.add(new Weapon("spritz-sprayer"){{
                 top = false;
@@ -1010,12 +1012,12 @@ public class XenUnitTypes {
         link = new UnitType("link") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("2b262d");
-            health = 550f;
-            armor = 0f;
+            health = 650f;
+            armor = 1f;
             hitSize = 13f;
             speed = 0.8f;
             rotateSpeed = 3f;
-            omniMovement = true;
+            omniMovement = false;
 
             itemCapacity = 15;
 
@@ -1023,9 +1025,9 @@ public class XenUnitTypes {
             treadRects = new Rect[]{
                     new Rect(
                             -31,
-                            -25,
+                            -24,
                             16,
-                            51
+                            50
                     )
             };
 
@@ -1059,9 +1061,9 @@ public class XenUnitTypes {
                     width = 5f;
 
                     colors = new Color[]{
-                            Pal.sapBulletBack.cpy().a(0.15f),
-                            Pal.sapBulletBack.cpy().a(0.35f),
-                            Pal.sapBullet.cpy().a(0.6f),
+                            Pal.sapBulletBack.cpy().a(0.2f),
+                            Pal.sapBulletBack.cpy().a(0.4f),
+                            Pal.sapBullet.cpy().a(0.55f),
                             Pal.sapBullet.cpy().a(0.8f),
                             Color.white
                     };
