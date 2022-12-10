@@ -1027,7 +1027,7 @@ public class XenUnitTypes {
             treadRects = new Rect[]{
                     new Rect(
                             -31,
-                            -25,
+                            -23,
                             16,
                             52
                     )
@@ -1035,7 +1035,7 @@ public class XenUnitTypes {
 
             faceTarget = true;
 
-            weapons.add(new Weapon("elementary-flare"){{
+            weapons.add(new Weapon("link-flare"){{
                 x = 0f;
                 y = 0.25f;
                 mirror = false;
@@ -1044,6 +1044,7 @@ public class XenUnitTypes {
                 continuous = true;
                 alwaysContinuous = true;
 
+                shootCone = 135f;
                 shootSound = Sounds.techloop;
                 shootStatus = StatusEffects.slow;
                 shootStatusDuration = 5;
@@ -1065,8 +1066,8 @@ public class XenUnitTypes {
                     colors = new Color[]{
                             Pal.sapBulletBack.cpy().a(0.2f),
                             Pal.sapBulletBack.cpy().a(0.4f),
-                            Pal.sapBullet.cpy().a(0.55f),
-                            Pal.sapBullet.cpy().a(0.8f),
+                            Pal.sapBullet.cpy().a(0.4f),
+                            Pal.sapBullet.cpy().a(0.7f),
                             Color.white
                     };
 
