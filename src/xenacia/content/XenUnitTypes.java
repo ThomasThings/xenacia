@@ -788,7 +788,7 @@ public class XenUnitTypes {
                 rotate = true;
                 rotateSpeed = 3f;
                 x = 0f;
-                y = -1.5f;
+                y = -1f;
                 mirror = false;
                 inaccuracy = 4f;
                 reload = 20f;
