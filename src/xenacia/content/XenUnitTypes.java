@@ -581,12 +581,14 @@ public class XenUnitTypes {
             speed = 0.7f;
             rotateSpeed = 3.5f;
 
+            buildSpeed = 0.5f;
+
             itemCapacity = 10;
 
             mechFrontSway = 0f;
             mechSideSway = 0.1f;
 
-            weapons.add(new Weapon("xenacia-tack-beam"){{
+            weapons.add(new Weapon("elementary-flare"){{
                 x = 0f;
                 y = 0.25f;
                 mirror = false;
@@ -608,7 +610,7 @@ public class XenUnitTypes {
                     pierceCap = 3;
 
                     collidesTeam = true;
-                    healPercent = 0.5f;
+                    healPercent = 0.25f;
 
                     status = StatusEffects.burning;
                     statusDuration = 30f;
@@ -657,6 +659,8 @@ public class XenUnitTypes {
             itemCapacity = 15;
             payloadCapacity = 144;
 
+            buildSpeed = 0.8f;
+
             abilities.add(new RepairFieldAbility(5f, 45, 55f));
         }};
         tick = new UnitType("tick") {{
@@ -677,6 +681,8 @@ public class XenUnitTypes {
             legLength = 11f;
             rippleScale = 0.2f;
             stepShake = 0f;
+
+            buildSpeed = 0.5f;
 
             abilities.add(new EnergyFieldAbility(6f, 35f, 60f){{
                 status = StatusEffects.shocked;
@@ -705,6 +711,8 @@ public class XenUnitTypes {
             waveTrailX = 3f;
             waveTrailY = -2f;
             trailScl = 1f;
+
+            buildSpeed = 0.5f;
 
             faceTarget = false;
             weapons.add(new Weapon("natuon-mine"){{
