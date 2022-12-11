@@ -15,7 +15,8 @@ public class XenUnitFactories{
             miteFactory,
             unitSeedConstructor,
             assaultTranstructor, supportTranstructor, specialistTranstructor,
-            assaultReconstructor, supportReconstructor, specialistReconstructor;
+            assaultReconstructor, supportReconstructor, specialistReconstructor,
+            convergentReconstructor;
 
     public static void load() {
         //mite
@@ -78,7 +79,7 @@ public class XenUnitFactories{
             );
         }};
         specialistTranstructor = new BaseTeamReconstructor("specialist-transtructor"){{
-            requirements(Category.units, with(XenItems.aluminum, 150, XenItems.iron, 130, Items.silicon, 100));
+            requirements(Category.units, with(XenItems.aluminum, 150, XenItems.iron, 120, Items.silicon, 80, XenItems.lithium, 60));
 
             size = 3;
             consumePower(4f);
@@ -120,9 +121,22 @@ public class XenUnitFactories{
             );
         }};
         specialistReconstructor = new BaseTeamReconstructor("specialist-reconstructor"){{
-            requirements(Category.units, with(XenItems.iron, 650, XenItems.aluminum, 550, Items.graphite, 350, Items.silicon, 600, Items.titanium, 400));
+            requirements(Category.units, with(XenItems.iron, 650, XenItems.aluminum, 500, Items.graphite, 300, Items.silicon, 400, Items.titanium, 400, XenItems.lithium, 300));
 
             size = 5;
+            consumePower(6f);
+            consumeItems(with(Items.silicon, 160, XenItems.iron, 90, XenItems.aluminum, 90, Items.graphite, 100));
+
+            constructTime = 60f * 25f;
+
+            upgrades.addAll(
+            );
+        }};
+
+        convergentReconstructor = new BaseTeamReconstructor("convergent-reconstructor"){{
+            requirements(Category.units, with(XenItems.iron, 2000, Items.graphite, 1500, Items.silicon, 1000, XenItems.lithium, 800, Items.titanium, 1000, XenItems.cobalt, 800));
+
+            size = 7;
             consumePower(6f);
             consumeItems(with(Items.silicon, 160, XenItems.iron, 90, XenItems.aluminum, 90, Items.graphite, 100));
 
