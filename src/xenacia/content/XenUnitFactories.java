@@ -14,7 +14,8 @@ public class XenUnitFactories{
     public static Block
             miteFactory,
             unitSeedConstructor,
-            assaultTranstructor, supportTranstructor, specialistTranstructor;
+            assaultTranstructor, supportTranstructor, specialistTranstructor,
+            assaultReconstructor, supportReconstructor, specialistReconstructor;
 
     public static void load() {
         //mite
@@ -41,6 +42,7 @@ public class XenUnitFactories{
             size = 3;
             consumePower(1.2f);
         }};
+
         assaultTranstructor = new BaseTeamReconstructor("assault-transtructor"){{
             requirements(Category.units, with(XenItems.iron, 150, XenItems.aluminum, 130, Items.silicon, 100));
 
@@ -79,7 +81,7 @@ public class XenUnitFactories{
             requirements(Category.units, with(XenItems.aluminum, 150, XenItems.iron, 130, Items.silicon, 100));
 
             size = 3;
-            consumePower(3f);
+            consumePower(4f);
             consumeItems(with(Items.silicon, 30, XenItems.iron, 30, XenItems.aluminum, 25));
 
             constructTime = 60f * 10f;
@@ -90,6 +92,43 @@ public class XenUnitFactories{
                     new UnitType[]{XenUnitTypes.polyped, XenUnitTypes.spritz},
                     new UnitType[]{XenUnitTypes.ship, XenUnitTypes.mount},
                     new UnitType[]{XenUnitTypes.tank, XenUnitTypes.link}
+            );
+        }};
+
+        assaultReconstructor = new BaseTeamReconstructor("assault-reconstructor"){{
+            requirements(Category.units, with(XenItems.iron, 650, XenItems.aluminum, 550, Items.graphite, 350, Items.silicon, 600, Items.titanium, 400));
+
+            size = 5;
+            consumePower(5f);
+            consumeItems(with(Items.silicon, 150, XenItems.iron, 100, XenItems.aluminum, 90, Items.graphite, 120));
+
+            constructTime = 60f * 25f;
+
+            upgrades.addAll(
+            );
+        }};
+        supportReconstructor = new BaseTeamReconstructor("support-reconstructor"){{
+            requirements(Category.units, with(XenItems.iron, 650, XenItems.aluminum, 550, Items.graphite, 350, Items.silicon, 600, Items.titanium, 400));
+
+            size = 5;
+            consumePower(5f);
+            consumeItems(with(Items.silicon, 150, XenItems.iron, 80, XenItems.aluminum, 80, Items.graphite, 150));
+
+            constructTime = 60f * 25f;
+
+            upgrades.addAll(
+            );
+        }};
+        specialistReconstructor = new BaseTeamReconstructor("specialist-reconstructor"){{
+            requirements(Category.units, with(XenItems.iron, 650, XenItems.aluminum, 550, Items.graphite, 350, Items.silicon, 600, Items.titanium, 400));
+
+            size = 5;
+            consumePower(6f);
+            consumeItems(with(Items.silicon, 160, XenItems.iron, 90, XenItems.aluminum, 90, Items.graphite, 100));
+
+            constructTime = 60f * 25f;
+
+            upgrades.addAll(
             );
         }};
     }
