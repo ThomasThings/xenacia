@@ -138,7 +138,7 @@ public class XenUnitFactories{
 
             size = 7;
             consumePower(6f);
-            consumeItems(with(Items.silicon, 160, XenItems.iron, 90, XenItems.aluminum, 90, Items.graphite, 100));
+            consumeItems(with(Items.silicon, 800, XenItems.iron, 600, XenItems.aluminum, 600, Items.graphite, 500, Items.titanium, 250));
 
             constructTime = 60f * 25f;
 
