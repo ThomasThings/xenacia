@@ -39,7 +39,6 @@ public class BaseTeamReconstructor extends Reconstructor{
                     Draw.color();
             }
 
-            //draw input
             boolean fallback = true;
             for(int i = 0; i < 4; i++){
                 if(blends(i) && i != rotation){
