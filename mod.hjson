@@ -6,9 +6,9 @@ author: "Thomas"
 
 main: "xenacia.XenaciaMod"
 
-description: "A Test."
+description: "A mod that adds an entire new campaign, larger than serpulo. Still in Aplha stages."
 
-version: 0.2
+version: 0.1
 
 minGameVersion: 140.3
 
