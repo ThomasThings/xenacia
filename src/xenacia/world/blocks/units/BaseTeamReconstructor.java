@@ -32,19 +32,14 @@ public class BaseTeamReconstructor extends Reconstructor{
         public void draw(){
             Draw.rect(region, x, y);
 
-            Draw.z(Layer.blockOver - 0.2f);
-
             if(teamRegion.found()){
-                if(teamRegions[team.id] == teamRegion) Draw.color(team.color);
-                Draw.rect(teamRegions[team.id], x, y);
-                Draw.color();
+                if(teamRegions[team.id] == teamRegion)
+                    Draw.color(team.color);
+                    Draw.rect(teamRegions[team.id], x, y);
+                    Draw.color();
             }
 
-            Draw.z(Layer.blockOver - 0.1f);
-
-            Draw.rect(inRegion, x, y, rotdeg());
-            Draw.rect(outRegion, x, y, rotdeg());
-
+            //draw input
             boolean fallback = true;
             for(int i = 0; i < 4; i++){
                 if(blends(i) && i != rotation){
@@ -69,13 +64,7 @@ public class BaseTeamReconstructor extends Reconstructor{
                 drawPayload();
             }
 
-            Draw.z(Layer.blockOver);
-
-            payRotation = rotdeg();
-            drawPayload();
-
             Draw.z(Layer.blockOver + 0.1f);
-
             Draw.rect(topRegion, x, y);
         }
     }
