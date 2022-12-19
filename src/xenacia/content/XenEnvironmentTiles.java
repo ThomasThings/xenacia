@@ -9,11 +9,18 @@ import mindustry.content.*;
 
 public class XenEnvironmentTiles{
     public static Block
+            //magmatic
             magmaFloor, magmaRock, magmaticCrack, volcanicRock, volcanicRockWall,
+            //scorched
             scorchedSoil, scorchedSoilWall, scorchedSand, scorchedSandWall,
+            //marsh
             wetMarsh, marsh, marshWall,
+            //misc env
             ash, ashWall, pumice, pumiceWall, meteor, meteorWall,
-            lunarRegolith, lunarRegolithWall, lunarCraters, lunarCratersWall;
+            //lunar
+            lunarRegolith, lunarRegolithWall, lunarCraters, lunarCratersWall,
+            //ores
+            oreIron, oreAluminum, orePeat, oreLithium, oreAmethyst, orePolonium, oreNeodymium, oreCobalt;
     public static void load(){
         //volcanic
         magmaFloor = new Floor("magma-floor"){{
@@ -64,7 +71,7 @@ public class XenEnvironmentTiles{
         scorchedSoilWall = new StaticWall("scorched-soil-wall");
         scorchedSand = new Floor("scorched-sand");
         scorchedSandWall = new StaticWall("scorched-sand-wall");
-        //marsh
+        //marsh env
         wetMarsh = new Floor("wet-marsh"){{
             speedMultiplier = 0.85f;
             variants = 3;
@@ -115,6 +122,14 @@ public class XenEnvironmentTiles{
             itemDrop = XenItems.lunarRegolith;
             playerUnmineable = true;
         }};
-
+        //ores
+        oreIron = new OreBlock(XenItems.iron);
+        oreAluminum = new OreBlock(XenItems.aluminum);
+        orePeat = new OreBlock(XenItems.peat);
+        oreLithium = new OreBlock(XenItems.lithium);
+        oreAmethyst = new OreBlock(XenItems.amethyst);
+        orePolonium = new OreBlock(XenItems.polonium);
+        oreNeodymium = new OreBlock(XenItems.neodymium);
+        oreCobalt = new OreBlock(XenItems.cobalt);
     }
 }
