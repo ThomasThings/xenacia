@@ -30,6 +30,8 @@ public class XenDrills{
             tier = 3;
             updateEffect = Fx.pulverizeSmall;
 
+            rotateSpeed = -2.5f;
+
             consumeLiquid(Liquids.water, 0.08f);
         }};
         bulkDrill = new Drill("bulk-drill"){{
@@ -42,6 +44,8 @@ public class XenDrills{
             updateEffect = Fx.pulverizeMedium;
             drillEffect = Fx.mineBig;
 
+            rotateSpeed = 4f;
+
             consumePower(0.80f);
         }};
         precisionDrill = new Drill("precision-drill"){{
@@ -52,6 +56,8 @@ public class XenDrills{
             hasPower = true;
             tier = 4;
             drillEffect = Fx.mineSmall;
+
+            rotateSpeed = 6f;
 
             consumePower(0.30f);
         }};
@@ -79,7 +85,9 @@ public class XenDrills{
             updateEffect = Fx.pulverizeMedium;
             drillEffect = Fx.mineBig;
 
-            consumePower(-1f);
+            rotateSpeed = -3f;
+
+            consumePower(1f);
             consumeLiquid(Liquids.water, 0.1f);
         }};
         detonationDrill = new Drill("detonation-drill"){{
@@ -97,7 +105,7 @@ public class XenDrills{
         }};
         titanicDrill = new BurstDrill("titanic-drill"){{
             requirements(Category.production, with(XenItems.volcrite, 350, XenItems.cobalt, 200, Items.titanium, 200, Items.silicon, 200));
-            drillTime = 180;
+            drillTime = 300;
             size = 7;
             hasPower = true;
             tier = 8;
@@ -105,14 +113,16 @@ public class XenDrills{
             drillEffect = new MultiEffect(
                     Fx.mineImpact,
                     Fx.drillSteam,
-                    Fx.dynamicSpikes.wrap(XenLiquids.voltike.color, 30f),
-                    Fx.mineImpactWave.wrap(XenLiquids.voltike.color, 45f)
+                    Fx.dynamicSpikes.wrap(XenLiquids.magma.color, 30f),
+                    Fx.mineImpactWave.wrap(XenLiquids.magma.color, 45f)
             );
             shake = 4f;
-            itemCapacity = 50;
+            itemCapacity = 100;
             arrowOffset = 2f;
             arrowSpacing = 5f;
             arrows = 2;
+
+            rotateSpeed = 6f;
 
             consumePower(6f);
             consumeLiquids(LiquidStack.with(XenLiquids.voltike, 4f / 60f));
