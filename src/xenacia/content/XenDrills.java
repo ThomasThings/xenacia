@@ -114,7 +114,8 @@ public class XenDrills{
                     Fx.mineImpact,
                     Fx.drillSteam,
                     Fx.dynamicSpikes.wrap(XenLiquids.magma.color, 30f),
-                    Fx.mineImpactWave.wrap(XenLiquids.magma.color, 45f)
+                    Fx.mineImpactWave.wrap(XenLiquids.magma.color, 45f),
+                    Fx.mineImpactWave.wrap(XenLiquids.magma.color, -45f)
             );
             shake = 4f;
             itemCapacity = 100;
