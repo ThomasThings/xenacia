@@ -13,14 +13,21 @@ import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.logic.*;
 import mindustry.type.*;
+import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.blocks.environment.*;
 import mindustry.world.blocks.production.Drill;
+import mindustry.world.draw.DrawBlock;
+import mindustry.world.draw.DrawDefault;
 import mindustry.world.meta.*;
 
 import static mindustry.Vars.*;
 
-public class VaultDrill extends Drill {
+public class TurbineDrill extends Drill {
+
+    public DrawBlock drawer = new DrawDefault();
+
+    TextureRegion bottomRegion, turbineRegionOne, turbineRegionTwo, defaultRegion, rotatorRegion, topRegion, ItemRegion;
 
     @Override
     public void load() {
@@ -31,7 +38,7 @@ public class VaultDrill extends Drill {
         itemRegion = Core.atlas.find(name + "-item");
     }
 
-    public VaultDrill(String name){
+    public TurbineDrill(String name){
         super(name);
         update = true;
         solid = true;
@@ -127,7 +134,7 @@ public class VaultDrill extends Drill {
 
     @Override
     public TextureRegion[] icons(){
-        return new TextureRegion[]{region, teamRegion, rotatorRegion, topRegion};
+        return new TextureRegion[]{bottomRegion, region, teamRegion, rotatorRegion, topRegion};
     }
 
     protected void countOre(Tile tile){
@@ -169,7 +176,7 @@ public class VaultDrill extends Drill {
         return drops != null && drops.hardness <= tier && drops != blockedItem;
     }
 
-    public class VaultDrillBuild extends DrillBuild{
+    public class TurbineDrillBuild extends DrillBuild{
         public float progress;
         public float warmup;
         public float timeDrilled;
@@ -285,16 +292,23 @@ public class VaultDrill extends Drill {
             float s = 0.3f;
             float ts = 0.6f;
 
+            Draw.rect(bottomRegion, x, y);
+
+            if(drawSpinSprite){
+                Drawf.spinSprite(turbineRegionOne, x, y, timeDrilled * rotateSpeed * 4);
+            }else{
+                Draw.rect(turbineRegionOne, x, y, timeDrilled * rotateSpeed * 4);
+            }
+            if(drawSpinSprite){
+                Drawf.spinSprite(turbineRegionTwo, x, y, timeDrilled * rotateSpeed * 2);
+            }else{
+                Draw.rect(turbineRegionTwo, x, y, timeDrilled * rotateSpeed * 2);
+            }
             Draw.rect(region, x, y);
             Draw.z(Layer.blockCracks);
             drawDefaultCracks();
 
             Draw.z(Layer.blockAfterCracks);
-            if(teamRegion.found()){
-                if(teamRegions[team.id] == teamRegion) Draw.color(team.color);
-                Draw.rect(teamRegions[team.id], x, y);
-                Draw.color();
-            }
 
             if(drawSpinSprite){
                 Drawf.spinSprite(rotatorRegion, x, y, timeDrilled * rotateSpeed);

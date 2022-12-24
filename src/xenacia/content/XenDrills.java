@@ -6,6 +6,7 @@ import mindustry.world.*;
 import mindustry.content.*;
 import mindustry.world.blocks.production.BurstDrill;
 import mindustry.world.blocks.production.Drill;
+import xenacia.world.blocks.production.TurbineDrill;
 import xenacia.world.blocks.production.VaultDrill;
 
 import static mindustry.type.ItemStack.*;
@@ -61,10 +62,10 @@ public class XenDrills{
 
             consumePower(0.30f);
         }};
-        turbineDrill = new Drill("turbine-drill"){{
+        turbineDrill = new TurbineDrill("turbine-drill"){{
             requirements(Category.production, with(XenItems.iron, 80, Items.graphite, 40, Items.silicon, 60));
             health = 550;
-            drillTime = 280;
+            drillTime = 250;
             size = 3;
             hasPower = true;
             tier = 4;
