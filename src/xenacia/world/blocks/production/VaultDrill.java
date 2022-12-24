@@ -128,7 +128,7 @@ public class VaultDrill extends Drill {
 
     @Override
     public TextureRegion[] icons(){
-        return new TextureRegion[]{region, rotatorRegion, topRegion};
+        return new TextureRegion[]{region, teamRegion, rotatorRegion, topRegion};
     }
 
     protected void countOre(Tile tile){

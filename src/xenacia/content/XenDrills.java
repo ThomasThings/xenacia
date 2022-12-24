@@ -61,7 +61,7 @@ public class XenDrills{
 
             consumePower(0.30f);
         }};
-        /*turbineDrill = new GeneratorDrill("turbine-drill"){{
+        turbineDrill = new Drill("turbine-drill"){{
             requirements(Category.production, with(XenItems.iron, 80, Items.graphite, 40, Items.silicon, 60));
             health = 550;
             drillTime = 280;
@@ -71,9 +71,9 @@ public class XenDrills{
             updateEffect = Fx.pulverizeMedium;
             drillEffect = new MultiEffect(Fx.mineBig, Fx.drillSteam);
 
-            consumePower(-1f);
+            consumePower(1f);
             consumeLiquid(Liquids.water, 0.1f);
-        }};*/
+        }};
         vaultDrill = new VaultDrill("vault-drill"){{
             requirements(Category.production, with(XenItems.iron, 50, Items.titanium, 100, Items.graphite, 40));
             health = 550;
