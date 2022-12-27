@@ -230,7 +230,7 @@ public class TurbineDrill extends PowerGenerator{
         return drops != null && drops.hardness <= tier && drops != blockedItem;
     }
 
-    public class TurbineDrillBuild extends Building{
+    public class TurbineDrillBuild extends GeneratorBuild{
         public float progress;
         public float warmup;
         public float timeDrilled;
