@@ -7,6 +7,8 @@ import arc.math.*;
 import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
+import mindustry.content.*;
+import mindustry.entities.*;
 import mindustry.entities.units.*;
 import mindustry.game.*;
 import mindustry.gen.*;
@@ -16,27 +18,57 @@ import mindustry.type.*;
 import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.blocks.environment.*;
-import mindustry.world.blocks.production.Drill;
-import mindustry.world.draw.DrawBlock;
-import mindustry.world.draw.DrawDefault;
+import mindustry.world.blocks.power.PowerGenerator;
 import mindustry.world.meta.*;
 
 import static mindustry.Vars.*;
 
-public class TurbineDrill extends Drill {
+public class TurbineDrill extends PowerGenerator{
+    public float hardnessDrillMultiplier = 50f;
 
-    public DrawBlock drawer = new DrawDefault();
+    protected final ObjectIntMap<Item> oreCount = new ObjectIntMap<>();
+    protected final Seq<Item> itemArray = new Seq<>();
 
-    TextureRegion bottomRegion, turbineRegionOne, turbineRegionTwo, defaultRegion, rotatorRegion, topRegion, ItemRegion;
+    /** Maximum tier of blocks this drill can mine. */
+    public int tier;
+    /** Base time to drill one ore, in frames. */
+    public float drillTime = 300;
+    /** How many times faster the drill will progress when boosted by liquid. */
+    public float liquidBoostIntensity = 1.6f;
+    /** Speed at which the drill speeds up. */
+    public float warmupSpeed = 0.015f;
+    /** Special exemption item that this drill can't mine. */
+    public @Nullable Item blockedItem;
 
-    @Override
-    public void load() {
-        super.load();
-        teamRegion = Core.atlas.find(name + "-team");
-        rotatorRegion = Core.atlas.find(name + "-rotator");
-        topRegion = Core.atlas.find(name + "-top");
-        itemRegion = Core.atlas.find(name + "-item");
-    }
+    protected @Nullable Item returnItem;
+    protected int returnCount;
+
+    /** Whether to draw the item this drill is mining. */
+    public boolean drawMineItem = true;
+    /** Effect played when an item is produced. This is colored. */
+    public Effect drillEffect = Fx.mine;
+    /** Drill effect randomness. Block size by default. */
+    public float drillEffectRnd = -1f;
+    /** Chance of displaying the effect. Useful for extremely fast drills. */
+    public float drillEffectChance = 1f;
+    /** Speed the drill bit rotates at. */
+    public float rotateSpeed = 2f;
+    /** Effect randomly played while drilling. */
+    public Effect updateEffect = Fx.pulverizeSmall;
+    /** Chance the update effect will appear. */
+    public float updateEffectChance = 0.02f;
+
+    public boolean drawRim = false;
+    public boolean drawSpinSprite = true;
+    public Color heatColor = Color.valueOf("ff5512");
+
+    public TextureRegion bottomRegion = Core.atlas.find(name + "-bottom");
+    public TextureRegion turbineRegion = Core.atlas.find(name + "-turbine");
+    public TextureRegion middleRegion = Core.atlas.find(name + "-middle");
+    public TextureRegion rimRegion = Core.atlas.find(name + "-middle");
+    public TextureRegion rotatorRegion = Core.atlas.find(name + "-rotator");
+    public TextureRegion topRegion = Core.atlas.find(name + "-top");
+    public TextureRegion itemRegion = Core.atlas.find(name + "-item");
 
     public TurbineDrill(String name){
         super(name);
@@ -53,6 +85,12 @@ public class TurbineDrill extends Drill {
     }
 
     @Override
+    public void init(){
+        super.init();
+        if(drillEffectRnd < 0) drillEffectRnd = size;
+    }
+
+    @Override
     public void drawPlanConfigTop(BuildPlan plan, Eachable<BuildPlan> list){
         if(!plan.worldContext) return;
         Tile tile = plan.tile();
@@ -64,6 +102,22 @@ public class TurbineDrill extends Drill {
         Draw.color(returnItem.color);
         Draw.rect(itemRegion, plan.drawx(), plan.drawy());
         Draw.color();
+    }
+
+    @Override
+    public void setBars(){
+        super.setBars();
+
+        if(hasPower && outputsPower){
+            addBar("power", (GeneratorBuild entity) -> new Bar(() ->
+                    Core.bundle.format("bar.poweroutput",
+                            Strings.fixed(entity.getPowerProduction() * 60 * entity.timeScale(), 1)),
+                    () -> Pal.powerBar,
+                    () -> entity.productionEfficiency));
+        }
+
+        addBar("drillspeed", (TurbineDrillBuild e) ->
+                new Bar(() -> Core.bundle.format("bar.drillspeed", Strings.fixed(e.lastDrillSpeed * 60 * e.timeScale(), 2)), () -> Pal.ammo, () -> e.warmup));
     }
 
     public Item getDrop(Tile tile){
@@ -134,7 +188,7 @@ public class TurbineDrill extends Drill {
 
     @Override
     public TextureRegion[] icons(){
-        return new TextureRegion[]{bottomRegion, region, teamRegion, rotatorRegion, topRegion};
+        return new TextureRegion[]{bottomRegion, turbineRegion, middleRegion, rimRegion, rotatorRegion, topRegion, itemRegion};
     }
 
     protected void countOre(Tile tile){
@@ -176,7 +230,7 @@ public class TurbineDrill extends Drill {
         return drops != null && drops.hardness <= tier && drops != blockedItem;
     }
 
-    public class TurbineDrillBuild extends DrillBuild{
+    public class TurbineDrillBuild extends Building{
         public float progress;
         public float warmup;
         public float timeDrilled;
@@ -292,23 +346,32 @@ public class TurbineDrill extends Drill {
             float s = 0.3f;
             float ts = 0.6f;
 
-            Draw.rect(bottomRegion, x, y);
+            Draw.rect(region, x, y);
 
             if(drawSpinSprite){
-                Drawf.spinSprite(turbineRegionOne, x, y, timeDrilled * rotateSpeed * 4);
+                Drawf.spinSprite(turbineRegion, x, y, timeDrilled * rotateSpeed);
             }else{
-                Draw.rect(turbineRegionOne, x, y, timeDrilled * rotateSpeed * 4);
+                Draw.rect(turbineRegion, x, y, timeDrilled * rotateSpeed);
             }
+
             if(drawSpinSprite){
-                Drawf.spinSprite(turbineRegionTwo, x, y, timeDrilled * rotateSpeed * 2);
+                Drawf.spinSprite(turbineRegion, x, y, timeDrilled * rotateSpeed);
             }else{
-                Draw.rect(turbineRegionTwo, x, y, timeDrilled * rotateSpeed * 2);
+                Draw.rect(turbineRegion, x, y, timeDrilled * rotateSpeed);
             }
-            Draw.rect(region, x, y);
+
             Draw.z(Layer.blockCracks);
             drawDefaultCracks();
 
             Draw.z(Layer.blockAfterCracks);
+            if(drawRim){
+                Draw.color(heatColor);
+                Draw.alpha(warmup * ts * (1f - s + Mathf.absin(Time.time, 3f, s)));
+                Draw.blend(Blending.additive);
+                Draw.rect(rimRegion, x, y);
+                Draw.blend();
+                Draw.color();
+            }
 
             if(drawSpinSprite){
                 Drawf.spinSprite(rotatorRegion, x, y, timeDrilled * rotateSpeed);
