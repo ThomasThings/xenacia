@@ -349,15 +349,15 @@ public class TurbineDrill extends PowerGenerator{
             Draw.rect(region, x, y);
 
             if(drawSpinSprite){
-                Drawf.spinSprite(turbineRegion, x, y, timeDrilled * rotateSpeed);
+                Drawf.spinSprite(turbineRegion, x, y, timeDrilled * rotateSpeed * -2f);
             }else{
-                Draw.rect(turbineRegion, x, y, timeDrilled * rotateSpeed);
+                Draw.rect(turbineRegion, x, y, timeDrilled * rotateSpeed * -2f);
             }
 
             if(drawSpinSprite){
-                Drawf.spinSprite(turbineRegion, x, y, timeDrilled * rotateSpeed);
+                Drawf.spinSprite(turbineRegion, x, y, timeDrilled * rotateSpeed * -2f);
             }else{
-                Draw.rect(turbineRegion, x, y, timeDrilled * rotateSpeed);
+                Draw.rect(turbineRegion, x, y, timeDrilled * rotateSpeed * -2f);
             }
 
             Draw.z(Layer.blockCracks);

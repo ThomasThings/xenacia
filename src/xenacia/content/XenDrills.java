@@ -70,7 +70,11 @@ public class XenDrills{
             hasPower = true;
             tier = 4;
             updateEffect = Fx.pulverizeMedium;
-            drillEffect = new MultiEffect(Fx.mineBig, Fx.drillSteam);
+            drillEffect = Fx.drillSteam;
+            updateEffectChance = 1;
+            drillEffectChance = 1;
+
+            rotateSpeed = 2f;
 
             powerProduction = 5.5f;
             consumeLiquid(XenLiquids.steam, 0.15f);
