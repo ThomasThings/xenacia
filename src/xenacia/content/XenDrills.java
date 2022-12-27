@@ -72,13 +72,13 @@ public class XenDrills{
             updateEffect = Fx.pulverizeMedium;
             drillEffect = new MultiEffect(Fx.mineBig, Fx.drillSteam);
 
-            consumePower(1f);
-            consumeLiquid(Liquids.water, 0.1f);
+            powerProduction = 5.5f;
+            consumeLiquid(XenLiquids.steam, 0.15f);
         }};
         vaultDrill = new VaultDrill("vault-drill"){{
             requirements(Category.production, with(XenItems.iron, 50, Items.titanium, 100, Items.graphite, 40));
             health = 550;
-            drillTime = 280;
+            drillTime = 200;
             size = 3;
             hasPower = true;
             tier = 4;
@@ -89,7 +89,6 @@ public class XenDrills{
             rotateSpeed = -3f;
 
             consumePower(1f);
-            consumeLiquid(Liquids.water, 0.1f);
         }};
         detonationDrill = new Drill("detonation-drill"){{
             requirements(Category.production, with(XenItems.cobalt, 250, Items.titanium, 200, XenItems.aluminum, 100, Items.graphite, 80));
@@ -106,7 +105,7 @@ public class XenDrills{
         }};
         titanicDrill = new BurstDrill("titanic-drill"){{
             requirements(Category.production, with(XenItems.volcrite, 350, XenItems.cobalt, 200, Items.titanium, 200, Items.silicon, 200));
-            drillTime = 300;
+            drillTime = 100;
             size = 7;
             hasPower = true;
             tier = 8;
