@@ -22,6 +22,8 @@ public class XenDrills{
             size = 2;
             tier = 2;
             updateEffect = Fx.pulverizeSmall;
+
+            consumeLiquid(Liquids.water, 0.05f).boost();
         }};
         hydraulicDrill = new Drill("hydraulic-drill"){{
             requirements(Category.production, with(XenItems.iron, 15, XenItems.aluminum, 10, Items.graphite, 15));
@@ -48,6 +50,8 @@ public class XenDrills{
             rotateSpeed = 4f;
 
             consumePower(0.80f);
+
+            consumeLiquid(Liquids.water, 0.05f).boost();
         }};
         precisionDrill = new Drill("precision-drill"){{
             requirements(Category.production, with(Items.titanium, 5, XenItems.iron, 10, Items.silicon, 10));
@@ -61,6 +65,8 @@ public class XenDrills{
             rotateSpeed = 6f;
 
             consumePower(0.30f);
+
+            consumeLiquid(Liquids.water, 0.025f).boost();
         }};
         turbineDrill = new TurbineDrill("turbine-drill"){{
             requirements(Category.production, with(XenItems.iron, 80, Items.graphite, 40, Items.silicon, 60));
@@ -78,6 +84,8 @@ public class XenDrills{
 
             powerProduction = 5.5f;
             consumeLiquid(XenLiquids.steam, 0.15f);
+
+            consumeLiquid(Liquids.water, 0.1f).boost();
         }};
         vaultDrill = new VaultDrill("vault-drill"){{
             requirements(Category.production, with(XenItems.iron, 50, Items.titanium, 100, Items.graphite, 40));
@@ -93,6 +101,8 @@ public class XenDrills{
             rotateSpeed = -3f;
 
             consumePower(1f);
+
+            consumeLiquid(Liquids.water, 0.1f).boost();
         }};
         detonationDrill = new Drill("detonation-drill"){{
             requirements(Category.production, with(XenItems.cobalt, 250, Items.titanium, 200, XenItems.aluminum, 100, Items.graphite, 80));
@@ -104,12 +114,17 @@ public class XenDrills{
             updateEffect = new MultiEffect(Fx.pulverizeMedium, Fx.pulverizeMedium, Fx.pulverizeSmall);
             drillEffect = new MultiEffect(Fx.mineBig, Fx.mineBig);
 
+            rotateSpeed = 8f;
+            warmupSpeed = 0.02f;
+
             consumePower(2f);
             consumeLiquid(XenLiquids.voltike, 0.2f);
+
+            consumeLiquid(Liquids.hydrogen, 0.2f).boost();
         }};
         titanicDrill = new BurstDrill("titanic-drill"){{
             requirements(Category.production, with(XenItems.volcrite, 350, XenItems.cobalt, 200, Items.titanium, 200, Items.silicon, 200));
-            drillTime = 100;
+            drillTime = 00;
             size = 7;
             hasPower = true;
             tier = 8;
@@ -131,6 +146,8 @@ public class XenDrills{
 
             consumePower(6f);
             consumeLiquids(LiquidStack.with(XenLiquids.voltike, 4f / 60f));
+
+            consumeLiquid(Liquids.water, 0.5f).boost();
         }};
     }
 }
