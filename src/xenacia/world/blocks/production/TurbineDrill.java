@@ -18,12 +18,12 @@ import mindustry.type.*;
 import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.blocks.environment.*;
-import mindustry.world.blocks.power.PowerGenerator;
+import mindustry.world.blocks.production.Drill;
 import mindustry.world.meta.*;
 
 import static mindustry.Vars.*;
 
-public class TurbineDrill extends PowerGenerator{
+public class TurbineDrill extends Drill {
     public float hardnessDrillMultiplier = 50f;
 
     protected final ObjectIntMap<Item> oreCount = new ObjectIntMap<>();
@@ -40,6 +40,7 @@ public class TurbineDrill extends PowerGenerator{
     /** Special exemption item that this drill can't mine. */
     public @Nullable Item blockedItem;
 
+    //return variables for countOre
     protected @Nullable Item returnItem;
     protected int returnCount;
 
@@ -62,14 +63,6 @@ public class TurbineDrill extends PowerGenerator{
     public boolean drawSpinSprite = true;
     public Color heatColor = Color.valueOf("ff5512");
 
-    public TextureRegion bottomRegion = Core.atlas.find(name + "-bottom");
-    public TextureRegion turbineRegion = Core.atlas.find(name + "-turbine");
-    public TextureRegion middleRegion = Core.atlas.find(name + "-middle");
-    public TextureRegion rimRegion = Core.atlas.find(name + "-middle");
-    public TextureRegion rotatorRegion = Core.atlas.find(name + "-rotator");
-    public TextureRegion topRegion = Core.atlas.find(name + "-top");
-    public TextureRegion itemRegion = Core.atlas.find(name + "-item");
-
     public TurbineDrill(String name){
         super(name);
         update = true;
@@ -80,6 +73,7 @@ public class TurbineDrill extends PowerGenerator{
         hasItems = true;
         ambientSound = Sounds.drill;
         ambientSoundVolume = 0.018f;
+        //drills work in space I guess
         envEnabled |= Env.space;
         flags = EnumSet.of(BlockFlag.drill);
     }
@@ -108,15 +102,7 @@ public class TurbineDrill extends PowerGenerator{
     public void setBars(){
         super.setBars();
 
-        if(hasPower && outputsPower){
-            addBar("power", (GeneratorBuild entity) -> new Bar(() ->
-                    Core.bundle.format("bar.poweroutput",
-                            Strings.fixed(entity.getPowerProduction() * 60 * entity.timeScale(), 1)),
-                    () -> Pal.powerBar,
-                    () -> entity.productionEfficiency));
-        }
-
-        addBar("drillspeed", (TurbineDrillBuild e) ->
+        addBar("drillspeed", (DrillBuild e) ->
                 new Bar(() -> Core.bundle.format("bar.drillspeed", Strings.fixed(e.lastDrillSpeed * 60 * e.timeScale(), 2)), () -> Pal.ammo, () -> e.warmup));
     }
 
@@ -188,7 +174,7 @@ public class TurbineDrill extends PowerGenerator{
 
     @Override
     public TextureRegion[] icons(){
-        return new TextureRegion[]{bottomRegion, turbineRegion, middleRegion, rimRegion, rotatorRegion, topRegion, itemRegion};
+        return new TextureRegion[]{region, rotatorRegion, topRegion};
     }
 
     protected void countOre(Tile tile){
@@ -230,7 +216,7 @@ public class TurbineDrill extends PowerGenerator{
         return drops != null && drops.hardness <= tier && drops != blockedItem;
     }
 
-    public class TurbineDrillBuild extends GeneratorBuild{
+    public class DrillBuild extends Building{
         public float progress;
         public float warmup;
         public float timeDrilled;
@@ -347,19 +333,6 @@ public class TurbineDrill extends PowerGenerator{
             float ts = 0.6f;
 
             Draw.rect(region, x, y);
-
-            if(drawSpinSprite){
-                Drawf.spinSprite(turbineRegion, x, y, timeDrilled * rotateSpeed * -2f);
-            }else{
-                Draw.rect(turbineRegion, x, y, timeDrilled * rotateSpeed * -2f);
-            }
-
-            if(drawSpinSprite){
-                Drawf.spinSprite(turbineRegion, x, y, timeDrilled * rotateSpeed * -2f);
-            }else{
-                Draw.rect(turbineRegion, x, y, timeDrilled * rotateSpeed * -2f);
-            }
-
             Draw.z(Layer.blockCracks);
             drawDefaultCracks();
 

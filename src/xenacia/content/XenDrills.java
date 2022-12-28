@@ -84,8 +84,6 @@ public class XenDrills{
 
             powerProduction = 5.5f;
             consumeLiquid(XenLiquids.steam, 0.15f);
-
-            consumeLiquid(Liquids.water, 0.1f).boost();
         }};
         vaultDrill = new VaultDrill("vault-drill"){{
             requirements(Category.production, with(XenItems.iron, 50, Items.titanium, 100, Items.graphite, 40));
