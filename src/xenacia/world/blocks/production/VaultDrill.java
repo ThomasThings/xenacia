@@ -7,12 +7,15 @@ import arc.math.*;
 import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
+import mindustry.content.*;
+import mindustry.entities.*;
 import mindustry.entities.units.*;
 import mindustry.game.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.logic.*;
 import mindustry.type.*;
+import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.blocks.environment.*;
 import mindustry.world.blocks.production.Drill;
@@ -21,7 +24,43 @@ import mindustry.world.meta.*;
 import static mindustry.Vars.*;
 
 public class VaultDrill extends Drill {
+    public float hardnessDrillMultiplier = 50f;
 
+    protected final ObjectIntMap<Item> oreCount = new ObjectIntMap<>();
+    protected final Seq<Item> itemArray = new Seq<>();
+
+    /** Maximum tier of blocks this drill can mine. */
+    public int tier;
+    /** Base time to drill one ore, in frames. */
+    public float drillTime = 300;
+    /** How many times faster the drill will progress when boosted by liquid. */
+    public float liquidBoostIntensity = 1.6f;
+    /** Speed at which the drill speeds up. */
+    public float warmupSpeed = 0.015f;
+    /** Special exemption item that this drill can't mine. */
+    public @Nullable Item blockedItem;
+
+    protected @Nullable Item returnItem;
+    protected int returnCount;
+
+    /** Whether to draw the item this drill is mining. */
+    public boolean drawMineItem = true;
+    /** Effect played when an item is produced. This is colored. */
+    public Effect drillEffect = Fx.mine;
+    /** Drill effect randomness. Block size by default. */
+    public float drillEffectRnd = -1f;
+    /** Chance of displaying the effect. Useful for extremely fast drills. */
+    public float drillEffectChance = 1f;
+    /** Speed the drill bit rotates at. */
+    public float rotateSpeed = 2f;
+    /** Effect randomly played while drilling. */
+    public Effect updateEffect = Fx.pulverizeSmall;
+    /** Chance the update effect will appear. */
+    public float updateEffectChance = 0.02f;
+
+    public boolean drawRim = false;
+    public boolean drawSpinSprite = true;
+    public Color heatColor = Color.valueOf("ff5512");
     @Override
     public void load() {
         super.load();
@@ -41,8 +80,15 @@ public class VaultDrill extends Drill {
         hasItems = true;
         ambientSound = Sounds.drill;
         ambientSoundVolume = 0.018f;
+        //drills work in space I guess
         envEnabled |= Env.space;
         flags = EnumSet.of(BlockFlag.drill);
+    }
+
+    @Override
+    public void init(){
+        super.init();
+        if(drillEffectRnd < 0) drillEffectRnd = size;
     }
 
     @Override
@@ -57,6 +103,14 @@ public class VaultDrill extends Drill {
         Draw.color(returnItem.color);
         Draw.rect(itemRegion, plan.drawx(), plan.drawy());
         Draw.color();
+    }
+
+    @Override
+    public void setBars(){
+        super.setBars();
+
+        addBar("drillspeed", (DrillBuild e) ->
+                new Bar(() -> Core.bundle.format("bar.drillspeed", Strings.fixed(e.lastDrillSpeed * 60 * e.timeScale(), 2)), () -> Pal.ammo, () -> e.warmup));
     }
 
     public Item getDrop(Tile tile){
@@ -127,7 +181,7 @@ public class VaultDrill extends Drill {
 
     @Override
     public TextureRegion[] icons(){
-        return new TextureRegion[]{region, teamRegion, rotatorRegion, topRegion};
+        return new TextureRegion[]{region, rotatorRegion, topRegion};
     }
 
     protected void countOre(Tile tile){
@@ -289,10 +343,19 @@ public class VaultDrill extends Drill {
             Draw.z(Layer.blockCracks);
             drawDefaultCracks();
 
-            Draw.z(Layer.blockAfterCracks);
             if(teamRegion.found()){
                 if(teamRegions[team.id] == teamRegion) Draw.color(team.color);
                 Draw.rect(teamRegions[team.id], x, y);
+                Draw.color();
+            }
+
+            Draw.z(Layer.blockAfterCracks);
+            if(drawRim){
+                Draw.color(heatColor);
+                Draw.alpha(warmup * ts * (1f - s + Mathf.absin(Time.time, 3f, s)));
+                Draw.blend(Blending.additive);
+                Draw.rect(rimRegion, x, y);
+                Draw.blend();
                 Draw.color();
             }
 
