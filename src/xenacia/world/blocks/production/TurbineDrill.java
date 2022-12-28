@@ -1,6 +1,7 @@
 package xenacia.world.blocks.production;
 
 import arc.*;
+import arc.audio.Sound;
 import arc.graphics.*;
 import arc.graphics.g2d.*;
 import arc.math.*;
@@ -19,7 +20,11 @@ import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.blocks.environment.*;
 import mindustry.world.blocks.production.Drill;
+import mindustry.world.draw.DrawBlock;
+import mindustry.world.draw.DrawDefault;
 import mindustry.world.meta.*;
+
+import mindustry.world.blocks.power.PowerGenerator;
 
 import static mindustry.Vars.*;
 
@@ -63,6 +68,22 @@ public class TurbineDrill extends Drill {
     public boolean drawSpinSprite = true;
     public Color heatColor = Color.valueOf("ff5512");
 
+    public float powerProduction;
+    public Stat generationType = Stat.basePowerGeneration;
+    public DrawBlock drawer = new DrawDefault();
+
+    public int explosionRadius = 12;
+    public int explosionDamage = 0;
+    public Effect explodeEffect = Fx.none;
+    public Sound explodeSound = Sounds.none;
+
+    public int explosionPuddles = 10;
+    public float explosionPuddleRange = tilesize * 2f;
+    public float explosionPuddleAmount = 100f;
+    public @Nullable Liquid explosionPuddleLiquid;
+    public float explosionMinWarmup = 0f;
+
+    public float explosionShake = 0f, explosionShakeDuration = 6f;
     public TurbineDrill(String name){
         super(name);
         update = true;
@@ -101,6 +122,14 @@ public class TurbineDrill extends Drill {
     @Override
     public void setBars(){
         super.setBars();
+
+        if(hasPower && outputsPower){
+            addBar("power", (PowerGenerator.GeneratorBuild entity) -> new Bar(() ->
+                    Core.bundle.format("bar.poweroutput",
+                            Strings.fixed(entity.getPowerProduction() * 60 * entity.timeScale(), 1)),
+                    () -> Pal.powerBar,
+                    () -> entity.productionEfficiency));
+        }
 
         addBar("drillspeed", (DrillBuild e) ->
                 new Bar(() -> Core.bundle.format("bar.drillspeed", Strings.fixed(e.lastDrillSpeed * 60 * e.timeScale(), 2)), () -> Pal.ammo, () -> e.warmup));
@@ -170,6 +199,8 @@ public class TurbineDrill extends Drill {
         if(liquidBoostIntensity != 1){
             stats.add(Stat.boostEffect, liquidBoostIntensity * liquidBoostIntensity, StatUnit.timesSpeed);
         }
+
+        stats.add(generationType, powerProduction * 60.0f, StatUnit.powerSecond);
     }
 
     @Override
@@ -225,10 +256,58 @@ public class TurbineDrill extends Drill {
         public int dominantItems;
         public Item dominantItem;
 
+        public float generateTime;
+
+        public float productionEfficiency = 0.0f;
+
         @Override
         public boolean shouldConsume(){
             return items.total() < itemCapacity && enabled;
         }
+
+        @Override
+        public float warmup(){
+            return productionEfficiency;
+        }
+
+        @Override
+        public void onDestroyed(){
+            super.onDestroyed();
+
+            if(state.rules.reactorExplosions){
+                createExplosion();
+            }
+        }
+
+        public void createExplosion(){
+            if(warmup() >= explosionMinWarmup){
+                if(explosionDamage > 0){
+                    Damage.damage(x, y, explosionRadius * tilesize, explosionDamage);
+                }
+
+                explodeEffect.at(this);
+                explodeSound.at(this);
+
+                if(explosionPuddleLiquid != null){
+                    for(int i = 0; i < explosionPuddles; i++){
+                        Tmp.v1.trns(Mathf.random(360f), Mathf.random(explosionPuddleRange));
+                        Tile tile = world.tileWorld(x + Tmp.v1.x, y + Tmp.v1.y);
+                        Puddles.deposit(tile, explosionPuddleLiquid, explosionPuddleAmount);
+                    }
+                }
+
+                if(explosionShake > 0){
+                    Effect.shake(explosionShake, explosionShakeDuration, this);
+                }
+            }
+        }
+
+        @Override
+        public float getPowerProduction(){
+            return powerProduction * productionEfficiency;
+        }
+
+
 
         @Override
         public boolean shouldAmbientSound(){
@@ -371,6 +450,8 @@ public class TurbineDrill extends Drill {
             super.write(write);
             write.f(progress);
             write.f(warmup);
+            write.f(productionEfficiency);
+            write.f(generateTime);
         }
 
         @Override
@@ -379,6 +460,10 @@ public class TurbineDrill extends Drill {
             if(revision >= 1){
                 progress = read.f();
                 warmup = read.f();
+            }
+            productionEfficiency = read.f();
+            if(revision >= 1){
+                generateTime = read.f();
             }
         }
     }
