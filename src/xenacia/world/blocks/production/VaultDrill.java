@@ -35,6 +35,7 @@ public class VaultDrill extends Drill {
         ambientSoundVolume = 0.018f;
         envEnabled |= Env.space;
         flags = EnumSet.of(BlockFlag.drill);
+
     }
 
     public Item getDrop(Tile tile){

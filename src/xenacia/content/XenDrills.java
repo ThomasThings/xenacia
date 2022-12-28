@@ -77,8 +77,8 @@ public class XenDrills{
             tier = 4;
             updateEffect = Fx.pulverizeMedium;
             drillEffect = Fx.drillSteam;
-            updateEffectChance = 1;
-            drillEffectChance = 1;
+            updateEffectChance = 0.1f;
+            drillEffectChance = 0.4f;
 
             rotateSpeed = 2f;
 
