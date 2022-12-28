@@ -91,6 +91,7 @@ public class XenItems{
             radioactivity = 0.3f;
             charge = 0f;
 
+            hardness = 5;
             cost = 1;
         }};
         cobalt = new Item("cobalt", Color.valueOf("53539f")){{

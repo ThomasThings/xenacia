@@ -105,15 +105,15 @@ public class XenDrills{
         detonationDrill = new Drill("detonation-drill"){{
             requirements(Category.production, with(XenItems.cobalt, 250, Items.titanium, 200, XenItems.aluminum, 100, Items.graphite, 80));
             health = 1100;
-            drillTime = 200;
+            drillTime = 180;
             size = 5;
             hasPower = true;
             tier = 5;
             updateEffect = new MultiEffect(Fx.pulverizeMedium, Fx.pulverizeMedium, Fx.pulverizeSmall);
             drillEffect = new MultiEffect(Fx.mineBig, Fx.mineBig);
 
-            rotateSpeed = 8f;
-            warmupSpeed = 0.02f;
+            rotateSpeed = 6.5f;
+            warmupSpeed = 0.01f;
 
             consumePower(2f);
             consumeLiquid(XenLiquids.voltike, 0.2f);
