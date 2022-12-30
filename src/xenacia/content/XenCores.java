@@ -4,7 +4,6 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.content.*;
 import mindustry.world.blocks.storage.CoreBlock;
-import mindustry.world.meta.BuildVisibility;
 
 import static mindustry.type.ItemStack.*;
 
@@ -41,7 +40,7 @@ public class XenCores{
         coreInception = new CoreBlock("core-inception"){{
             requirements(Category.effect, with(XenItems.iron, 3000, XenItems.aluminum, 3000, Items.graphite, 3000, Items.silicon, 2000, Items.titanium, 1500));
 
-            unitType = XenUnitTypes.dusk;
+            unitType = XenUnitTypes.dawn;
             health = 10000;
             armor = 10f;
             itemCapacity = 10000;
@@ -53,7 +52,7 @@ public class XenCores{
         coreBreakpoint = new CoreBlock("core-breakpoint"){{
             requirements(Category.effect, with(XenItems.iron, 9000, XenItems.aluminum, 9000, Items.titanium, 7000, Items.graphite, 5000, Items.silicon, 5000,  XenItems.polonium, 3000));
 
-            unitType = XenUnitTypes.dawn;
+            unitType = XenUnitTypes.dusk;
             health = 24000;
             armor = 15f;
             itemCapacity = 20000;

@@ -379,8 +379,8 @@ public class XenUnitTypes {
                 rotate = false;
                 shootY = 0f;
                 beamWidth = 0.6f;
-                repairSpeed = 3f;
-                fractionRepairSpeed = 0.1f;
+                repairSpeed = 1.5f;
+                fractionRepairSpeed = 0.8f;
                 aimDst = 0f;
                 shootCone = 15f;
                 mirror = false;
@@ -428,7 +428,7 @@ public class XenUnitTypes {
             itemCapacity = 60;
 
             engineSize = 2.5f;
-            engineOffset = 6f;
+            engineOffset = 6.5f;
 
             weapons.add(new Weapon(){{
                 x = 0f;
@@ -436,16 +436,18 @@ public class XenUnitTypes {
                 rotate = false;
                 mirror = false;
                 reload = 60f;
-                velocityRnd = 0.2f;
+                velocityRnd = 0.6f;
                 shoot.shots = 3;
                 inaccuracy = 5f;
-                bullet = new LaserBoltBulletType(3.5f, 5) {{
+                bullet = new LaserBoltBulletType(3.5f, 15) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 30f;
 
                     collidesTeam = true;
-                    healPercent = 0.5f;
+                    healPercent = 0.8f;
+
+                    buildingDamageMultiplier = 0.8f;
 
                     backColor = Color.valueOf("ffd37f");
                     frontColor = Color.white;
@@ -494,15 +496,18 @@ public class XenUnitTypes {
                 rotate = false;
                 mirror = false;
                 reload = 60f;
-                shoot.shots = 5;
+                velocityRnd = 0.7f;
+                shoot.shots = 6;
                 inaccuracy = 5f;
-                bullet = new LaserBoltBulletType(3.5f, 5) {{
+                bullet = new LaserBoltBulletType(3.5f, 15) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 30f;
 
                     collidesTeam = true;
-                    healPercent = 0.3f;
+                    healPercent = 0.8f;
+
+                    buildingDamageMultiplier = 0.8f;
 
                     backColor = Color.valueOf("ffd37f");
                     frontColor = Color.white;
