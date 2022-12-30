@@ -13,7 +13,7 @@ public class XenCores{
             coreCradle, coreDerive, coreInception, coreBreakpoint;
     public static void load() {
         coreCradle = new CoreBlock("core-cradle"){{
-            requirements(Category.effect, BuildVisibility.editorOnly, with(XenItems.iron, 800, XenItems.aluminum, 500));
+            requirements(Category.effect, with(XenItems.iron, 800, XenItems.aluminum, 500));
             alwaysUnlocked = true;
 
             isFirstTier = true;

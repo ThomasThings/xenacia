@@ -338,7 +338,7 @@ public class XenUnitTypes {
         //core units
         float coreFleeRange = 500f;
         period = new UnitType("period") {{
-            constructor = UnitEntity::create;
+            constructor = PayloadUnit::create;
             outlineColor = Color.valueOf("2b262d");
             controller = u -> new BuilderAI(true, coreFleeRange);
             coreUnitDock = true;
@@ -368,8 +368,8 @@ public class XenUnitTypes {
             itemCapacity = 40;
             isEnemy = false;
 
-            engineSize = 3.5f;
-            engineOffset = 4f;
+            engineSize = 2f;
+            engineOffset = 5.5f;
 
             weapons.add(new RepairBeamWeapon(){{
                 widthSinMag = 0.11f;
@@ -398,7 +398,7 @@ public class XenUnitTypes {
             }});
         }};
         moment = new UnitType("moment") {{
-            constructor = UnitEntity::create;
+            constructor = PayloadUnit::create;
             outlineColor = Color.valueOf("2b262d");
             controller = u -> new BuilderAI(true, coreFleeRange);
             coreUnitDock = true;
@@ -427,15 +427,16 @@ public class XenUnitTypes {
 
             itemCapacity = 60;
 
-            engineSize = 3.5f;
-            engineOffset = 4f;
+            engineSize = 2.5f;
+            engineOffset = 6f;
 
             weapons.add(new Weapon(){{
                 x = 0f;
-                y = 5;
+                y = 3;
                 rotate = false;
                 mirror = false;
                 reload = 60f;
+                velocityRnd = 0.2f;
                 shoot.shots = 3;
                 inaccuracy = 5f;
                 bullet = new LaserBoltBulletType(3.5f, 5) {{
@@ -453,8 +454,8 @@ public class XenUnitTypes {
                 ejectEffect = Fx.none;
             }});
         }};
-        dusk = new UnitType("dusk") {{
-            constructor = UnitEntity::create;
+        dawn = new UnitType("dawn") {{
+            constructor = PayloadUnit::create;
             outlineColor = Color.valueOf("2b262d");
             controller = u -> new BuilderAI(true, coreFleeRange);
             coreUnitDock = true;
@@ -484,7 +485,7 @@ public class XenUnitTypes {
             itemCapacity = 100;
 
             setEnginesMirror(
-                    new UnitEngine(2.5f, -5f, 3f, 20f)
+                    new UnitEngine(2.5f, -5f, 1.5f, 20f)
             );
 
             weapons.add(new Weapon(){{
@@ -535,8 +536,8 @@ public class XenUnitTypes {
                 }};
             }});
         }};
-        dawn = new UnitType("dawn") {{
-            constructor = UnitEntity::create;
+        dusk = new UnitType("dusk") {{
+            constructor = PayloadUnit::create;
             outlineColor = Color.valueOf("2b262d");
             controller = u -> new BuilderAI(true, coreFleeRange);
             coreUnitDock = true;
@@ -566,8 +567,8 @@ public class XenUnitTypes {
             itemCapacity = 100;
 
             setEnginesMirror(
-                new UnitEngine(7.75f, 6f, 5f, 45f),
-                new UnitEngine(7f, -7.5f, 8f, 315f)
+                new UnitEngine(7.75f, 6f, 2.5f, 45f),
+                new UnitEngine(7f, -7.5f, 3f, 315f)
             );
 
             weapons.add(new Weapon(){{
@@ -904,7 +905,7 @@ public class XenUnitTypes {
 
         }};
         lug = new UnitType("lug") {{
-            constructor = UnitEntity::create;
+            constructor = PayloadUnit::create;
             outlineColor = Color.valueOf("2b262d");
             defaultCommand = UnitCommand.rebuildCommand;
 
@@ -1135,7 +1136,7 @@ public class XenUnitTypes {
 
         }};
         ryher = new UnitType("ryher") {{
-            constructor = UnitEntity::create;
+            constructor = PayloadUnit::create;
             outlineColor = Color.valueOf("2b262d");
 
             health = 550f;
