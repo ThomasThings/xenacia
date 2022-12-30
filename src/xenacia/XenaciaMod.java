@@ -18,6 +18,7 @@ public class XenaciaMod extends Mod{
         XenFluidBlocks.load();
         XenDrills.load();
         XenDistribution.load();
+        XenCores.load();
         XenStorage.load();
         XenTurrets.load();
     }

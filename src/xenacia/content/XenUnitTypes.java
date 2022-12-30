@@ -3,6 +3,7 @@ package xenacia.content;
 import arc.graphics.Color;
 import arc.math.geom.Rect;
 import mindustry.ai.UnitCommand;
+import mindustry.ai.types.BuilderAI;
 import mindustry.ai.types.SuicideAI;
 import mindustry.content.Fx;
 import mindustry.content.Liquids;
@@ -15,16 +16,20 @@ import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
 import mindustry.type.*;
 import mindustry.gen.*;
+import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.world.meta.BlockFlag;
 
 //payloadCapacity = ((1.5 * 8) ^ 2);
 
 public class XenUnitTypes {
+
     public static UnitType
     //mites
     coreMite, assaultMite, boltMite, sapMite,
     //seeds
     mech, aircraft, polyped, ship, tank,
+    //core units
+    period, moment, dusk, dawn,
     //terrestrial assault
     gale,
     anax,
@@ -329,6 +334,264 @@ public class XenUnitTypes {
                     48
                 )
             };
+        }};
+        //core units
+        float coreFleeRange = 500f;
+        period = new UnitType("period") {{
+            constructor = UnitEntity::create;
+            outlineColor = Color.valueOf("2b262d");
+            controller = u -> new BuilderAI(true, coreFleeRange);
+            coreUnitDock = true;
+            health = 400f;
+            armor = 2f;
+            hitSize = 8f;
+            speed = 5f;
+            rotateSpeed = 5f;
+            flying = true;
+            lowAltitude = true;
+            accel = 0.09f;
+            drag = 0.08f;
+
+            targetPriority = -2;
+
+            mineWalls = false;
+            mineFloor = true;
+            mineHardnessScaling = false;
+            mineSpeed = 2f;
+            mineTier = 2;
+            buildSpeed = 1f;
+
+            payloadCapacity = 64f;
+            pickupUnits = false;
+            vulnerableWithPayloads = true;
+
+            itemCapacity = 40;
+            isEnemy = false;
+
+            engineSize = 3.5f;
+            engineOffset = 4f;
+
+            weapons.add(new RepairBeamWeapon(){{
+                widthSinMag = 0.11f;
+                reload = 10f;
+                x = 0f;
+                y = 3.5f;
+                rotate = false;
+                shootY = 0f;
+                beamWidth = 0.6f;
+                repairSpeed = 3f;
+                fractionRepairSpeed = 0.1f;
+                aimDst = 0f;
+                shootCone = 15f;
+                mirror = false;
+
+                targetUnits = true;
+                targetBuildings = true;
+                autoTarget = false;
+                controllable = true;
+                laserColor = Color.valueOf("ffd37f");
+                healColor = Color.valueOf("ffd37f");
+
+                bullet = new BulletType(){{
+                    maxRange = 48f;
+                }};
+            }});
+        }};
+        moment = new UnitType("moment") {{
+            constructor = UnitEntity::create;
+            outlineColor = Color.valueOf("2b262d");
+            controller = u -> new BuilderAI(true, coreFleeRange);
+            coreUnitDock = true;
+            health = 800f;
+            armor = 4f;
+            hitSize = 12f;
+            speed = 5f;
+            rotateSpeed = 5f;
+            flying = true;
+            lowAltitude = true;
+            accel = 0.09f;
+            drag = 0.08f;
+
+            targetPriority = -2;
+
+            mineWalls = false;
+            mineFloor = true;
+            mineHardnessScaling = false;
+            mineSpeed = 3f;
+            mineTier = 3;
+            buildSpeed = 1.5f;
+
+            payloadCapacity = 144f;
+            pickupUnits = false;
+            vulnerableWithPayloads = true;
+
+            itemCapacity = 60;
+
+            engineSize = 3.5f;
+            engineOffset = 4f;
+
+            weapons.add(new Weapon(){{
+                x = 0f;
+                y = 5;
+                rotate = false;
+                mirror = false;
+                reload = 60f;
+                shoot.shots = 3;
+                inaccuracy = 5f;
+                bullet = new LaserBoltBulletType(3.5f, 5) {{
+                    width = 1.5f;
+                    height = 5f;
+                    lifetime = 30f;
+
+                    collidesTeam = true;
+                    healPercent = 0.5f;
+
+                    backColor = Color.valueOf("ffd37f");
+                    frontColor = Color.white;
+                }};
+                shootSound = Sounds.lasershoot;
+                ejectEffect = Fx.none;
+            }});
+        }};
+        dusk = new UnitType("dusk") {{
+            constructor = UnitEntity::create;
+            outlineColor = Color.valueOf("2b262d");
+            controller = u -> new BuilderAI(true, coreFleeRange);
+            coreUnitDock = true;
+            health = 1200f;
+            armor = 6f;
+            hitSize = 12f;
+            speed = 5.5f;
+            rotateSpeed = 5f;
+            flying = true;
+            lowAltitude = true;
+            accel = 0.09f;
+            drag = 0.08f;
+
+            targetPriority = -2;
+
+            mineWalls = false;
+            mineFloor = true;
+            mineHardnessScaling = false;
+            mineSpeed = 6f;
+            mineTier = 4;
+            buildSpeed = 4f;
+
+            payloadCapacity = 256f;
+            pickupUnits = false;
+            vulnerableWithPayloads = true;
+
+            itemCapacity = 100;
+
+            setEnginesMirror(
+                    new UnitEngine(2.5f, -5f, 3f, 20f)
+            );
+
+            weapons.add(new Weapon(){{
+                x = 0f;
+                y = 7;
+                rotate = false;
+                mirror = false;
+                reload = 60f;
+                shoot.shots = 5;
+                inaccuracy = 5f;
+                bullet = new LaserBoltBulletType(3.5f, 5) {{
+                    width = 1.5f;
+                    height = 5f;
+                    lifetime = 30f;
+
+                    collidesTeam = true;
+                    healPercent = 0.3f;
+
+                    backColor = Color.valueOf("ffd37f");
+                    frontColor = Color.white;
+                }};
+                shootSound = Sounds.lasershoot;
+                ejectEffect = Fx.none;
+            }});
+            weapons.add(new RepairBeamWeapon(){{
+                widthSinMag = 0.11f;
+                reload = 15f;
+                x = 0f;
+                y = 3.5f;
+                rotate = false;
+                shootY = 0f;
+                beamWidth = 0.6f;
+                repairSpeed = 3f;
+                fractionRepairSpeed = 0.1f;
+                aimDst = 0f;
+                shootCone = 15f;
+                mirror = false;
+
+                targetUnits = true;
+                targetBuildings = true;
+                autoTarget = false;
+                controllable = true;
+                laserColor = Color.valueOf("ffd37f");
+                healColor = Color.valueOf("ffd37f");
+
+                bullet = new BulletType(){{
+                    maxRange = 48f;
+                }};
+            }});
+        }};
+        dawn = new UnitType("dawn") {{
+            constructor = UnitEntity::create;
+            outlineColor = Color.valueOf("2b262d");
+            controller = u -> new BuilderAI(true, coreFleeRange);
+            coreUnitDock = true;
+            health = 1200f;
+            armor = 6f;
+            hitSize = 12f;
+            speed = 5.5f;
+            rotateSpeed = 5f;
+            flying = true;
+            lowAltitude = true;
+            accel = 0.09f;
+            drag = 0.08f;
+
+            targetPriority = -2;
+
+            mineWalls = false;
+            mineFloor = true;
+            mineHardnessScaling = false;
+            mineSpeed = 6f;
+            mineTier = 4;
+            buildSpeed = 4f;
+
+            payloadCapacity = 256f;
+            pickupUnits = false;
+            vulnerableWithPayloads = true;
+
+            itemCapacity = 100;
+
+            setEnginesMirror(
+                new UnitEngine(7.75f, 6f, 5f, 45f),
+                new UnitEngine(7f, -7.5f, 8f, 315f)
+            );
+
+            weapons.add(new Weapon(){{
+                x = 5f;
+                y = -2.25f;
+                rotate = false;
+                mirror = false;
+                reload = 90f;
+                shoot.shots = 10;
+                inaccuracy = 5f;
+                bullet = new LaserBoltBulletType(3.5f, 10) {{
+                    width = 1.5f;
+                    height = 5f;
+                    lifetime = 40f;
+
+                    collidesTeam = true;
+                    healPercent = 0.3f;
+
+                    backColor = Color.valueOf("ffd37f");
+                    frontColor = Color.white;
+                }};
+                shootSound = Sounds.lasershoot;
+                ejectEffect = Fx.none;
+            }});
         }};
         //terrestrial assault
         gale = new UnitType("gale") {{

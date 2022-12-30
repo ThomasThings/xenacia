@@ -6,6 +6,7 @@ import mindustry.world.*;
 import mindustry.content.*;
 import mindustry.world.blocks.production.BurstDrill;
 import mindustry.world.blocks.production.Drill;
+import mindustry.world.meta.BuildVisibility;
 import xenacia.world.blocks.production.TurbineDrill;
 import xenacia.world.blocks.production.VaultDrill;
 
@@ -69,6 +70,7 @@ public class XenDrills{
             consumeLiquid(Liquids.water, 0.025f).boost();
         }};
         turbineDrill = new TurbineDrill("turbine-drill"){{
+            buildVisibility = BuildVisibility.hidden;
             requirements(Category.production, with(XenItems.iron, 80, Items.graphite, 40, Items.silicon, 60));
             health = 550;
             drillTime = 250;
@@ -86,6 +88,7 @@ public class XenDrills{
             consumeLiquid(XenLiquids.steam, 0.15f);
         }};
         vaultDrill = new VaultDrill("vault-drill"){{
+            buildVisibility = BuildVisibility.hidden;
             requirements(Category.production, with(XenItems.iron, 50, Items.titanium, 100, Items.graphite, 40));
             health = 550;
             drillTime = 200;
@@ -121,6 +124,7 @@ public class XenDrills{
             consumeLiquid(Liquids.hydrogen, 0.2f).boost();
         }};
         titanicDrill = new BurstDrill("titanic-drill"){{
+            buildVisibility = BuildVisibility.hidden;
             requirements(Category.production, with(XenItems.volcrite, 350, XenItems.cobalt, 200, Items.titanium, 200, Items.silicon, 200));
             drillTime = 00;
             size = 7;
