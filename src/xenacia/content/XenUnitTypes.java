@@ -572,25 +572,26 @@ public class XenUnitTypes {
             itemCapacity = 100;
 
             setEnginesMirror(
-                new UnitEngine(7.75f, 6f, 2.5f, 45f),
-                new UnitEngine(7f, -7.5f, 3f, 315f)
+                new UnitEngine(8.25f, 7f, 2.5f, 45f),
+                new UnitEngine(8f, -8.5f, 3f, 315f)
             );
 
-            weapons.add(new Weapon(){{
+            weapons.add(new Weapon("dusk-bolt-shotgun"){{
                 x = 5f;
                 y = -2.25f;
                 rotate = false;
-                mirror = false;
-                reload = 90f;
-                shoot.shots = 10;
-                inaccuracy = 5f;
-                bullet = new LaserBoltBulletType(3.5f, 10) {{
+                mirror = true;
+                reload = 45f;
+                shoot.shots = 12;
+                inaccuracy = 9f;
+                velocityRnd = 1f;
+                bullet = new LaserBoltBulletType(3.5f, 12) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 40f;
 
                     collidesTeam = true;
-                    healPercent = 0.3f;
+                    healPercent = 0.5f;
 
                     backColor = Color.valueOf("ffd37f");
                     frontColor = Color.white;
