@@ -40,6 +40,7 @@ public class XenStorage{
             health = 7000;
             size = 7;
             itemCapacity = 30000;
+            coreMerge = false;
 
             researchCostMultiplier = 1f;
         }};
