@@ -14,7 +14,7 @@ public class XenEnvironmentTiles{
             //scorched
             scorchedSoil, scorchedSoilWall, scorchedSand, scorchedSandWall,
             //marsh
-            wetMarsh, marsh, marshWall,
+            deepMarsh, wetMarsh, marsh, marshWall,
             //misc env
             ash, ashWall, pumice, pumiceWall, meteor, meteorWall,
             //lunar
@@ -77,6 +77,18 @@ public class XenEnvironmentTiles{
             variants = 3;
             status = StatusEffects.wet;
             statusDuration = 90f;
+            liquidDrop = Liquids.water;
+            isLiquid = true;
+            cacheLayer = CacheLayer.water;
+            albedo = 0.9f;
+            supportsOverlay = true;
+        }};
+        deepMarsh = new Floor("wet-marsh"){{
+            speedMultiplier = 0.5f;
+            variants = 3;
+            status = StatusEffects.wet;
+            statusDuration = 90f;
+            drownTime = 200f;
             liquidDrop = Liquids.water;
             isLiquid = true;
             cacheLayer = CacheLayer.water;
