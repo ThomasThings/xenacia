@@ -14,7 +14,7 @@ public class XenEnvironmentTiles{
             //scorched
             scorchedSoil, scorchedSoilWall, scorchedSand, scorchedSandWall,
             //marsh
-            wetMarsh, marsh, marshWall,
+            deepMarsh, wetMarsh, marsh, marshWall,
             //misc env
             ash, ashWall, pumice, pumiceWall, meteor, meteorWall,
             //lunar
@@ -67,9 +67,13 @@ public class XenEnvironmentTiles{
         volcanicRock = new Floor("volcanic-rock");
         volcanicRockWall = new StaticWall("volcanic-rock-wall");
         //scorched
-        scorchedSoil = new Floor("scorched-soil");
+        scorchedSoil = new Floor("scorched-soil"){{
+             mapColor = Color.valueOf("292725");
+        }};
         scorchedSoilWall = new StaticWall("scorched-soil-wall");
-        scorchedSand = new Floor("scorched-sand");
+        scorchedSand = new Floor("scorched-sand"){{
+            mapColor = Color.valueOf("2A2826");
+        }};
         scorchedSandWall = new StaticWall("scorched-sand-wall");
         //marsh env
         wetMarsh = new Floor("wet-marsh"){{
@@ -77,6 +81,18 @@ public class XenEnvironmentTiles{
             variants = 3;
             status = StatusEffects.wet;
             statusDuration = 90f;
+            liquidDrop = Liquids.water;
+            isLiquid = true;
+            cacheLayer = CacheLayer.water;
+            albedo = 0.9f;
+            supportsOverlay = true;
+        }};
+        deepMarsh = new Floor("wet-marsh"){{
+            speedMultiplier = 0.5f;
+            variants = 3;
+            status = StatusEffects.wet;
+            statusDuration = 90f;
+            drownTime = 200f;
             liquidDrop = Liquids.water;
             isLiquid = true;
             cacheLayer = CacheLayer.water;
@@ -93,9 +109,13 @@ public class XenEnvironmentTiles{
             playerUnmineable = true;
         }};
         //misc
-        ash = new Floor("ash");
+        ash = new Floor("ash"){{
+             mapColor = Color.valueOf("6D7478");
+        }};
         ashWall = new StaticWall("ash-wall");
-        pumice = new Floor("pumice");
+        pumice = new Floor("pumice"){{
+             mapColor = Color.valueOf("50565A");
+        }};
         pumiceWall = new StaticWall("pumice-wall");
         meteor = new Floor("meteor"){{
             itemDrop = XenItems.meteorFragment;
@@ -107,6 +127,7 @@ public class XenEnvironmentTiles{
         }};
         //lunar
         lunarRegolith = new Floor("lunar-regolith-floor"){{
+            mapColor = Color.valueOf("B7CBD0");
             itemDrop = XenItems.lunarRegolith;
             playerUnmineable = true;
         }};
@@ -115,6 +136,7 @@ public class XenEnvironmentTiles{
             playerUnmineable = true;
         }};
         lunarCraters = new Floor("lunar-craters"){{
+            mapColor = Color.valueOf("B1C4C9");
             itemDrop = XenItems.lunarRegolith;
             playerUnmineable = true;
         }};
