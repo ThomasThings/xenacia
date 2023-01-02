@@ -19,7 +19,7 @@ import mindustry.gen.*;
 import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.world.meta.BlockFlag;
 
-//payloadCapacity = ((1.5 * 8) ^ 2);
+//payloadCapacity = ((X * 8) ^ 2), X being the side of the payload in blocks
 
 public class XenUnitTypes {
 
@@ -487,7 +487,7 @@ public class XenUnitTypes {
             itemCapacity = 100;
 
             setEnginesMirror(
-                    new UnitEngine(2.5f, -5f, 1.5f, 20f)
+                    new UnitEngine(3.2f, -6.5f, 1.5f, 20f)
             );
 
             weapons.add(new Weapon(){{
@@ -516,10 +516,12 @@ public class XenUnitTypes {
                 ejectEffect = Fx.none;
             }});
             weapons.add(new RepairBeamWeapon(){{
+                controllable = false;
+                autoTarget = true;
                 widthSinMag = 0.11f;
                 reload = 15f;
                 x = 0f;
-                y = 3.5f;
+                y = 7f;
                 rotate = false;
                 shootY = 0f;
                 beamWidth = 0.6f;
