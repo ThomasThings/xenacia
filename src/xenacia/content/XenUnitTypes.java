@@ -516,8 +516,6 @@ public class XenUnitTypes {
                 ejectEffect = Fx.none;
             }});
             weapons.add(new RepairBeamWeapon(){{
-                controllable = false;
-                autoTarget = true;
                 widthSinMag = 0.11f;
                 reload = 15f;
                 x = 0f;
@@ -530,6 +528,11 @@ public class XenUnitTypes {
                 aimDst = 0f;
                 shootCone = 15f;
                 mirror = false;
+
+                controllable = false;
+                autoTarget = true;
+                targetInterval = 20f;
+                targetSwitchInterval = 35f;
 
                 targetUnits = true;
                 targetBuildings = true;
@@ -574,8 +577,8 @@ public class XenUnitTypes {
             itemCapacity = 100;
 
             setEnginesMirror(
-                new UnitEngine(8.75f, 7f, 2.5f, 45f),
-                new UnitEngine(8.5f, -8.5f, 3f, 315f)
+                new UnitEngine(10.75f, 8f, 2.5f, 45f),
+                new UnitEngine(9.5f, -9.5f, 3f, 315f)
             );
 
             weapons.add(new Weapon("xenacia-dusk-bolt-shotgun"){{
@@ -584,22 +587,22 @@ public class XenUnitTypes {
                 top = true;
                 rotate = false;
                 mirror = true;
-                reload = 30f;
+                reload = 15f;
                 shoot.shots = 12;
-                inaccuracy = 13f;
-                velocityRnd = 0.5f;
+                inaccuracy = 15f;
+                velocityRnd = 0.2f;
                 bullet = new LaserBoltBulletType(3.5f, 12) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 40f;
 
                     collidesTeam = true;
-                    healPercent = 1f;
+                    healPercent = 2f;
 
                     backColor = Color.valueOf("ffd37f");
                     frontColor = Color.white;
                 }};
-                shootSound = Sounds.lasershoot;
+                shootSound = Sounds.;
                 ejectEffect = Fx.none;
             }});
         }};
