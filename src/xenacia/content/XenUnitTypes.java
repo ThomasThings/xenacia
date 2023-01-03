@@ -24,12 +24,10 @@ import mindustry.world.meta.BlockFlag;
 public class XenUnitTypes {
 
     public static UnitType
-    //mites
-    coreMite, assaultMite, boltMite, sapMite,
-    //seeds
-    mech, aircraft, polyped, ship, tank,
     //core units
     period, moment, dusk, dawn,
+    //seeds
+    mech, aircraft, polyped, ship, tank,
     //terrestrial assault
     gale,
     anax,
@@ -48,294 +46,15 @@ public class XenUnitTypes {
     spritz,
     mount,
     link;
+    //mites and parasites
+    coreMite,
+    assaultMite,
+    boltMite,
+    sapMite,
 
     public static void load() {
-        //mites
-        coreMite = new UnitType("core-mite") {{
-            constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("2b262d");
-            health = 110f;
-            armor = 0f;
-            hitSize = 6f;
-            speed = 1f;
-            rotateSpeed = 8f;
-            drag = 0.11f;
-
-            useUnitCap = false;
-            itemCapacity = 0;
-
-            aiController = SuicideAI::new;
-
-            legForwardScl = 5f;
-            legContinuousMove = true;
-            legCount = 4;
-            legGroupSize = 1;
-            legLength = 6f;
-            legExtension = 1f;
-            legBaseOffset = 0.5f;
-            legStraightness = 0.5f;
-            rippleScale = 0.1f;
-            legMaxLength = 1f;
-            legMinLength = 1f;
-            allowLegStep = false;
-
-            range = 40f;
-
-            weapons.add(new Weapon() {{
-                shootOnDeath = true;
-                reload = 24f;
-                shootCone = 180f;
-                ejectEffect = Fx.none;
-                shootSound = Sounds.explosion;
-                x = shootY = 0f;
-                mirror = false;
-                bullet = new BulletType() {{
-                    collidesTiles = false;
-                    collides = false;
-                    hitSound = Sounds.explosion;
-
-                    rangeOverride = 12f;
-                    hitEffect = Fx.pulverize;
-                    speed = 0f;
-                    splashDamageRadius = 24f;
-                    instantDisappear = true;
-                    splashDamage = 100f;
-                    killShooter = true;
-                    hittable = false;
-                    collidesAir = true;
-                }};
-            }});
-        }};
-        assaultMite = new UnitType("assault-mite") {{
-            constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("2b262d");
-            health = 100f;
-            armor = 0f;
-            hitSize = 6f;
-            speed = 0.9f;
-            rotateSpeed = 8f;
-            drag = 0.11f;
-
-            useUnitCap = false;
-            itemCapacity = 0;
-
-            legForwardScl = 5f;
-            legContinuousMove = true;
-            legCount = 4;
-            legGroupSize = 1;
-            legLength = 6f;
-            legExtension = 1f;
-            legBaseOffset = 0f;
-            legStraightness = 0.5f;
-            rippleScale = 0.1f;
-            legMaxLength = 1f;
-            legMinLength = 1f;
-            allowLegStep = false;
-
-            weapons.add(new Weapon("assault-mite-weapon") {{
-                x = 0f;
-                y = 0f;
-                rotate = false;
-                mirror = false;
-                reload = 30f;
-                bullet = new BasicBulletType(3.5f, 9) {{
-                    width = 5f;
-                    height = 7f;
-                    lifetime = 30f;
-                }};
-                ejectEffect = Fx.none;
-            }});
-        }};
-        boltMite = new UnitType("bolt-mite") {{
-            constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("2b262d");
-            health = 100f;
-            armor = 0f;
-            hitSize = 6f;
-            speed = 0.9f;
-            rotateSpeed = 8f;
-            drag = 0.11f;
-
-            useUnitCap = false;
-            itemCapacity = 0;
-
-            legForwardScl = 5f;
-            legContinuousMove = true;
-            legCount = 4;
-            legGroupSize = 1;
-            legLength = 6f;
-            legExtension = 1f;
-            legBaseOffset = 0f;
-            legStraightness = 0.5f;
-            rippleScale = 0.1f;
-            legMaxLength = 1f;
-            legMinLength = 1f;
-            allowLegStep = false;
-
-            weapons.add(new Weapon("bolt-mite-weapon") {{
-                x = 0f;
-                y = 0f;
-                rotate = false;
-                mirror = false;
-                reload = 30f;
-                bullet = new LaserBoltBulletType(3.5f, 9) {{
-                    width = 1.5f;
-                    height = 5f;
-                    lifetime = 30f;
-
-                    collidesTeam = true;
-                    healPercent = 0.5f;
-
-                    backColor = Pal.heal;
-                    frontColor = Color.white;
-                }};
-                shootSound = Sounds.lasershoot;
-                ejectEffect = Fx.none;
-            }});
-        }};
-        sapMite = new UnitType("sap-mite") {{
-            constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("2b262d");
-            health = 85f;
-            armor = 0f;
-            hitSize = 6f;
-            speed = 0.9f;
-            rotateSpeed = 8f;
-            drag = 0.11f;
-
-            useUnitCap = false;
-            itemCapacity = 0;
-
-            legForwardScl = 5f;
-            legContinuousMove = true;
-            legCount = 4;
-            legGroupSize = 1;
-            legLength = 6f;
-            legExtension = 1f;
-            legBaseOffset = 0f;
-            legStraightness = 0.5f;
-            rippleScale = 0.1f;
-            legMaxLength = 1f;
-            legMinLength = 1f;
-            allowLegStep = false;
-
-            weapons.add(new Weapon("sap-mite-weapon") {{
-                x = 0f;
-                y = 0f;
-                rotate = false;
-                mirror = false;
-                reload = 15f;
-                bullet = new SapBulletType() {{
-                    damage = 2;
-                    sapStrength = 1f;
-                    length = 25f;
-                    width = 0.5f;
-                    lifetime = 25f;
-                    knockback = -0.2f;
-
-                    shootEffect = Fx.shootSmall;
-                    despawnEffect = Fx.none;
-                    hitColor = color = Color.valueOf("bf92f9");
-                }};
-                shootSound = Sounds.sap;
-                ejectEffect = Fx.none;
-            }});
-        }};
-        //seeds
-        mech = new UnitType("mech") {{
-            constructor = MechUnit::create;
-            outlineColor = Color.valueOf("2b262d");
-            mechLegColor = Color.valueOf("2b262d");
-            health = 250f;
-            armor = 0f;
-            hitSize = 10f;
-            speed = 0.6f;
-            rotateSpeed = 5f;
-
-            itemCapacity = 5;
-            isEnemy = false;
-
-            mechFrontSway = 0.2f;
-            mechSideSway = 0.3f;
-        }};
-        aircraft = new UnitType("aircraft") {{
-            constructor = UnitEntity::create;
-            outlineColor = Color.valueOf("2b262d");
-            health = 250f;
-            armor = 0f;
-            hitSize = 10f;
-            speed = 2f;
-            rotateSpeed = 5f;
-            flying = true;
-            lowAltitude = true;
-            accel = 0.1f;
-            drag = 0.05f;
-
-            itemCapacity = 5;
-            isEnemy = false;
-
-            engineSize = 3f;
-            engineOffset = 5.5f;
-        }};
-        polyped = new UnitType("polyped") {{
-            constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("2b262d");
-            health = 250f;
-            armor = 0f;
-            hitSize = 10f;
-            speed = 0.8f;
-            rotateSpeed = 5f;
-
-            itemCapacity = 5;
-            isEnemy = false;
-
-            legContinuousMove = false;
-            legCount = 3;
-            legGroupSize = 1;
-            legLength = 9f;
-            rippleScale = 0.1f;
-        }};
-        ship = new UnitType("ship") {{
-            constructor = UnitWaterMove::create;
-            outlineColor = Color.valueOf("2b262d");
-            health = 250f;
-            armor = 0f;
-            hitSize = 10f;
-            speed = 1f;
-            rotateSpeed = 5f;
-
-            itemCapacity = 5;
-            isEnemy = false;
-
-            trailLength = 15;
-            waveTrailX = 4.5f;
-            waveTrailY = -1f;
-            trailScl = 1.2f;
-        }};
-        tank = new UnitType("tank") {{
-            constructor = TankUnit::create;
-            outlineColor = Color.valueOf("2b262d");
-            health = 250f;
-            armor = 0f;
-            hitSize = 10f;
-            speed = 0.8f;
-            rotateSpeed = 5f;
-            omniMovement = false;
-
-            itemCapacity = 5;
-            isEnemy = false;
-
-            treadFrames = 8;
-            treadRects = new Rect[]{
-                new Rect(
-                    12,
-                    -25,
-                    11,
-                    48
-                )
-            };
-        }};
         //core units
+
         float coreFleeRange = 500f;
         period = new UnitType("period") {{
             constructor = PayloadUnit::create;
@@ -577,8 +296,8 @@ public class XenUnitTypes {
             itemCapacity = 100;
 
             setEnginesMirror(
-                new UnitEngine(10.75f, 8f, 2.5f, 45f),
-                new UnitEngine(9.5f, -9.5f, 3f, 315f)
+                    new UnitEngine(10.75f, 8f, 2.5f, 45f),
+                    new UnitEngine(9.5f, -9.5f, 3f, 315f)
             );
 
             weapons.add(new Weapon("xenacia-dusk-bolt-shotgun"){{
@@ -606,7 +325,105 @@ public class XenUnitTypes {
                 ejectEffect = Fx.none;
             }});
         }};
+
+        //seeds
+
+        mech = new UnitType("mech") {{
+            constructor = MechUnit::create;
+            outlineColor = Color.valueOf("2b262d");
+            mechLegColor = Color.valueOf("2b262d");
+            health = 250f;
+            armor = 0f;
+            hitSize = 10f;
+            speed = 0.6f;
+            rotateSpeed = 5f;
+
+            itemCapacity = 5;
+            isEnemy = false;
+
+            mechFrontSway = 0.2f;
+            mechSideSway = 0.3f;
+        }};
+        aircraft = new UnitType("aircraft") {{
+            constructor = UnitEntity::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 250f;
+            armor = 0f;
+            hitSize = 10f;
+            speed = 2f;
+            rotateSpeed = 5f;
+            flying = true;
+            lowAltitude = true;
+            accel = 0.1f;
+            drag = 0.05f;
+
+            itemCapacity = 5;
+            isEnemy = false;
+
+            engineSize = 3f;
+            engineOffset = 5.5f;
+        }};
+        polyped = new UnitType("polyped") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 250f;
+            armor = 0f;
+            hitSize = 10f;
+            speed = 0.8f;
+            rotateSpeed = 5f;
+
+            itemCapacity = 5;
+            isEnemy = false;
+
+            legContinuousMove = false;
+            legCount = 3;
+            legGroupSize = 1;
+            legLength = 9f;
+            rippleScale = 0.1f;
+        }};
+        ship = new UnitType("ship") {{
+            constructor = UnitWaterMove::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 250f;
+            armor = 0f;
+            hitSize = 10f;
+            speed = 1f;
+            rotateSpeed = 5f;
+
+            itemCapacity = 5;
+            isEnemy = false;
+
+            trailLength = 15;
+            waveTrailX = 4.5f;
+            waveTrailY = -1f;
+            trailScl = 1.2f;
+        }};
+        tank = new UnitType("tank") {{
+            constructor = TankUnit::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 250f;
+            armor = 0f;
+            hitSize = 10f;
+            speed = 0.8f;
+            rotateSpeed = 5f;
+            omniMovement = false;
+
+            itemCapacity = 5;
+            isEnemy = false;
+
+            treadFrames = 8;
+            treadRects = new Rect[]{
+                new Rect(
+                    12,
+                    -25,
+                    11,
+                    48
+                )
+            };
+        }};
+
         //terrestrial assault
+
         gale = new UnitType("gale") {{
             constructor = MechUnit::create;
             outlines = false;
@@ -653,6 +470,7 @@ public class XenUnitTypes {
                 }};
             }});
         }};
+
         anax = new UnitType("anax") {{
             constructor = UnitEntity::create;
             outlineColor = Color.valueOf("2b262d");
@@ -700,6 +518,7 @@ public class XenUnitTypes {
                 }};
             }});
         }};
+
         explore = new UnitType("explore") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("2b262d");
@@ -745,6 +564,7 @@ public class XenUnitTypes {
                 }};
             }});
         }};
+
         shif = new UnitType("shif") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
@@ -793,6 +613,7 @@ public class XenUnitTypes {
                 }};
             }});
         }};
+
         tack = new UnitType("tack") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("2b262d");
@@ -849,7 +670,9 @@ public class XenUnitTypes {
                         }});
             }});
         }};
+
         //terrestrial support
+
         elementary = new UnitType("elementary") {{
             constructor = MechUnit::create;
             outlineColor = Color.valueOf("2b262d");
@@ -916,6 +739,7 @@ public class XenUnitTypes {
             }});
 
         }};
+
         lug = new UnitType("lug") {{
             constructor = PayloadUnit::create;
             outlineColor = Color.valueOf("2b262d");
@@ -944,6 +768,7 @@ public class XenUnitTypes {
 
             abilities.add(new RepairFieldAbility(5f, 45, 55f));
         }};
+
         tick = new UnitType("tick") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("2b262d");
@@ -978,6 +803,7 @@ public class XenUnitTypes {
                 effectRadius = 4f;
             }});
         }};
+
         natuon = new UnitType("natuon") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
@@ -1041,6 +867,7 @@ public class XenUnitTypes {
             }});
             abilities.add(new RepairFieldAbility(8f, 120, 100f));
         }};
+
         assist = new UnitType("assist") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("2b262d");
@@ -1105,7 +932,9 @@ public class XenUnitTypes {
                 }};
             }});
         }};
+
         //terrestrial specialist
+
         erode = new UnitType("erode") {{
             constructor = MechUnit::create;
             outlineColor = Color.valueOf("2b262d");
@@ -1147,6 +976,7 @@ public class XenUnitTypes {
             }});
 
         }};
+
         ryher = new UnitType("ryher") {{
             constructor = PayloadUnit::create;
             outlineColor = Color.valueOf("2b262d");
@@ -1195,6 +1025,7 @@ public class XenUnitTypes {
                 ejectEffect = Fx.none;
             }});
         }};
+
         spritz = new UnitType("spritz") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("2b262d");
@@ -1239,6 +1070,7 @@ public class XenUnitTypes {
                 }};
             }});
         }};
+
         mount = new UnitType("mount") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
@@ -1289,6 +1121,7 @@ public class XenUnitTypes {
                 }};
             }});
         }};
+
         link = new UnitType("link") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("2b262d");
@@ -1357,6 +1190,202 @@ public class XenUnitTypes {
                     shootEffect = Fx.none;
                     smokeEffect = Fx.none;
                 }};
+            }});
+        }};
+
+        //mites
+
+        coreMite = new UnitType("core-mite") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 110f;
+            armor = 0f;
+            hitSize = 6f;
+            speed = 1f;
+            rotateSpeed = 8f;
+            drag = 0.11f;
+
+            useUnitCap = false;
+            itemCapacity = 0;
+
+            aiController = SuicideAI::new;
+
+            legForwardScl = 5f;
+            legContinuousMove = true;
+            legCount = 4;
+            legGroupSize = 1;
+            legLength = 6f;
+            legExtension = 1f;
+            legBaseOffset = 0.5f;
+            legStraightness = 0.5f;
+            rippleScale = 0.1f;
+            legMaxLength = 1f;
+            legMinLength = 1f;
+            allowLegStep = false;
+
+            range = 40f;
+
+            weapons.add(new Weapon() {{
+                shootOnDeath = true;
+                reload = 24f;
+                shootCone = 180f;
+                ejectEffect = Fx.none;
+                shootSound = Sounds.explosion;
+                x = shootY = 0f;
+                mirror = false;
+                bullet = new BulletType() {{
+                    collidesTiles = false;
+                    collides = false;
+                    hitSound = Sounds.explosion;
+
+                    rangeOverride = 12f;
+                    hitEffect = Fx.pulverize;
+                    speed = 0f;
+                    splashDamageRadius = 24f;
+                    instantDisappear = true;
+                    splashDamage = 100f;
+                    killShooter = true;
+                    hittable = false;
+                    collidesAir = true;
+                }};
+            }});
+        }};
+
+        assaultMite = new UnitType("assault-mite") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 100f;
+            armor = 0f;
+            hitSize = 6f;
+            speed = 0.9f;
+            rotateSpeed = 8f;
+            drag = 0.11f;
+
+            useUnitCap = false;
+            itemCapacity = 0;
+
+            legForwardScl = 5f;
+            legContinuousMove = true;
+            legCount = 4;
+            legGroupSize = 1;
+            legLength = 6f;
+            legExtension = 1f;
+            legBaseOffset = 0f;
+            legStraightness = 0.5f;
+            rippleScale = 0.1f;
+            legMaxLength = 1f;
+            legMinLength = 1f;
+            allowLegStep = false;
+
+            weapons.add(new Weapon("assault-mite-weapon") {{
+                x = 0f;
+                y = 0f;
+                rotate = false;
+                mirror = false;
+                reload = 30f;
+                bullet = new BasicBulletType(3.5f, 9) {{
+                    width = 5f;
+                    height = 7f;
+                    lifetime = 30f;
+                }};
+                ejectEffect = Fx.none;
+            }});
+        }};
+
+        boltMite = new UnitType("bolt-mite") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 100f;
+            armor = 0f;
+            hitSize = 6f;
+            speed = 0.9f;
+            rotateSpeed = 8f;
+            drag = 0.11f;
+
+            useUnitCap = false;
+            itemCapacity = 0;
+
+            legForwardScl = 5f;
+            legContinuousMove = true;
+            legCount = 4;
+            legGroupSize = 1;
+            legLength = 6f;
+            legExtension = 1f;
+            legBaseOffset = 0f;
+            legStraightness = 0.5f;
+            rippleScale = 0.1f;
+            legMaxLength = 1f;
+            legMinLength = 1f;
+            allowLegStep = false;
+
+            weapons.add(new Weapon("bolt-mite-weapon") {{
+                x = 0f;
+                y = 0f;
+                rotate = false;
+                mirror = false;
+                reload = 30f;
+                bullet = new LaserBoltBulletType(3.5f, 9) {{
+                    width = 1.5f;
+                    height = 5f;
+                    lifetime = 30f;
+
+                    collidesTeam = true;
+                    healPercent = 0.5f;
+
+                    backColor = Pal.heal;
+                    frontColor = Color.white;
+                }};
+                shootSound = Sounds.lasershoot;
+                ejectEffect = Fx.none;
+            }});
+        }};
+
+        sapMite = new UnitType("sap-mite") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 85f;
+            armor = 0f;
+            hitSize = 6f;
+            speed = 0.9f;
+            rotateSpeed = 8f;
+            drag = 0.11f;
+
+            useUnitCap = false;
+            itemCapacity = 0;
+
+            legForwardScl = 5f;
+            legContinuousMove = true;
+            legCount = 4;
+            legGroupSize = 1;
+            legLength = 6f;
+            legExtension = 1f;
+            legBaseOffset = 0f;
+            legStraightness = 0.5f;
+            rippleScale = 0.1f;
+            legMaxLength = 1f;
+            legMinLength = 1f;
+            allowLegStep = false;
+
+            weapons.add(new Weapon("sap-mite-weapon") {{
+                x = 0f;
+                y = 0f;
+                rotate = false;
+                mirror = false;
+                reload = 15f;
+                bullet = new SapBulletType() {{
+                    damage = 2;
+                    sapStrength = 1f;
+                    length = 25f;
+                    width = 0.5f;
+                    lifetime = 25f;
+                    knockback = -0.2f;
+
+                    shootEffect = Fx.shootSmall;
+                    despawnEffect = Fx.none;
+                    hitColor = color = Color.valueOf("bf92f9");
+                }};
+                shootSound = Sounds.sap;
+                ejectEffect = Fx.none;
             }});
         }};
     }
