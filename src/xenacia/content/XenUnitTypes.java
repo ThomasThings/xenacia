@@ -578,9 +578,10 @@ public class XenUnitTypes {
                 new UnitEngine(8.5f, -8.5f, 3f, 315f)
             );
 
-            weapons.add(new Weapon("dusk-bolt-shotgun"){{
+            weapons.add(new Weapon("xenacia-dusk-bolt-shotgun"){{
                 x = 5f;
                 y = -2.25f;
+                top = true;
                 rotate = false;
                 mirror = true;
                 reload = 30f;
