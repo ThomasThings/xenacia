@@ -321,7 +321,7 @@ public class XenUnitTypes {
                     backColor = Color.valueOf("ffd37f");
                     frontColor = Color.white;
                 }};
-                shootSound = Sounds.;
+                shootSound = Sounds.shotgun;
                 ejectEffect = Fx.none;
             }});
         }};
