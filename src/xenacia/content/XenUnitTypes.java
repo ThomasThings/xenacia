@@ -296,7 +296,7 @@ public class XenUnitTypes {
             itemCapacity = 100;
 
             setEnginesMirror(
-                    new UnitEngine(10.75f, 8f, 2.5f, 45f),
+                    new UnitEngine(10f, 7.25f, 2.5f, 45f),
                     new UnitEngine(9.5f, -9.5f, 3f, 315f)
             );
 
@@ -316,7 +316,7 @@ public class XenUnitTypes {
                     lifetime = 40f;
 
                     collidesTeam = true;
-                    healPercent = 2f;
+                    healPercent = 1f;
 
                     backColor = Color.valueOf("ffd37f");
                     frontColor = Color.white;
