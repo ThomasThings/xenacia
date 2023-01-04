@@ -87,7 +87,7 @@ public class XenEnvironmentTiles{
             albedo = 0.9f;
             supportsOverlay = true;
         }};
-        deepMarsh = new Floor("wet-marsh"){{
+        deepMarsh = new Floor("deep-marsh"){{
             speedMultiplier = 0.5f;
             variants = 3;
             status = StatusEffects.wet;
