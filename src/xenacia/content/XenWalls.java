@@ -127,7 +127,7 @@ public class XenWalls{
         cobaltWall = new Wall("cobalt-wall"){{
             requirements(Category.defense, with(XenItems.cobalt, 8));
             health = 1300;
-            armor = 4
+            armor = 4;
             size = 1;
             researchCost = with(XenItems.cobalt, 1000);
         }};
