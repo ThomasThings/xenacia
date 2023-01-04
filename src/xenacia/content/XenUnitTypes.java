@@ -45,12 +45,12 @@ public class XenUnitTypes {
     ryher,
     spritz,
     mount,
-    link;
+    link,
     //mites and parasites
     coreMite,
     assaultMite,
     boltMite,
-    sapMite,
+    sapMite;
 
     public static void load() {
         //core units
