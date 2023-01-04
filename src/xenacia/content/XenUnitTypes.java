@@ -158,13 +158,13 @@ public class XenUnitTypes {
                 velocityRnd = 0.6f;
                 shoot.shots = 3;
                 inaccuracy = 5f;
-                bullet = new LaserBoltBulletType(3.5f, 15) {{
+                bullet = new LaserBoltBulletType(3.5f, 20) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 30f;
 
                     collidesTeam = true;
-                    healPercent = 0.8f;
+                    healPercent = 1f;
 
                     buildingDamageMultiplier = 0.8f;
 
@@ -218,7 +218,7 @@ public class XenUnitTypes {
                 velocityRnd = 0.7f;
                 shoot.shots = 6;
                 inaccuracy = 5f;
-                bullet = new LaserBoltBulletType(3.5f, 15) {{
+                bullet = new LaserBoltBulletType(3.5f, 20) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 30f;
@@ -255,8 +255,6 @@ public class XenUnitTypes {
 
                 targetUnits = true;
                 targetBuildings = true;
-                autoTarget = false;
-                controllable = true;
                 laserColor = Color.valueOf("ffd37f");
                 healColor = Color.valueOf("ffd37f");
 
@@ -321,7 +319,7 @@ public class XenUnitTypes {
                     backColor = Color.valueOf("ffd37f");
                     frontColor = Color.white;
                 }};
-                shootSound = Sounds.shotgun;
+                shootSound = Sounds.lasershoot;
                 ejectEffect = Fx.none;
             }});
         }};
