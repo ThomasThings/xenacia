@@ -106,7 +106,6 @@ public class XenPayloadBlocks{
             chargeTime = 120f;
             range = 960f;
             maxPayloadSize = 6.5f;
-            shootSound = Sounds.shootSmite;
             consumePower(5f);
             outlineIcon = false;
         }};
