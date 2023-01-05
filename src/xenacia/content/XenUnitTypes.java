@@ -156,15 +156,15 @@ public class XenUnitTypes {
                 mirror = false;
                 reload = 60f;
                 velocityRnd = 0.6f;
-                shoot.shots = 3;
+                shoot.shots = 5;
                 inaccuracy = 5f;
-                bullet = new LaserBoltBulletType(3.5f, 20) {{
+                bullet = new LaserBoltBulletType(3.5f, 15) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 30f;
 
                     collidesTeam = true;
-                    healPercent = 0.8f;
+                    healPercent = 1f;
 
                     buildingDamageMultiplier = 0.8f;
 
@@ -206,7 +206,7 @@ public class XenUnitTypes {
             itemCapacity = 100;
 
             setEnginesMirror(
-                    new UnitEngine(3.2f, -6.5f, 2f, 0f)
+                    new UnitEngine(3.5f, -6.8f, 2.5f, 0f)
             );
 
             weapons.add(new Weapon(){{
@@ -218,7 +218,7 @@ public class XenUnitTypes {
                 velocityRnd = 0.7f;
                 shoot.shots = 6;
                 inaccuracy = 5f;
-                bullet = new LaserBoltBulletType(3.5f, 20) {{
+                bullet = new LaserBoltBulletType(3.5f, 15) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 30f;
@@ -242,7 +242,7 @@ public class XenUnitTypes {
                 rotate = false;
                 shootY = 0f;
                 beamWidth = 0.6f;
-                repairSpeed = 1.2f;
+                repairSpeed = 0.8f;
                 fractionRepairSpeed = 0.8f;
                 aimDst = 0f;
                 shootCone = 15f;
@@ -308,7 +308,7 @@ public class XenUnitTypes {
                 shoot.shots = 12;
                 inaccuracy = 15f;
                 velocityRnd = 0.2f;
-                bullet = new LaserBoltBulletType(3.5f, 12) {{
+                bullet = new LaserBoltBulletType(3.5f, 8) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 40f;
