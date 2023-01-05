@@ -87,7 +87,7 @@ public class XenUnitTypes {
             itemCapacity = 40;
             isEnemy = false;
 
-            engineSize = 5f;
+            engineSize = 2.8f;
             engineOffset = 5.6f;
 
             weapons.add(new RepairBeamWeapon(){{
@@ -98,8 +98,8 @@ public class XenUnitTypes {
                 rotate = false;
                 shootY = 0f;
                 beamWidth = 0.6f;
-                repairSpeed = 1.5f;
-                fractionRepairSpeed = 0.3f;
+                repairSpeed = 0.8f;
+                fractionRepairSpeed = 0.6f;
                 aimDst = 0f;
                 shootCone = 15f;
                 mirror = false;
@@ -206,7 +206,7 @@ public class XenUnitTypes {
             itemCapacity = 100;
 
             setEnginesMirror(
-                    new UnitEngine(3.2f, -6.5f, 2f, 20f)
+                    new UnitEngine(3.2f, -6.5f, 2f, 0f)
             );
 
             weapons.add(new Weapon(){{
@@ -224,7 +224,7 @@ public class XenUnitTypes {
                     lifetime = 30f;
 
                     collidesTeam = true;
-                    healPercent = 0.5f;
+                    healPercent = 0.8f;
 
                     buildingDamageMultiplier = 0.8f;
 
@@ -242,8 +242,8 @@ public class XenUnitTypes {
                 rotate = false;
                 shootY = 0f;
                 beamWidth = 0.6f;
-                repairSpeed = 2f;
-                fractionRepairSpeed = 0.3f;
+                repairSpeed = 1.2f;
+                fractionRepairSpeed = 0.8f;
                 aimDst = 0f;
                 shootCone = 15f;
                 mirror = false;
@@ -294,7 +294,7 @@ public class XenUnitTypes {
             itemCapacity = 100;
 
             setEnginesMirror(
-                    new UnitEngine(10f, 7.25f, 2.5f, 45f),
+                    new UnitEngine(9.75f, 7.50f, 2.5f, 45f),
                     new UnitEngine(9.5f, -9.25f, 3f, 315f)
             );
 
@@ -314,7 +314,7 @@ public class XenUnitTypes {
                     lifetime = 40f;
 
                     collidesTeam = true;
-                    healPercent = 1f;
+                    healPercent = 0.6f;
 
                     backColor = Color.valueOf("ffd37f");
                     frontColor = Color.white;
