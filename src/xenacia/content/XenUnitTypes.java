@@ -76,7 +76,7 @@ public class XenUnitTypes {
             mineWalls = false;
             mineFloor = true;
             mineHardnessScaling = false;
-            mineSpeed = 2f;
+            mineSpeed = 4f;
             mineTier = 2;
             buildSpeed = 1f;
 
@@ -87,19 +87,19 @@ public class XenUnitTypes {
             itemCapacity = 40;
             isEnemy = false;
 
-            engineSize = 2f;
-            engineOffset = 5.5f;
+            engineSize = 5f;
+            engineOffset = 5.6f;
 
             weapons.add(new RepairBeamWeapon(){{
                 widthSinMag = 0.11f;
-                reload = 10f;
+                reload = 15f;
                 x = 0f;
                 y = 3.5f;
                 rotate = false;
                 shootY = 0f;
                 beamWidth = 0.6f;
                 repairSpeed = 1.5f;
-                fractionRepairSpeed = 0.8f;
+                fractionRepairSpeed = 0.3f;
                 aimDst = 0f;
                 shootCone = 15f;
                 mirror = false;
@@ -136,7 +136,7 @@ public class XenUnitTypes {
             mineWalls = false;
             mineFloor = true;
             mineHardnessScaling = false;
-            mineSpeed = 3f;
+            mineSpeed = 6f;
             mineTier = 3;
             buildSpeed = 1.5f;
 
@@ -146,7 +146,7 @@ public class XenUnitTypes {
 
             itemCapacity = 60;
 
-            engineSize = 2.5f;
+            engineSize = 3f;
             engineOffset = 6.5f;
 
             weapons.add(new Weapon(){{
@@ -164,7 +164,7 @@ public class XenUnitTypes {
                     lifetime = 30f;
 
                     collidesTeam = true;
-                    healPercent = 1f;
+                    healPercent = 0.8f;
 
                     buildingDamageMultiplier = 0.8f;
 
@@ -196,7 +196,7 @@ public class XenUnitTypes {
             mineFloor = true;
             mineHardnessScaling = false;
             mineSpeed = 6f;
-            mineTier = 4;
+            mineTier = 2;
             buildSpeed = 4f;
 
             payloadCapacity = 256f;
@@ -206,7 +206,7 @@ public class XenUnitTypes {
             itemCapacity = 100;
 
             setEnginesMirror(
-                    new UnitEngine(3.2f, -6.5f, 1.5f, 20f)
+                    new UnitEngine(3.2f, -6.5f, 2f, 20f)
             );
 
             weapons.add(new Weapon(){{
@@ -224,7 +224,7 @@ public class XenUnitTypes {
                     lifetime = 30f;
 
                     collidesTeam = true;
-                    healPercent = 0.8f;
+                    healPercent = 0.5f;
 
                     buildingDamageMultiplier = 0.8f;
 
@@ -242,8 +242,8 @@ public class XenUnitTypes {
                 rotate = false;
                 shootY = 0f;
                 beamWidth = 0.6f;
-                repairSpeed = 3f;
-                fractionRepairSpeed = 0.1f;
+                repairSpeed = 2f;
+                fractionRepairSpeed = 0.3f;
                 aimDst = 0f;
                 shootCone = 15f;
                 mirror = false;
@@ -284,7 +284,7 @@ public class XenUnitTypes {
             mineFloor = true;
             mineHardnessScaling = false;
             mineSpeed = 6f;
-            mineTier = 4;
+            mineTier = 3;
             buildSpeed = 4f;
 
             payloadCapacity = 256f;
@@ -295,7 +295,7 @@ public class XenUnitTypes {
 
             setEnginesMirror(
                     new UnitEngine(10f, 7.25f, 2.5f, 45f),
-                    new UnitEngine(9.5f, -9.5f, 3f, 315f)
+                    new UnitEngine(9.5f, -9.25f, 3f, 315f)
             );
 
             weapons.add(new Weapon("xenacia-dusk-bolt-shotgun"){{
