@@ -63,7 +63,7 @@ public class XenUnitTypes {
             coreUnitDock = true;
             health = 400f;
             armor = 2f;
-            hitSize = 8f;
+            hitSize = 10f;
             speed = 5f;
             rotateSpeed = 5f;
             flying = true;
@@ -270,7 +270,7 @@ public class XenUnitTypes {
             coreUnitDock = true;
             health = 1200f;
             armor = 6f;
-            hitSize = 12f;
+            hitSize = 20f;
             speed = 5.5f;
             rotateSpeed = 5f;
             flying = true;
