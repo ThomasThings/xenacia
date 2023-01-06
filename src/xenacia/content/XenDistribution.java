@@ -7,19 +7,19 @@ import mindustry.content.*;
 
 import static mindustry.type.ItemStack.*;
 
+import xenacia.world.blocks.distribution.Rail;
+
 public class XenDistribution{
     public static Block
             rail, poweredRail, bulkRail, armoredRail,
             railRouter, bulkRailRouter, railJunction, railBridge;
 
     public static void load(){
-        rail = new StackConveyor("rail"){{
+        rail = new Rail("rail"){{
             requirements(Category.distribution, with(XenItems.iron, 1, XenItems.aluminum, 1));
             health = 80;
             speed = 2.5f / 60f;
             itemCapacity = 5;
-
-            outputRouter = false;
 
             researchCost = with(XenItems.iron, 20, XenItems.aluminum, 20);
         }};
