@@ -91,8 +91,8 @@ public class XenUnitFactories{
                     new UnitType[]{XenUnitTypes.mech, XenUnitTypes.erode},
                     new UnitType[]{XenUnitTypes.aircraft, XenUnitTypes.ryher},
                     new UnitType[]{XenUnitTypes.polyped, XenUnitTypes.spritz},
-                    new UnitType[]{XenUnitTypes.ship, XenUnitTypes.mount},
-                    new UnitType[]{XenUnitTypes.tank, XenUnitTypes.link}
+                    new UnitType[]{XenUnitTypes.ship, XenUnitTypes.kyre},
+                    new UnitType[]{XenUnitTypes.tank, XenUnitTypes.tie}
             );
         }};
 
