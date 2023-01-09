@@ -44,8 +44,8 @@ public class XenUnitTypes {
     erode,
     ryher,
     spritz,
-    mount,
-    link,
+    kyre,
+    tie,
     //mites and parasites
     coreMite,
     assaultMite,
@@ -1069,7 +1069,7 @@ public class XenUnitTypes {
             }});
         }};
 
-        mount = new UnitType("mount") {{
+        kyre = new UnitType("kyre") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
             health = 650f;
@@ -1086,7 +1086,7 @@ public class XenUnitTypes {
             trailScl = 3f;
 
             faceTarget = false;
-            weapons.add(new Weapon("xenacia-mount-cannon") {{
+            weapons.add(new Weapon("xenacia-kyre-cannon") {{
                 x = 0f;
                 y = -2.25f;
                 mirror = false;
@@ -1120,7 +1120,7 @@ public class XenUnitTypes {
             }});
         }};
 
-        link = new UnitType("link") {{
+        tie = new UnitType("tie") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("2b262d");
             health = 650f;
