@@ -431,7 +431,7 @@ public class XenUnitTypes {
             hitSize = 10f;
             speed = 2f;
             rotateSpeed = 5f;
-            flying = true;
+            hovering = true;
             lowAltitude = true;
             accel = 0.1f;
             drag = 0.05f;
@@ -442,18 +442,26 @@ public class XenUnitTypes {
             engineSize = 1.5f;
             engineOffset = 1.5f;
 
-            for(float f : new float[]{-5.5f, 2.5f}){
-                parts.add(new HoverPart(){{
-                    x = 0f;
-                    y = f;
-                    mirror = false;
-                    radius = 2.75f;
-                    phase = 90f;
-                    stroke = 2f;
-                    layerOffset = -0.001f;
-                    color = Color.valueOf("dcc6c6");
-                }});
-            }
+            parts.add(new HoverPart(){{
+                x = 0f;
+                y = 3f;
+                mirror = false;
+                radius = 2.75f;
+                phase = 90f;
+                stroke = 1.5f;
+                layerOffset = -0.001f;
+                color = Color.valueOf("dcc6c6");
+            }});
+            parts.add(new HoverPart(){{
+                x = 0f;
+                y = -4f;
+                mirror = false;
+                radius = 3.75f;
+                phase = 90f;
+                stroke = 1.5f;
+                layerOffset = -0.001f;
+                color = Color.valueOf("dcc6c6");
+            }});
         }};
         arthocraft = new SegmentedUnitType("arthocraft") {{
             constructor = UnitEntity::create;
