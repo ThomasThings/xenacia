@@ -329,8 +329,8 @@ public class XenUnitTypes {
 
         mechacraft = new UnitType("mechacraft") {{
             constructor = MechUnit::create;
-            outlineColor = Color.valueOf("2b262d");
-            mechLegColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("3d2f37");
+            mechLegColor = Color.valueOf("3d2f37");
             health = 250f;
             armor = 0f;
             hitSize = 10f;
@@ -345,7 +345,7 @@ public class XenUnitTypes {
         }};
         aircraft = new UnitType("aircraft") {{
             constructor = UnitEntity::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("3d2f37");
             health = 250f;
             armor = 0f;
             hitSize = 10f;
@@ -364,7 +364,7 @@ public class XenUnitTypes {
         }};
         polycraft = new UnitType("polycraft") {{
             constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("3d2f37");
             health = 250f;
             armor = 0f;
             hitSize = 10f;
@@ -382,7 +382,7 @@ public class XenUnitTypes {
         }};
         watercraft = new UnitType("watercraft") {{
             constructor = UnitWaterMove::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("3d2f37");
             health = 250f;
             armor = 0f;
             hitSize = 10f;
@@ -399,7 +399,7 @@ public class XenUnitTypes {
         }};
         treadcraft = new UnitType("treadcraft") {{
             constructor = TankUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("3d2f37");
             health = 250f;
             armor = 0f;
             hitSize = 10f;
@@ -422,7 +422,7 @@ public class XenUnitTypes {
         }};
         hovercraft = new UnitType("hovercraft") {{
             constructor = UnitEntity::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("3d2f37");
             health = 250f;
             armor = 0f;
             hitSize = 10f;
@@ -462,7 +462,7 @@ public class XenUnitTypes {
         }};
         arthocraft = new UnitType("arthocraft") {{
             constructor = CrawlUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("3d2f37");
             health = 250f;
             armor = 0f;
             hitSize = 10f;
