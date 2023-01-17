@@ -626,7 +626,7 @@ public class XenUnitTypes {
                     fragVelocityMin = 0.4f;
 
                     fragBullets = 3;
-                    fragLifeMin = 15f;
+                    fragLifeMin = 0f;
                     fragRandomSpread = 30f;
 
                     fragBullet = new BasicBulletType(2, 15){{
