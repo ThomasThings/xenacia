@@ -9,7 +9,6 @@ import mindustry.content.Fx;
 import mindustry.content.Liquids;
 import mindustry.content.StatusEffects;
 import mindustry.entities.abilities.EnergyFieldAbility;
-import mindustry.entities.abilities.MoveEffectAbility;
 import mindustry.entities.abilities.RepairFieldAbility;
 import mindustry.entities.bullet.*;
 import mindustry.entities.part.HoverPart;
@@ -18,10 +17,8 @@ import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
 import mindustry.type.*;
 import mindustry.gen.*;
-import mindustry.type.unit.NeoplasmUnitType;
 import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.world.meta.BlockFlag;
-import xenacia.type.unit.SegmentedUnitType;
 
 //payloadCapacity = ((X * 8) ^ 2), X being the side of the payload in blocks
 
@@ -444,7 +441,7 @@ public class XenUnitTypes {
 
             parts.add(new HoverPart(){{
                 x = 0f;
-                y = 3f;
+                y = 5f;
                 mirror = false;
                 radius = 2.75f;
                 phase = 90f;
@@ -454,7 +451,7 @@ public class XenUnitTypes {
             }});
             parts.add(new HoverPart(){{
                 x = 0f;
-                y = -4f;
+                y = -4.5f;
                 mirror = false;
                 radius = 3.75f;
                 phase = 90f;
@@ -463,8 +460,8 @@ public class XenUnitTypes {
                 color = Color.valueOf("dcc6c6");
             }});
         }};
-        arthocraft = new SegmentedUnitType("arthocraft") {{
-            constructor = UnitEntity::create;
+        arthocraft = new UnitType("arthocraft") {{
+            constructor = CrawlUnit::create;
             outlineColor = Color.valueOf("2b262d");
             health = 250f;
             armor = 0f;
@@ -615,8 +612,8 @@ public class XenUnitTypes {
                 shootSound = Sounds.none;
                 shoot.shots = 5;
                 bullet = new BombBulletType(120f, 24f) {{
-                    width = 10f;
-                    height = 10f;
+                    width = 12f;
+                    height = 12f;
                     backColor = Color.valueOf("d06b53");
                     frontColor = Color.valueOf("ffa665");
                     hitEffect = Fx.flakExplosion;
@@ -629,12 +626,12 @@ public class XenUnitTypes {
                     fragVelocityMin = 0.4f;
 
                     fragBullets = 3;
-                    fragLifeMin = 0f;
+                    fragLifeMin = 15f;
                     fragRandomSpread = 30f;
 
-                    fragBullet = new BasicBulletType(2, 20){{
-                        width = 3f;
-                        height = 3f;
+                    fragBullet = new BasicBulletType(2, 15){{
+                        width = 6f;
+                        height = 6f;
                         lifetime = 45f;
 
                         backColor = Color.valueOf("d06b53");
