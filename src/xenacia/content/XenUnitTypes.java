@@ -426,7 +426,7 @@ public class XenUnitTypes {
             health = 250f;
             armor = 0f;
             hitSize = 10f;
-            speed = 2f;
+            speed = 1.5f;
             rotateSpeed = 5f;
             hovering = true;
             lowAltitude = true;
