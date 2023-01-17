@@ -34,11 +34,11 @@ public class XenUnitFactories{
         unitSeedConstructor = new BaseTeamUnitFactory("unit-seed-constructor"){{
             requirements(Category.units, with( XenItems.aluminum, 100, Items.silicon, 80, XenItems.iron, 80));
             plans = Seq.with(
-                    new UnitPlan(XenUnitTypes.mech, 60f * 15, with(Items.silicon, 15, XenItems.iron, 15, XenItems.aluminum, 5)),
+                    new UnitPlan(XenUnitTypes.mechacraft, 60f * 15, with(Items.silicon, 15, XenItems.iron, 15, XenItems.aluminum, 5)),
                     new UnitPlan(XenUnitTypes.aircraft, 60f * 15, with(Items.silicon, 15, XenItems.iron, 5, XenItems.aluminum, 10)),
-                    new UnitPlan(XenUnitTypes.polyped, 60f * 15, with(Items.silicon, 20, XenItems.iron, 10, XenItems.aluminum, 5)),
-                    new UnitPlan(XenUnitTypes.ship, 60f * 15, with(Items.silicon, 20, XenItems.aluminum, 15)),
-                    new UnitPlan(XenUnitTypes.tank, 60f * 15, with(Items.silicon, 25, XenItems.iron, 15, XenItems.aluminum, 10))
+                    new UnitPlan(XenUnitTypes.polycraft, 60f * 15, with(Items.silicon, 20, XenItems.iron, 10, XenItems.aluminum, 5)),
+                    new UnitPlan(XenUnitTypes.watercraft, 60f * 15, with(Items.silicon, 20, XenItems.aluminum, 15)),
+                    new UnitPlan(XenUnitTypes.treadcraft, 60f * 15, with(Items.silicon, 25, XenItems.iron, 15, XenItems.aluminum, 10))
             );
             size = 3;
             consumePower(1.2f);
@@ -54,11 +54,11 @@ public class XenUnitFactories{
             constructTime = 60f * 10f;
 
             upgrades.addAll(
-                    new UnitType[]{XenUnitTypes.mech, XenUnitTypes.gale},
+                    new UnitType[]{XenUnitTypes.mechacraft, XenUnitTypes.gale},
                     new UnitType[]{XenUnitTypes.aircraft, XenUnitTypes.anax},
-                    new UnitType[]{XenUnitTypes.polyped, XenUnitTypes.explore},
-                    new UnitType[]{XenUnitTypes.ship, XenUnitTypes.shif},
-                    new UnitType[]{XenUnitTypes.tank, XenUnitTypes.tack}
+                    new UnitType[]{XenUnitTypes.polycraft, XenUnitTypes.explore},
+                    new UnitType[]{XenUnitTypes.watercraft, XenUnitTypes.shif},
+                    new UnitType[]{XenUnitTypes.treadcraft, XenUnitTypes.tack}
             );
         }};
         supportTranstructor = new BaseTeamReconstructor("support-transtructor"){{
@@ -71,11 +71,11 @@ public class XenUnitFactories{
             constructTime = 60f * 10f;
 
             upgrades.addAll(
-                    new UnitType[]{XenUnitTypes.mech, XenUnitTypes.elementary},
+                    new UnitType[]{XenUnitTypes.mechacraft, XenUnitTypes.elementary},
                     new UnitType[]{XenUnitTypes.aircraft, XenUnitTypes.lug},
-                    new UnitType[]{XenUnitTypes.polyped, XenUnitTypes.tick},
-                    new UnitType[]{XenUnitTypes.ship, XenUnitTypes.natuon},
-                    new UnitType[]{XenUnitTypes.tank, XenUnitTypes.assist}
+                    new UnitType[]{XenUnitTypes.polycraft, XenUnitTypes.tick},
+                    new UnitType[]{XenUnitTypes.watercraft, XenUnitTypes.natuon},
+                    new UnitType[]{XenUnitTypes.treadcraft, XenUnitTypes.assist}
             );
         }};
         specialistTranstructor = new BaseTeamReconstructor("specialist-transtructor"){{
@@ -88,11 +88,11 @@ public class XenUnitFactories{
             constructTime = 60f * 10f;
 
             upgrades.addAll(
-                    new UnitType[]{XenUnitTypes.mech, XenUnitTypes.erode},
+                    new UnitType[]{XenUnitTypes.mechacraft, XenUnitTypes.erode},
                     new UnitType[]{XenUnitTypes.aircraft, XenUnitTypes.ryher},
-                    new UnitType[]{XenUnitTypes.polyped, XenUnitTypes.spritz},
-                    new UnitType[]{XenUnitTypes.ship, XenUnitTypes.kyre},
-                    new UnitType[]{XenUnitTypes.tank, XenUnitTypes.tie}
+                    new UnitType[]{XenUnitTypes.polycraft, XenUnitTypes.spritz},
+                    new UnitType[]{XenUnitTypes.watercraft, XenUnitTypes.kyre},
+                    new UnitType[]{XenUnitTypes.treadcraft, XenUnitTypes.tie}
             );
         }};
 

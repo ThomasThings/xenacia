@@ -9,15 +9,19 @@ import mindustry.content.Fx;
 import mindustry.content.Liquids;
 import mindustry.content.StatusEffects;
 import mindustry.entities.abilities.EnergyFieldAbility;
+import mindustry.entities.abilities.MoveEffectAbility;
 import mindustry.entities.abilities.RepairFieldAbility;
 import mindustry.entities.bullet.*;
+import mindustry.entities.part.HoverPart;
 import mindustry.entities.part.RegionPart;
 import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
 import mindustry.type.*;
 import mindustry.gen.*;
+import mindustry.type.unit.NeoplasmUnitType;
 import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.world.meta.BlockFlag;
+import xenacia.type.unit.SegmentedUnitType;
 
 //payloadCapacity = ((X * 8) ^ 2), X being the side of the payload in blocks
 
@@ -27,24 +31,24 @@ public class XenUnitTypes {
     //core units
     period, moment, dusk, dawn,
     //seeds
-    mech, aircraft, polyped, ship, tank,
+    mechacraft, aircraft, polycraft, watercraft, treadcraft, hovercraft, arthocraft,
     //terrestrial assault
     gale,
-    anax,
+    anax, odonata,
     explore,
-    shif,
+    shif, kreeg,
     tack,
     //terrestrial support
     elementary,
-    lug,
+    lug, haul,
     tick,
-    natuon,
+    natuon, enavo,
     assist,
     //terrestrial specialist
     erode,
-    ryher,
+    ryher, evelate,
     spritz,
-    kyre,
+    kyre, yriek,
     tie,
     //mites and parasites
     coreMite,
@@ -326,7 +330,7 @@ public class XenUnitTypes {
 
         //seeds
 
-        mech = new UnitType("mech") {{
+        mechacraft = new UnitType("mechacraft") {{
             constructor = MechUnit::create;
             outlineColor = Color.valueOf("2b262d");
             mechLegColor = Color.valueOf("2b262d");
@@ -361,7 +365,7 @@ public class XenUnitTypes {
             engineSize = 3f;
             engineOffset = 5.5f;
         }};
-        polyped = new UnitType("polyped") {{
+        polycraft = new UnitType("polycraft") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("2b262d");
             health = 250f;
@@ -379,7 +383,7 @@ public class XenUnitTypes {
             legLength = 9f;
             rippleScale = 0.1f;
         }};
-        ship = new UnitType("ship") {{
+        watercraft = new UnitType("watercraft") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
             health = 250f;
@@ -396,7 +400,7 @@ public class XenUnitTypes {
             waveTrailY = -1f;
             trailScl = 1.2f;
         }};
-        tank = new UnitType("tank") {{
+        treadcraft = new UnitType("treadcraft") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("2b262d");
             health = 250f;
@@ -418,6 +422,58 @@ public class XenUnitTypes {
                     48
                 )
             };
+        }};
+        hovercraft = new UnitType("hovercraft") {{
+            constructor = UnitEntity::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 250f;
+            armor = 0f;
+            hitSize = 10f;
+            speed = 2f;
+            rotateSpeed = 5f;
+            flying = true;
+            lowAltitude = true;
+            accel = 0.1f;
+            drag = 0.05f;
+
+            itemCapacity = 5;
+            isEnemy = false;
+
+            engineSize = 1.5f;
+            engineOffset = 1.5f;
+
+            for(float f : new float[]{-5.5f, 2.5f}){
+                parts.add(new HoverPart(){{
+                    x = 0f;
+                    y = f;
+                    mirror = false;
+                    radius = 2.75f;
+                    phase = 90f;
+                    stroke = 2f;
+                    layerOffset = -0.001f;
+                    color = Color.valueOf("dcc6c6");
+                }});
+            }
+        }};
+        arthocraft = new SegmentedUnitType("arthocraft") {{
+            constructor = UnitEntity::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 250f;
+            armor = 0f;
+            hitSize = 10f;
+            drownTimeMultiplier = 1.2f;
+            omniMovement = false;
+            speed = 1.2f;
+            rotateSpeed = 3f;
+
+            itemCapacity = 0;
+            isEnemy = false;
+
+            drawBody = false;
+            segments = 3;
+            segmentScl = 3f;
+            segmentPhase = 5f;
+            segmentMag = 0.5f;
         }};
 
         //terrestrial assault
@@ -513,6 +569,69 @@ public class XenUnitTypes {
 
                     status = StatusEffects.blasted;
                     statusDuration = 60f;
+                }};
+            }});
+        }};
+        odonata = new UnitType("odonata") {{
+            constructor = UnitEntity::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 600f;
+            armor = 1f;
+            hitSize = 18f;
+            speed = 1.5f;
+            rotateSpeed = 4f;
+            flying = true;
+            lowAltitude = false;
+            accel = 0.09f;
+            drag = 0.04f;
+
+            itemCapacity = 50;
+
+            engineSize = 4f;
+            engineOffset = 8f;
+
+            circleTarget = true;
+            targetFlags = new BlockFlag[]{BlockFlag.battery, null};
+            faceTarget = false;
+
+            weapons.add(new Weapon() {{
+                minShootVelocity = 0.75f;
+                x = 0f;
+                y = 0f;
+                shootY = 0f;
+                reload = 20f;
+                shootCone = 180f;
+                ejectEffect = Fx.none;
+                inaccuracy = 180f;
+                ignoreRotation = true;
+                shootSound = Sounds.none;
+                shoot.shots = 5;
+                bullet = new BombBulletType(120f, 24f) {{
+                    width = 10f;
+                    height = 10f;
+                    backColor = Color.valueOf("d06b53");
+                    frontColor = Color.valueOf("ffa665");
+                    hitEffect = Fx.flakExplosion;
+                    shootEffect = Fx.none;
+                    smokeEffect = Fx.none;
+
+                    status = StatusEffects.blasted;
+                    statusDuration = 60f;
+
+                    fragVelocityMin = 0.4f;
+
+                    fragBullets = 3;
+                    fragLifeMin = 0f;
+                    fragRandomSpread = 30f;
+
+                    fragBullet = new BasicBulletType(2, 20){{
+                        width = 3f;
+                        height = 3f;
+                        lifetime = 45f;
+
+                        backColor = Color.valueOf("d06b53");
+                        frontColor = Color.valueOf("ffa665");
+                    }};
                 }};
             }});
         }};
@@ -765,6 +884,36 @@ public class XenUnitTypes {
             buildSpeed = 0.8f;
 
             abilities.add(new RepairFieldAbility(5f, 45, 55f));
+        }};
+        haul = new UnitType("haul") {{
+            constructor = PayloadUnit::create;
+            outlineColor = Color.valueOf("2b262d");
+            defaultCommand = UnitCommand.rebuildCommand;
+
+            health = 650f;
+            armor = 1f;
+            hitSize = 25f;
+
+            speed = 1f;
+            rotateSpeed = 10f;
+
+            flying = true;
+            lowAltitude = true;
+            accel = 0.1f;
+            drag = 0.05f;
+
+            setEnginesMirror(
+                    new UnitEngine(3f, -8f, 3f, 22.5f)
+            );
+
+            mineTier = 2;
+            mineSpeed = 2f;
+            itemCapacity = 45;
+            payloadCapacity = 576;
+
+            buildSpeed = 0.8f;
+
+            abilities.add(new RepairFieldAbility(12f, 120, 80f));
         }};
 
         tick = new UnitType("tick") {{
