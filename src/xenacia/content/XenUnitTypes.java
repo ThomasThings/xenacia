@@ -20,11 +20,13 @@ import mindustry.gen.*;
 import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.world.meta.BlockFlag;
 
+import mindustry.type.*;
+
 //payloadCapacity = ((X * 8) ^ 2), X being the side of the payload in blocks
 
 public class XenUnitTypes {
-
     public static UnitType
+    //region key
     //core units
     period, moment, dusk, dawn,
     //seeds
@@ -53,8 +55,10 @@ public class XenUnitTypes {
     boltMite,
     sapMite;
 
+    //endregion
+
     public static void load() {
-        //core units
+        //region core units
 
         float coreFleeRange = 500f;
         period = new UnitType("period") {{
@@ -325,7 +329,9 @@ public class XenUnitTypes {
             }});
         }};
 
-        //seeds
+        //endregion
+
+        //region seeds
 
         mechacraft = new UnitType("mechacraft") {{
             constructor = MechUnit::create;
@@ -481,7 +487,9 @@ public class XenUnitTypes {
             segmentMag = 0.5f;
         }};
 
-        //terrestrial assault
+        //endregion
+
+        //region terrestrial assault
 
         gale = new UnitType("gale") {{
             constructor = MechUnit::create;
@@ -793,7 +801,9 @@ public class XenUnitTypes {
             }});
         }};
 
-        //terrestrial support
+        //endregion
+
+        //region terrestrial support
 
         elementary = new UnitType("elementary") {{
             constructor = MechUnit::create;
@@ -1085,7 +1095,9 @@ public class XenUnitTypes {
             }});
         }};
 
-        //terrestrial specialist
+        //endregion
+
+        //region terrestrial specialist
 
         erode = new UnitType("erode") {{
             constructor = MechUnit::create;
@@ -1345,7 +1357,9 @@ public class XenUnitTypes {
             }});
         }};
 
-        //mites
+        //endregion
+
+        //region mites
 
         coreMite = new UnitType("core-mite") {{
             constructor = LegsUnit::create;
@@ -1540,5 +1554,7 @@ public class XenUnitTypes {
                 ejectEffect = Fx.none;
             }});
         }};
+
+        //endregion
     }
 }
