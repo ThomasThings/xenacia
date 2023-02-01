@@ -1027,6 +1027,7 @@ public class XenUnitTypes {
                 }};
 
             }});
+
             abilities.add(new RepairFieldAbility(8f, 120, 100f));
         }};
         enavo = new UnitType("enavo") {{
@@ -1090,7 +1091,7 @@ public class XenUnitTypes {
 
                     fragBullets = 3;
                     fragLifeMin = 0f;
-                    fragRandomSpread = 30f;
+                    fragRandomSpread = 180f;
 
                     fragBullet = new BasicBulletType(9f, 20){{
                         width = 10f;
@@ -1100,13 +1101,15 @@ public class XenUnitTypes {
                         backColor = Color.valueOf("98ffa9");
 
                         lifetime = 20f;
-                        hitEffect = Fx.flakExplosion;
+                        hitEffect = Fx.hitLaserBlast;
+                        hitSound = Sounds.plasmaboom;
                         splashDamage = 20f;
                         splashDamageRadius = 10f;
                     }};
                 }};
 
             }});
+
             abilities.add(new RepairFieldAbility(8f, 120, 100f));
         }};
 
