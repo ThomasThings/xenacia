@@ -905,8 +905,8 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("2b262d");
             defaultCommand = UnitCommand.rebuildCommand;
 
-            health = 650f;
-            armor = 1f;
+            health = 1600f;
+            armor = 5f;
             hitSize = 25f;
 
             speed = 1f;
@@ -1024,6 +1024,86 @@ public class XenUnitTypes {
                     frontColor = Color.valueOf("ffffff");
                     backColor = Color.valueOf("98ffa9");
                     mixColorTo = Color.valueOf("ffffff");
+                }};
+
+            }});
+            abilities.add(new RepairFieldAbility(8f, 120, 100f));
+        }};
+        enavo = new UnitType("enavo") {{
+            constructor = UnitWaterMove::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 1800f;
+            armor = 5f;
+            hitSize = 30f;
+            speed = 0.4f;
+            rotateSpeed = 2.5f;
+
+            itemCapacity = 20;
+
+            trailLength = 40;
+            waveTrailX = 11.25f;
+            waveTrailY = -12f;
+            trailScl = 5f;
+
+            buildSpeed = 0.5f;
+
+            faceTarget = false;
+            weapons.add(new Weapon("enavo-mine"){{
+                top = false;
+                x = 0f;
+                y = -8f;
+                mirror = false;
+
+                shootCone = 180f;
+                reload = 75f;
+                shootY = -6.5f;
+                ignoreRotation = true;
+
+                shootSound = Sounds.mineDeploy;
+
+                bullet = new BasicBulletType(){{
+                    damage = 60f;
+                    splashDamage = 150f;
+                    splashDamageRadius = 16f;
+                    healPercent = 10f;
+                    lifetime = 900f;
+                    speed = 0f;
+                    keepVelocity = false;
+
+                    collidesAir = false;
+                    collideFloor = true;
+                    collidesTeam = true;
+
+                    hitSound = Sounds.plasmaboom;
+
+                    shootEffect = Fx.none;
+                    smokeEffect = Fx.none;
+                    sprite = "mine-bullet";
+                    layer = 10;
+                    height = 21;
+                    width = 21;
+                    shrinkX = 0.5f;
+                    shrinkY = 0.5f;
+                    frontColor = Color.valueOf("ffffff");
+                    backColor = Color.valueOf("98ffa9");
+                    mixColorTo = Color.valueOf("ffffff");
+
+                    fragBullets = 3;
+                    fragLifeMin = 0f;
+                    fragRandomSpread = 30f;
+
+                    fragBullet = new BasicBulletType(9f, 20){{
+                        width = 10f;
+                        height = 10f;
+
+                        frontColor = Color.valueOf("ffffff");
+                        backColor = Color.valueOf("98ffa9");
+
+                        lifetime = 20f;
+                        hitEffect = Fx.flakExplosion;
+                        splashDamage = 20f;
+                        splashDamageRadius = 10f;
+                    }};
                 }};
 
             }});
