@@ -972,7 +972,7 @@ public class XenUnitTypes {
             health = 650f;
             armor = 1f;
             hitSize = 14f;
-            speed = 0.6f;
+            speed = 0.7f;
             rotateSpeed = 3f;
 
             itemCapacity = 10;
@@ -980,7 +980,7 @@ public class XenUnitTypes {
             trailLength = 25;
             waveTrailX = 3f;
             waveTrailY = -1f;
-            trailScl = 3f;
+            trailScl = 1f;
 
             buildSpeed = 0.5f;
 
@@ -1037,7 +1037,7 @@ public class XenUnitTypes {
             health = 1800f;
             armor = 5f;
             hitSize = 30f;
-            speed = 0.4f;
+            speed = 0.6f;
             rotateSpeed = 2.5f;
 
             itemCapacity = 20;
@@ -1045,7 +1045,7 @@ public class XenUnitTypes {
             trailLength = 40;
             waveTrailX = 11.25f;
             waveTrailY = -12f;
-            trailScl = 5f;
+            trailScl = 2f;
 
             buildSpeed = 0.5f;
 
@@ -1111,7 +1111,7 @@ public class XenUnitTypes {
 
             }});
 
-            abilities.add(new RepairFieldAbility(8f, 120, 100f));
+            abilities.add(new RepairFieldAbility(15f, 120, 120f));
         }};
 
         assist = new UnitType("assist") {{
