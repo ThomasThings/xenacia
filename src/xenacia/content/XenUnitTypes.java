@@ -995,6 +995,7 @@ public class XenUnitTypes {
                 reload = 45f;
                 shootY = -6.5f;
                 ignoreRotation = true;
+                minShootVelocity = 0.01f;
 
                 shootSound = Sounds.mineDeploy;
 
@@ -1059,13 +1060,14 @@ public class XenUnitTypes {
                 reload = 75f;
                 shootY = -6.5f;
                 ignoreRotation = true;
+                minShootVelocity = 0.01f;
 
                 shootSound = Sounds.mineDeploy;
 
                 bullet = new BasicBulletType(){{
-                    damage = 60f;
-                    splashDamage = 150f;
-                    splashDamageRadius = 16f;
+                    damage = 100f;
+                    splashDamage = 180f;
+                    splashDamageRadius = 24f;
                     healPercent = 10f;
                     lifetime = 900f;
                     speed = 0f;
@@ -1081,27 +1083,26 @@ public class XenUnitTypes {
                     smokeEffect = Fx.none;
                     sprite = "mine-bullet";
                     layer = 10;
-                    height = 21;
-                    width = 21;
+                    height = 16;
+                    width = 16;
                     shrinkX = 0.5f;
                     shrinkY = 0.5f;
                     frontColor = Color.valueOf("ffffff");
                     backColor = Color.valueOf("98ffa9");
                     mixColorTo = Color.valueOf("ffffff");
 
-                    fragBullets = 3;
+                    fragBullets = 6;
                     fragLifeMin = 0f;
-                    fragRandomSpread = 180f;
+                    fragRandomSpread = 360f;
 
-                    fragBullet = new BasicBulletType(9f, 20){{
+                    fragBullet = new BasicBulletType(3f, 20){{
                         width = 10f;
                         height = 10f;
 
                         frontColor = Color.valueOf("ffffff");
                         backColor = Color.valueOf("98ffa9");
 
-                        lifetime = 20f;
-                        hitEffect = Fx.hitLaserBlast;
+                        lifetime = 45f;
                         hitSound = Sounds.plasmaboom;
                         splashDamage = 20f;
                         splashDamageRadius = 10f;
