@@ -587,7 +587,7 @@ public class XenUnitTypes {
             constructor = UnitEntity::create;
             outlineColor = Color.valueOf("2b262d");
             health = 2300f;
-            armor = 1f;
+            armor = 5f;
             hitSize = 18f;
             speed = 1.5f;
             rotateSpeed = 4f;
@@ -745,7 +745,7 @@ public class XenUnitTypes {
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
             health = 2400f;
-            armor = 1f;
+            armor = 5f;
             hitSize = 32f;
             speed = 0.9f;
             rotateSpeed = 2f;
@@ -957,7 +957,7 @@ public class XenUnitTypes {
             defaultCommand = UnitCommand.rebuildCommand;
 
             health = 2600f;
-            armor = 5f;
+            armor = 3f;
             hitSize = 25f;
 
             speed = 1f;
@@ -1086,12 +1086,12 @@ public class XenUnitTypes {
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
             health = 2800f;
-            armor = 5f;
+            armor = 4f;
             hitSize = 30f;
             speed = 0.6f;
             rotateSpeed = 2.5f;
 
-            itemCapacity = 20;
+            itemCapacity = 40;
 
             trailLength = 40;
             waveTrailX = 11.25f;
@@ -1384,7 +1384,7 @@ public class XenUnitTypes {
             trailLength = 25;
             waveTrailX = 5f;
             waveTrailY = -1f;
-            trailScl = 3f;
+            trailScl = 1f;
 
             faceTarget = false;
             weapons.add(new Weapon("xenacia-kyre-cannon") {{
@@ -1404,7 +1404,7 @@ public class XenUnitTypes {
                     width = height = 10f;
                     collides = true;
                     collidesTiles = true;
-                    splashDamageRadius = 32f;
+                    splashDamageRadius = 16f;
                     splashDamage = 50f;
                     trailColor = Pal.sapBulletBack;
                     backColor = Pal.sapBulletBack;
@@ -1417,6 +1417,88 @@ public class XenUnitTypes {
 
                     status = StatusEffects.sapped;
                     statusDuration = 180;
+                }};
+            }});
+        }};
+        yriek = new UnitType("yriek") {{
+            constructor = UnitWaterMove::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 2100f;
+            armor = 3f;
+            hitSize = 12f;
+            speed = 0.7f;
+            rotateSpeed = 2f;
+
+            itemCapacity = 20;
+
+            trailLength = 40;
+            waveTrailX = 10.5f;
+            waveTrailY = -17f;
+            trailScl = 2f;
+
+            faceTarget = false;
+            weapons.add(new Weapon("xenacia-yriek-small-cannon") {{
+                x = 0f;
+                y = 11f;
+                mirror = false;
+                rotate = true;
+                rotateSpeed = 3f;
+                reload = 60f;
+                inaccuracy = 0f;
+                shootSound = Sounds.artillery;
+
+                bullet = new ArtilleryBulletType(2.8f, 30) {{
+                    hitEffect = Fx.flakExplosion;
+                    knockback = 0.5f;
+                    lifetime = 120f;
+                    width = height = 10f;
+                    collides = true;
+                    collidesTiles = true;
+                    splashDamageRadius = 16f;
+                    splashDamage = 50f;
+                    trailColor = Pal.sapBulletBack;
+                    backColor = Pal.sapBulletBack;
+                    frontColor = Pal.sapBullet;
+
+                    lightning = 2;
+                    lightningLength = 7;
+                    lightningDamage = 10;
+                    lightningColor = Pal.sapBullet;
+
+                    status = StatusEffects.sapped;
+                    statusDuration = 180;
+                }};
+            }});
+            weapons.add(new Weapon("xenacia-yriek-big-cannon") {{
+                x = 0f;
+                y = -7f;
+                mirror = false;
+                rotate = true;
+                rotateSpeed = 3f;
+                reload = 180f;
+                inaccuracy = 0f;
+                shootSound = Sounds.artillery;
+
+                bullet = new ArtilleryBulletType(3f, 60) {{
+                    hitEffect = Fx.flakExplosion;
+                    knockback = 0.5f;
+                    lifetime = 180f;
+                    width = height = 10f;
+                    collides = true;
+                    collidesTiles = true;
+                    splashDamageRadius = 24f;
+                    splashDamage = 120f;
+                    trailColor = Pal.sapBulletBack;
+                    backColor = Pal.sapBulletBack;
+                    frontColor = Pal.sapBullet;
+
+                    lightning = 3;
+                    lightningLength = 9;
+                    lightningDamage = 15;
+                    lightningColor = Pal.sapBullet;
+
+                    status = StatusEffects.sapped;
+                    statusDuration = 240;
                 }};
             }});
         }};
