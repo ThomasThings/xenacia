@@ -588,7 +588,7 @@ public class XenUnitTypes {
         odonata = new UnitType("odonata") {{
             constructor = UnitEntity::create;
             outlineColor = Color.valueOf("2b262d");
-            health = 600f;
+            health = 1300f;
             armor = 1f;
             hitSize = 18f;
             speed = 1.5f;
@@ -740,6 +740,59 @@ public class XenUnitTypes {
                     despawnEffect = Fx.blastExplosion;
                     weaveScale = 4f;
                     weaveMag = 1f;
+                }};
+            }});
+        }};
+        kreeg = new UnitType("kreeg") {{
+            constructor = UnitWaterMove::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 1400f;
+            armor = 1f;
+            hitSize = 14f;
+            speed = 0.9f;
+            rotateSpeed = 4f;
+
+            itemCapacity = 10;
+
+            trailLength = 20;
+            waveTrailX = 9f;
+            waveTrailY = -14f;
+            trailScl = 1.4f;
+
+            weapons.add(new Weapon("xenacia-kreeg-missiles") {{
+                top = true;
+                x = 0f;
+                y = 1.75f;
+                mirror = false;
+                rotate = true;
+                reload = 15f;
+                inaccuracy = 2f;
+                velocityRnd = 0.2f;
+                shootSound = Sounds.missile;
+                recoil = 1f;
+
+                shake = 1;
+                shoot.shots = 5;
+                shoot.shotDelay = 2;
+
+                bullet = new MissileBulletType(3.2f, 80) {{
+                    width = 8f;
+                    height = 8f;
+                    shrinkY = 0f;
+                    drag = -0.003f;
+                    homingRange = 30f;
+                    keepVelocity = false;
+                    splashDamage = 40f;
+                    splashDamageRadius = 24f;
+                    lifetime = 90f;
+                    trailColor = Color.valueOf("d06b53");
+                    backColor = Color.valueOf("d06b53");
+                    frontColor = Color.valueOf("ffa665");
+                    hitEffect = Fx.blastExplosion;
+                    despawnEffect = Fx.blastExplosion;
+                    weaveScale = 4f;
+                    weaveMag = 1f;
+                    weaveRandom = true;
                 }};
             }});
         }};
@@ -1045,7 +1098,7 @@ public class XenUnitTypes {
             trailLength = 40;
             waveTrailX = 11.25f;
             waveTrailY = -12f;
-            trailScl = 2f;
+            trailScl = 1.5f;
 
             buildSpeed = 0.5f;
 
