@@ -1346,7 +1346,7 @@ public class XenUnitTypes {
             );
 
             itemCapacity = 60;
-            payloadCapacity = 200;
+            payloadCapacity = 576;
 
             weapons.add(new Weapon("evelate-weapon") {{
                 top = false;
@@ -1357,8 +1357,8 @@ public class XenUnitTypes {
                 reload = 5f;
 
                 bullet = new SapBulletType() {{
-                    damage = 8;
-                    sapStrength = 1.7f;
+                    damage = 10;
+                    sapStrength = 1f;
                     length = 80f;
                     width = 0.7f;
                     lifetime = 25f;
