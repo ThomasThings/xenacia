@@ -161,7 +161,7 @@ public class XenUnitTypes {
                 velocityRnd = 0.6f;
                 shoot.shots = 5;
                 inaccuracy = 5f;
-                bullet = new LaserBoltBulletType(3.5f, 15) {{
+                bullet = new LaserBoltBulletType(3.5f, 10) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 30f;
@@ -221,7 +221,7 @@ public class XenUnitTypes {
                 velocityRnd = 0.7f;
                 shoot.shots = 6;
                 inaccuracy = 5f;
-                bullet = new LaserBoltBulletType(3.5f, 15) {{
+                bullet = new LaserBoltBulletType(3.5f, 10) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 30f;
@@ -245,7 +245,7 @@ public class XenUnitTypes {
                 rotate = false;
                 shootY = 0f;
                 beamWidth = 0.6f;
-                repairSpeed = 0.8f;
+                repairSpeed = 0.7f;
                 fractionRepairSpeed = 0.8f;
                 aimDst = 0f;
                 shootCone = 15f;
@@ -317,7 +317,7 @@ public class XenUnitTypes {
                     lifetime = 40f;
 
                     collidesTeam = true;
-                    healPercent = 0.4f;
+                    healPercent = 0.35f;
 
                     backColor = Color.valueOf("ffd37f");
                     frontColor = Color.white;
@@ -1442,7 +1442,7 @@ public class XenUnitTypes {
                 y = 11f;
                 mirror = false;
                 rotate = true;
-                rotateSpeed = f;
+                rotateSpeed = 4f;
                 reload = 60f;
                 inaccuracy = 0f;
                 shootSound = Sounds.artillery;
