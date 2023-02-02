@@ -588,7 +588,7 @@ public class XenUnitTypes {
         odonata = new UnitType("odonata") {{
             constructor = UnitEntity::create;
             outlineColor = Color.valueOf("2b262d");
-            health = 1300f;
+            health = 2300f;
             armor = 1f;
             hitSize = 18f;
             speed = 1.5f;
@@ -746,7 +746,7 @@ public class XenUnitTypes {
         kreeg = new UnitType("kreeg") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
-            health = 1400f;
+            health = 2400f;
             armor = 1f;
             hitSize = 32f;
             speed = 0.9f;
@@ -958,7 +958,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("2b262d");
             defaultCommand = UnitCommand.rebuildCommand;
 
-            health = 1600f;
+            health = 2600f;
             armor = 5f;
             hitSize = 25f;
 
@@ -1087,7 +1087,7 @@ public class XenUnitTypes {
         enavo = new UnitType("enavo") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
-            health = 1800f;
+            health = 2800f;
             armor = 5f;
             hitSize = 30f;
             speed = 0.6f;
