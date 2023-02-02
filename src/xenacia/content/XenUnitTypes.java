@@ -750,7 +750,7 @@ public class XenUnitTypes {
             armor = 1f;
             hitSize = 32f;
             speed = 0.9f;
-            rotateSpeed = 4f;
+            rotateSpeed = 2f;
 
             itemCapacity = 10;
 
@@ -766,6 +766,7 @@ public class XenUnitTypes {
                 mirror = false;
                 rotate = true;
                 reload = 60f;
+                rotateSpeed = 1.5f;
                 inaccuracy = 15f;
                 velocityRnd = 0.2f;
                 shootSound = Sounds.explosion;
@@ -790,7 +791,7 @@ public class XenUnitTypes {
                     hitEffect = Fx.blastExplosion;
                     despawnEffect = Fx.blastExplosion;
                     weaveScale = 4f;
-                    weaveMag = 1f;
+                    weaveMag = 4f;
                     weaveRandom = true;
                 }};
             }});
