@@ -97,39 +97,45 @@ public class XenUnitFactories{
         }};
 
         assaultReconstructor = new BaseTeamReconstructor("assault-reconstructor"){{
-            requirements(Category.units, with(XenItems.iron, 650, XenItems.aluminum, 550, Items.graphite, 350, Items.silicon, 600, Items.titanium, 400));
+            requirements(Category.units, with(XenItems.iron, 750, XenItems.aluminum, 600, Items.graphite, 350, Items.silicon, 650, Items.titanium, 400));
 
             size = 5;
-            consumePower(5f);
-            consumeItems(with(Items.silicon, 150, XenItems.iron, 100, XenItems.aluminum, 90, Items.graphite, 120));
+            consumePower(8.5f);
+            consumeItems(with(Items.silicon, 350, XenItems.iron, 350, XenItems.aluminum, 250, Items.graphite, 250));
 
             constructTime = 60f * 25f;
 
             upgrades.addAll(
+                    new UnitType[]{XenUnitTypes.anax, XenUnitTypes.odonata},
+                    new UnitType[]{XenUnitTypes.shif, XenUnitTypes.kreeg}
             );
         }};
         supportReconstructor = new BaseTeamReconstructor("support-reconstructor"){{
-            requirements(Category.units, with(XenItems.iron, 650, XenItems.aluminum, 550, Items.graphite, 350, Items.silicon, 600, Items.titanium, 400));
+            requirements(Category.units, with(XenItems.iron, 750, XenItems.aluminum, 550, Items.graphite, 400, Items.silicon, 650, Items.titanium, 450));
 
             size = 5;
-            consumePower(5f);
-            consumeItems(with(Items.silicon, 150, XenItems.iron, 80, XenItems.aluminum, 80, Items.graphite, 150));
+            consumePower(9f);
+            consumeItems(with(Items.silicon, 350, XenItems.iron, 300, XenItems.aluminum, 300, Items.graphite, 250));
 
             constructTime = 60f * 25f;
 
             upgrades.addAll(
+                    new UnitType[]{XenUnitTypes.lug, XenUnitTypes.haul},
+                    new UnitType[]{XenUnitTypes.natuon, XenUnitTypes.enavo}
             );
         }};
         specialistReconstructor = new BaseTeamReconstructor("specialist-reconstructor"){{
-            requirements(Category.units, with(XenItems.iron, 650, XenItems.aluminum, 500, Items.graphite, 300, Items.silicon, 400, Items.titanium, 400, XenItems.lithium, 300));
+            requirements(Category.units, with(XenItems.iron, 650, XenItems.aluminum, 500, Items.graphite, 300, Items.silicon, 550, Items.titanium, 400, XenItems.lithium, 300));
 
             size = 5;
-            consumePower(6f);
-            consumeItems(with(Items.silicon, 160, XenItems.iron, 90, XenItems.aluminum, 90, Items.graphite, 100));
+            consumePower(10f);
+            consumeItems(with(Items.silicon, 400, XenItems.iron, 300, XenItems.aluminum, 250, Items.graphite, 300));
 
             constructTime = 60f * 25f;
 
             upgrades.addAll(
+                    new UnitType[]{XenUnitTypes.ryher, XenUnitTypes.evelate},
+                    new UnitType[]{XenUnitTypes.kyre, XenUnitTypes.yriek}
             );
         }};
 
