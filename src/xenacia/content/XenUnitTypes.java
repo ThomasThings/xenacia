@@ -1398,9 +1398,9 @@ public class XenUnitTypes {
                 shootSound = Sounds.artillery;
 
                 bullet = new ArtilleryBulletType(2.8f, 20) {{
-                    hitEffect = Fx.flakExplosion;
+                    hitEffect = Fx.sapExplosion;
                     knockback = 0.5f;
-                    lifetime = 100f;
+                    lifetime = 60f;
                     width = height = 10f;
                     collides = true;
                     collidesTiles = true;
@@ -1448,9 +1448,9 @@ public class XenUnitTypes {
                 shootSound = Sounds.artillery;
 
                 bullet = new ArtilleryBulletType(2.8f, 30) {{
-                    hitEffect = Fx.flakExplosion;
+                    hitEffect = Fx.sapExplosion;
                     knockback = 0.5f;
-                    lifetime = 120f;
+                    lifetime = 80f;
                     width = height = 10f;
                     collides = true;
                     collidesTiles = true;
@@ -1478,12 +1478,13 @@ public class XenUnitTypes {
                 reload = 180f;
                 inaccuracy = 0f;
                 shootSound = Sounds.artillery;
+                shoot.firstShotDelay = 30f;
 
                 bullet = new ArtilleryBulletType(3f, 60) {{
-                    hitEffect = Fx.flakExplosion;
-                    knockback = 0.5f;
-                    lifetime = 180f;
-                    width = height = 10f;
+                    hitEffect = Fx.sapExplosion;
+                    knockback = 01f;
+                    lifetime = 120f;
+                    width = height = 20f;
                     collides = true;
                     collidesTiles = true;
                     splashDamageRadius = 24f;
