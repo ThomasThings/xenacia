@@ -20,8 +20,6 @@ import mindustry.gen.*;
 import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.world.meta.BlockFlag;
 
-import mindustry.type.*;
-
 //payloadCapacity = ((X * 8) ^ 2), X being the side of the payload in blocks
 
 public class XenUnitTypes {
@@ -310,16 +308,16 @@ public class XenUnitTypes {
                 rotate = false;
                 mirror = true;
                 reload = 15f;
-                shoot.shots = 12;
+                shoot.shots = 11;
                 inaccuracy = 15f;
                 velocityRnd = 0.2f;
-                bullet = new LaserBoltBulletType(3.5f, 8) {{
+                bullet = new LaserBoltBulletType(3.5f, 5) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 40f;
 
                     collidesTeam = true;
-                    healPercent = 0.6f;
+                    healPercent = 0.4f;
 
                     backColor = Color.valueOf("ffd37f");
                     frontColor = Color.white;
