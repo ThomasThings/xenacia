@@ -494,7 +494,7 @@ public class XenUnitTypes {
             outlines = false;
             mechLegColor = Color.valueOf("2b262d");
             health = 650f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 12f;
             speed = 0.6f;
             rotateSpeed = 5f;
@@ -540,7 +540,7 @@ public class XenUnitTypes {
             constructor = UnitEntity::create;
             outlineColor = Color.valueOf("2b262d");
             health = 600f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 18f;
             speed = 2f;
             rotateSpeed = 4f;
@@ -651,7 +651,7 @@ public class XenUnitTypes {
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("2b262d");
             health = 550f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 12f;
             speed = 0.8f;
             rotateSpeed = 5f;
@@ -697,7 +697,7 @@ public class XenUnitTypes {
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
             health = 600f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 14f;
             speed = 0.9f;
             rotateSpeed = 4f;
@@ -799,7 +799,7 @@ public class XenUnitTypes {
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("2b262d");
             health = 650f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 12f;
             speed = 0.8f;
             rotateSpeed = 4f;
@@ -861,7 +861,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("2b262d");
             mechLegColor = Color.valueOf("2b262d");
             health = 600f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 8f;
             speed = 0.7f;
             rotateSpeed = 3.5f;
@@ -929,7 +929,7 @@ public class XenUnitTypes {
             defaultCommand = UnitCommand.rebuildCommand;
 
             health = 650f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 12f;
 
             speed = 2f;
@@ -957,7 +957,7 @@ public class XenUnitTypes {
             defaultCommand = UnitCommand.rebuildCommand;
 
             health = 2600f;
-            armor = 3f;
+            armor = 7f;
             hitSize = 25f;
 
             speed = 1f;
@@ -987,7 +987,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("2b262d");
             defaultCommand = UnitCommand.repairCommand;
             health = 750f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 10f;
             speed = 0.6f;
             rotateSpeed = 3f;
@@ -1021,7 +1021,7 @@ public class XenUnitTypes {
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
             health = 650f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 14f;
             speed = 0.7f;
             rotateSpeed = 3f;
@@ -1086,7 +1086,7 @@ public class XenUnitTypes {
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
             health = 2800f;
-            armor = 4f;
+            armor = 7f;
             hitSize = 30f;
             speed = 0.6f;
             rotateSpeed = 2.5f;
@@ -1169,7 +1169,7 @@ public class XenUnitTypes {
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("2b262d");
             health = 550f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 12f;
             speed = 0.8f;
             rotateSpeed = 3f;
@@ -1239,7 +1239,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("2b262d");
             mechLegColor = Color.valueOf("2b262d");
             health = 550f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 8f;
             speed = 0.7f;
             rotateSpeed = 3.5f;
@@ -1281,7 +1281,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("2b262d");
 
             health = 550f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 12f;
 
             speed = 2f;
@@ -1324,12 +1324,60 @@ public class XenUnitTypes {
                 ejectEffect = Fx.none;
             }});
         }};
+        evelate = new UnitType("evelate") {{
+            constructor = PayloadUnit::create;
+            outlineColor = Color.valueOf("2b262d");
+
+            health = 1900f;
+            armor = 6f;
+            hitSize = 12f;
+
+            speed = 2f;
+            rotateSpeed = 5f;
+
+            flying = true;
+            lowAltitude = false;
+            accel = 0.1f;
+            drag = 0.05f;
+            engineSize = 0f;
+            setEnginesMirror(
+                    new UnitEngine(44 / 4f, 17 / 4f, 2.2f, 45f),
+                    new UnitEngine(44 / 4f, -40 / 4f, 2.2f, 315f)
+            );
+
+            itemCapacity = 60;
+            payloadCapacity = 200;
+
+            weapons.add(new Weapon("evelate-weapon") {{
+                top = false;
+                x = 0f;
+                y = 0f;
+                rotate = false;
+                mirror = false;
+                reload = 5f;
+
+                bullet = new SapBulletType() {{
+                    damage = 8;
+                    sapStrength = 1.7f;
+                    length = 80f;
+                    width = 0.7f;
+                    lifetime = 25f;
+                    knockback = -0.3f;
+
+                    shootEffect = Fx.none;
+                    despawnEffect = Fx.none;
+                    hitColor = color = Color.valueOf("bf92f9");
+                }};
+                shootSound = Sounds.sap;
+                ejectEffect = Fx.none;
+            }});
+        }};
 
         spritz = new UnitType("spritz") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("2b262d");
             health = 650f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 10f;
             speed = 0.6f;
             rotateSpeed = 4.5f;
@@ -1374,7 +1422,7 @@ public class XenUnitTypes {
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
             health = 650f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 12f;
             speed = 0.8f;
             rotateSpeed = 2.5f;
@@ -1424,7 +1472,7 @@ public class XenUnitTypes {
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
             health = 2100f;
-            armor = 3f;
+            armor = 6.5f;
             hitSize = 12f;
             speed = 0.7f;
             rotateSpeed = 2f;
@@ -1508,7 +1556,7 @@ public class XenUnitTypes {
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("2b262d");
             health = 650f;
-            armor = 1f;
+            armor = 0f;
             hitSize = 13f;
             speed = 0.8f;
             rotateSpeed = 3f;
