@@ -754,7 +754,7 @@ public class XenUnitTypes {
 
             itemCapacity = 10;
 
-            trailLength = 20;
+            trailLength = 50;
             waveTrailX = 9f;
             waveTrailY = -14f;
             trailScl = 1.4f;
