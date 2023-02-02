@@ -748,7 +748,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("2b262d");
             health = 1400f;
             armor = 1f;
-            hitSize = 14f;
+            hitSize = 32f;
             speed = 0.9f;
             rotateSpeed = 4f;
 
@@ -765,15 +765,14 @@ public class XenUnitTypes {
                 y = 1.75f;
                 mirror = false;
                 rotate = true;
-                reload = 15f;
-                inaccuracy = 2f;
+                reload = 60f;
+                inaccuracy = 15f;
                 velocityRnd = 0.2f;
-                shootSound = Sounds.missile;
+                shootSound = Sounds.explosion;
                 recoil = 1f;
 
                 shake = 1;
-                shoot.shots = 5;
-                shoot.shotDelay = 2;
+                shoot.shots = 10;
 
                 bullet = new MissileBulletType(3.2f, 80) {{
                     width = 8f;
