@@ -1341,8 +1341,9 @@ public class XenUnitTypes {
             drag = 0.05f;
             engineSize = 0f;
             setEnginesMirror(
-                    new UnitEngine(44 / 4f, 17 / 4f, 2.2f, 45f),
-                    new UnitEngine(44 / 4f, -40 / 4f, 2.2f, 315f)
+                    new UnitEngine(44 / 4f, 17 / 4f, 2.5f, 45f),
+                    new UnitEngine(44 / 4f, -40 / 4f, 2.5f, 315f),
+                    new UnitEngine(0, -44 / 4f, 2.5f, 0f)
             );
 
             itemCapacity = 60;
