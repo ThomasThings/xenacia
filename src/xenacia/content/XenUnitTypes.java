@@ -1080,7 +1080,7 @@ public class XenUnitTypes {
 
             }});
 
-            abilities.add(new RepairFieldAbility(8f, 120, 100f));
+            abilities.add(new RepairFieldAbility(15f, 120, 100f));
         }};
         enavo = new UnitType("enavo") {{
             constructor = UnitWaterMove::create;
@@ -1442,7 +1442,7 @@ public class XenUnitTypes {
                 y = 11f;
                 mirror = false;
                 rotate = true;
-                rotateSpeed = 3f;
+                rotateSpeed = f;
                 reload = 60f;
                 inaccuracy = 0f;
                 shootSound = Sounds.artillery;
