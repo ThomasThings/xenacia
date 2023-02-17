@@ -91,16 +91,17 @@ public class XenUnitTypes {
             isEnemy = false;
 
             setEnginesMirror(
-                    new UnitEngine(-3f, -1f, 2f, 315f)
+                    new UnitEngine(-4f, -2f, 2f, 315f)
             );
+            engineSize = 1.5f;
+            engineOffset = 2f;
 
             weapons.add(new Weapon(){{
                 x = 0f;
-                y = 4.5f;
+                y = 3.5f;
                 rotate = false;
                 mirror = false;
-                reload = 70f;
-                velocityRnd = 0.5f;
+                reload = 60f;
                 shoot.shots = 2;
                 inaccuracy = 5f;
                 bullet = new LaserBoltBulletType(3.5f, 10) {{
