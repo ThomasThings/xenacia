@@ -67,7 +67,7 @@ public class XenUnitTypes {
             health = 400f;
             armor = 2f;
             hitSize = 10f;
-            speed = 5f;
+            speed = 3.5f;
             rotateSpeed = 5f;
             flying = true;
             lowAltitude = true;
@@ -128,7 +128,7 @@ public class XenUnitTypes {
             health = 800f;
             armor = 4f;
             hitSize = 12f;
-            speed = 5f;
+            speed = 4f;
             rotateSpeed = 5f;
             flying = true;
             lowAltitude = true;
@@ -187,7 +187,7 @@ public class XenUnitTypes {
             health = 1200f;
             armor = 6f;
             hitSize = 12f;
-            speed = 5.5f;
+            speed = 4f;
             rotateSpeed = 5f;
             flying = true;
             lowAltitude = true;
@@ -275,7 +275,7 @@ public class XenUnitTypes {
             health = 1200f;
             armor = 6f;
             hitSize = 20f;
-            speed = 5.5f;
+            speed = 4.5f;
             rotateSpeed = 5f;
             flying = true;
             lowAltitude = true;
