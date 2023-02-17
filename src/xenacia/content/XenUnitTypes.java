@@ -91,7 +91,7 @@ public class XenUnitTypes {
             isEnemy = false;
 
             setEnginesMirror(
-                    new UnitEngine(-3f, -1f, 2f, 90f)
+                    new UnitEngine(-3f, -1f, 2f, 315f)
             );
 
             weapons.add(new Weapon(){{
