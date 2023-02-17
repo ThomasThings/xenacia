@@ -90,33 +90,34 @@ public class XenUnitTypes {
             itemCapacity = 40;
             isEnemy = false;
 
-            engineSize = 2.8f;
-            engineOffset = 5.6f;
+            setEnginesMirror(
+                    new UnitEngine(-3f, -1f, 2f, 90f)
+            );
 
-            weapons.add(new RepairBeamWeapon(){{
-                widthSinMag = 0.11f;
-                reload = 15f;
+            weapons.add(new Weapon(){{
                 x = 0f;
-                y = 3.5f;
+                y = 4.5f;
                 rotate = false;
-                shootY = 0f;
-                beamWidth = 0.6f;
-                repairSpeed = 0.8f;
-                fractionRepairSpeed = 0.6f;
-                aimDst = 0f;
-                shootCone = 15f;
                 mirror = false;
+                reload = 70f;
+                velocityRnd = 0.5f;
+                shoot.shots = 2;
+                inaccuracy = 5f;
+                bullet = new LaserBoltBulletType(3.5f, 10) {{
+                    width = 1.5f;
+                    height = 5f;
+                    lifetime = 30f;
 
-                targetUnits = true;
-                targetBuildings = true;
-                autoTarget = false;
-                controllable = true;
-                laserColor = Color.valueOf("ffd37f");
-                healColor = Color.valueOf("ffd37f");
+                    collidesTeam = true;
+                    healPercent = 2f;
 
-                bullet = new BulletType(){{
-                    maxRange = 48f;
+                    buildingDamageMultiplier = 0.5f;
+
+                    backColor = Color.valueOf("ffd37f");
+                    frontColor = Color.white;
                 }};
+                shootSound = Sounds.lasershoot;
+                ejectEffect = Fx.none;
             }});
         }};
         moment = new UnitType("moment") {{
