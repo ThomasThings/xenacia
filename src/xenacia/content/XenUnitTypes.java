@@ -10,6 +10,7 @@ import mindustry.content.Liquids;
 import mindustry.content.StatusEffects;
 import mindustry.entities.abilities.EnergyFieldAbility;
 import mindustry.entities.abilities.RepairFieldAbility;
+import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.entities.bullet.*;
 import mindustry.entities.part.HoverPart;
 import mindustry.entities.part.RegionPart;
@@ -26,7 +27,7 @@ public class XenUnitTypes {
     public static UnitType
     //region key
     //core units
-    period, moment, dusk, dawn,
+    period, periodDrone, moment, dusk, dawn,
     //seeds
     mechacraft, aircraft, polycraft, watercraft, treadcraft, hovercraft, arthocraft,
     //terrestrial assault
@@ -67,7 +68,7 @@ public class XenUnitTypes {
             health = 400f;
             armor = 2f;
             hitSize = 10f;
-            speed = 3.5f;
+            speed = 2f;
             rotateSpeed = 5f;
             flying = true;
             lowAltitude = true;
@@ -81,7 +82,8 @@ public class XenUnitTypes {
             mineHardnessScaling = false;
             mineSpeed = 4f;
             mineTier = 2;
-            buildSpeed = 1f;
+            buildSpeed = 0.2f;
+            buildBeamOffset = 2f;
 
             payloadCapacity = 64f;
             pickupUnits = false;
@@ -120,7 +122,39 @@ public class XenUnitTypes {
                 shootSound = Sounds.lasershoot;
                 ejectEffect = Fx.none;
             }});
+
+            abilities.add(new UnitSpawnAbility(XenUnitTypes.periodDrone, 60f, 0f, -2f));
         }};
+        periodDrone = new UnitType("period-drone") {{
+            outlineColor = Color.valueOf("2b262d");
+            controller = u -> new BuilderAI(true, coreFleeRange);
+            defaultCommand = UnitCommand.rebuildCommand;
+            allowedInPayloads = false;
+            logicControllable = false;
+            playerControllable = false;
+            health = 100f;
+            armor = 0f;
+            hitSize = 4f;
+            speed = 2f;
+            rotateSpeed = 5f;
+            flying = true;
+            lowAltitude = true;
+            accel = 0.09f;
+            drag = 0.08f;
+
+            targetPriority = -2;
+
+            buildSpeed = 1f;
+
+            itemCapacity = 0;
+            isEnemy = false;
+
+            engineSize = 1.8f;
+            engineOffset = 3f;
+
+            hidden = true;
+        }};
+
         moment = new UnitType("moment") {{
             constructor = PayloadUnit::create;
             outlineColor = Color.valueOf("2b262d");
@@ -180,6 +214,7 @@ public class XenUnitTypes {
                 ejectEffect = Fx.none;
             }});
         }};
+
         dawn = new UnitType("dawn") {{
             constructor = PayloadUnit::create;
             outlineColor = Color.valueOf("2b262d");
@@ -268,6 +303,7 @@ public class XenUnitTypes {
                 }};
             }});
         }};
+
         dusk = new UnitType("dusk") {{
             constructor = PayloadUnit::create;
             outlineColor = Color.valueOf("2b262d");
@@ -435,9 +471,12 @@ public class XenUnitTypes {
             speed = 1.5f;
             rotateSpeed = 5f;
             hovering = true;
+            shadowElevation = 0.1f;
+            useEngineElevation = false;
             lowAltitude = true;
             accel = 0.1f;
             drag = 0.05f;
+            omniMovement = false;
 
             itemCapacity = 5;
             isEnemy = false;
