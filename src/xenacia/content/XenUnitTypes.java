@@ -126,6 +126,7 @@ public class XenUnitTypes {
             abilities.add(new UnitSpawnAbility(XenUnitTypes.periodDrone, 60f, 0f, -2f));
         }};
         periodDrone = new UnitType("period-drone") {{
+            constructor = UnitEntity::create;
             outlineColor = Color.valueOf("2b262d");
             controller = u -> new BuilderAI(true, coreFleeRange);
             defaultCommand = UnitCommand.rebuildCommand;
@@ -135,7 +136,7 @@ public class XenUnitTypes {
             health = 100f;
             armor = 0f;
             hitSize = 4f;
-            speed = 2f;
+            speed = 1.6f;
             rotateSpeed = 5f;
             flying = true;
             lowAltitude = true;
@@ -144,7 +145,7 @@ public class XenUnitTypes {
 
             targetPriority = -2;
 
-            buildSpeed = 1f;
+            buildSpeed = 0.2f;
 
             itemCapacity = 0;
             isEnemy = false;
