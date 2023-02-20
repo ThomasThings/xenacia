@@ -67,6 +67,7 @@ public class XenTurrets{
         clinger = new ItemTurret("clinger"){{
             outlineColor = Color.valueOf("292729");
             drawer = new DrawTurret("xenacia-");
+            size = 2;
             requirements(Category.turret, with(XenItems.iron, 80, XenItems.aluminum, 120, Items.graphite, 80));
             ammo(
                     Items.graphite,  new BasicBulletType(0f, 1){{
