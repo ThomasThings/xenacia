@@ -111,17 +111,19 @@ public class XenTurrets{
             coolant = consumeCoolant(0.2f);
 
             drawer = new DrawTurret("reinforced-"){{
-                parts.add(new RegionPart("-blade"){{
+                parts.add(
+                        new RegionPart("-blade"){{
                               progress = PartProgress.warmup;
                               moves.add(new PartMove(PartProgress.recoil, 0f, 0f, -40f));
                               mirror = true;
-                          }},
+                        }},
                         new RegionPart("-mid"){{
-                            progress = PartProgress.recoil; 
+                            progress = PartProgress.recoil;
                             mirror = false;
                             under = true;
-                            moveY = -5f;
-                        }}, new RegionPart("-missile"){{
+                            moveY = -1f;
+                        }},
+                        new RegionPart("-missile"){{
                             progress = PartProgress.reload.curve(Interp.pow2In);
 
                             colorTo = new Color(1f, 1f, 1f, 0f);
@@ -133,7 +135,7 @@ public class XenTurrets{
 
                             layerOffset = -0.01f;
 
-                            moves.add(new PartMove(PartProgress.warmup.inv(), 0f, -4f, 0f));
+                            moves.add(new PartMove(PartProgress.warmup.inv(), 0f, -2f, 0f));
                         }});
             }};
 
