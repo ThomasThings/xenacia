@@ -74,7 +74,7 @@ public class XenTurrets{
             ammo(
                     Items.graphite,  new BasicBulletType(0f, 1){{
                         shootEffect = Fx.shootBig;
-                        smokeEffect = Fx.shootSmokeMissile;
+                        smokeEffect = Fx.none;
                         ammoMultiplier = 1f;
 
                         spawnUnit = new MissileUnitType("clinger-missile"){{
@@ -93,7 +93,7 @@ public class XenTurrets{
                                 mirror = false;
                                 reload = 1f;
                                 shootOnDeath = true;
-                                bullet = new ExplosionBulletType(120f, 18f){{
+                                bullet = new ExplosionBulletType(250f, 20f){{
                                     shootEffect = Fx.massiveExplosion;
                                     collidesAir = false;
                                 }};
@@ -120,7 +120,8 @@ public class XenTurrets{
                         new RegionPart("-mid"){{
                             progress = PartProgress.recoil;
                             mirror = false;
-                            under = true;
+                            under = false;
+                            layerOffset = 0.2f;
                             moveY = -1f;
                         }},
                         new RegionPart("-missile"){{
@@ -131,9 +132,7 @@ public class XenTurrets{
                             mixColorTo = Pal.accent;
                             mixColor = new Color(1f, 1f, 1f, 0f);
                             outline = false;
-                            under = true;
-
-                            layerOffset = -0.01f;
+                            under = false;
 
                             moves.add(new PartMove(PartProgress.warmup.inv(), 0f, -2f, 0f));
                         }});
