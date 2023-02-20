@@ -1,8 +1,11 @@
 package xenacia.content;
 
 import arc.graphics.Color;
+import arc.math.Interp;
+import arc.math.Mathf;
 import mindustry.entities.bullet.BasicBulletType;
 import mindustry.entities.bullet.ExplosionBulletType;
+import mindustry.entities.part.RegionPart;
 import mindustry.entities.pattern.ShootAlternate;
 import mindustry.gen.Sounds;
 import mindustry.graphics.Layer;
@@ -66,7 +69,6 @@ public class XenTurrets{
         }};
         clinger = new ItemTurret("clinger"){{
             outlineColor = Color.valueOf("292729");
-            drawer = new DrawTurret("xenacia-");
             size = 2;
             requirements(Category.turret, with(XenItems.iron, 80, XenItems.aluminum, 120, Items.graphite, 80));
             ammo(
@@ -76,12 +78,12 @@ public class XenTurrets{
                         ammoMultiplier = 1f;
 
                         spawnUnit = new MissileUnitType("clinger-missile"){{
+                            outlineColor = Color.valueOf("292729");
                             targetAir = false;
                             speed = 4.3f;
                             maxRange = 6f;
                             lifetime = 60f * 1.4f;
-                            outlineColor = Pal.darkOutline;
-                            engineColor = trailColor = Pal.sapBulletBack;
+                            engineColor = trailColor = Color.valueOf("feb380");
                             engineLayer = Layer.effect;
                             health = 45;
                             loopSoundVolume = 0.1f;
@@ -107,6 +109,33 @@ public class XenTurrets{
             inaccuracy = 0f;
             rotateSpeed = 1f;
             coolant = consumeCoolant(0.2f);
+
+            drawer = new DrawTurret("reinforced-"){{
+                parts.add(new RegionPart("-blade"){{
+                              progress = PartProgress.warmup;
+                              moves.add(new PartMove(PartProgress.recoil, 0f, 0f, -40f));
+                              mirror = true;
+                          }},
+                        new RegionPart("-mid"){{
+                            progress = PartProgress.recoil; 
+                            mirror = false;
+                            under = true;
+                            moveY = -5f;
+                        }}, new RegionPart("-missile"){{
+                            progress = PartProgress.reload.curve(Interp.pow2In);
+
+                            colorTo = new Color(1f, 1f, 1f, 0f);
+                            color = Color.white;
+                            mixColorTo = Pal.accent;
+                            mixColor = new Color(1f, 1f, 1f, 0f);
+                            outline = false;
+                            under = true;
+
+                            layerOffset = -0.01f;
+
+                            moves.add(new PartMove(PartProgress.warmup.inv(), 0f, -4f, 0f));
+                        }});
+            }};
 
             limitRange();
         }};
