@@ -82,7 +82,7 @@ public class XenTurrets{
                             targetAir = true;
                             speed = 4.3f;
                             maxRange = 6f;
-                            lifetime = 60f * 1.4f;
+                            lifetime = 100f;
                             engineColor = trailColor = Color.valueOf("feb380");
                             engineLayer = Layer.effect;
                             health = 45;
@@ -111,21 +111,21 @@ public class XenTurrets{
             coolant = consumeCoolant(0.2f);
 
             drawer = new DrawTurret("reinforced-"){{
-                parts.add(
-                        new RegionPart("-blade"){{
+                parts.add(new RegionPart("-blade"){{
                               progress = PartProgress.warmup;
-                              moves.add(new PartMove(PartProgress.recoil, 0f, 0f, -10f));
-                              moves.add(new PartMove(PartProgress.warmup.inv(), 0f, 0f, -5f));
+                              moves.add(new PartMove(PartProgress.recoil, 0f, 1f, -10f));
+                              moveRot = -22f;
+                              moveX = 0f;
+                              moveY = -5f;
                               mirror = true;
-                        }},
+                          }},
                         new RegionPart("-mid"){{
                             progress = PartProgress.recoil;
+                            heatProgress = PartProgress.warmup.add(-0.2f).add(p -> Mathf.sin(9f, 0.2f) * p.warmup);
                             mirror = false;
-                            under = false;
-                            layerOffset = 0.2f;
-                            moveY = -1f;
-                        }},
-                        new RegionPart("-missile"){{
+                            under = true;
+                            moveY = -2f;
+                        }}, new RegionPart("-missile"){{
                             progress = PartProgress.reload.curve(Interp.pow2In);
 
                             colorTo = new Color(1f, 1f, 1f, 0f);
@@ -133,7 +133,9 @@ public class XenTurrets{
                             mixColorTo = Pal.accent;
                             mixColor = new Color(1f, 1f, 1f, 0f);
                             outline = false;
-                            under = false;
+                            under = true;
+
+                            layerOffset = -0.01f;
 
                             moves.add(new PartMove(PartProgress.warmup.inv(), 0f, -2f, 0f));
                         }});

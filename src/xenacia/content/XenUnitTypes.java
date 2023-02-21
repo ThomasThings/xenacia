@@ -14,6 +14,7 @@ import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.entities.bullet.*;
 import mindustry.entities.part.HoverPart;
 import mindustry.entities.part.RegionPart;
+import mindustry.entities.pattern.ShootSpread;
 import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
 import mindustry.type.*;
@@ -86,7 +87,7 @@ public class XenUnitTypes {
             isEnemy = false;
 
             engineSize = 1.8f;
-            engineOffset = 3f;
+            engineOffset = 4f;
 
             hidden = true;
         }};
@@ -125,7 +126,7 @@ public class XenUnitTypes {
             setEnginesMirror(
                     new UnitEngine(-3.5f, -2f, 2f, 315f)
             );
-            engineSize = 1.5f;
+            engineSize = 2f;
             engineOffset = 6.5f;
 
             weapons.add(new Weapon(){{
@@ -134,7 +135,7 @@ public class XenUnitTypes {
                 rotate = false;
                 mirror = false;
                 reload = 60f;
-                shoot.shots = 2;
+                shoot = new ShootSpread(3, 5f);
                 inaccuracy = 5f;
                 bullet = new LaserBoltBulletType(3.5f, 10) {{
                     width = 1.5f;
