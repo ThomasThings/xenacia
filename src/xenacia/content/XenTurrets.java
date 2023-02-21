@@ -79,7 +79,7 @@ public class XenTurrets{
 
                         spawnUnit = new MissileUnitType("clinger-missile"){{
                             outlineColor = Color.valueOf("292729");
-                            targetAir = false;
+                            targetAir = true;
                             speed = 4.3f;
                             maxRange = 6f;
                             lifetime = 60f * 1.4f;
@@ -101,20 +101,21 @@ public class XenTurrets{
                         }};
                     }}
             );
-            reload = 120f;
+            reload = 180f;
             range = 440;
             shootCone = 1f;
             ammoUseEffect = Fx.none;
             health = 800;
             inaccuracy = 0f;
-            rotateSpeed = 1f;
+            rotateSpeed = 2f;
             coolant = consumeCoolant(0.2f);
 
             drawer = new DrawTurret("reinforced-"){{
                 parts.add(
                         new RegionPart("-blade"){{
                               progress = PartProgress.warmup;
-                              moves.add(new PartMove(PartProgress.recoil, 0f, 0f, -40f));
+                              moves.add(new PartMove(PartProgress.recoil, 0f, 0f, -10f));
+                              moves.add(new PartMove(PartProgress.warmup.inv(), 0f, 0f, -5f));
                               mirror = true;
                         }},
                         new RegionPart("-mid"){{
