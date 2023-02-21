@@ -27,7 +27,7 @@ public class XenUnitTypes {
     public static UnitType
     //region key
     //core units
-    period, periodDrone, moment, dusk, dawn,
+    periodDrone, period, momentDrone, moment, duskDrone, dusk, dawnDrone, dawn,
     //seeds
     mechacraft, aircraft, polycraft, watercraft, treadcraft, hovercraft, arthocraft,
     //terrestrial assault
@@ -60,6 +60,36 @@ public class XenUnitTypes {
         //region core units
 
         float coreFleeRange = 500f;
+        periodDrone = new UnitType("period-drone") {{
+            constructor = UnitEntity::create;
+            outlineColor = Color.valueOf("2b262d");
+            controller = u -> new BuilderAI(true, coreFleeRange);
+            defaultCommand = UnitCommand.rebuildCommand;
+            allowedInPayloads = false;
+            logicControllable = false;
+            playerControllable = false;
+            health = 100f;
+            armor = 0f;
+            hitSize = 4f;
+            speed = 1.6f;
+            rotateSpeed = 5f;
+            flying = true;
+            lowAltitude = true;
+            accel = 0.09f;
+            drag = 0.08f;
+
+            targetPriority = -2;
+
+            buildSpeed = 0.2f;
+
+            itemCapacity = 0;
+            isEnemy = false;
+
+            engineSize = 1.8f;
+            engineOffset = 3f;
+
+            hidden = true;
+        }};
         period = new UnitType("period") {{
             constructor = PayloadUnit::create;
             outlineColor = Color.valueOf("2b262d");
@@ -124,36 +154,6 @@ public class XenUnitTypes {
             }});
 
             abilities.add(new UnitSpawnAbility(XenUnitTypes.periodDrone, 60f, 0f, -2f));
-        }};
-        periodDrone = new UnitType("period-drone") {{
-            constructor = UnitEntity::create;
-            outlineColor = Color.valueOf("2b262d");
-            controller = u -> new BuilderAI(true, coreFleeRange);
-            defaultCommand = UnitCommand.rebuildCommand;
-            allowedInPayloads = false;
-            logicControllable = false;
-            playerControllable = false;
-            health = 100f;
-            armor = 0f;
-            hitSize = 4f;
-            speed = 1.6f;
-            rotateSpeed = 5f;
-            flying = true;
-            lowAltitude = true;
-            accel = 0.09f;
-            drag = 0.08f;
-
-            targetPriority = -2;
-
-            buildSpeed = 0.2f;
-
-            itemCapacity = 0;
-            isEnemy = false;
-
-            engineSize = 1.8f;
-            engineOffset = 3f;
-
-            hidden = true;
         }};
 
         moment = new UnitType("moment") {{
