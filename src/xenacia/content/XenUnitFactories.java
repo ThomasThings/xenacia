@@ -75,7 +75,7 @@ public class XenUnitFactories{
                     new UnitType[]{XenUnitTypes.aircraft, XenUnitTypes.lug},
                     new UnitType[]{XenUnitTypes.polycraft, XenUnitTypes.tick},
                     new UnitType[]{XenUnitTypes.watercraft, XenUnitTypes.natuon},
-                    new UnitType[]{XenUnitTypes.treadcraft, XenUnitTypes.assist}
+                    new UnitType[]{XenUnitTypes.treadcraft, XenUnitTypes.aid}
             );
         }};
         specialistTranstructor = new BaseTeamReconstructor("specialist-transtructor"){{
