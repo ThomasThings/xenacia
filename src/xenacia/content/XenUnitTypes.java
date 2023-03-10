@@ -14,6 +14,8 @@ import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.entities.bullet.*;
 import mindustry.entities.part.HoverPart;
 import mindustry.entities.part.RegionPart;
+import mindustry.entities.pattern.ShootAlternate;
+import mindustry.entities.pattern.ShootBarrel;
 import mindustry.entities.pattern.ShootSpread;
 import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
@@ -36,19 +38,19 @@ public class XenUnitTypes {
     anax, odonata,
     explore,
     shif, kreeg,
-    tack,
+    tack, nail,
     //terrestrial support
     elementary,
     lug, haul,
     tick,
     natuon, enavo,
-    assist,
+    aid, guard,
     //terrestrial specialist
     erode,
     ryher, evelate,
     spritz,
     kyre, yriek,
-    tie,
+    tie, link,
     //mites and parasites
     coreMite,
     assaultMite,
@@ -542,7 +544,7 @@ public class XenUnitTypes {
             speed = 0.6f;
             rotateSpeed = 5f;
 
-            itemCapacity = 10;
+            itemCapacity = 0;
 
             mechFrontSway = 0.2f;
             mechSideSway = 0.4f;
@@ -639,7 +641,7 @@ public class XenUnitTypes {
             accel = 0.09f;
             drag = 0.04f;
 
-            itemCapacity = 50;
+            itemCapacity = 75;
 
             engineSize = 4f;
             engineOffset = 8f;
@@ -699,7 +701,7 @@ public class XenUnitTypes {
             speed = 0.8f;
             rotateSpeed = 5f;
 
-            itemCapacity = 10;
+            itemCapacity = 0;
 
             legContinuousMove = true;
             legCount = 4;
@@ -745,7 +747,7 @@ public class XenUnitTypes {
             speed = 0.9f;
             rotateSpeed = 4f;
 
-            itemCapacity = 10;
+            itemCapacity = 0;
 
             trailLength = 20;
             waveTrailX = 4f;
@@ -793,7 +795,7 @@ public class XenUnitTypes {
             speed = 0.9f;
             rotateSpeed = 2f;
 
-            itemCapacity = 10;
+            itemCapacity = 0;
 
             trailLength = 50;
             waveTrailX = 9f;
@@ -848,7 +850,7 @@ public class XenUnitTypes {
             rotateSpeed = 4f;
             omniMovement = false;
 
-            itemCapacity = 10;
+            itemCapacity = 0;
 
             treadFrames = 10;
             treadRects = new Rect[]{
@@ -894,6 +896,76 @@ public class XenUnitTypes {
                         }});
             }});
         }};
+        nail = new UnitType("nail") {{
+            constructor = TankUnit::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 1600f;
+            armor = 8f;
+            hitSize = 34f;
+            speed = 0.75f;
+            rotateSpeed = 3.5f;
+            omniMovement = false;
+
+            itemCapacity = 0;
+
+            treadFrames = 16;
+            treadRects = new Rect[]{
+                    new Rect(
+                            -41,
+                            37,
+                            24,
+                            24
+                    ),
+                    new Rect(
+                            -64,
+                            -9,
+                            16,
+                            24
+                    ),
+                    new Rect(
+                            -58,
+                            -63,
+                            32,
+                            20
+                    )
+            };
+
+            weapons.add(new Weapon("xenacia-nail-beam"){{
+                x = 0f;
+                y = 0f;
+                layerOffset = 0.1f;
+                top = true;
+                mirror = false;
+                rotate = true;
+                rotateSpeed = 3.5f;
+                reload = 120f;
+                recoil = 2f;
+                shootSound = Sounds.laser;
+
+                bullet = new LaserBulletType(){{
+                    damage = 350f;
+                    sideAngle = 75f;
+                    sideWidth = 0.7f;
+                    sideLength = 25f;
+                    length = 80f;
+                    width = 30f;
+                    colors = new Color[]{Color.valueOf("ffa665").cpy().a(0.4f), Color.valueOf("ffa665"), Color.white};
+                }};
+
+                parts.addAll(
+                        new RegionPart("-jaw"){{
+                            x = 0f;
+                            y = 2.5f;
+                            progress = PartProgress.warmup;
+                            mirror = true;
+                            under = true;
+                            outline = true;
+                            moveX = 0.75f;
+                            moveRot = 0f;
+                            moves.add(new PartMove(PartProgress.recoil, 0.5f, 0f, -8f));
+                        }});
+            }});
+        }};
 
         //endregion
 
@@ -911,7 +983,7 @@ public class XenUnitTypes {
 
             buildSpeed = 0.5f;
 
-            itemCapacity = 10;
+            itemCapacity = 5;
 
             mechFrontSway = 0.2f;
             mechSideSway = 0.5f;
@@ -1017,7 +1089,7 @@ public class XenUnitTypes {
 
             mineTier = 2;
             mineSpeed = 2f;
-            itemCapacity = 45;
+            itemCapacity = 100;
             payloadCapacity = 576;
 
             buildSpeed = 0.8f;
@@ -1069,7 +1141,7 @@ public class XenUnitTypes {
             speed = 0.7f;
             rotateSpeed = 3f;
 
-            itemCapacity = 10;
+            itemCapacity = 15;
 
             trailLength = 25;
             waveTrailX = 3f;
@@ -1208,7 +1280,7 @@ public class XenUnitTypes {
             abilities.add(new RepairFieldAbility(15f, 120, 120f));
         }};
 
-        assist = new UnitType("assist") {{
+        aid = new UnitType("aid") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("2b262d");
             health = 550f;
@@ -1232,7 +1304,7 @@ public class XenUnitTypes {
 
             faceTarget = false;
 
-            weapons.add(new Weapon("xenacia-assist-missiles"){{
+            weapons.add(new Weapon("xenacia-aid-missiles"){{
                 top = true;
                 rotate = true;
                 rotateSpeed = 3f;
@@ -1256,6 +1328,79 @@ public class XenUnitTypes {
                     lifetime = 45f;
                     weaveScale = 1.5f;
                     weaveMag = 3f;
+
+                    collidesTeam = true;
+                    healPercent = 3f;
+
+                    trailColor = Color.valueOf("98ffa9");
+                    backColor = Color.valueOf("98ffa9");
+                    frontColor = Color.valueOf("ffffff");
+
+                    shootEffect = Fx.shootHeal;
+                    smokeEffect = Fx.hitLaser;
+                    hitEffect = Fx.hitLaser;
+                    hitSound = Sounds.none;
+                    despawnEffect = Fx.hitLaser;
+                }};
+            }});
+        }};
+        guard = new UnitType("guard") {{
+            constructor = TankUnit::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 1300f;
+            armor = 5f;
+            hitSize = 12f;
+            speed = 0.8f;
+            rotateSpeed = 3f;
+            omniMovement = false;
+
+            itemCapacity = 10;
+
+            treadFrames = 16;
+            treadRects = new Rect[]{
+                    new Rect(
+                            -65,
+                            -61,
+                            37,
+                            126
+                    )
+            };
+
+            faceTarget = false;
+
+            weapons.add(new Weapon("xenacia-guard-missiles"){{
+                top = true;
+                rotate = true;
+                rotateSpeed = 2f;
+                x = 0f;
+                y = -2.5f;
+                mirror = false;
+                inaccuracy = 8f;
+                reload = 20f;
+                shootSound = Sounds.missile;
+                recoil = 0.8f;
+
+                shoot = new ShootBarrel(){{
+                    barrels = new float[]{
+                            4.75f, 4f, 0f,
+                            0f, 6f, 0f,
+                            -4.75f, 4f, 0f,
+                    };
+                    shots = 6;
+                    shotDelay = 0.5f;
+                }};
+
+                bullet = new MissileBulletType(5f, 5) {{
+                    width = 8f;
+                    height = 8f;
+                    shrinkY = 0f;
+                    drag = -0.003f;
+                    homingRange = 35f;
+                    splashDamageRadius = 8f;
+                    splashDamage = 15f;
+                    lifetime = 45f;
+                    weaveScale = 2f;
+                    weaveMag = 4f;
 
                     collidesTeam = true;
                     healPercent = 3f;
@@ -1426,7 +1571,7 @@ public class XenUnitTypes {
             speed = 0.6f;
             rotateSpeed = 4.5f;
 
-            itemCapacity = 10;
+            itemCapacity = 0;
 
             legContinuousMove = false;
             legCount = 4;
@@ -1471,7 +1616,7 @@ public class XenUnitTypes {
             speed = 0.8f;
             rotateSpeed = 2.5f;
 
-            itemCapacity = 10;
+            itemCapacity = 0;
 
             trailLength = 25;
             waveTrailX = 5f;
@@ -1521,7 +1666,7 @@ public class XenUnitTypes {
             speed = 0.7f;
             rotateSpeed = 2f;
 
-            itemCapacity = 20;
+            itemCapacity = 0;
 
             trailLength = 40;
             waveTrailX = 10.5f;
@@ -1606,7 +1751,7 @@ public class XenUnitTypes {
             rotateSpeed = 3f;
             omniMovement = false;
 
-            itemCapacity = 15;
+            itemCapacity = 0;
 
             treadFrames = 12;
             treadRects = new Rect[]{
@@ -1620,7 +1765,7 @@ public class XenUnitTypes {
 
             faceTarget = true;
 
-            weapons.add(new Weapon("link-flare"){{
+            weapons.add(new Weapon("ltie-flare"){{
                 x = 0f;
                 y = 0.25f;
                 mirror = false;
@@ -1659,6 +1804,76 @@ public class XenUnitTypes {
                     flareColor = Pal.sapBullet;
                     flareLength = 8f;
                     flareRotSpeed = -3.5f;
+                    hitColor = Pal.sapBullet;
+
+                    shootEffect = Fx.none;
+                    smokeEffect = Fx.none;
+                }};
+            }});
+        }};
+        link = new UnitType("link") {{
+            constructor = TankUnit::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 1500f;
+            armor = 6f;
+            hitSize = 24f;
+            speed = 0.6f;
+            rotateSpeed = 2.3f;
+            omniMovement = false;
+
+            itemCapacity = 0;
+
+            treadFrames = 16;
+            treadRects = new Rect[]{
+                    new Rect(
+                            -32f,
+                            -35f,
+                            27,
+                            128
+                    )
+            };
+
+            faceTarget = true;
+
+            weapons.add(new Weapon("link-flare"){{
+                x = 0f;
+                y = 5f;
+                mirror = false;
+                rotate = false;
+                parentizeEffects = true;
+                continuous = true;
+                alwaysContinuous = true;
+
+                shootCone = 135f;
+                shootSound = Sounds.techloop;
+                shootStatus = StatusEffects.slow;
+                shootStatusDuration = 5;
+
+                bullet = new ContinuousFlameBulletType(){{
+                    damage = 15f;
+                    buildingDamageMultiplier = 1.5f;
+
+                    pierce = true;
+                    pierceBuilding = false;
+                    pierceCap = 5;
+
+                    status = StatusEffects.burning;
+                    statusDuration = 180f;
+
+                    length = 75f;
+                    width = 15f;
+
+                    colors = new Color[]{
+                            Pal.sapBulletBack.cpy().a(0.2f),
+                            Pal.sapBulletBack.cpy().a(0.4f),
+                            Pal.sapBullet.cpy().a(0.4f),
+                            Pal.sapBullet.cpy().a(0.7f),
+                            Color.white
+                    };
+
+                    flareColor = Pal.sapBullet;
+                    flareLength = 12f;
+                    flareRotSpeed = -2f;
                     hitColor = Pal.sapBullet;
 
                     shootEffect = Fx.none;
