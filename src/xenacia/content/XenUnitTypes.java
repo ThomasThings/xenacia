@@ -903,7 +903,7 @@ public class XenUnitTypes {
             armor = 8f;
             hitSize = 34f;
             speed = 0.75f;
-            rotateSpeed = 3.5f;
+            rotateSpeed = 5f;
             omniMovement = false;
 
             itemCapacity = 0;
@@ -1351,7 +1351,7 @@ public class XenUnitTypes {
             armor = 5f;
             hitSize = 12f;
             speed = 0.8f;
-            rotateSpeed = 3f;
+            rotateSpeed = 5f;
             omniMovement = false;
 
             itemCapacity = 10;
@@ -1818,7 +1818,7 @@ public class XenUnitTypes {
             armor = 6f;
             hitSize = 24f;
             speed = 0.6f;
-            rotateSpeed = 2.3f;
+            rotateSpeed = 5f;
             omniMovement = false;
 
             itemCapacity = 0;
