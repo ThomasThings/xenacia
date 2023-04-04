@@ -32,11 +32,11 @@ public class XenUnitTypes {
     //core units
     periodDrone, period, momentDrone, moment, duskDrone, dusk, dawnDrone, dawn,
     //seeds
-    mechacraft, aircraft, polycraft, watercraft, treadcraft, hovercraft, arthocraft,
+    mechacraftHull, aircraftHull, polycraftHull, watercraftHull, treadcraftHull, hovercraftHull, arthocraftHull,
     //terrestrial assault
-    gale,
+    gale, squall, draft,
     anax, odonata,
-    explore,
+    explore, seeker,
     shif, kreeg,
     tack, nail,
     //terrestrial support
@@ -371,9 +371,9 @@ public class XenUnitTypes {
 
         //endregion
 
-        //region seeds
+        //region hulls
 
-        mechacraft = new UnitType("mechacraft") {{
+        mechacraftHull = new UnitType("mechacraft-hull") {{
             constructor = MechUnit::create;
             outlineColor = Color.valueOf("3d2f37");
             mechLegColor = Color.valueOf("3d2f37");
@@ -389,7 +389,7 @@ public class XenUnitTypes {
             mechFrontSway = 0.2f;
             mechSideSway = 0.3f;
         }};
-        aircraft = new UnitType("aircraft") {{
+        aircraftHull = new UnitType("aircraft-hull") {{
             constructor = UnitEntity::create;
             outlineColor = Color.valueOf("3d2f37");
             health = 250f;
@@ -408,7 +408,7 @@ public class XenUnitTypes {
             engineSize = 3f;
             engineOffset = 5.5f;
         }};
-        polycraft = new UnitType("polycraft") {{
+        polycraftHull = new UnitType("polycraft-hull") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("3d2f37");
             health = 250f;
@@ -426,7 +426,7 @@ public class XenUnitTypes {
             legLength = 9f;
             rippleScale = 0.1f;
         }};
-        watercraft = new UnitType("watercraft") {{
+        watercraftHull = new UnitType("watercraft-hull") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("3d2f37");
             health = 250f;
@@ -443,7 +443,7 @@ public class XenUnitTypes {
             waveTrailY = -1f;
             trailScl = 1.2f;
         }};
-        treadcraft = new UnitType("treadcraft") {{
+        treadcraftHull = new UnitType("treadcraft-hull") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("3d2f37");
             health = 250f;
@@ -466,7 +466,7 @@ public class XenUnitTypes {
                 )
             };
         }};
-        hovercraft = new UnitType("hovercraft") {{
+        hovercraftHull = new UnitType("hovercraft-hull") {{
             constructor = UnitEntity::create;
             outlineColor = Color.valueOf("3d2f37");
             health = 250f;
@@ -509,7 +509,7 @@ public class XenUnitTypes {
                 color = Color.valueOf("dcc6c6");
             }});
         }};
-        arthocraft = new UnitType("arthocraft") {{
+        arthocraftHull = new UnitType("arthocraft-hull") {{
             constructor = CrawlUnit::create;
             outlineColor = Color.valueOf("3d2f37");
             health = 250f;
@@ -570,6 +570,100 @@ public class XenUnitTypes {
                     splashDamageRadius = 20f;
                     splashDamage = 15f;
                     lifetime = 60f;
+                    trailColor = Color.valueOf("d06b53");
+                    backColor = Color.valueOf("d06b53");
+                    frontColor = Color.valueOf("ffa665");
+                    hitEffect = Fx.blastExplosion;
+                    despawnEffect = Fx.blastExplosion;
+                    weaveScale = 4f;
+                    weaveMag = 1f;
+                }};
+            }});
+        }};
+        squall = new UnitType("squall") {{
+            constructor = MechUnit::create;
+            outlines = false;
+            mechLegColor = Color.valueOf("2b262d");
+            health = 2600f;
+            armor = 8f;
+            hitSize = 24f;
+            speed = 0.6f;
+            rotateSpeed = 4f;
+
+            itemCapacity = 0;
+
+            mechFrontSway = 0.3f;
+            mechSideSway = 0.6f;
+
+            weapons.add(new Weapon("xenacia-squall-missiles") {{
+                x = 10.25f;
+                y = 0f;
+                top = false;
+                layerOffset = -0.0001f;
+                rotate = false;
+                reload = 30f;
+                inaccuracy = 2f;
+                velocityRnd = 0.2f;
+                shootSound = Sounds.missile;
+                shootY = 8.5f;
+                shoot.shots = 5;
+
+                bullet = new MissileBulletType(2.8f, 35) {{
+                    width = 8.5f;
+                    height = 8.5f;
+                    shrinkY = 0f;
+                    drag = -0.003f;
+                    homingRange = 30f;
+                    splashDamageRadius = 20f;
+                    splashDamage = 15f;
+                    lifetime = 75f;
+                    trailColor = Color.valueOf("d06b53");
+                    backColor = Color.valueOf("d06b53");
+                    frontColor = Color.valueOf("ffa665");
+                    hitEffect = Fx.blastExplosion;
+                    despawnEffect = Fx.blastExplosion;
+                    weaveScale = 4f;
+                    weaveMag = 1f;
+                }};
+            }});
+        }};
+        draft = new UnitType("draft") {{
+            constructor = MechUnit::create;
+            outlines = false;
+            mechLegColor = Color.valueOf("2b262d");
+            health = 8200f;
+            armor = 12f;
+            hitSize = 24f;
+            speed = 0.6f;
+            rotateSpeed = 4f;
+
+            itemCapacity = 0;
+
+            mechFrontSway = 0.3f;
+            mechSideSway = 0.6f;
+
+            weapons.add(new Weapon("xenacia-draft-missiles") {{
+                x = 14.5f;
+                y = -0.25f;
+                top = false;
+                layerOffset = -0.0001f;
+                rotate = false;
+                reload = 30f;
+                inaccuracy = 0.5f;
+                velocityRnd = 0.2f;
+                shootSound = Sounds.missile;
+                shootY = 8.5f;
+                shoot.shots = 5;
+
+                bullet = new MissileBulletType(3.5f, 120) {{
+                    width = 8.5f;
+                    height = 8.5f;
+                    shrinkY = 0f;
+                    drag = -0.003f;
+                    homingRange = 30f;
+                    splashDamageRadius = 20f;
+                    splashDamage = 15f;
+                    lifetime = 75f;
                     trailColor = Color.valueOf("d06b53");
                     backColor = Color.valueOf("d06b53");
                     frontColor = Color.valueOf("ffa665");
@@ -731,6 +825,51 @@ public class XenUnitTypes {
                     collidesTiles = true;
                     splashDamageRadius = 32f;
                     splashDamage = 60f;
+                    trailColor = Color.valueOf("d06b53");
+                    backColor = Color.valueOf("d06b53");
+                    frontColor = Color.valueOf("ffa665");
+                }};
+            }});
+        }};
+        seeker = new UnitType("seeker") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("2b262d");
+            health = 550f;
+            armor = 0f;
+            hitSize = 12f;
+            speed = 0.8f;
+            rotateSpeed = 5f;
+
+            itemCapacity = 0;
+
+            legContinuousMove = true;
+            legCount = 4;
+            legGroupSize = 1;
+            legLength = 11f;
+            rippleScale = 0.2f;
+            stepShake = 0f;
+            hovering = true;
+
+            weapons.add(new Weapon("xenacia-seeker-cannon") {{
+                x = 0f;
+                y = -7.5f;
+                mirror = false;
+                rotate = true;
+                rotateSpeed = 4f;
+                reload = 60f;
+                inaccuracy = 0f;
+                shootSound = Sounds.artillery;
+
+                shootY = 14.5f;
+                bullet = new ArtilleryBulletType(2.8f, 50, "shell") {{
+                    hitEffect = Fx.blastExplosion;
+                    knockback = 0.5f;
+                    lifetime = 150f;
+                    width = height = 10f;
+                    collides = true;
+                    collidesTiles = true;
+                    splashDamageRadius = 40f;
+                    splashDamage = 180f;
                     trailColor = Color.valueOf("d06b53");
                     backColor = Color.valueOf("d06b53");
                     frontColor = Color.valueOf("ffa665");

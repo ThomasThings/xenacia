@@ -13,7 +13,7 @@ import static mindustry.type.ItemStack.*;
 public class XenUnitFactories{
     public static Block
             miteFactory,
-            unitSeedConstructor,
+            unitHullConstructor,
             assaultTranstructor, supportTranstructor, specialistTranstructor,
             assaultReconstructor, supportReconstructor, specialistReconstructor,
             convergentReconstructor;
@@ -31,14 +31,14 @@ public class XenUnitFactories{
             size = 2;
             consumePower(0.8f);
         }};
-        unitSeedConstructor = new BaseTeamUnitFactory("unit-seed-constructor"){{
+        unitHullConstructor = new BaseTeamUnitFactory("unit-hull-constructor"){{
             requirements(Category.units, with( XenItems.aluminum, 100, Items.silicon, 80, XenItems.iron, 80));
             plans = Seq.with(
-                    new UnitPlan(XenUnitTypes.mechacraft, 60f * 15, with(Items.silicon, 15, XenItems.iron, 15, XenItems.aluminum, 5)),
-                    new UnitPlan(XenUnitTypes.aircraft, 60f * 15, with(Items.silicon, 15, XenItems.iron, 5, XenItems.aluminum, 10)),
-                    new UnitPlan(XenUnitTypes.polycraft, 60f * 15, with(Items.silicon, 20, XenItems.iron, 10, XenItems.aluminum, 5)),
-                    new UnitPlan(XenUnitTypes.watercraft, 60f * 15, with(Items.silicon, 20, XenItems.aluminum, 15)),
-                    new UnitPlan(XenUnitTypes.treadcraft, 60f * 15, with(Items.silicon, 25, XenItems.iron, 15, XenItems.aluminum, 10))
+                    new UnitPlan(XenUnitTypes.mechacraftHull, 60f * 15, with(Items.silicon, 15, XenItems.iron, 15, XenItems.aluminum, 5)),
+                    new UnitPlan(XenUnitTypes.aircraftHull, 60f * 15, with(Items.silicon, 15, XenItems.iron, 5, XenItems.aluminum, 10)),
+                    new UnitPlan(XenUnitTypes.polycraftHull, 60f * 15, with(Items.silicon, 20, XenItems.iron, 10, XenItems.aluminum, 5)),
+                    new UnitPlan(XenUnitTypes.watercraftHull, 60f * 15, with(Items.silicon, 20, XenItems.aluminum, 15)),
+                    new UnitPlan(XenUnitTypes.treadcraftHull, 60f * 15, with(Items.silicon, 25, XenItems.iron, 15, XenItems.aluminum, 10))
             );
             size = 3;
             consumePower(1.2f);
@@ -54,11 +54,11 @@ public class XenUnitFactories{
             constructTime = 60f * 10f;
 
             upgrades.addAll(
-                    new UnitType[]{XenUnitTypes.mechacraft, XenUnitTypes.gale},
-                    new UnitType[]{XenUnitTypes.aircraft, XenUnitTypes.anax},
-                    new UnitType[]{XenUnitTypes.polycraft, XenUnitTypes.explore},
-                    new UnitType[]{XenUnitTypes.watercraft, XenUnitTypes.shif},
-                    new UnitType[]{XenUnitTypes.treadcraft, XenUnitTypes.tack}
+                    new UnitType[]{XenUnitTypes.mechacraftHull, XenUnitTypes.gale},
+                    new UnitType[]{XenUnitTypes.aircraftHull, XenUnitTypes.anax},
+                    new UnitType[]{XenUnitTypes.polycraftHull, XenUnitTypes.explore},
+                    new UnitType[]{XenUnitTypes.watercraftHull, XenUnitTypes.shif},
+                    new UnitType[]{XenUnitTypes.treadcraftHull, XenUnitTypes.tack}
             );
         }};
         supportTranstructor = new BaseTeamReconstructor("support-transtructor"){{
@@ -71,11 +71,11 @@ public class XenUnitFactories{
             constructTime = 60f * 10f;
 
             upgrades.addAll(
-                    new UnitType[]{XenUnitTypes.mechacraft, XenUnitTypes.elementary},
-                    new UnitType[]{XenUnitTypes.aircraft, XenUnitTypes.lug},
-                    new UnitType[]{XenUnitTypes.polycraft, XenUnitTypes.tick},
-                    new UnitType[]{XenUnitTypes.watercraft, XenUnitTypes.natuon},
-                    new UnitType[]{XenUnitTypes.treadcraft, XenUnitTypes.aid}
+                    new UnitType[]{XenUnitTypes.mechacraftHull, XenUnitTypes.elementary},
+                    new UnitType[]{XenUnitTypes.aircraftHull, XenUnitTypes.lug},
+                    new UnitType[]{XenUnitTypes.polycraftHull, XenUnitTypes.tick},
+                    new UnitType[]{XenUnitTypes.watercraftHull, XenUnitTypes.natuon},
+                    new UnitType[]{XenUnitTypes.treadcraftHull, XenUnitTypes.aid}
             );
         }};
         specialistTranstructor = new BaseTeamReconstructor("specialist-transtructor"){{
@@ -88,11 +88,11 @@ public class XenUnitFactories{
             constructTime = 60f * 10f;
 
             upgrades.addAll(
-                    new UnitType[]{XenUnitTypes.mechacraft, XenUnitTypes.erode},
-                    new UnitType[]{XenUnitTypes.aircraft, XenUnitTypes.ryher},
-                    new UnitType[]{XenUnitTypes.polycraft, XenUnitTypes.spritz},
-                    new UnitType[]{XenUnitTypes.watercraft, XenUnitTypes.kyre},
-                    new UnitType[]{XenUnitTypes.treadcraft, XenUnitTypes.tie}
+                    new UnitType[]{XenUnitTypes.mechacraftHull, XenUnitTypes.erode},
+                    new UnitType[]{XenUnitTypes.aircraftHull, XenUnitTypes.ryher},
+                    new UnitType[]{XenUnitTypes.polycraftHull, XenUnitTypes.spritz},
+                    new UnitType[]{XenUnitTypes.watercraftHull, XenUnitTypes.kyre},
+                    new UnitType[]{XenUnitTypes.treadcraftHull, XenUnitTypes.tie}
             );
         }};
 
