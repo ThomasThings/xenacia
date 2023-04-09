@@ -112,16 +112,9 @@ public class XenTurrets{
 
             drawer = new DrawTurret("xenacia-"){{
                 parts.add(
-                        new RegionPart("-mid"){{
-                            progress = PartProgress.recoil;
-                            heatProgress = PartProgress.warmup.add(-0.2f).add(p -> Mathf.sin(9f, 0.2f) * p.warmup);
-                            mirror = false;
-                            under = true;
-                            moveY = -2f;
-                            }},
                         new RegionPart("-blade"){{
                             progress = PartProgress.warmup;
-                            moves.add(new PartMove(PartProgress.recoil, 0f, 1f, -8f));
+                            moves.add(new PartMove(PartProgress.recoil, 0f, 1f, -7.5f));
                             moveRot = -22f;
                             moveX = 0f;
                             moveY = -5f;
@@ -145,7 +138,7 @@ public class XenTurrets{
                             progress = PartProgress.recoil;
                             heatProgress = PartProgress.warmup.add(-0.2f).add(p -> Mathf.sin(9f, 0.2f) * p.warmup);
                             mirror = false;
-                            under = true;
+                            under = false;
                             moveY = -2f;
                         }}
                 );
