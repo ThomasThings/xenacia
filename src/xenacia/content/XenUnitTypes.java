@@ -584,9 +584,9 @@ public class XenUnitTypes {
             constructor = MechUnit::create;
             outlines = false;
             mechLegColor = Color.valueOf("2b262d");
-            health = 2600f;
+            health = 3800f;
             armor = 8f;
-            hitSize = 24f;
+            hitSize = 22f;
             speed = 0.6f;
             rotateSpeed = 4f;
 
@@ -631,9 +631,9 @@ public class XenUnitTypes {
             constructor = MechUnit::create;
             outlines = false;
             mechLegColor = Color.valueOf("2b262d");
-            health = 8200f;
-            armor = 12f;
-            hitSize = 24f;
+            health = 9600f;
+            armor = 15f;
+            hitSize = 28f;
             speed = 0.6f;
             rotateSpeed = 4f;
 
@@ -648,12 +648,12 @@ public class XenUnitTypes {
                 top = false;
                 layerOffset = -0.0001f;
                 rotate = false;
-                reload = 30f;
-                inaccuracy = 0.5f;
+                reload = 45f;
+                inaccuracy = 2.5f;
                 velocityRnd = 0.2f;
                 shootSound = Sounds.missile;
                 shootY = 8.5f;
-                shoot.shots = 5;
+                shoot.shots = 10;
 
                 bullet = new MissileBulletType(3.5f, 120) {{
                     width = 8.5f;
@@ -725,8 +725,8 @@ public class XenUnitTypes {
         odonata = new UnitType("odonata") {{
             constructor = UnitEntity::create;
             outlineColor = Color.valueOf("2b262d");
-            health = 2300f;
-            armor = 5f;
+            health = 3200f;
+            armor = 8f;
             hitSize = 18f;
             speed = 1.5f;
             rotateSpeed = 4f;
@@ -834,7 +834,7 @@ public class XenUnitTypes {
         seeker = new UnitType("seeker") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("2b262d");
-            health = 550f;
+            health = 2900f;
             armor = 0f;
             hitSize = 12f;
             speed = 0.8f;
@@ -928,7 +928,7 @@ public class XenUnitTypes {
         kreeg = new UnitType("kreeg") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
-            health = 2400f;
+            health = 3400f;
             armor = 5f;
             hitSize = 32f;
             speed = 0.9f;
@@ -1038,7 +1038,7 @@ public class XenUnitTypes {
         nail = new UnitType("nail") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("2b262d");
-            health = 1600f;
+            health = 3400f;
             armor = 8f;
             hitSize = 34f;
             speed = 0.75f;
@@ -1210,7 +1210,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("2b262d");
             defaultCommand = UnitCommand.rebuildCommand;
 
-            health = 2600f;
+            health = 2800f;
             armor = 7f;
             hitSize = 25f;
 
@@ -1339,7 +1339,7 @@ public class XenUnitTypes {
         enavo = new UnitType("enavo") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("2b262d");
-            health = 2800f;
+            health = 3100f;
             armor = 7f;
             hitSize = 30f;
             speed = 0.6f;
@@ -1422,7 +1422,7 @@ public class XenUnitTypes {
         aid = new UnitType("aid") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("2b262d");
-            health = 550f;
+            health = 600f;
             armor = 0f;
             hitSize = 12f;
             speed = 0.8f;
@@ -1486,7 +1486,7 @@ public class XenUnitTypes {
         guard = new UnitType("guard") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("2b262d");
-            health = 1300f;
+            health = 3200f;
             armor = 5f;
             hitSize = 12f;
             speed = 0.8f;

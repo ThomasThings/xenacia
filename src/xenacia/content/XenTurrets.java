@@ -110,22 +110,24 @@ public class XenTurrets{
             rotateSpeed = 2f;
             coolant = consumeCoolant(0.2f);
 
-            drawer = new DrawTurret("reinforced-"){{
-                parts.add(new RegionPart("-blade"){{
-                              progress = PartProgress.warmup;
-                              moves.add(new PartMove(PartProgress.recoil, 0f, 1f, -10f));
-                              moveRot = -22f;
-                              moveX = 0f;
-                              moveY = -5f;
-                              mirror = true;
-                          }},
+            drawer = new DrawTurret("xenacia-"){{
+                parts.add(
                         new RegionPart("-mid"){{
-                            progress = PartProgress.recoil;
-                            heatProgress = PartProgress.warmup.add(-0.2f).add(p -> Mathf.sin(9f, 0.2f) * p.warmup);
+                                progress = PartProgress.recoil;
+                                heatProgress = PartProgress.warmup.add(-0.2f).add(p -> Mathf.sin(9f, 0.2f) * p.warmup);
                             mirror = false;
                             under = true;
-                            moveY = -2f;
-                        }}, new RegionPart("-missile"){{
+                                moveY = -2f;
+                            }},
+                        new RegionPart("-blade"){{
+                            progress = PartProgress.warmup;
+                            moves.add(new PartMove(PartProgress.recoil, 0f, 1f, -8f));
+                            moveRot = -22f;
+                            moveX = 0f;
+                            moveY = -5f;
+                            mirror = true;
+                            }},
+                        new RegionPart("-missile"){{
                             progress = PartProgress.reload.curve(Interp.pow2In);
 
                             colorTo = new Color(1f, 1f, 1f, 0f);
