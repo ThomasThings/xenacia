@@ -139,7 +139,14 @@ public class XenTurrets{
                             heatProgress = PartProgress.warmup.add(-0.2f).add(p -> Mathf.sin(9f, 0.2f) * p.warmup);
                             mirror = false;
                             under = false;
-                            moveY = -2f;
+                            moveY = -4f;
+                        }},
+                        new RegionPart("-mid"){{
+                            progress = PartProgress.recoil;
+                            heatProgress = PartProgress.warmup.add(-0.2f).add(p -> Mathf.sin(9f, 0.2f) * p.warmup);
+                            mirror = false;
+                            under = false;
+                           moveY = -2f;
                         }}
                 );
             }};
