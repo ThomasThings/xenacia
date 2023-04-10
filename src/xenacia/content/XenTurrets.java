@@ -135,18 +135,18 @@ public class XenTurrets{
                             moves.add(new PartMove(PartProgress.warmup.inv(), 0f, -2f, 0f));
                         }},
                         new RegionPart("-mid"){{
-                            progress = PartProgress.recoil;
-                            heatProgress = PartProgress.warmup.add(-0.2f).add(p -> Mathf.sin(9f, 0.2f) * p.warmup);
+                            progress = PartProgress.warmup;
+                            moves.add(new PartMove(PartProgress.recoil, 0f, -1f, 0));
                             mirror = false;
                             under = false;
                             moveY = -4f;
                         }},
                         new RegionPart("-mid"){{
-                            progress = PartProgress.recoil;
-                            heatProgress = PartProgress.warmup.add(-0.2f).add(p -> Mathf.sin(9f, 0.2f) * p.warmup);
+                            progress = PartProgress.warmup;
+                            moves.add(new PartMove(PartProgress.recoil, 0f, -1f, 0));
                             mirror = false;
                             under = false;
-                           moveY = -2f;
+                           moveY = -6f;
                         }}
                 );
             }};
