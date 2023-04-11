@@ -92,6 +92,30 @@ public class XenUnitTypes {
             engineOffset = 4f;
 
             hidden = true;
+
+            weapons.add(new Weapon(){{
+                x = 0f;
+                y = 3f;
+                rotate = false;
+                mirror = false;
+                reload = 20f;
+                inaccuracy = 10f;
+                bullet = new LaserBoltBulletType(5f, 2) {{
+                    width = 1.5f;
+                    height = 5f;
+                    lifetime = 30f;
+
+                    collidesTeam = true;
+                    healPercent = 0.25f;
+
+                    buildingDamageMultiplier = 0f;
+
+                    backColor = Color.valueOf("ffd37f");
+                    frontColor = Color.white;
+                }};
+                shootSound = Sounds.lasershoot;
+                ejectEffect = Fx.none;
+            }});
         }};
         period = new UnitType("period") {{
             constructor = PayloadUnit::create;
@@ -138,7 +162,7 @@ public class XenUnitTypes {
                 mirror = false;
                 reload = 60f;
                 shoot = new ShootSpread(3, 5f);
-                inaccuracy = 5f;
+                inaccuracy = 0f;
                 bullet = new LaserBoltBulletType(3.5f, 10) {{
                     width = 1.5f;
                     height = 5f;
@@ -156,7 +180,7 @@ public class XenUnitTypes {
                 ejectEffect = Fx.none;
             }});
 
-            abilities.add(new UnitSpawnAbility(XenUnitTypes.periodDrone, 60f, 0f, -2f));
+            abilities.add(new UnitSpawnAbility(XenUnitTypes.periodDrone, 300f, 0f, -2f));
         }};
 
         moment = new UnitType("moment") {{
@@ -605,7 +629,8 @@ public class XenUnitTypes {
                 inaccuracy = 2f;
                 velocityRnd = 0.2f;
                 shootSound = Sounds.missile;
-                shootY = 8.5f;
+                shootY = 8f;
+                shootX = -1f;
                 shoot.shots = 5;
 
                 bullet = new MissileBulletType(2.8f, 35) {{
@@ -838,14 +863,14 @@ public class XenUnitTypes {
             armor = 0f;
             hitSize = 12f;
             speed = 0.8f;
-            rotateSpeed = 5f;
+            rotateSpeed = 3f;
 
             itemCapacity = 0;
 
             legContinuousMove = true;
             legCount = 4;
             legGroupSize = 1;
-            legLength = 11f;
+            legLength = 42.5f;
             rippleScale = 0.2f;
             stepShake = 0f;
             hovering = true;
@@ -856,11 +881,11 @@ public class XenUnitTypes {
                 mirror = false;
                 rotate = true;
                 rotateSpeed = 4f;
-                reload = 60f;
+                reload = 120f;
                 inaccuracy = 0f;
                 shootSound = Sounds.artillery;
 
-                shootY = 14.5f;
+                shootY = 11.5f;
                 bullet = new ArtilleryBulletType(2.8f, 50, "shell") {{
                     hitEffect = Fx.blastExplosion;
                     knockback = 0.5f;
@@ -1050,20 +1075,20 @@ public class XenUnitTypes {
             treadFrames = 16;
             treadRects = new Rect[]{
                     new Rect(
-                            -41,
-                            37,
+                            39 - 80,
+                            60 - 80,
                             24,
                             24
                     ),
                     new Rect(
-                            -64,
-                            -9,
+                            16 - 80,
+                            15 - 80,
                             16,
                             24
                     ),
                     new Rect(
-                            -58,
-                            -63,
+                            22 - 80,
+                            44 + 80,
                             32,
                             20
                     )
@@ -1082,11 +1107,11 @@ public class XenUnitTypes {
                 shootSound = Sounds.laser;
 
                 bullet = new LaserBulletType(){{
-                    damage = 350f;
+                    damage = 300f;
                     sideAngle = 75f;
                     sideWidth = 0.7f;
                     sideLength = 25f;
-                    length = 80f;
+                    length = 85f;
                     width = 30f;
                     colors = new Color[]{Color.valueOf("ffa665").cpy().a(0.4f), Color.valueOf("ffa665"), Color.white};
                 }};
@@ -1094,14 +1119,14 @@ public class XenUnitTypes {
                 parts.addAll(
                         new RegionPart("-jaw"){{
                             x = 0f;
-                            y = 2.5f;
+                            y = 0f;
                             progress = PartProgress.warmup;
                             mirror = true;
                             under = true;
                             outline = true;
-                            moveX = 0.75f;
+                            moveX = 1.25f;
                             moveRot = 0f;
-                            moves.add(new PartMove(PartProgress.recoil, 0.5f, 0f, -8f));
+                            moves.add(new PartMove(PartProgress.recoil, 0.5f, -1f, -12f));
                         }});
             }});
         }};
@@ -1636,8 +1661,8 @@ public class XenUnitTypes {
                 reload = 10f;
 
                 bullet = new SapBulletType() {{
-                    damage = 5;
-                    sapStrength = 1.5f;
+                    damage = 8;
+                    sapStrength = 1f;
                     length = 50f;
                     width = 0.4f;
                     lifetime = 25f;
@@ -1668,9 +1693,9 @@ public class XenUnitTypes {
             drag = 0.05f;
             engineSize = 0f;
             setEnginesMirror(
-                    new UnitEngine(44 / 4f, 17 / 4f, 2.5f, 45f),
-                    new UnitEngine(44 / 4f, -40 / 4f, 2.5f, 315f),
-                    new UnitEngine(0, -44 / 4f, 2.5f, 0f)
+                    new UnitEngine(52 / 4f, 25 / 4f, 2.5f, 45f),
+                    new UnitEngine(48 / 4f, -44 / 4f, 2.5f, 315f),
+                    new UnitEngine(0, -44 / 4f, 2.5f, 90f)
             );
 
             itemCapacity = 60;

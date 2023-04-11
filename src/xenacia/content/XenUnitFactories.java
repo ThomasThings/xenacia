@@ -38,7 +38,9 @@ public class XenUnitFactories{
                     new UnitPlan(XenUnitTypes.aircraftHull, 60f * 15, with(Items.silicon, 15, XenItems.iron, 5, XenItems.aluminum, 10)),
                     new UnitPlan(XenUnitTypes.polycraftHull, 60f * 15, with(Items.silicon, 20, XenItems.iron, 10, XenItems.aluminum, 5)),
                     new UnitPlan(XenUnitTypes.watercraftHull, 60f * 15, with(Items.silicon, 20, XenItems.aluminum, 15)),
-                    new UnitPlan(XenUnitTypes.treadcraftHull, 60f * 15, with(Items.silicon, 25, XenItems.iron, 15, XenItems.aluminum, 10))
+                    new UnitPlan(XenUnitTypes.treadcraftHull, 60f * 15, with(Items.silicon, 25, XenItems.iron, 15, XenItems.aluminum, 10)),
+                    new UnitPlan(XenUnitTypes.hovercraftHull, 60f * 15, with(Items.silicon, 20, XenItems.iron, 15, XenItems.aluminum, 5)),
+                    new UnitPlan(XenUnitTypes.arthocraftHull, 60f * 15, with(Items.silicon, 25, XenItems.iron, 10, XenItems.aluminum, 5))
             );
             size = 3;
             consumePower(1.2f);

@@ -17,8 +17,8 @@ public class XenCores{
 
             isFirstTier = true;
             unitType = XenUnitTypes.period;
-            health = 1000;
-            armor = 2f;
+            health = 5000;
+            armor = 5f;
             itemCapacity = 1000;
             size = 2;
             thrusterLength = 34/4f;
@@ -29,7 +29,7 @@ public class XenCores{
             requirements(Category.effect, with(XenItems.iron, 1000, XenItems.aluminum, 1000, Items.graphite, 1000));
 
             unitType = XenUnitTypes.moment;
-            health = 4000;
+            health = 22000;
             armor = 5f;
             itemCapacity = 5000;
             size = 3;
@@ -41,7 +41,7 @@ public class XenCores{
             requirements(Category.effect, with(XenItems.iron, 3000, XenItems.aluminum, 3000, Items.graphite, 3000, Items.silicon, 2000, Items.titanium, 1500));
 
             unitType = XenUnitTypes.dawn;
-            health = 10000;
+            health = 46000;
             armor = 10f;
             itemCapacity = 10000;
             size = 4;
@@ -53,7 +53,7 @@ public class XenCores{
             requirements(Category.effect, with(XenItems.iron, 9000, XenItems.aluminum, 9000, Items.titanium, 7000, Items.graphite, 5000, Items.silicon, 5000,  XenItems.polonium, 3000));
 
             unitType = XenUnitTypes.dusk;
-            health = 24000;
+            health = 68000;
             armor = 15f;
             itemCapacity = 20000;
             size = 5;
