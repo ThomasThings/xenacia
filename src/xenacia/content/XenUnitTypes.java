@@ -1066,8 +1066,8 @@ public class XenUnitTypes {
             health = 3400f;
             armor = 8f;
             hitSize = 34f;
-            speed = 0.75f;
-            rotateSpeed = 5f;
+            speed = 0.65f;
+            rotateSpeed = 1f;
             omniMovement = false;
 
             itemCapacity = 0;
@@ -1101,13 +1101,13 @@ public class XenUnitTypes {
                 top = true;
                 mirror = false;
                 rotate = true;
-                rotateSpeed = 3.5f;
+                rotateSpeed = 2f;
                 reload = 120f;
                 recoil = 2f;
                 shootSound = Sounds.laser;
 
                 bullet = new LaserBulletType(){{
-                    damage = 300f;
+                    damage = 250f;
                     sideAngle = 75f;
                     sideWidth = 0.7f;
                     sideLength = 25f;
@@ -1514,8 +1514,8 @@ public class XenUnitTypes {
             health = 3200f;
             armor = 5f;
             hitSize = 12f;
-            speed = 0.8f;
-            rotateSpeed = 5f;
+            speed = 0.7f;
+            rotateSpeed = 1f;
             omniMovement = false;
 
             itemCapacity = 10;
@@ -2001,7 +2001,7 @@ public class XenUnitTypes {
 
             weapons.add(new Weapon("link-flare"){{
                 x = 0f;
-                y = 5f;
+                y = 4f;
                 mirror = false;
                 rotate = false;
                 parentizeEffects = true;
@@ -2025,7 +2025,7 @@ public class XenUnitTypes {
                     statusDuration = 180f;
 
                     length = 75f;
-                    width = 15f;
+                    width = 10f;
 
                     colors = new Color[]{
                             Pal.sapBulletBack.cpy().a(0.2f),
@@ -2036,7 +2036,8 @@ public class XenUnitTypes {
                     };
 
                     flareColor = Pal.sapBullet;
-                    flareLength = 12f;
+                    flareLength = 35f;
+                    flareWidth = 4f;
                     flareRotSpeed = -2f;
                     hitColor = Pal.sapBullet;
 
