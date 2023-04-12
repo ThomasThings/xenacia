@@ -1075,20 +1075,20 @@ public class XenUnitTypes {
             treadFrames = 16;
             treadRects = new Rect[]{
                     new Rect(
-                            39 - 80,
-                            60 - 80,
+                            39 + 80,
+                            60 + 80,
                             24,
                             24
                     ),
                     new Rect(
-                            16 - 80,
-                            15 - 80,
+                            16 + 80,
+                            15 + 80,
                             16,
                             24
                     ),
                     new Rect(
-                            22 - 80,
-                            44 + 80,
+                            22 + 80,
+                            44 - 80,
                             32,
                             20
                     )
