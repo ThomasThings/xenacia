@@ -1522,6 +1522,7 @@ public class XenUnitTypes {
             itemCapacity = 10;
 
             treadFrames = 16;
+            treadPullOffset = 1;
             treadRects = new Rect[]{
                     new Rect(
                             15 - 80,
