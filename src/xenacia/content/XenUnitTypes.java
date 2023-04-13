@@ -1065,7 +1065,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("2b262d");
             health = 3400f;
             armor = 8f;
-            hitSize = 34f;
+            hitSize = 31f;
             speed = 0.65f;
             rotateSpeed = 1f;
             omniMovement = false;
@@ -1513,7 +1513,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("2b262d");
             health = 3200f;
             armor = 5f;
-            hitSize = 12f;
+            hitSize = 24f;
             speed = 0.7f;
             rotateSpeed = 1f;
             omniMovement = false;
@@ -1524,7 +1524,7 @@ public class XenUnitTypes {
             treadRects = new Rect[]{
                     new Rect(
                             15 - 80,
-                            23 - 80,
+                            15 - 80,
                             37,
                             126
                     )
