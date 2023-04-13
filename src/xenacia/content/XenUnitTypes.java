@@ -1982,7 +1982,7 @@ public class XenUnitTypes {
             armor = 6f;
             hitSize = 24f;
             speed = 0.6f;
-            rotateSpeed = 5f;
+            rotateSpeed = 1f;
             omniMovement = false;
 
             itemCapacity = 0;
