@@ -12,6 +12,7 @@ public class XenWalls{
             ironWall, ironWallLarge, bulkIronWall, bulkIronWallLarge, bulkIronWallHuge,
             graphiteWall, graphiteWallLarge, bulkGraphiteWall, bulkGraphiteWallLarge, bulkGraphiteWallHuge,
             titaniumAlloyWall, titaniumAlloyWallLarge, bulkTitaniumAlloyWall, bulkTitaniumAlloyWallLarge, bulkTitaniumAlloyWallHuge,
+            amethystWall, amethystWallLarge, bulkAmethystWall, bulkAmethystWallLarge, bulkAmethystWallHuge,
             cobaltWall, cobaltWallLarge, bulkCobaltWall, bulkCobaltWallLarge, bulkCobaltWallHuge;
 
     public static void load(){
@@ -86,6 +87,42 @@ public class XenWalls{
             armor = 6;
             size = 4;
             researchCost = with(Items.graphite, 3000, XenItems.iron, 2000);
+        }};
+        //amethyst
+        amethystWall = new Wall("amethyst-wall"){{
+            requirements(Category.defense, with(XenItems.amethyst, 6));
+            health = 550;
+            armor = 2;
+            size = 1;
+            researchCost = with(XenItems.amethyst, 600);
+        }};
+        amethystWallLarge = new Wall("amethyst-wall-large"){{
+            requirements(Category.defense, with(XenItems.amethyst, 6 * 4));
+            health = 550 * 4;
+            armor = 2;
+            size = 2;
+            researchCost = with(XenItems.amethyst, 1200);
+        }};
+        bulkAmethystWall = new Wall("bulk-amethyst-wall"){{
+            requirements(Category.defense, with(XenItems.amethyst, 10 * 4, Items.graphite, 4 * 4));
+            health = 550 * 2 * 4;
+            armor = 6;
+            size = 2;
+            researchCost = with(XenItems.amethyst, 3000, XenItems.aluminum, 800);
+        }};
+        bulkAmethystWallLarge = new Wall("bulk-amethyst-wall-large"){{
+            requirements(Category.defense, with(XenItems.amethyst, 10 * 9, Items.graphite, 4 * 9));
+            health = 550 * 2 * 9;
+            armor = 6;
+            size = 3;
+            researchCost = with(XenItems.amethyst, 7000, XenItems.aluminum, 1400);
+        }};
+        bulkAmethystWallHuge = new Wall("bulk-amethyst-wall-huge"){{
+            requirements(Category.defense, with(XenItems.amethyst, 10 * 16, Items.graphite, 4 * 16));
+            health = 550 * 2 * 16;
+            armor = 6;
+            size = 4;
+            researchCost = with(XenItems.amethyst, 14000, Items.graphite, 4000);
         }};
         //titanium alloy
         titaniumAlloyWall = new Wall("titanium-alloy-wall"){{
