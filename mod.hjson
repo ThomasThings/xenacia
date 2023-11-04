@@ -6,10 +6,10 @@ author: "Thomas's Things"
 
 main: "xenacia.XenaciaMod"
 
-description: "A mod that adds an entire new campaign, larger than serpulo. Still in Aplha stages."
+description: "A mod that adds an entire new campaign, larger than serpulo. Still in Pre-Aplha stages."
 
 version: 0.1.3.1
 
-minGameVersion: 145.1
+minGameVersion: 146
 
 java: true
