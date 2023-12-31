@@ -24,7 +24,8 @@ import mindustry.gen.*;
 import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.world.meta.BlockFlag;
 
-//payloadCapacity = ((X * 8) ^ 2), X being the side of the payload in blocks
+//payloadCapacity is ((X*8)^2), X is desired side length of payload capacity
+//unit size = (X x 8), X being the side of
 
 public class XenUnitTypes {
     public static UnitType
@@ -41,7 +42,7 @@ public class XenUnitTypes {
     tack, nail,
     //terrestrial support
     elementary,
-    lug, haul,
+    lug, haul, envoy, halecarry,
     tick,
     natuon, enavo,
     aid, guard,
@@ -1241,6 +1242,36 @@ public class XenUnitTypes {
             hitSize = 25f;
 
             speed = 1f;
+            rotateSpeed = 10f;
+
+            flying = true;
+            lowAltitude = true;
+            accel = 0.1f;
+            drag = 0.05f;
+
+            setEnginesMirror(
+                    new UnitEngine(3f, -8f, 3f, 22.5f)
+            );
+
+            mineTier = 2;
+            mineSpeed = 2f;
+            itemCapacity = 100;
+            payloadCapacity = 576;
+
+            buildSpeed = 0.8f;
+
+            abilities.add(new RepairFieldAbility(12f, 120, 80f));
+        }};
+        envoy = new UnitType("envoy") {{
+            constructor = PayloadUnit::create;
+            outlineColor = Color.valueOf("2b262d");
+            defaultCommand = UnitCommand.rebuildCommand;
+
+            health = 2800f;
+            armor = 7f;
+            hitSize = 45f;
+
+            speed = 0.9f;
             rotateSpeed = 10f;
 
             flying = true;
