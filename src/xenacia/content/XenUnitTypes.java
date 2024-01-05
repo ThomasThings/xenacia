@@ -14,13 +14,13 @@ import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.entities.bullet.*;
 import mindustry.entities.part.HoverPart;
 import mindustry.entities.part.RegionPart;
-import mindustry.entities.pattern.ShootAlternate;
 import mindustry.entities.pattern.ShootBarrel;
 import mindustry.entities.pattern.ShootSpread;
+import mindustry.gen.*;
 import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
-import mindustry.type.*;
-import mindustry.gen.*;
+import mindustry.type.UnitType;
+import mindustry.type.Weapon;
 import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.world.meta.BlockFlag;
 
@@ -793,21 +793,6 @@ public class XenUnitTypes {
 
                     status = StatusEffects.blasted;
                     statusDuration = 60f;
-
-                    fragVelocityMin = 0.4f;
-
-                    fragBullets = 3;
-                    fragLifeMin = 0f;
-                    fragRandomSpread = 30f;
-
-                    fragBullet = new BasicBulletType(2, 15){{
-                        width = 6f;
-                        height = 6f;
-                        lifetime = 45f;
-
-                        backColor = Color.valueOf("d06b53");
-                        frontColor = Color.valueOf("ffa665");
-                    }};
                 }};
             }});
         }};
@@ -1694,8 +1679,8 @@ public class XenUnitTypes {
                 reload = 10f;
 
                 bullet = new SapBulletType() {{
-                    damage = 8;
-                    sapStrength = 1f;
+                    damage = 10;
+                    sapStrength = 0.8f;
                     length = 50f;
                     width = 0.4f;
                     lifetime = 25f;
@@ -1743,8 +1728,8 @@ public class XenUnitTypes {
                 reload = 5f;
 
                 bullet = new SapBulletType() {{
-                    damage = 10;
-                    sapStrength = 1f;
+                    damage = 15;
+                    sapStrength = 0.8f;
                     length = 80f;
                     width = 0.7f;
                     lifetime = 25f;
