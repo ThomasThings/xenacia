@@ -10,7 +10,6 @@ import mindustry.content.Liquids;
 import mindustry.content.StatusEffects;
 import mindustry.entities.abilities.EnergyFieldAbility;
 import mindustry.entities.abilities.RepairFieldAbility;
-import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.entities.bullet.*;
 import mindustry.entities.part.HoverPart;
 import mindustry.entities.part.RegionPart;
@@ -65,6 +64,7 @@ public class XenUnitTypes {
 
         float coreFleeRange = 500f;
         periodDrone = new UnitType("period-drone") {{
+            hidden = true;
             constructor = UnitEntity::create;
             outlineColor = Color.valueOf("2b262d");
             controller = u -> new BuilderAI(true, coreFleeRange);
@@ -162,7 +162,7 @@ public class XenUnitTypes {
                 rotate = false;
                 mirror = false;
                 reload = 60f;
-                shoot = new ShootSpread(3, 5f);
+                shoot = new ShootSpread(1, 5f);
                 inaccuracy = 0f;
                 bullet = new LaserBoltBulletType(3.5f, 10) {{
                     width = 1.5f;
@@ -181,7 +181,7 @@ public class XenUnitTypes {
                 ejectEffect = Fx.none;
             }});
 
-            abilities.add(new UnitSpawnAbility(XenUnitTypes.periodDrone, 300f, 0f, -2f));
+            //abilities.add(new UnitSpawnAbility(XenUnitTypes.periodDrone, 300f, 0f, -2f));
         }};
 
         moment = new UnitType("moment") {{
