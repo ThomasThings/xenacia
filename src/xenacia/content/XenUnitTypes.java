@@ -155,16 +155,16 @@ public class XenUnitTypes {
 
             weapons.add(new Weapon(){{
                 x = 0f;
-                y = 1.5f;
+                y = 0.5f;
                 rotate = false;
                 mirror = false;
-                reload = 60f;
+                reload = 30f;
                 shoot = new ShootSpread(1, 5f);
                 inaccuracy = 0f;
-                bullet = new LaserBoltBulletType(5f, 20) {{
+                bullet = new LaserBoltBulletType(3f, 20) {{
                     width = 1.5f;
                     height = 5f;
-                    lifetime = 30f;
+                    lifetime = 60f;
 
                     collidesTeam = true;
                     healPercent = 2f;

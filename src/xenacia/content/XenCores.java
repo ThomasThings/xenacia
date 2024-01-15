@@ -17,9 +17,9 @@ public class XenCores{
 
             isFirstTier = true;
             unitType = XenUnitTypes.period;
-            health = 5000;
-            armor = 5f;
-            itemCapacity = 1000;
+            health = 2000;
+            armor = 0f;
+            itemCapacity = 2000;
             size = 2;
             thrusterLength = 34/4f;
 
