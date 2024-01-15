@@ -126,7 +126,7 @@ public class XenUnitTypes {
             health = 400f;
             armor = 2f;
             hitSize = 10f;
-            speed = 2f;
+            speed = 3f;
             rotateSpeed = 5f;
             flying = true;
             lowAltitude = true;
@@ -141,7 +141,7 @@ public class XenUnitTypes {
             mineSpeed = 4f;
             mineTier = 2;
             buildSpeed = 0.2f;
-            buildBeamOffset = 2f;
+            buildBeamOffset = 4f;
 
             payloadCapacity = 64f;
             pickupUnits = false;
@@ -150,21 +150,18 @@ public class XenUnitTypes {
             itemCapacity = 40;
             isEnemy = false;
 
-            setEnginesMirror(
-                    new UnitEngine(-3.5f, -2f, 2f, 315f)
-            );
-            engineSize = 2f;
-            engineOffset = 6.5f;
+            engineSize = 2.5f;
+            engineOffset = 6.2f;
 
             weapons.add(new Weapon(){{
                 x = 0f;
-                y = 3.5f;
+                y = 1.5f;
                 rotate = false;
                 mirror = false;
                 reload = 60f;
                 shoot = new ShootSpread(1, 5f);
                 inaccuracy = 0f;
-                bullet = new LaserBoltBulletType(3.5f, 10) {{
+                bullet = new LaserBoltBulletType(5f, 20) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 30f;
@@ -172,7 +169,7 @@ public class XenUnitTypes {
                     collidesTeam = true;
                     healPercent = 2f;
 
-                    buildingDamageMultiplier = 0.5f;
+                    buildingDamageMultiplier = 0.1f;
 
                     backColor = Color.valueOf("ffd37f");
                     frontColor = Color.white;
