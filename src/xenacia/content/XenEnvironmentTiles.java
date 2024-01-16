@@ -9,8 +9,6 @@ import mindustry.content.*;
 
 public class XenEnvironmentTiles{
     public static Block
-            //test
-            testFloor,
             //magmatic
             magmaFloor, magmaRock, magmaticCrack, volcanicRock, volcanicRockWall,
             //scorched
@@ -24,10 +22,6 @@ public class XenEnvironmentTiles{
             //ores
             oreIron, oreAluminum, orePeat, oreLithium, oreAmethyst, orePolonium, oreNeodymium, oreCobalt;
     public static void load(){
-        //test
-        testFloor = new Floor("test-floor"){{
-            variants = 4;
-        }};
         //volcanic
         magmaFloor = new Floor("magma-floor"){{
             speedMultiplier = 0.2f;
