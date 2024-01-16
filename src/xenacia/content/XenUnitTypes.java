@@ -66,7 +66,7 @@ public class XenUnitTypes {
         periodDrone = new UnitType("period-drone") {{
             hidden = true;
             constructor = UnitEntity::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             controller = u -> new BuilderAI(true, coreFleeRange);
             defaultCommand = UnitCommand.rebuildCommand;
             allowedInPayloads = false;
@@ -120,7 +120,7 @@ public class XenUnitTypes {
         }};
         period = new UnitType("period") {{
             constructor = PayloadUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             controller = u -> new BuilderAI(true, coreFleeRange);
             coreUnitDock = true;
             health = 400f;
@@ -167,7 +167,7 @@ public class XenUnitTypes {
                     lifetime = 60f;
 
                     collidesTeam = true;
-                    healPercent = 2f;
+                    healAmount = 30;
 
                     buildingDamageMultiplier = 0.1f;
 
@@ -183,7 +183,7 @@ public class XenUnitTypes {
 
         moment = new UnitType("moment") {{
             constructor = PayloadUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             controller = u -> new BuilderAI(true, coreFleeRange);
             coreUnitDock = true;
             health = 800f;
@@ -243,7 +243,7 @@ public class XenUnitTypes {
 
         dawn = new UnitType("dawn") {{
             constructor = PayloadUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             controller = u -> new BuilderAI(true, coreFleeRange);
             coreUnitDock = true;
             health = 1200f;
@@ -332,7 +332,7 @@ public class XenUnitTypes {
 
         dusk = new UnitType("dusk") {{
             constructor = PayloadUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             controller = u -> new BuilderAI(true, coreFleeRange);
             coreUnitDock = true;
             health = 1200f;
@@ -559,7 +559,7 @@ public class XenUnitTypes {
         gale = new UnitType("gale") {{
             constructor = MechUnit::create;
             outlines = false;
-            mechLegColor = Color.valueOf("2b262d");
+            mechLegColor = Color.valueOf("231b25");
             health = 650f;
             armor = 0f;
             hitSize = 12f;
@@ -605,7 +605,7 @@ public class XenUnitTypes {
         squall = new UnitType("squall") {{
             constructor = MechUnit::create;
             outlines = false;
-            mechLegColor = Color.valueOf("2b262d");
+            mechLegColor = Color.valueOf("231b25");
             health = 3800f;
             armor = 8f;
             hitSize = 22f;
@@ -653,7 +653,7 @@ public class XenUnitTypes {
         draft = new UnitType("draft") {{
             constructor = MechUnit::create;
             outlines = false;
-            mechLegColor = Color.valueOf("2b262d");
+            mechLegColor = Color.valueOf("231b25");
             health = 9600f;
             armor = 15f;
             hitSize = 28f;
@@ -700,7 +700,7 @@ public class XenUnitTypes {
 
         anax = new UnitType("anax") {{
             constructor = UnitEntity::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 600f;
             armor = 0f;
             hitSize = 18f;
@@ -747,7 +747,7 @@ public class XenUnitTypes {
         }};
         odonata = new UnitType("odonata") {{
             constructor = UnitEntity::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 3200f;
             armor = 8f;
             hitSize = 18f;
@@ -796,7 +796,7 @@ public class XenUnitTypes {
 
         explore = new UnitType("explore") {{
             constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 550f;
             armor = 0f;
             hitSize = 12f;
@@ -841,7 +841,7 @@ public class XenUnitTypes {
         }};
         seeker = new UnitType("seeker") {{
             constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 2900f;
             armor = 0f;
             hitSize = 12f;
@@ -887,7 +887,7 @@ public class XenUnitTypes {
 
         shif = new UnitType("shif") {{
             constructor = UnitWaterMove::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 600f;
             armor = 0f;
             hitSize = 14f;
@@ -935,7 +935,7 @@ public class XenUnitTypes {
         }};
         kreeg = new UnitType("kreeg") {{
             constructor = UnitWaterMove::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 3400f;
             armor = 5f;
             hitSize = 32f;
@@ -989,7 +989,7 @@ public class XenUnitTypes {
 
         tack = new UnitType("tack") {{
             constructor = TankUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 650f;
             armor = 0f;
             hitSize = 12f;
@@ -1045,7 +1045,7 @@ public class XenUnitTypes {
         }};
         nail = new UnitType("nail") {{
             constructor = TankUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 3400f;
             armor = 8f;
             hitSize = 31f;
@@ -1121,8 +1121,8 @@ public class XenUnitTypes {
 
         elementary = new UnitType("elementary") {{
             constructor = MechUnit::create;
-            outlineColor = Color.valueOf("2b262d");
-            mechLegColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
+            mechLegColor = Color.valueOf("231b25");
             health = 600f;
             armor = 0f;
             hitSize = 8f;
@@ -1188,7 +1188,7 @@ public class XenUnitTypes {
 
         lug = new UnitType("lug") {{
             constructor = PayloadUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             defaultCommand = UnitCommand.rebuildCommand;
 
             health = 650f;
@@ -1216,7 +1216,7 @@ public class XenUnitTypes {
         }};
         haul = new UnitType("haul") {{
             constructor = PayloadUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             defaultCommand = UnitCommand.rebuildCommand;
 
             health = 2800f;
@@ -1246,7 +1246,7 @@ public class XenUnitTypes {
         }};
         envoy = new UnitType("envoy") {{
             constructor = PayloadUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             defaultCommand = UnitCommand.rebuildCommand;
 
             health = 2800f;
@@ -1277,7 +1277,7 @@ public class XenUnitTypes {
 
         tick = new UnitType("tick") {{
             constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             defaultCommand = UnitCommand.repairCommand;
             health = 750f;
             armor = 0f;
@@ -1312,7 +1312,7 @@ public class XenUnitTypes {
 
         natuon = new UnitType("natuon") {{
             constructor = UnitWaterMove::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 650f;
             armor = 0f;
             hitSize = 14f;
@@ -1377,7 +1377,7 @@ public class XenUnitTypes {
         }};
         enavo = new UnitType("enavo") {{
             constructor = UnitWaterMove::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 3100f;
             armor = 7f;
             hitSize = 30f;
@@ -1460,7 +1460,7 @@ public class XenUnitTypes {
 
         aid = new UnitType("aid") {{
             constructor = TankUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 600f;
             armor = 0f;
             hitSize = 12f;
@@ -1524,7 +1524,7 @@ public class XenUnitTypes {
         }};
         guard = new UnitType("guard") {{
             constructor = TankUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 3200f;
             armor = 5f;
             hitSize = 24f;
@@ -1603,8 +1603,8 @@ public class XenUnitTypes {
 
         erode = new UnitType("erode") {{
             constructor = MechUnit::create;
-            outlineColor = Color.valueOf("2b262d");
-            mechLegColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
+            mechLegColor = Color.valueOf("231b25");
             health = 550f;
             armor = 0f;
             hitSize = 8f;
@@ -1645,7 +1645,7 @@ public class XenUnitTypes {
 
         ryher = new UnitType("ryher") {{
             constructor = PayloadUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
 
             health = 550f;
             armor = 0f;
@@ -1693,7 +1693,7 @@ public class XenUnitTypes {
         }};
         evelate = new UnitType("evelate") {{
             constructor = PayloadUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
 
             health = 1900f;
             armor = 6f;
@@ -1743,7 +1743,7 @@ public class XenUnitTypes {
 
         spritz = new UnitType("spritz") {{
             constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 650f;
             armor = 0f;
             hitSize = 10f;
@@ -1788,7 +1788,7 @@ public class XenUnitTypes {
 
         kyre = new UnitType("kyre") {{
             constructor = UnitWaterMove::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 650f;
             armor = 0f;
             hitSize = 12f;
@@ -1838,7 +1838,7 @@ public class XenUnitTypes {
         }};
         yriek = new UnitType("yriek") {{
             constructor = UnitWaterMove::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 2100f;
             armor = 6.5f;
             hitSize = 12f;
@@ -1922,7 +1922,7 @@ public class XenUnitTypes {
 
         tie = new UnitType("tie") {{
             constructor = TankUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 650f;
             armor = 0f;
             hitSize = 13f;
@@ -1992,7 +1992,7 @@ public class XenUnitTypes {
         }};
         link = new UnitType("link") {{
             constructor = TankUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 1500f;
             armor = 6f;
             hitSize = 24f;
@@ -2068,7 +2068,7 @@ public class XenUnitTypes {
 
         coreMite = new UnitType("core-mite") {{
             constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 110f;
             armor = 0f;
             hitSize = 6f;
@@ -2124,7 +2124,7 @@ public class XenUnitTypes {
 
         assaultMite = new UnitType("assault-mite") {{
             constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 100f;
             armor = 0f;
             hitSize = 6f;
@@ -2165,7 +2165,7 @@ public class XenUnitTypes {
 
         boltMite = new UnitType("bolt-mite") {{
             constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 100f;
             armor = 0f;
             hitSize = 6f;
@@ -2213,7 +2213,7 @@ public class XenUnitTypes {
 
         sapMite = new UnitType("sap-mite") {{
             constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("2b262d");
+            outlineColor = Color.valueOf("231b25");
             health = 85f;
             armor = 0f;
             hitSize = 6f;

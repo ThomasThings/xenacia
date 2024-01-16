@@ -2,22 +2,22 @@ package xenacia.content;
 
 import arc.graphics.Color;
 import arc.math.Interp;
-import arc.math.Mathf;
+import mindustry.content.Fx;
+import mindustry.content.Items;
 import mindustry.entities.bullet.BasicBulletType;
 import mindustry.entities.bullet.ExplosionBulletType;
 import mindustry.entities.part.RegionPart;
 import mindustry.entities.pattern.ShootAlternate;
-import mindustry.gen.Sounds;
 import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
-import mindustry.type.*;
+import mindustry.type.Category;
+import mindustry.type.Weapon;
 import mindustry.type.unit.MissileUnitType;
-import mindustry.world.*;
+import mindustry.world.Block;
 import mindustry.world.blocks.defense.turrets.ItemTurret;
-import mindustry.content.*;
 import mindustry.world.draw.DrawTurret;
 
-import static mindustry.type.ItemStack.*;
+import static mindustry.type.ItemStack.with;
 
 public class XenTurrets{
     public static Block
@@ -25,7 +25,7 @@ public class XenTurrets{
 
     public static void load(){
         repeater = new ItemTurret("repeater"){{
-            outlineColor = Color.valueOf("292729");
+            outlineColor = Color.valueOf("231b25");
             drawer = new DrawTurret("xenacia-");
             requirements(Category.turret, with(XenItems.iron, 25, XenItems.aluminum, 15));
             ammo(
@@ -68,7 +68,7 @@ public class XenTurrets{
             limitRange();
         }};
         clinger = new ItemTurret("clinger"){{
-            outlineColor = Color.valueOf("292729");
+            outlineColor = Color.valueOf("231b25");
             size = 2;
             requirements(Category.turret, with(XenItems.iron, 80, XenItems.aluminum, 120, Items.graphite, 80));
             ammo(
@@ -78,7 +78,7 @@ public class XenTurrets{
                         ammoMultiplier = 1f;
 
                         spawnUnit = new MissileUnitType("clinger-missile"){{
-                            outlineColor = Color.valueOf("292729");
+                            outlineColor = Color.valueOf("231b25");
                             targetAir = true;
                             speed = 4.3f;
                             maxRange = 6f;
