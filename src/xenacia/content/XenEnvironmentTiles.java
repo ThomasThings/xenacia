@@ -9,10 +9,8 @@ import mindustry.content.*;
 
 public class XenEnvironmentTiles{
     public static Block
-            //test
-            testFloor,
-            //magmatic
-            magmaFloor, magmaRock, magmaticCrack, volcanicRock, volcanicRockWall,
+            //volcanic
+            magmaFloor, magmaRock, magmaCrack, volcanicRock, volcanicBoulder, volcanicRockWall, magmaVent, volcanicVent,
             //scorched
             scorchedSoil, scorchedSoilWall, scorchedSand, scorchedSandWall,
             //marsh
@@ -24,12 +22,9 @@ public class XenEnvironmentTiles{
             //ores
             oreIron, oreAluminum, orePeat, oreLithium, oreAmethyst, orePolonium, oreNeodymium, oreCobalt;
     public static void load(){
-        //test
-        testFloor = new StaticWall("test-floor"){{
-            variants = 4;
-        }};
         //volcanic
         magmaFloor = new Floor("magma-floor"){{
+            variants = 4;
             speedMultiplier = 0.2f;
             liquidDrop = XenLiquids.magma;
             liquidMultiplier = 1f;
@@ -45,8 +40,8 @@ public class XenEnvironmentTiles{
             lightColor = Color.orange.cpy().a(0.5f);
         }};
         magmaRock = new Floor("magma-rock"){{
+            variants = 4;
             speedMultiplier = 0.9f;
-            variants = 3;
             status = StatusEffects.melting;
             statusDuration = 120f;
             liquidDrop = XenLiquids.magma;
@@ -59,7 +54,8 @@ public class XenEnvironmentTiles{
             lightRadius = 55f;
             lightColor = Color.orange.cpy().a(0.35f);
         }};
-        magmaticCrack = new Floor("magmatic-crack"){{
+        magmaCrack = new Floor("magma-crack"){{
+            variants = 4;
             liquidDrop = XenLiquids.magma;
             liquidMultiplier = 0.4f;
             status = StatusEffects.burning;
@@ -71,6 +67,19 @@ public class XenEnvironmentTiles{
             lightColor = Color.orange.cpy().a(0.2f);
         }};
         volcanicRock = new Floor("volcanic-rock");
+        volcanicBoulder = new Prop("volcanic-boulder"){{
+            variants = 5;
+            magmaCrack.asFloor().decoration = volcanicRock.asFloor().decoration = this;
+        }};
+        magmaVent = new SteamVent("magma-vent"){{
+            parent = blendGroup = volcanicRock;
+            attributes.set(Attribute.steam, 1f);
+            attributes.set(Attribute.heat, 3f);
+        }};
+        volcanicVent = new SteamVent("volcanic-vent"){{
+            parent = blendGroup = volcanicRock;
+            attributes.set(Attribute.steam, 1f);
+        }};
         volcanicRockWall = new StaticWall("volcanic-rock-wall");
         //scorched
         scorchedSoil = new Floor("scorched-soil"){{
