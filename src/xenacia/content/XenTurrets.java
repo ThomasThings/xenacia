@@ -70,6 +70,7 @@ public class XenTurrets{
         clinger = new ItemTurret("clinger"){{
             outlineColor = Color.valueOf("231b25");
             size = 2;
+            shootWarmupSpeed = 60f;
             requirements(Category.turret, with(XenItems.iron, 80, XenItems.aluminum, 120, Items.graphite, 80));
             ammo(
                     Items.graphite,  new BasicBulletType(0f, 1){{
@@ -95,7 +96,7 @@ public class XenTurrets{
                                 shootOnDeath = true;
                                 bullet = new ExplosionBulletType(250f, 20f){{
                                     shootEffect = Fx.massiveExplosion;
-                                    collidesAir = false;
+                                    collidesAir = true;
                                 }};
                             }});
                         }};
@@ -117,7 +118,7 @@ public class XenTurrets{
                             moves.add(new PartMove(PartProgress.recoil, 0f, 1f, -7.5f));
                             moveRot = -22f;
                             moveX = 0f;
-                            moveY = -5f;
+                            moveY = -1.5f;
                             mirror = true;
                             }},
                         new RegionPart("-missile"){{
@@ -132,16 +133,16 @@ public class XenTurrets{
 
                             layerOffset = -0.01f;
 
-                            moves.add(new PartMove(PartProgress.warmup.inv(), 0f, -2f, 0f));
+                            moves.add(new PartMove(PartProgress.warmup.inv(), 0f, 2.5f, 0f));
                         }},
                         new RegionPart("-mid"){{
                             progress = PartProgress.warmup;
                             moves.add(new PartMove(PartProgress.recoil, 0f, -1f, 0));
                             mirror = false;
                             under = false;
-                            moveY = -4f;
+                            moveY = -1f;
                         }},
-                        new RegionPart("-mid"){{
+                        new RegionPart("-top"){{
                             progress = PartProgress.warmup;
                             moves.add(new PartMove(PartProgress.recoil, 0f, -1f, 0));
                             mirror = false;
