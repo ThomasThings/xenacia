@@ -132,22 +132,22 @@ public class XenTurrets{
 
                             layerOffset = -0.01f;
 
-                            moves.add(new PartMove(PartProgress.warmup.inv(), 0f, 3.5f, 0f));
+                            moves.add(new PartMove(PartProgress.warmup.inv(), 0f, -1f, 0f));
                         }},
 
                         new RegionPart("-mid"){{
                             progress = PartProgress.warmup;
-                            moves.add(new PartMove(PartProgress.recoil, 0f, 0f, 0));
-                            mirror = false;
-                            under = false;
-                            moveY = -1.5f;
-                        }},
-                        new RegionPart("-cap"){{
-                            progress = PartProgress.warmup;
                             moves.add(new PartMove(PartProgress.recoil, 0f, -1f, 0));
                             mirror = false;
                             under = false;
-                           moveY = -3f;
+                            moveY = -3f;
+                        }},
+                        new RegionPart("-cap"){{
+                            progress = PartProgress.warmup;
+                            moves.add(new PartMove(PartProgress.recoil, 0f, 0f, 0));
+                            mirror = false;
+                            under = false;
+                           moveY = -1.5f;
                         }}
                 );
             }};
