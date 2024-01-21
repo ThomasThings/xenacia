@@ -213,7 +213,7 @@ public class XenUnitTypes {
                     new UnitEngine(7.25f, 4f, 2.2f, 45f),
                     new UnitEngine(7.25f, -6.75f, 2.2f, 315f)
             );
-            engineOffset = 8.5f;
+            engineOffset = 9f;
             engineSize = 2.2f;
 
             weapons.add(new Weapon(){{
