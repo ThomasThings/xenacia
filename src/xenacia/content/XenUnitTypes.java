@@ -210,15 +210,15 @@ public class XenUnitTypes {
             itemCapacity = 60;
 
             setEnginesMirror(
-                    new UnitEngine(7f, 3.75f, 2.2f, 45f),
-                    new UnitEngine(7f, -6.50f, 2.2f, 315f)
+                    new UnitEngine(7f, 4f, 2.2f, 45f),
+                    new UnitEngine(7f, -6.75f, 2.2f, 315f)
             );
-            engineOffset = -6.5f;
+            engineOffset = 6.5f;
             engineSize = 2.2f;
 
             weapons.add(new Weapon(){{
                 x = 0f;
-                y = 5.5f;
+                y = 4f;
                 rotate = false;
                 mirror = false;
                 reload = 45f;
