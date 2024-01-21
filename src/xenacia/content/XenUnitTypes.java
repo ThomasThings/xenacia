@@ -213,7 +213,7 @@ public class XenUnitTypes {
                     new UnitEngine(7f, 4f, 2.2f, 45f),
                     new UnitEngine(7f, -6.75f, 2.2f, 315f)
             );
-            engineOffset = 7.5f;
+            engineOffset = 8.5f;
             engineSize = 2.2f;
 
             weapons.add(new Weapon(){{
@@ -225,7 +225,7 @@ public class XenUnitTypes {
                 shoot.shots = 2;
                 shoot.shotDelay = 5f;
                 inaccuracy = 0f;
-                bullet = new LaserBoltBulletType(3f, 15) {{
+                bullet = new LaserBoltBulletType(3f, 18) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 60f;
