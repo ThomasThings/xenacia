@@ -231,7 +231,7 @@ public class XenUnitTypes {
                     lifetime = 60f;
 
                     collidesTeam = true;
-                    healAmount = 30;
+                    healAmount = 50;
 
                     buildingDamageMultiplier = 0.1f;
 

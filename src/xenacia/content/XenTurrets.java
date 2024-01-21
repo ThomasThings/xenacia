@@ -101,6 +101,8 @@ public class XenTurrets{
                         }};
                     }}
             );
+            ammoPerShot = 10;
+            itemCapacity = 30;
             reload = 180f;
             range = 440;
             shootCone = 1f;
