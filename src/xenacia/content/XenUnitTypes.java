@@ -189,7 +189,7 @@ public class XenUnitTypes {
             health = 800f;
             armor = 4f;
             hitSize = 12f;
-            speed = 4f;
+            speed = 3.5f;
             rotateSpeed = 5f;
             flying = true;
             lowAltitude = true;
@@ -211,8 +211,10 @@ public class XenUnitTypes {
 
             itemCapacity = 60;
 
-            engineSize = 3f;
-            engineOffset = 6.5f;
+            setEnginesMirror(
+                    new UnitEngine(6f, 3f, 2.2f, 45f),
+                    new UnitEngine(6f, -5.75f, 2.2f, 315f)
+            );
 
             weapons.add(new Weapon(){{
                 x = 0f;
@@ -232,6 +234,30 @@ public class XenUnitTypes {
                     healPercent = 1f;
 
                     buildingDamageMultiplier = 0.8f;
+
+                    backColor = Color.valueOf("ffd37f");
+                    frontColor = Color.white;
+                }};
+                shootSound = Sounds.lasershoot;
+                ejectEffect = Fx.none;
+            }});
+            weapons.add(new Weapon(){{
+                x = 0f;
+                y = 5.25f;
+                rotate = false;
+                mirror = false;
+                reload = 30f;
+                shoot = new ShootSpread(1,2);
+                inaccuracy = 0f;
+                bullet = new LaserBoltBulletType(3f, 20) {{
+                    width = 1.5f;
+                    height = 5f;
+                    lifetime = 60f;
+
+                    collidesTeam = true;
+                    healAmount = 30;
+
+                    buildingDamageMultiplier = 0.1f;
 
                     backColor = Color.valueOf("ffd37f");
                     frontColor = Color.white;
