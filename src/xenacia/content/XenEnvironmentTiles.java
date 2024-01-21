@@ -11,8 +11,10 @@ public class XenEnvironmentTiles{
     public static Block
             //volcanic
             magmaFloor, magmaRock, magmaCrack, volcanicRock, volcanicBoulder, volcanicRockWall, magmaVent, volcanicVent,
-            //scorched
-            scorchedSoil, scorchedSoilWall, scorchedSand, scorchedSandWall,
+            //scorched soil
+            scorchedSoil, scorchedSoilBoulder, scorchedShrub, scorchedSoilWall,
+             //scorched sand
+            scorchedSand, scorchedSandBoulder, scorchedSandWall,
             //marsh
             deepMarsh, wetMarsh, marsh, marshWall,
             //misc env
@@ -25,6 +27,7 @@ public class XenEnvironmentTiles{
         //volcanic
         magmaFloor = new Floor("magma-floor"){{
             variants = 4;
+            mapColor = Color.valueOf("f2a848");
             speedMultiplier = 0.2f;
             liquidDrop = XenLiquids.magma;
             liquidMultiplier = 1f;
@@ -41,6 +44,7 @@ public class XenEnvironmentTiles{
         }};
         magmaRock = new Floor("magma-rock"){{
             variants = 4;
+            mapColor = Color.valueOf("db7448");
             speedMultiplier = 0.9f;
             status = StatusEffects.melting;
             statusDuration = 120f;
@@ -56,6 +60,7 @@ public class XenEnvironmentTiles{
         }};
         magmaCrack = new Floor("magma-crack"){{
             variants = 4;
+            mapColor = Color.valueOf("2b2726");
             liquidDrop = XenLiquids.magma;
             liquidMultiplier = 0.4f;
             status = StatusEffects.burning;
@@ -66,7 +71,10 @@ public class XenEnvironmentTiles{
             lightRadius = 25f;
             lightColor = Color.orange.cpy().a(0.2f);
         }};
-        volcanicRock = new Floor("volcanic-rock");
+        volcanicRock = new Floor("volcanic-rock"){{
+            variants = 4;
+            mapColor = Color.valueOf("2b2726");
+        }};
         volcanicBoulder = new Prop("volcanic-boulder"){{
             variants = 5;
             magmaCrack.asFloor().decoration = volcanicRock.asFloor().decoration = this;
@@ -81,15 +89,33 @@ public class XenEnvironmentTiles{
             attributes.set(Attribute.steam, 1f);
         }};
         volcanicRockWall = new StaticWall("volcanic-rock-wall");
-        //scorched
+
+        //scorchedSoil
         scorchedSoil = new Floor("scorched-soil"){{
-             mapColor = Color.valueOf("292725");
+            variants = 4;
+            mapColor = Color.valueOf("453838");
+        }};
+        scorchedSoilBoulder = new Prop("scorched-soil-boulder"){{
+            variants = 3;
+            scorchedSoil.asFloor().decoration = this;
+        }};
+        scorchedShrub = new Prop("scorched-shrub"){{
+            variants = 3;
+            scorchedSoil.asFloor().decoration = this;
         }};
         scorchedSoilWall = new StaticWall("scorched-soil-wall");
+
+        //scorchedSand
         scorchedSand = new Floor("scorched-sand"){{
-            mapColor = Color.valueOf("2A2826");
+            variants = 4;
+            mapColor = Color.valueOf("3f3b3b");
+        }};
+        scorchedSandBoulder = new Prop("scorched-sand-boulder"){{
+            variants = 3;
+            scorchedSand.asFloor().decoration = this;
         }};
         scorchedSandWall = new StaticWall("scorched-sand-wall");
+
         //marsh env
         wetMarsh = new Floor("wet-marsh"){{
             speedMultiplier = 0.85f;
@@ -123,6 +149,7 @@ public class XenEnvironmentTiles{
             itemDrop = XenItems.peat;
             playerUnmineable = true;
         }};
+
         //misc
         ash = new Floor("ash"){{
              mapColor = Color.valueOf("6D7478");
@@ -140,6 +167,7 @@ public class XenEnvironmentTiles{
             itemDrop = XenItems.meteorFragment;
             playerUnmineable = true;
         }};
+
         //lunar
         lunarRegolith = new Floor("lunar-regolith-floor"){{
             mapColor = Color.valueOf("B7CBD0");
@@ -159,6 +187,7 @@ public class XenEnvironmentTiles{
             itemDrop = XenItems.lunarRegolith;
             playerUnmineable = true;
         }};
+
         //ores
         oreIron = new OreBlock(XenItems.iron);
         oreAluminum = new OreBlock(XenItems.aluminum);
