@@ -14,7 +14,6 @@ import mindustry.entities.bullet.*;
 import mindustry.entities.part.HoverPart;
 import mindustry.entities.part.RegionPart;
 import mindustry.entities.pattern.ShootBarrel;
-import mindustry.entities.pattern.ShootSpread;
 import mindustry.gen.*;
 import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
@@ -159,7 +158,6 @@ public class XenUnitTypes {
                 rotate = false;
                 mirror = false;
                 reload = 30f;
-                shoot = new ShootSpread(1, 5f);
                 inaccuracy = 0f;
                 bullet = new LaserBoltBulletType(3f, 20) {{
                     width = 1.5f;
@@ -212,44 +210,20 @@ public class XenUnitTypes {
             itemCapacity = 60;
 
             setEnginesMirror(
-                    new UnitEngine(6f, 3f, 2.2f, 45f),
-                    new UnitEngine(6f, -5.75f, 2.2f, 315f)
+                    new UnitEngine(8f, 5f, 2.2f, 45f),
+                    new UnitEngine(8f, -7.75f, 2.2f, 315f)
             );
 
             weapons.add(new Weapon(){{
                 x = 0f;
-                y = 3;
+                y = 0.5f;
                 rotate = false;
                 mirror = false;
-                reload = 60f;
-                velocityRnd = 0.6f;
-                shoot.shots = 5;
-                inaccuracy = 5f;
-                bullet = new LaserBoltBulletType(3.5f, 10) {{
-                    width = 1.5f;
-                    height = 5f;
-                    lifetime = 30f;
-
-                    collidesTeam = true;
-                    healPercent = 1f;
-
-                    buildingDamageMultiplier = 0.8f;
-
-                    backColor = Color.valueOf("ffd37f");
-                    frontColor = Color.white;
-                }};
-                shootSound = Sounds.lasershoot;
-                ejectEffect = Fx.none;
-            }});
-            weapons.add(new Weapon(){{
-                x = 0f;
-                y = 5.25f;
-                rotate = false;
-                mirror = false;
-                reload = 30f;
-                shoot = new ShootSpread(1,2);
+                reload = 45f;
+                shoot.shots = 2;
+                shoot.shotDelay = 5f;
                 inaccuracy = 0f;
-                bullet = new LaserBoltBulletType(3f, 20) {{
+                bullet = new LaserBoltBulletType(3f, 15) {{
                     width = 1.5f;
                     height = 5f;
                     lifetime = 60f;
