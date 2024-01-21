@@ -210,8 +210,8 @@ public class XenUnitTypes {
             itemCapacity = 60;
 
             setEnginesMirror(
-                    new UnitEngine(7f, 4f, 2.2f, 45f),
-                    new UnitEngine(7f, -6.75f, 2.2f, 315f)
+                    new UnitEngine(7.25f, 4f, 2.2f, 45f),
+                    new UnitEngine(7.25f, -6.75f, 2.2f, 315f)
             );
             engineOffset = 8.5f;
             engineSize = 2.2f;
