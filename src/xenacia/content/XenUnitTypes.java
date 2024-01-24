@@ -399,8 +399,8 @@ public class XenUnitTypes {
 
         mechacraftHull = new UnitType("mechacraft-hull") {{
             constructor = MechUnit::create;
-            outlineColor = Color.valueOf("3d2f37");
-            mechLegColor = Color.valueOf("3d2f37");
+            outlineColor = Color.valueOf("3b2e35");
+            mechLegColor = Color.valueOf("3b2e35");
             health = 250f;
             armor = 0f;
             hitSize = 10f;
@@ -415,7 +415,7 @@ public class XenUnitTypes {
         }};
         aircraftHull = new UnitType("aircraft-hull") {{
             constructor = UnitEntity::create;
-            outlineColor = Color.valueOf("3d2f37");
+            outlineColor = Color.valueOf("3b2e35");
             health = 250f;
             armor = 0f;
             hitSize = 10f;
@@ -434,7 +434,7 @@ public class XenUnitTypes {
         }};
         polycraftHull = new UnitType("polycraft-hull") {{
             constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("3d2f37");
+            outlineColor = Color.valueOf("3b2e35");
             health = 250f;
             armor = 0f;
             hitSize = 10f;
@@ -447,12 +447,12 @@ public class XenUnitTypes {
             legContinuousMove = false;
             legCount = 3;
             legGroupSize = 1;
-            legLength = 9f;
+            legLength = 18f;
             rippleScale = 0.1f;
         }};
         watercraftHull = new UnitType("watercraft-hull") {{
             constructor = UnitWaterMove::create;
-            outlineColor = Color.valueOf("3d2f37");
+            outlineColor = Color.valueOf("3b2e35");
             health = 250f;
             armor = 0f;
             hitSize = 10f;
@@ -463,13 +463,13 @@ public class XenUnitTypes {
             isEnemy = false;
 
             trailLength = 15;
-            waveTrailX = 4.5f;
-            waveTrailY = -1f;
+            waveTrailX = 4f;
+            waveTrailY = -6f;
             trailScl = 1.2f;
         }};
         treadcraftHull = new UnitType("treadcraft-hull") {{
             constructor = TankUnit::create;
-            outlineColor = Color.valueOf("3d2f37");
+            outlineColor = Color.valueOf("3b2e35");
             health = 250f;
             armor = 0f;
             hitSize = 10f;
@@ -484,15 +484,15 @@ public class XenUnitTypes {
             treadRects = new Rect[]{
                 new Rect(
                     12,
-                    -25,
-                    11,
+                    -22,
+                    13,
                     48
                 )
             };
         }};
         hovercraftHull = new UnitType("hovercraft-hull") {{
             constructor = UnitEntity::create;
-            outlineColor = Color.valueOf("3d2f37");
+            outlineColor = Color.valueOf("3b2e35");
             health = 250f;
             armor = 0f;
             hitSize = 10f;
@@ -535,7 +535,7 @@ public class XenUnitTypes {
         }};
         arthocraftHull = new UnitType("arthocraft-hull") {{
             constructor = CrawlUnit::create;
-            outlineColor = Color.valueOf("3d2f37");
+            outlineColor = Color.valueOf("3b2e35");
             health = 250f;
             armor = 0f;
             hitSize = 10f;
