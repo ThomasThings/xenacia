@@ -22,13 +22,6 @@ import mindustry.type.Weapon;
 import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.world.meta.BlockFlag;
 
-//payloadCapacity is ((X*8)^2), X is desired side length of payload capacity square
-//unit size = (X x 8), X being the side of
-
-//tread x = [ (number of pixels between the left side of the tread and the left edge of the @-treads sprite) - (half of sprite width) ]
-//tread y = [ (number of pixels between the tread and top of @-treads sprite) - (half of sprite height) ]
-//tread width = ( @-treads#-# sprite width )
-//tread height = ( @-treads#-# sprite height )
 
 public class XenUnitTypes {
     public static UnitType
@@ -60,6 +53,18 @@ public class XenUnitTypes {
     assaultMite,
     boltMite,
     sapMite;
+
+    //endregion
+
+    //region equation-key
+
+    //payload capacity is ((X*8)^2), X is desired side length of payload capacity square
+    //unit size = (X x 8), X being the side of
+
+    //tread x = [ (number of pixels between the left side of the tread and the left edge of the @-treads sprite) - (half of sprite width) ]
+    //tread y = [ (number of pixels between the tread and top of @-treads sprite) - (half of sprite height) ]
+    //tread width = ( @-treads#-# sprite width )
+    //tread height = ( @-treads#-# sprite height )
 
     //endregion
 
@@ -554,7 +559,7 @@ public class XenUnitTypes {
 
             drawBody = false;
             segments = 3;
-            segmentScl = 3f;
+            segmentScl = 1.5f;
             segmentPhase = 5f;
             segmentMag = 0.5f;
         }};
