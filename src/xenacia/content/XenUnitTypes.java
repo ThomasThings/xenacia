@@ -560,7 +560,7 @@ public class XenUnitTypes {
             drawBody = false;
             segments = 3;
             segmentScl = 1.5f;
-            segmentPhase = 5f;
+            segmentPhase = 2.5f;
             segmentMag = 0.5f;
         }};
 
