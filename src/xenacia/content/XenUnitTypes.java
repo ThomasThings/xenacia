@@ -546,6 +546,7 @@ public class XenUnitTypes {
         arthocraftHull = new UnitType("arthocraft-hull") {{
             constructor = CrawlUnit::create;
             outlineColor = Color.valueOf("3b2e35");
+            drawCell = false;
             health = 250f;
             armor = 0f;
             hitSize = 10f;
