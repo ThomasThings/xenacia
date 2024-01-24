@@ -456,8 +456,8 @@ public class XenUnitTypes {
             health = 250f;
             armor = 0f;
             hitSize = 10f;
-            speed = 0.5f;
-            rotateSpeed = 5f;
+            speed = 0.7f;
+            rotateSpeed = 3f;
 
             itemCapacity = 5;
             isEnemy = false;
@@ -474,7 +474,7 @@ public class XenUnitTypes {
             armor = 0f;
             hitSize = 10f;
             speed = 0.8f;
-            rotateSpeed = 1f;
+            rotateSpeed = 3f;
             omniMovement = false;
 
             itemCapacity = 5;
