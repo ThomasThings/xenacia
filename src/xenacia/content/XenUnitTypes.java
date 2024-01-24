@@ -460,6 +460,8 @@ public class XenUnitTypes {
             legLength = 18f;
             rippleScale = 0.1f;
             hovering = true;
+            shadowElevation = 0.1f;
+            groundLayer = Layer.legUnit - 1f;
         }};
         watercraftHull = new UnitType("watercraft-hull") {{
             constructor = UnitWaterMove::create;
@@ -510,7 +512,7 @@ public class XenUnitTypes {
             speed = 1.5f;
             rotateSpeed = 4f;
             hovering = true;
-            shadowElevation = 0.1f;
+            shadowElevation = 0.05f;
             useEngineElevation = false;
             lowAltitude = true;
             accel = 0.1f;
