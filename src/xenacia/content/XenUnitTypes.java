@@ -484,8 +484,8 @@ public class XenUnitTypes {
             treadRects = new Rect[]{
                 new Rect(
                     12,
-                    -25,
-                    11,
+                    -22,
+                    13,
                     48
                 )
             };
