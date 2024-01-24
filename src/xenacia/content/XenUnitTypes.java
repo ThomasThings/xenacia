@@ -438,14 +438,14 @@ public class XenUnitTypes {
             health = 250f;
             armor = 0f;
             hitSize = 10f;
-            speed = 0.8f;
+            speed = 0.7f;
             rotateSpeed = 5f;
 
             itemCapacity = 5;
             isEnemy = false;
 
             legContinuousMove = false;
-            legCount = 3;
+            legCount = 4;
             legGroupSize = 1;
             legLength = 18f;
             rippleScale = 0.1f;
@@ -456,7 +456,7 @@ public class XenUnitTypes {
             health = 250f;
             armor = 0f;
             hitSize = 10f;
-            speed = 1f;
+            speed = 0.5f;
             rotateSpeed = 5f;
 
             itemCapacity = 5;
@@ -474,7 +474,7 @@ public class XenUnitTypes {
             armor = 0f;
             hitSize = 10f;
             speed = 0.8f;
-            rotateSpeed = 5f;
+            rotateSpeed = 1f;
             omniMovement = false;
 
             itemCapacity = 5;
@@ -520,7 +520,7 @@ public class XenUnitTypes {
                 phase = 90f;
                 stroke = 1.5f;
                 layerOffset = -0.001f;
-                color = Color.valueOf("dcc6c6");
+                color = Color.valueOf("e3a76a");
             }});
             parts.add(new HoverPart(){{
                 x = 0f;
