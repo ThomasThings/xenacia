@@ -414,14 +414,14 @@ public class XenUnitTypes {
             health = 250f;
             armor = 0f;
             hitSize = 10f;
-            speed = 0.6f;
+            speed = 0.5f;
             rotateSpeed = 5f;
 
             itemCapacity = 5;
             isEnemy = false;
 
-            mechFrontSway = 0.2f;
-            mechSideSway = 0.3f;
+            mechFrontSway = 0.1f;
+            mechSideSway = 0.1f;
         }};
         aircraftHull = new UnitType("aircraft-hull") {{
             constructor = UnitEntity::create;
@@ -430,7 +430,7 @@ public class XenUnitTypes {
             armor = 0f;
             hitSize = 10f;
             speed = 2f;
-            rotateSpeed = 5f;
+            rotateSpeed = 4.5f;
             flying = true;
             lowAltitude = true;
             accel = 0.1f;
@@ -439,7 +439,7 @@ public class XenUnitTypes {
             itemCapacity = 5;
             isEnemy = false;
 
-            engineSize = 3f;
+            engineSize = 2.2f;
             engineOffset = 5.5f;
         }};
         polycraftHull = new UnitType("polycraft-hull") {{
@@ -459,6 +459,7 @@ public class XenUnitTypes {
             legGroupSize = 1;
             legLength = 18f;
             rippleScale = 0.1f;
+            hovering = true;
         }};
         watercraftHull = new UnitType("watercraft-hull") {{
             constructor = UnitWaterMove::create;
@@ -507,7 +508,7 @@ public class XenUnitTypes {
             armor = 0f;
             hitSize = 10f;
             speed = 1.5f;
-            rotateSpeed = 5f;
+            rotateSpeed = 4f;
             hovering = true;
             shadowElevation = 0.1f;
             useEngineElevation = false;
