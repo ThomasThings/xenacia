@@ -530,7 +530,7 @@ public class XenUnitTypes {
                 phase = 90f;
                 stroke = 1.5f;
                 layerOffset = -0.001f;
-                color = Color.valueOf("dcc6c6");
+                color = Color.valueOf("e3a76a");
             }});
         }};
         arthocraftHull = new UnitType("arthocraft-hull") {{
