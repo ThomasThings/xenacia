@@ -22,8 +22,13 @@ import mindustry.type.Weapon;
 import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.world.meta.BlockFlag;
 
-//payloadCapacity is ((X*8)^2), X is desired side length of payload capacity
+//payloadCapacity is ((X*8)^2), X is desired side length of payload capacity square
 //unit size = (X x 8), X being the side of
+
+//tread x = [ (number of pixels between the left side of the tread and the left edge of the @-treads sprite) - (half of sprite width) ]
+//tread y = [ (number of pixels between the tread and top of @-treads sprite) - (half of sprite height) ]
+//tread width = ( @-treads#-# sprite width )
+//tread height = ( @-treads#-# sprite height )
 
 public class XenUnitTypes {
     public static UnitType
@@ -483,8 +488,8 @@ public class XenUnitTypes {
             treadFrames = 8;
             treadRects = new Rect[]{
                 new Rect(
-                    12,
-                    -22,
+                    7 - 30,
+                    6 - 30.5f,
                     13,
                     48
                 )
