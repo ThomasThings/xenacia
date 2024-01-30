@@ -19,7 +19,7 @@ public class XenPayloadBlocks{
 
     public static void load() {
         smallPayloadConveyor = new PayloadConveyor("small-payload-conveyor"){{
-            requirements(Category.units, with(XenItems.iron, 10, Items.graphite, 10, Items.silicon, 5));
+            requirements(Category.units, with(XenItems.iron, 10,XenItems.graphite, 10,XenItems.silicon, 5));
             health = 900;
             size = 3;
             payloadLimit = 3f;
@@ -27,7 +27,7 @@ public class XenPayloadBlocks{
             moveTime = 30f;
         }};
         largePayloadConveyor = new PayloadConveyor("large-payload-conveyor"){{
-            requirements(Category.units, with(XenItems.neodymium, 40, Items.graphite, 30, Items.silicon, 30));
+            requirements(Category.units, with(XenItems.neodymium, 40,XenItems.graphite, 30,XenItems.silicon, 30));
             health = 2500;
             size = 5;
             payloadLimit = 5.5f;
@@ -36,7 +36,7 @@ public class XenPayloadBlocks{
         }};
 
         smallPayloadRouter = new PayloadRouter("small-payload-router"){{
-            requirements(Category.units, with(XenItems.iron, 15, Items.graphite, 10, Items.silicon, 10));
+            requirements(Category.units, with(XenItems.iron, 15,XenItems.graphite, 10,XenItems.silicon, 10));
             health = 900;
             size = 3;
             payloadLimit = 3f;
@@ -44,7 +44,7 @@ public class XenPayloadBlocks{
             moveTime = 30f;
         }};
         largePayloadRouter = new PayloadRouter("large-payload-router"){{
-            requirements(Category.units, with(XenItems.neodymium, 50, Items.graphite, 30, Items.silicon, 40));
+            requirements(Category.units, with(XenItems.neodymium, 50,XenItems.graphite, 30,XenItems.silicon, 40));
             health = 2500;
             size = 5;
             payloadLimit = 5.5f;
@@ -53,7 +53,7 @@ public class XenPayloadBlocks{
         }};
 
         smallPayloadConstructor = new Constructor("small-payload-constructor"){{
-            requirements(Category.units, with(XenItems.iron, 100, Items.graphite, 100));
+            requirements(Category.units, with(XenItems.iron, 100,XenItems.graphite, 100));
             health = 900;
             size = 3;
             hasPower = true;
@@ -61,7 +61,7 @@ public class XenPayloadBlocks{
             consumePower(2f);
         }};
         largePayloadConstructor = new Constructor("large-payload-constructor"){{
-            requirements(Category.units, with(XenItems.cobalt, 250, XenItems.iron, 200, Items.silicon, 150));
+            requirements(Category.units, with(XenItems.cobalt, 250, XenItems.iron, 200,XenItems.silicon, 150));
             health = 2500;
             size = 7;
             minBlockSize = 2;
@@ -72,14 +72,14 @@ public class XenPayloadBlocks{
         }};
 
         smallPayloadLoader = new PayloadLoader("small-payload-loader"){{
-            requirements(Category.units, with(XenItems.aluminum, 100, Items.graphite, 80, Items.silicon, 80));
+            requirements(Category.units, with(XenItems.aluminum, 100,XenItems.graphite, 80,XenItems.silicon, 80));
             health = 900;
             size = 3;
             hasPower = true;
             consumePower(2f);
         }};
         largePayloadLoader = new PayloadLoader("large-payload-loader"){{
-            requirements(Category.units, with(XenItems.cobalt, 150, XenItems.aluminum, 100, Items.graphite, 200, Items.silicon, 200));
+            requirements(Category.units, with(XenItems.cobalt, 150, XenItems.aluminum, 100,XenItems.graphite, 200,XenItems.silicon, 200));
             health = 2500;
             size = 7;
             maxBlockSize = 6;
@@ -88,7 +88,7 @@ public class XenPayloadBlocks{
         }};
 
         smallPayloadLaunchTower = new PayloadMassDriver("small-payload-launch-tower"){{
-            requirements(Category.units, with(XenItems.iron, 80, XenItems.aluminum, 80, Items.silicon, 80));
+            requirements(Category.units, with(XenItems.iron, 80, XenItems.aluminum, 80,XenItems.silicon, 80));
             health = 900;
             size = 3;
             reload = 150f;
@@ -99,7 +99,7 @@ public class XenPayloadBlocks{
             outlineIcon = false;
         }};
         largePayloadLaunchTower = new PayloadMassDriver("large-payload-launch-tower"){{
-            requirements(Category.units, with(XenItems.iron, 500, XenItems.aluminum, 550, Items.silicon, 450, XenItems.cobalt, 250));
+            requirements(Category.units, with(XenItems.iron, 500, XenItems.aluminum, 550,XenItems.silicon, 450, XenItems.cobalt, 250));
             health = 4900;
             size = 7;
             reload = 240f;
@@ -111,14 +111,14 @@ public class XenPayloadBlocks{
         }};
 
         smallPayloadUnloader = new PayloadUnloader("small-payload-unloader"){{
-            requirements(Category.units, with(XenItems.aluminum, 100, Items.graphite, 80, Items.silicon, 80));
+            requirements(Category.units, with(XenItems.aluminum, 100,XenItems.graphite, 80,XenItems.silicon, 80));
             health = 900;
             size = 3;
             hasPower = true;
             consumePower(2f);
         }};
         largePayloadUnloader = new PayloadUnloader("large-payload-unloader"){{
-            requirements(Category.units, with(XenItems.cobalt, 150, XenItems.aluminum, 100, Items.graphite, 200, Items.silicon, 200));
+            requirements(Category.units, with(XenItems.cobalt, 150, XenItems.aluminum, 100,XenItems.graphite, 200,XenItems.silicon, 200));
             health = 2500;
             size = 7;
             maxBlockSize = 6;
@@ -127,7 +127,7 @@ public class XenPayloadBlocks{
         }};
 
         smallPayloadDeconstructor = new PayloadDeconstructor("small-payload-deconstructor"){{
-            requirements(Category.units, with(XenItems.aluminum, 100, Items.graphite, 1000));
+            requirements(Category.units, with(XenItems.aluminum, 100,XenItems.graphite, 1000));
             health = 900;
             size = 3;
             itemCapacity = 200;
@@ -135,7 +135,7 @@ public class XenPayloadBlocks{
             deconstructSpeed = 1.5f;
         }};
         largePayloadDeconstructor = new PayloadDeconstructor("large-payload-deconstructor"){{
-            requirements(Category.units, with(XenItems.cobalt, 250, XenItems.aluminum, 200, Items.silicon, 150));
+            requirements(Category.units, with(XenItems.cobalt, 250, XenItems.aluminum, 200,XenItems.silicon, 150));
             health = 2500;
             size = 7;
             maxPayloadSize = 6;

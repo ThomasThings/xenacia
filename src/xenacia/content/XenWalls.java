@@ -104,61 +104,61 @@ public class XenWalls{
             researchCost = with(XenItems.amethyst, 1200);
         }};
         bulkAmethystWall = new Wall("bulk-amethyst-wall"){{
-            requirements(Category.defense, with(XenItems.amethyst, 10 * 4, Items.graphite, 4 * 4));
+            requirements(Category.defense, with(XenItems.amethyst, 10 * 4,XenItems.graphite, 4 * 4));
             health = 550 * 2 * 4;
             armor = 6;
             size = 2;
             researchCost = with(XenItems.amethyst, 3000, XenItems.aluminum, 800);
         }};
         bulkAmethystWallLarge = new Wall("bulk-amethyst-wall-large"){{
-            requirements(Category.defense, with(XenItems.amethyst, 10 * 9, Items.graphite, 4 * 9));
+            requirements(Category.defense, with(XenItems.amethyst, 10 * 9,XenItems.graphite, 4 * 9));
             health = 550 * 2 * 9;
             armor = 6;
             size = 3;
             researchCost = with(XenItems.amethyst, 7000, XenItems.aluminum, 1400);
         }};
         bulkAmethystWallHuge = new Wall("bulk-amethyst-wall-huge"){{
-            requirements(Category.defense, with(XenItems.amethyst, 10 * 16, Items.graphite, 4 * 16));
+            requirements(Category.defense, with(XenItems.amethyst, 10 * 16,XenItems.graphite, 4 * 16));
             health = 550 * 2 * 16;
             armor = 6;
             size = 4;
-            researchCost = with(XenItems.amethyst, 14000, Items.graphite, 4000);
+            researchCost = with(XenItems.amethyst, 14000,XenItems.graphite, 4000);
         }};
         //titanium alloy
         titaniumAlloyWall = new Wall("titanium-alloy-wall"){{
-            requirements(Category.defense, with(Items.titanium, 6, Items.graphite, 2, XenItems.iron, 4));
+            requirements(Category.defense, with(Items.titanium, 6,XenItems.graphite, 2, XenItems.iron, 4));
             health = 1050;
             armor = 4;
             size = 1;
-            researchCost = with(Items.titanium, 600, Items.graphite, 300, XenItems.iron, 300);
+            researchCost = with(Items.titanium, 600,XenItems.graphite, 300, XenItems.iron, 300);
         }};
         titaniumAlloyWallLarge = new Wall("titanium-alloy-wall-large"){{
-            requirements(Category.defense, with(Items.titanium, 6 * 4, Items.graphite, 2 * 4, XenItems.iron, 4 * 4));
+            requirements(Category.defense, with(Items.titanium, 6 * 4,XenItems.graphite, 2 * 4, XenItems.iron, 4 * 4));
             health = 1050 * 4;
             armor = 4;
             size = 2;
-            researchCost = with(Items.titanium, 1500, Items.graphite, 800, XenItems.iron, 800);
+            researchCost = with(Items.titanium, 1500,XenItems.graphite, 800, XenItems.iron, 800);
         }};
         bulkTitaniumAlloyWall = new Wall("bulk-titanium-alloy-wall"){{
-            requirements(Category.defense, with(Items.titanium, 10 * 4, Items.graphite, 4 * 4, XenItems.iron, 6 * 4));
+            requirements(Category.defense, with(Items.titanium, 10 * 4,XenItems.graphite, 4 * 4, XenItems.iron, 6 * 4));
             health = 1050 * 2 * 4;
             armor = 10;
             size = 2;
-            researchCost = with(Items.titanium, 2000, Items.graphite, 1000, XenItems.iron, 1000);
+            researchCost = with(Items.titanium, 2000,XenItems.graphite, 1000, XenItems.iron, 1000);
         }};
         bulkTitaniumAlloyWallLarge = new Wall("bulk-titanium-alloy-wall-large"){{
-            requirements(Category.defense, with(Items.titanium, 10 * 9, Items.graphite, 4 * 9, XenItems.iron, 6 * 9));
+            requirements(Category.defense, with(Items.titanium, 10 * 9,XenItems.graphite, 4 * 9, XenItems.iron, 6 * 9));
             health = 1050 * 2 * 4;
             armor = 10;
             size = 3;
-            researchCost = with(Items.titanium, 2500, Items.graphite, 1500, XenItems.iron, 1500);
+            researchCost = with(Items.titanium, 2500,XenItems.graphite, 1500, XenItems.iron, 1500);
         }};
         bulkTitaniumAlloyWallHuge = new Wall("bulk-titanium-alloy-wall-huge"){{
-            requirements(Category.defense, with(Items.titanium, 10 * 16, Items.graphite, 4 * 16, XenItems.iron, 6 * 16));
+            requirements(Category.defense, with(Items.titanium, 10 * 16,XenItems.graphite, 4 * 16, XenItems.iron, 6 * 16));
             health = 1050 * 2 * 4;
             armor = 10;
             size = 4;
-            researchCost = with(Items.titanium, 3000, Items.graphite, 2000, XenItems.iron, 2000);
+            researchCost = with(Items.titanium, 3000,XenItems.graphite, 2000, XenItems.iron, 2000);
         }};
         //cobalt
         cobaltWall = new Wall("cobalt-wall"){{
@@ -176,25 +176,25 @@ public class XenWalls{
             researchCost = with(XenItems.cobalt, 2000);
         }};
         bulkCobaltWall = new Wall("bulk-cobalt-wall"){{
-            requirements(Category.defense, with(XenItems.cobalt, 14 * 4, Items.titanium, 10 * 4));
+            requirements(Category.defense, with(XenItems.cobalt, 14 * 4,XenItems.titanium, 10 * 4));
             health = 1300 * 2 * 4;
             armor = 12;
             size = 2;
-            researchCost = with(XenItems.cobalt, 5000, Items.titanium, 2000);
+            researchCost = with(XenItems.cobalt, 5000,XenItems.titanium, 2000);
         }};
         bulkCobaltWallLarge = new Wall("bulk-cobalt-wall-large"){{
-            requirements(Category.defense, with(XenItems.cobalt, 14 * 9, Items.titanium, 10 * 9));
+            requirements(Category.defense, with(XenItems.cobalt, 14 * 9,XenItems.titanium, 10 * 9));
             health = 1300 * 2 * 9;
             armor = 12;
             size = 3;
-            researchCost = with(XenItems.cobalt, 10000, Items.titanium, 4000);
+            researchCost = with(XenItems.cobalt, 10000,XenItems.titanium, 4000);
         }};
         bulkCobaltWallHuge = new Wall("bulk-cobalt-wall-huge"){{
-            requirements(Category.defense, with(XenItems.cobalt, 14 * 16, Items.titanium, 10 * 16));
+            requirements(Category.defense, with(XenItems.cobalt, 14 * 16,XenItems.titanium, 10 * 16));
             health = 1300 * 2 * 16;
             armor = 12;
             size = 4;
-            researchCost = with(XenItems.cobalt, 15000, Items.titanium, 8000);
+            researchCost = with(XenItems.cobalt, 15000,XenItems.titanium, 8000);
         }};
     }
 }

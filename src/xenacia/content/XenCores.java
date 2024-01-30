@@ -26,7 +26,7 @@ public class XenCores{
             unitCapModifier = 6;
         }};
         coreDerive = new CoreBlock("core-derive"){{
-            requirements(Category.effect, with(XenItems.iron, 1000, XenItems.aluminum, 1000, Items.graphite, 1000));
+            requirements(Category.effect, with(XenItems.iron, 1000, XenItems.aluminum, 1000,XenItems.graphite, 1000));
 
             unitType = XenUnitTypes.moment;
             health = 22000;
@@ -38,7 +38,7 @@ public class XenCores{
             unitCapModifier = 14;
         }};
         coreInception = new CoreBlock("core-inception"){{
-            requirements(Category.effect, with(XenItems.iron, 3000, XenItems.aluminum, 3000, Items.graphite, 3000, Items.silicon, 2000, Items.titanium, 1500));
+            requirements(Category.effect, with(XenItems.iron, 3000, XenItems.aluminum, 3000,XenItems.graphite, 3000,XenItems.silicon, 2000,XenItems.titanium, 1500));
 
             unitType = XenUnitTypes.dawn;
             health = 46000;
@@ -50,7 +50,7 @@ public class XenCores{
             unitCapModifier = 24;
         }};
         coreBreakpoint = new CoreBlock("core-breakpoint"){{
-            requirements(Category.effect, with(XenItems.iron, 9000, XenItems.aluminum, 9000, Items.titanium, 7000, Items.graphite, 5000, Items.silicon, 5000,  XenItems.polonium, 3000));
+            requirements(Category.effect, with(XenItems.iron, 9000, XenItems.aluminum, 9000,XenItems.titanium, 7000,XenItems.graphite, 5000,XenItems.silicon, 5000,  XenItems.polonium, 3000));
 
             unitType = XenUnitTypes.dusk;
             health = 68000;

@@ -141,12 +141,12 @@ public class XenEnvironmentTiles{
             supportsOverlay = true;
         }};
         marsh = new Floor("marsh"){{
-            itemDrop = XenItems.peat;
+            itemDrop = XenItems.biomass;
             playerUnmineable = true;
             attributes.set(Attribute.water, 0.5f);
         }};
         marshWall = new StaticWall("marsh-wall"){{
-            itemDrop = XenItems.peat;
+            itemDrop = XenItems.biomass;
             playerUnmineable = true;
         }};
 
@@ -171,27 +171,20 @@ public class XenEnvironmentTiles{
         //lunar
         lunarRegolith = new Floor("lunar-regolith-floor"){{
             mapColor = Color.valueOf("B7CBD0");
-            itemDrop = XenItems.lunarRegolith;
             playerUnmineable = true;
         }};
         lunarRegolithWall = new StaticWall("lunar-regolith-wall"){{
-            itemDrop = XenItems.lunarRegolith;
-            playerUnmineable = true;
         }};
         lunarCraters = new Floor("lunar-craters"){{
-            mapColor = Color.valueOf("B1C4C9");
-            itemDrop = XenItems.lunarRegolith;
             playerUnmineable = true;
         }};
         lunarCratersWall = new StaticWall("lunar-craters-wall"){{
-            itemDrop = XenItems.lunarRegolith;
-            playerUnmineable = true;
         }};
 
         //ores
         oreIron = new OreBlock(XenItems.iron);
         oreAluminum = new OreBlock(XenItems.aluminum);
-        orePeat = new OreBlock(XenItems.peat);
+        orePeat = new OreBlock(XenItems.biomass);
         oreLithium = new OreBlock(XenItems.lithium);
         oreAmethyst = new OreBlock(XenItems.amethyst);
         orePolonium = new OreBlock(XenItems.polonium);

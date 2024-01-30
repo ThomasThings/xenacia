@@ -27,14 +27,14 @@ public class XenFactories{
             hasLiquids = true;
             liquidCapacity = 24f;
 
-            consumeItem(XenItems.peat, 2);
+            consumeItem(XenItems.biomass, 2);
             consumePower(0.5f);
 
             craftTime = 60f;
 
             outputsLiquid = true;
             outputLiquid = new LiquidStack(Liquids.water, 6f / 60f);
-            outputItem = new ItemStack(Items.coal, 1);
+            outputItem = new ItemStack(XenItems.coal, 1);
 
             craftEffect = Fx.pulverizeMedium;
         }};
@@ -49,17 +49,17 @@ public class XenFactories{
             hasItems = true;
             itemCapacity = 20;
 
-            consumeItem(Items.coal, 5);
+            consumeItem(XenItems.coal, 5);
             consumePower(0.5f);
 
             craftTime = 60f;
 
-            outputItem = new ItemStack(Items.graphite, 3);
+            outputItem = new ItemStack(XenItems.graphite, 3);
 
             craftEffect = Fx.pulverizeMedium;
         }};
         carbonKiloPress = new GenericCrafter("carbon-kilo-press"){{
-            requirements(Category.crafting, with(XenItems.iron, 160, Items.graphite, 100, Items.silicon, 80));
+            requirements(Category.crafting, with(XenItems.iron, 160, XenItems.graphite, 100, XenItems.silicon, 80));
             size = 3;
             rotate = false;
             solid = true;
@@ -69,12 +69,12 @@ public class XenFactories{
             hasItems = true;
             itemCapacity = 60;
 
-            consumeItem(Items.coal, 10);
+            consumeItem(XenItems.coal, 10);
             consumePower(0.5f);
 
             craftTime = 75f;
 
-            outputItem = new ItemStack(Items.graphite, 8);
+            outputItem = new ItemStack(XenItems.graphite, 8);
 
             craftEffect = Fx.pulverizeMedium;
         }};

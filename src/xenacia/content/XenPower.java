@@ -1,19 +1,16 @@
 package xenacia.content;
 
+import mindustry.content.Fx;
 import mindustry.gen.Sounds;
-import mindustry.type.*;
-import mindustry.world.*;
-import mindustry.content.*;
+import mindustry.type.Category;
+import mindustry.world.Block;
 import mindustry.world.blocks.power.ConsumeGenerator;
 import mindustry.world.blocks.power.PowerNode;
-import mindustry.world.blocks.production.GenericCrafter;
-import mindustry.world.consumers.ConsumeItemFlammable;
 import mindustry.world.draw.DrawDefault;
 import mindustry.world.draw.DrawMulti;
 import mindustry.world.draw.DrawWarmupRegion;
-import mindustry.world.meta.Env;
 
-import static mindustry.type.ItemStack.*;
+import static mindustry.type.ItemStack.with;
 
 public class XenPower{
     public static Block
@@ -21,7 +18,7 @@ public class XenPower{
 
     public static void load(){
         networkLinker = new PowerNode("network-linker"){{
-            requirements(Category.power, with(XenItems.aluminum, 15, XenItems.iron, 10, Items.graphite, 5));
+            requirements(Category.power, with(XenItems.aluminum, 15, XenItems.iron, 10,XenItems.graphite, 5));
             size = 2;
             maxNodes = 20;
             laserRange = 20f;
@@ -35,7 +32,7 @@ public class XenPower{
             ambientSoundVolume = 0.03f;
             generateEffect = Fx.generatespark;
 
-            consumeItem(XenItems.peat);
+            consumeItem(XenItems.biomass);
 
             drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion());
         }};
