@@ -5,10 +5,10 @@ import mindustry.type.*;
 
 public class XenLiquids{
     public static Liquid
-            water, steam, oil, oxygen, hydrogen, liquidNitrogen, magma, volatlite;
+            xenWater, steam, xenOil, xenOxygen, xenHydrogen, liquidNitrogen, magma, volatlite;
 
     public static void load(){
-        water = new Liquid("fluid-water", Color.valueOf("486acd")){{
+        xenWater = new Liquid("xen-fluid-water", Color.valueOf("486acd")){{
             gas = true;
             barColor = Color.valueOf("84e4ea");
         }};
@@ -16,15 +16,15 @@ public class XenLiquids{
             gas = true;
             barColor = Color.valueOf("84e4ea");
         }};
-        oil = new Liquid("fluid-oil", Color.valueOf("313131")){{
+        xenOil = new Liquid("xen-fluid-oil", Color.valueOf("313131")){{
             gas = true;
             barColor = Color.valueOf("84e4ea");
         }};
-        oxygen = new Liquid("fluid-oxygen", Color.valueOf("ffbdd4")){{
+        xenOxygen = new Liquid("xenfluid-oxygen", Color.valueOf("ffbdd4")){{
             gas = true;
             barColor = Color.valueOf("84e4ea");
         }};
-        hydrogen = new Liquid("fluid-hydrogen", Color.valueOf("d1e4ff")){{
+        xenHydrogen = new Liquid("xen-fluid-hydrogen", Color.valueOf("d1e4ff")){{
             gas = true;
             barColor = Color.valueOf("84e4ea");
         }};
