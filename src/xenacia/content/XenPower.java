@@ -18,7 +18,7 @@ public class XenPower{
 
     public static void load(){
         networkLinker = new PowerNode("network-linker"){{
-            requirements(Category.power, with(XenItems.aluminum, 15, XenItems.iron, 10,XenItems.graphite, 5));
+            requirements(Category.power, with(XenItems.aluminum, 15, XenItems.iron, 10,XenItems.xenGraphite, 5));
             size = 2;
             maxNodes = 20;
             laserRange = 20f;

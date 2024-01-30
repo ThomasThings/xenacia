@@ -1,11 +1,10 @@
 package xenacia.content;
 
-import mindustry.type.*;
-import mindustry.world.*;
-import mindustry.content.*;
+import mindustry.type.Category;
+import mindustry.world.Block;
 import mindustry.world.blocks.storage.CoreBlock;
 
-import static mindustry.type.ItemStack.*;
+import static mindustry.type.ItemStack.with;
 
 public class XenCores{
     public static Block
@@ -26,7 +25,7 @@ public class XenCores{
             unitCapModifier = 6;
         }};
         coreDerive = new CoreBlock("core-derive"){{
-            requirements(Category.effect, with(XenItems.iron, 1000, XenItems.aluminum, 1000,XenItems.graphite, 1000));
+            requirements(Category.effect, with(XenItems.iron, 1000, XenItems.aluminum, 1000,XenItems.xenGraphite, 1000));
 
             unitType = XenUnitTypes.moment;
             health = 22000;
@@ -38,7 +37,7 @@ public class XenCores{
             unitCapModifier = 14;
         }};
         coreInception = new CoreBlock("core-inception"){{
-            requirements(Category.effect, with(XenItems.iron, 3000, XenItems.aluminum, 3000,XenItems.graphite, 3000,XenItems.silicon, 2000,XenItems.titanium, 1500));
+            requirements(Category.effect, with(XenItems.iron, 3000, XenItems.aluminum, 3000,XenItems.xenGraphite, 3000,XenItems.xenSilicon, 2000,XenItems.xenTitanium, 1500));
 
             unitType = XenUnitTypes.dawn;
             health = 46000;
@@ -50,7 +49,7 @@ public class XenCores{
             unitCapModifier = 24;
         }};
         coreBreakpoint = new CoreBlock("core-breakpoint"){{
-            requirements(Category.effect, with(XenItems.iron, 9000, XenItems.aluminum, 9000,XenItems.titanium, 7000,XenItems.graphite, 5000,XenItems.silicon, 5000,  XenItems.polonium, 3000));
+            requirements(Category.effect, with(XenItems.iron, 9000, XenItems.aluminum, 9000,XenItems.xenTitanium, 7000,XenItems.xenGraphite, 5000,XenItems.xenSilicon, 5000,  XenItems.polonium, 3000));
 
             unitType = XenUnitTypes.dusk;
             health = 68000;

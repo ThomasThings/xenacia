@@ -3,7 +3,6 @@ package xenacia.content;
 import arc.graphics.Color;
 import arc.math.Interp;
 import mindustry.content.Fx;
-import mindustry.content.Items;
 import mindustry.entities.bullet.BasicBulletType;
 import mindustry.entities.bullet.ExplosionBulletType;
 import mindustry.entities.part.RegionPart;
@@ -70,9 +69,9 @@ public class XenTurrets{
         clinger = new ItemTurret("clinger"){{
             outlineColor = Color.valueOf("231b25");
             size = 2;
-            requirements(Category.turret, with(XenItems.iron, 80, XenItems.aluminum, 120,XenItems.graphite, 80));
+            requirements(Category.turret, with(XenItems.iron, 80, XenItems.aluminum, 120,XenItems.xenGraphite, 80));
             ammo(
-                   XenItems.graphite,  new BasicBulletType(0f, 1){{
+                   XenItems.xenGraphite,  new BasicBulletType(0f, 1){{
                         shootEffect = Fx.shootBig;
                         smokeEffect = Fx.none;
                         ammoMultiplier = 1f;

@@ -21,7 +21,7 @@ public class XenUnitFactories{
     public static void load() {
         //mite
         miteFactory = new BaseTeamUnitFactory("mite-factory"){{
-            requirements(Category.units, BuildVisibility.sandboxOnly, with(XenItems.iron, 50,XenItems.silicon, 40));
+            requirements(Category.units, BuildVisibility.sandboxOnly, with(XenItems.iron, 50,XenItems.xenSilicon, 40));
             plans = Seq.with(
                     new UnitPlan(XenUnitTypes.coreMite, 60f * 8, with(Items.silicon, 5, XenItems.aluminum, 3)),
                     new UnitPlan(XenUnitTypes.assaultMite, 60f * 8, with(Items.silicon, 5, XenItems.iron, 3)),
@@ -32,7 +32,7 @@ public class XenUnitFactories{
             consumePower(0.8f);
         }};
         unitHullConstructor = new BaseTeamUnitFactory("unit-hull-constructor"){{
-            requirements(Category.units, with( XenItems.aluminum, 100,XenItems.silicon, 80, XenItems.iron, 80));
+            requirements(Category.units, with( XenItems.aluminum, 100,XenItems.xenSilicon, 80, XenItems.iron, 80));
             plans = Seq.with(
                     new UnitPlan(XenUnitTypes.mechacraftHull, 60f * 15, with(Items.silicon, 15, XenItems.iron, 15, XenItems.aluminum, 5)),
                     new UnitPlan(XenUnitTypes.aircraftHull, 60f * 15, with(Items.silicon, 15, XenItems.iron, 5, XenItems.aluminum, 10)),
@@ -47,7 +47,7 @@ public class XenUnitFactories{
         }};
 
         assaultTranstructor = new BaseTeamReconstructor("assault-transtructor"){{
-            requirements(Category.units, with(XenItems.iron, 150, XenItems.aluminum, 130,XenItems.silicon, 100));
+            requirements(Category.units, with(XenItems.iron, 150, XenItems.aluminum, 130,XenItems.xenSilicon, 100));
 
             size = 3;
             consumePower(3f);
@@ -64,7 +64,7 @@ public class XenUnitFactories{
             );
         }};
         supportTranstructor = new BaseTeamReconstructor("support-transtructor"){{
-            requirements(Category.units, with(XenItems.iron, 180, XenItems.aluminum, 100,XenItems.silicon, 100));
+            requirements(Category.units, with(XenItems.iron, 180, XenItems.aluminum, 100,XenItems.xenSilicon, 100));
 
             size = 3;
             consumePower(3f);
@@ -81,7 +81,7 @@ public class XenUnitFactories{
             );
         }};
         specialistTranstructor = new BaseTeamReconstructor("specialist-transtructor"){{
-            requirements(Category.units, with(XenItems.aluminum, 150, XenItems.iron, 120,XenItems.silicon, 80, XenItems.lithium, 60));
+            requirements(Category.units, with(XenItems.aluminum, 150, XenItems.iron, 120,XenItems.xenSilicon, 80, XenItems.lithium, 60));
 
             size = 3;
             consumePower(4f);
@@ -99,11 +99,11 @@ public class XenUnitFactories{
         }};
 
         assaultReconstructor = new BaseTeamReconstructor("assault-reconstructor"){{
-            requirements(Category.units, with(XenItems.iron, 750, XenItems.aluminum, 600,XenItems.graphite, 350,XenItems.silicon, 650,XenItems.titanium, 400));
+            requirements(Category.units, with(XenItems.iron, 750, XenItems.aluminum, 600,XenItems.xenGraphite, 350,XenItems.xenSilicon, 650,XenItems.xenTitanium, 400));
 
             size = 5;
             consumePower(8.5f);
-            consumeItems(with(Items.silicon, 350, XenItems.iron, 350, XenItems.aluminum, 250,XenItems.graphite, 250));
+            consumeItems(with(Items.silicon, 350, XenItems.iron, 350, XenItems.aluminum, 250,XenItems.xenGraphite, 250));
 
             constructTime = 60f * 25f;
 
@@ -113,11 +113,11 @@ public class XenUnitFactories{
             );
         }};
         supportReconstructor = new BaseTeamReconstructor("support-reconstructor"){{
-            requirements(Category.units, with(XenItems.iron, 750, XenItems.aluminum, 550,XenItems.graphite, 400,XenItems.silicon, 650,XenItems.titanium, 450));
+            requirements(Category.units, with(XenItems.iron, 750, XenItems.aluminum, 550,XenItems.xenGraphite, 400,XenItems.xenSilicon, 650,XenItems.xenTitanium, 450));
 
             size = 5;
             consumePower(9f);
-            consumeItems(with(Items.silicon, 350, XenItems.iron, 300, XenItems.aluminum, 300,XenItems.graphite, 250));
+            consumeItems(with(Items.silicon, 350, XenItems.iron, 300, XenItems.aluminum, 300,XenItems.xenGraphite, 250));
 
             constructTime = 60f * 25f;
 
@@ -127,11 +127,11 @@ public class XenUnitFactories{
             );
         }};
         specialistReconstructor = new BaseTeamReconstructor("specialist-reconstructor"){{
-            requirements(Category.units, with(XenItems.iron, 650, XenItems.aluminum, 500,XenItems.graphite, 300,XenItems.silicon, 550,XenItems.titanium, 400, XenItems.lithium, 300));
+            requirements(Category.units, with(XenItems.iron, 650, XenItems.aluminum, 500,XenItems.xenGraphite, 300,XenItems.xenSilicon, 550,XenItems.xenTitanium, 400, XenItems.lithium, 300));
 
             size = 5;
             consumePower(10f);
-            consumeItems(with(Items.silicon, 400, XenItems.iron, 300, XenItems.aluminum, 250,XenItems.graphite, 300));
+            consumeItems(with(Items.silicon, 400, XenItems.iron, 300, XenItems.aluminum, 250,XenItems.xenGraphite, 300));
 
             constructTime = 60f * 25f;
 
@@ -142,11 +142,11 @@ public class XenUnitFactories{
         }};
 
         convergentReconstructor = new BaseTeamReconstructor("convergent-reconstructor"){{
-            requirements(Category.units, with(XenItems.iron, 2000,XenItems.graphite, 1500,XenItems.silicon, 1000, XenItems.lithium, 800,XenItems.titanium, 1000, XenItems.cobalt, 800));
+            requirements(Category.units, with(XenItems.iron, 2000,XenItems.xenGraphite, 1500,XenItems.xenSilicon, 1000, XenItems.lithium, 800,XenItems.xenTitanium, 1000, XenItems.cobalt, 800));
 
             size = 7;
             consumePower(6f);
-            consumeItems(with(Items.silicon, 800, XenItems.iron, 600, XenItems.aluminum, 600,XenItems.graphite, 500,XenItems.titanium, 250));
+            consumeItems(with(Items.silicon, 800, XenItems.iron, 600, XenItems.aluminum, 600,XenItems.xenGraphite, 500,XenItems.xenTitanium, 250));
 
             constructTime = 60f * 25f;
 
