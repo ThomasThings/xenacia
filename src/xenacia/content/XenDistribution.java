@@ -1,5 +1,6 @@
 package xenacia.content;
 
+import mindustry.content.Items;
 import mindustry.type.Category;
 import mindustry.world.Block;
 import mindustry.world.blocks.distribution.*;
@@ -22,7 +23,7 @@ public class XenDistribution{
             researchCost = with(XenItems.iron, 20, XenItems.aluminum, 20);
         }};
         poweredRail = new StackConveyor("powered-rail"){{
-            requirements(Category.distribution, with(XenItems.iron, 2,XenItems.xenSilicon, 2));
+            requirements(Category.distribution, with(XenItems.iron, 2, Items.silicon, 2));
             health = 100;
             speed = 5f / 60f;
             itemCapacity = 10;
@@ -35,10 +36,10 @@ public class XenDistribution{
             baseEfficiency = 1f;
             consumePower(1f / 60f);
 
-            researchCost = with(XenItems.iron, 200,XenItems.xenSilicon, 200);
+            researchCost = with(XenItems.iron, 200,Items.silicon, 200);
         }};
         bulkRail = new StackConveyor("bulk-rail"){{
-            requirements(Category.distribution, with(XenItems.iron, 3,XenItems.xenTitanium, 2,XenItems.xenSilicon, 2));
+            requirements(Category.distribution, with(XenItems.iron, 3,Items.titanium, 2,Items.silicon, 2));
             health = 100;
             speed = 5f / 60f;
             itemCapacity = 20;
@@ -51,13 +52,13 @@ public class XenDistribution{
             baseEfficiency = 1f;
             consumePower(1.5f / 60f);
 
-            researchCost = with(XenItems.iron, 250,XenItems.xenTitanium, 250,XenItems.xenSilicon, 250);
+            researchCost = with(XenItems.iron, 250,Items.titanium, 250,Items.silicon, 250);
         }};
         armoredRail = new Duct("armored-rail"){{
-            requirements(Category.distribution, with(XenItems.iron, 2, XenItems.cobalt, 2,XenItems.xenSilicon, 2));
+            requirements(Category.distribution, with(XenItems.iron, 2, XenItems.cobalt, 2,Items.silicon, 2));
             health = 180;
             speed = 5f;
-            researchCost = with(XenItems.iron, 250,XenItems.xenTitanium, 250,XenItems.xenSilicon, 250);
+            researchCost = with(XenItems.iron, 250,Items.titanium, 250,Items.silicon, 250);
         }};
         railRouter = new StackRouter("rail-router"){{
             requirements(Category.distribution, with(XenItems.iron, 2, XenItems.aluminum, 2));
@@ -73,7 +74,7 @@ public class XenDistribution{
             researchCost = with(XenItems.iron, 20, XenItems.aluminum, 20);
         }};
         bulkRailRouter = new StackRouter("bulk-rail-router"){{
-            requirements(Category.distribution, with(XenItems.iron, 4,XenItems.xenTitanium, 4,XenItems.xenSilicon, 2));
+            requirements(Category.distribution, with(XenItems.iron, 4,Items.titanium, 4,Items.silicon, 2));
             health = 100;
             speed = 5f;
 
@@ -86,7 +87,7 @@ public class XenDistribution{
 
             underBullets = true;
             solid = false;
-            researchCost = with(XenItems.iron, 250,XenItems.xenTitanium, 250,XenItems.xenSilicon, 250);
+            researchCost = with(XenItems.iron, 250,Items.titanium, 250,Items.silicon, 250);
         }};
         railJunction = new Junction("rail-junction"){{
             requirements(Category.distribution, with(XenItems.iron, 2, XenItems.aluminum, 2));

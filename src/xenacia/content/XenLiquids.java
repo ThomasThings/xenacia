@@ -1,38 +1,20 @@
 package xenacia.content;
 
-import arc.graphics.*;
-import mindustry.type.*;
+import arc.graphics.Color;
+import mindustry.type.Liquid;
 
 public class XenLiquids{
     public static Liquid
-            xenWater, steam, xenOil, xenOxygen, xenHydrogen, liquidNitrogen, magma, volatlite;
+            steam, liquidNitrogen, magma, volatlite;
 
     public static void load(){
-        xenWater = new Liquid("xen-fluid-water", Color.valueOf("486acd")){{
-            gas = true;
-            barColor = Color.valueOf("84e4ea");
-        }};
         steam = new Liquid("fluid-steam", Color.valueOf("e9f8f9")){{
             gas = true;
             barColor = Color.valueOf("84e4ea");
         }};
-        xenOil = new Liquid("xen-fluid-oil", Color.valueOf("313131")){{
-            gas = true;
-            barColor = Color.valueOf("84e4ea");
-        }};
-        xenOxygen = new Liquid("xenfluid-oxygen", Color.valueOf("ffbdd4")){{
-            gas = true;
-            barColor = Color.valueOf("84e4ea");
-        }};
-        xenHydrogen = new Liquid("xen-fluid-hydrogen", Color.valueOf("d1e4ff")){{
-            gas = true;
-            barColor = Color.valueOf("84e4ea");
-        }};
         liquidNitrogen = new Liquid("fluid-liquid-nitrogen", Color.valueOf("e4d6f6")){{
-            temperature = 0.6f;
-            flammability = 2f;
-            explosiveness = 3f;
-            viscosity = 0.3f;
+            temperature = 0f;
+            viscosity = 0.2f;
         }};
         magma = new Liquid("fluid-magma", Color.valueOf("db7448")){{
             temperature = 3f;
@@ -44,7 +26,7 @@ public class XenLiquids{
            temperature = 0.6f;
            flammability = 2f;
            explosiveness = 3f;
-           viscosity = 0.3f;
+           viscosity = 0.2f;
         }};
     }
 }

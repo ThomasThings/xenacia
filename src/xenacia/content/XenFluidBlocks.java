@@ -18,22 +18,22 @@ public class XenFluidBlocks{
 
     public static void load(){
         fluidPipe = new Conduit("fluid-pipe"){{
-            requirements(Category.liquid, with(XenItems.aluminum, 1,XenItems.xenGraphite, 1));
+            requirements(Category.liquid, with(XenItems.aluminum, 1,Items.graphite, 1));
             health = 80;
             botColor = Color.valueOf("2d282e");
 
-            researchCost = with(XenItems.aluminum, 80,XenItems.xenGraphite, 80);
+            researchCost = with(XenItems.aluminum, 80,Items.graphite, 80);
         }};
         armoredFluidPipe = new Conduit("armored-fluid-pipe"){{
-            requirements(Category.liquid, with(XenItems.cobalt, 2, XenItems.aluminum, 3,XenItems.xenGraphite, 2));
+            requirements(Category.liquid, with(XenItems.cobalt, 2, XenItems.aluminum, 3,Items.graphite, 2));
             health = 200;
             leaks = false;
             botColor = Color.valueOf("2d282e");
 
-            researchCost = with(XenItems.cobalt, 200, XenItems.aluminum, 150,XenItems.xenGraphite, 150);
+            researchCost = with(XenItems.cobalt, 200, XenItems.aluminum, 150,Items.graphite, 150);
         }};
         fluidRouter = new LiquidRouter("fluid-router"){{
-            requirements(Category.liquid, with(XenItems.aluminum, 2,XenItems.xenGraphite, 3));
+            requirements(Category.liquid, with(XenItems.aluminum, 2,Items.graphite, 3));
             health = 80;
             liquidCapacity = 20f;
             liquidPadding = 1.5f;
@@ -41,20 +41,20 @@ public class XenFluidBlocks{
             squareSprite = false;
             solid = false;
 
-            researchCost = with(XenItems.aluminum, 100,XenItems.xenGraphite, 100);
+            researchCost = with(XenItems.aluminum, 100,Items.graphite, 100);
         }};
         fluidJunction = new LiquidJunction("fluid-junction"){{
-            requirements(Category.liquid, with(XenItems.aluminum, 2,XenItems.xenGraphite, 3));
+            requirements(Category.liquid, with(XenItems.aluminum, 2,Items.graphite, 3));
             health = 80;
             solid = false;
 
             ((Conduit)fluidPipe).junctionReplacement = this;
             ((Conduit)armoredFluidPipe).junctionReplacement = this;
 
-            researchCost = with(XenItems.aluminum, 100,XenItems.xenGraphite, 100);
+            researchCost = with(XenItems.aluminum, 100,Items.graphite, 100);
         }};
         bridgePipe = new DirectionLiquidBridge("bridge-pipe"){{
-            requirements(Category.liquid, with(XenItems.aluminum, 5,XenItems.xenGraphite, 5));
+            requirements(Category.liquid, with(XenItems.aluminum, 5,Items.graphite, 5));
             health = 80;
             range = 6;
             hasPower = false;
@@ -64,7 +64,7 @@ public class XenFluidBlocks{
             ((Conduit)fluidPipe).rotBridgeReplacement = this;
             ((Conduit)armoredFluidPipe).rotBridgeReplacement = this;
 
-            researchCost = with(XenItems.aluminum, 150,XenItems.xenGraphite, 150);
+            researchCost = with(XenItems.aluminum, 150,Items.graphite, 150);
         }};
         smallFluidTank = new LiquidRouter("small-fluid-tank"){{
             requirements(Category.liquid, with(XenItems.iron, 60, XenItems.aluminum, 30));
@@ -79,7 +79,7 @@ public class XenFluidBlocks{
             researchCostMultiplier = 1f;
         }};
         largeFluidTank = new LiquidRouter("large-fluid-tank"){{
-            requirements(Category.liquid, with(XenItems.iron, 200,XenItems.xenTitanium, 100, XenItems.aluminum, 100));
+            requirements(Category.liquid, with(XenItems.iron, 200,Items.titanium, 100, XenItems.aluminum, 100));
             health = 1260;
             size = 3;
             liquidCapacity = 2000f;
@@ -91,7 +91,7 @@ public class XenFluidBlocks{
             researchCostMultiplier = 1f;
         }};
         bulkFluidTank = new TeamLiquidRouter("bulk-fluid-tank"){{
-            requirements(Category.liquid, with(XenItems.aluminum, 400,XenItems.xenGraphite, 400, XenItems.cobalt, 500));
+            requirements(Category.liquid, with(XenItems.aluminum, 400,Items.graphite, 400, XenItems.cobalt, 500));
             health = 3500;
             size = 5;
             liquidCapacity = 10000f;
@@ -103,7 +103,7 @@ public class XenFluidBlocks{
             researchCostMultiplier = 1f;
         }};
         fluidPayloadTransportTank = new TeamLiquidRouter("fluid-payload-transport-tank"){{
-            requirements(Category.liquid, with(XenItems.aluminum, 1000,XenItems.xenGraphite, 800, XenItems.cobalt, 800, XenItems.volcrite, 1000));
+            requirements(Category.liquid, with(XenItems.aluminum, 1000,Items.graphite, 800, XenItems.cobalt, 800, XenItems.volcrite, 1000));
             health = 7000;
             size = 7;
             liquidCapacity = 30000f;

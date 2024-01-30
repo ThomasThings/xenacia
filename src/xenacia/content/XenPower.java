@@ -1,6 +1,7 @@
 package xenacia.content;
 
 import mindustry.content.Fx;
+import mindustry.content.Items;
 import mindustry.gen.Sounds;
 import mindustry.type.Category;
 import mindustry.world.Block;
@@ -18,7 +19,7 @@ public class XenPower{
 
     public static void load(){
         networkLinker = new PowerNode("network-linker"){{
-            requirements(Category.power, with(XenItems.aluminum, 15, XenItems.iron, 10,XenItems.xenGraphite, 5));
+            requirements(Category.power, with(XenItems.aluminum, 15, XenItems.iron, 10, Items.graphite, 5));
             size = 2;
             maxNodes = 20;
             laserRange = 20f;

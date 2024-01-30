@@ -1,5 +1,6 @@
 package xenacia.content;
 
+import mindustry.content.Items;
 import mindustry.type.Category;
 import mindustry.world.Block;
 import mindustry.world.blocks.storage.StorageBlock;
@@ -11,7 +12,7 @@ public class XenStorage{
             smallVault, largeVault, bulkVault, resourcePayloadTransportVault;
     public static void load() {
         smallVault = new StorageBlock("small-vault") {{
-            requirements(Category.effect, with(XenItems.iron, 100,XenItems.xenGraphite, 50));
+            requirements(Category.effect, with(XenItems.iron, 100, Items.graphite, 50));
             health = 560;
             size = 2;
             itemCapacity = 500;
@@ -19,7 +20,7 @@ public class XenStorage{
             researchCostMultiplier = 1f;
         }};
         largeVault = new StorageBlock("large-vault") {{
-            requirements(Category.effect, with(XenItems.iron, 300,XenItems.xenTitanium, 250));
+            requirements(Category.effect, with(XenItems.iron, 300,Items.titanium, 250));
             health = 1260;
             size = 3;
             itemCapacity = 1500;
@@ -27,7 +28,7 @@ public class XenStorage{
             researchCostMultiplier = 1f;
         }};
         bulkVault = new StorageBlock("bulk-vault") {{
-            requirements(Category.effect, with(XenItems.iron, 500,XenItems.xenTitanium, 350, XenItems.cobalt, 500));
+            requirements(Category.effect, with(XenItems.iron, 500,Items.titanium, 350, XenItems.cobalt, 500));
             health = 3500;
             size = 5;
             itemCapacity = 5000;

@@ -33,32 +33,32 @@ public class XenItems{
             lowPriority = true;
             buildable = false;
         }};
-        xenCoal = new Item("xen-coal", Color.valueOf("2a2a2a")){{
+        /*xenCoal = new Item("xen-coal", Color.valueOf("2a2a2a")){{
             explosiveness = 0.2f;
             flammability = 1.2f;
 
             hardness = 1;
             buildable = false;
-        }};
-        xenGraphite = new Item("xen-graphite", Color.valueOf("8193b9")){{
+        }};*/
+        /*xenGraphite = new Item("xen-graphite", Color.valueOf("8193b9")){{
             hardness = 3;
             cost = 0.8f;
             healthScaling = 0.2f;
-        }};
+        }};*/
         stone = new Item("stone", Color.valueOf("666e77")){{
             hardness = 2;
             lowPriority = true;
             buildable = false;
         }};
-        xenSand = new Item("xen-sand", Color.valueOf("f7cba4")){{
+        /*xenSand = new Item("xen-sand", Color.valueOf("f7cba4")){{
             hardness = 1;
             lowPriority = true;
             buildable = false;
-        }};
-        xenSilicon = new Item("xen-silicon", Color.valueOf("48485d")){{
+        }};*/
+        /*xenSilicon = new Item("xen-silicon", Color.valueOf("48485d")){{
             cost = 0.5f;
             healthScaling = 0.15f;
-        }};
+        }};*/
         lithium = new Item("lithium", Color.valueOf("9baa9d")){{
             explosiveness = 0.7f;
             flammability = 0.6f;
@@ -67,16 +67,16 @@ public class XenItems{
             hardness = 2;
             cost = 0.8f;
         }};
-        xenBeryllium = new Item("xen-beryllium", Color.valueOf("3f8b64")){{
+        /*xenBeryllium = new Item("xen-beryllium", Color.valueOf("3f8b64")){{
             hardness = 3;
             cost = 1f;
             healthScaling = 0.3f;
-        }};
-        xenTitanium = new Item("xen-titanium", Color.valueOf("8d9ae0")){{
+        }};*/
+        /*xenTitanium = new Item("xen-titanium", Color.valueOf("8d9ae0")){{
             hardness = 3;
             cost = 1f;
             healthScaling = 0.5f;
-        }};
+        }};*/
         cobalt = new Item("cobalt", Color.valueOf("3b3b69")){{
             hardness = 4;
             cost = 1.2f;
@@ -106,16 +106,16 @@ public class XenItems{
             hardness = 4;
             cost = 1f;
         }};
-        xenTungsten = new Item("xen-tungsten", Color.valueOf("534171")){{
+        /*xenTungsten = new Item("xen-tungsten", Color.valueOf("534171")){{
             hardness = 5;
             cost = 1.5f;
             healthScaling = 1.2f;
-        }};
-        xenCarbide = new Item("xen-carbide", Color.valueOf("534171")){{
+        }};*/
+        /*xenCarbide = new Item("xen-carbide", Color.valueOf("534171")){{
             hardness = 1;
             cost = 1.5f;
             healthScaling = 1.6f;
-        }};
+        }};*/
         volcrite = new Item("volcrite", Color.valueOf("483529")){{
             hardness = 1;
             cost = 1.5f;

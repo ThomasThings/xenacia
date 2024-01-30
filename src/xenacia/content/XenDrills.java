@@ -27,7 +27,7 @@ public class XenDrills{
             consumeLiquid(Liquids.water, 0.05f).boost();
         }};
         hydraulicDrill = new Drill("hydraulic-drill"){{
-            requirements(Category.production, with(XenItems.iron, 15, XenItems.aluminum, 10,XenItems.xenGraphite, 15));
+            requirements(Category.production, with(XenItems.iron, 15, XenItems.aluminum, 10,Items.graphite, 15));
             health = 250;
             drillTime = 300;
             size = 2;
@@ -39,7 +39,7 @@ public class XenDrills{
             consumeLiquid(Liquids.water, 0.08f);
         }};
         bulkDrill = new Drill("bulk-drill"){{
-            requirements(Category.production, with(Items.titanium, 80, XenItems.iron, 50,XenItems.xenGraphite, 25,XenItems.xenSilicon, 30));
+            requirements(Category.production, with(Items.titanium, 80, XenItems.iron, 50,Items.graphite, 25,Items.silicon, 30));
             health = 550;
             drillTime = 250;
             size = 3;
@@ -55,7 +55,7 @@ public class XenDrills{
             consumeLiquid(Liquids.water, 0.05f).boost();
         }};
         precisionDrill = new Drill("precision-drill"){{
-            requirements(Category.production, with(Items.titanium, 5, XenItems.iron, 10,XenItems.xenSilicon, 10));
+            requirements(Category.production, with(Items.titanium, 5, XenItems.iron, 10,Items.silicon, 10));
             health = 100;
             drillTime = 400;
             size = 1;
@@ -71,7 +71,7 @@ public class XenDrills{
         }};
         turbineDrill = new TurbineDrill("turbine-drill"){{
             buildVisibility = BuildVisibility.hidden;
-            requirements(Category.production, with(XenItems.iron, 80,XenItems.xenGraphite, 40,XenItems.xenSilicon, 60));
+            requirements(Category.production, with(XenItems.iron, 80,Items.graphite, 40,Items.silicon, 60));
             health = 550;
             drillTime = 250;
             size = 3;
@@ -89,7 +89,7 @@ public class XenDrills{
         }};
         vaultDrill = new VaultDrill("vault-drill"){{
             buildVisibility = BuildVisibility.hidden;
-            requirements(Category.production, with(XenItems.iron, 50,XenItems.xenTitanium, 100,XenItems.xenGraphite, 40));
+            requirements(Category.production, with(XenItems.iron, 50,Items.titanium, 100,Items.graphite, 40));
             health = 550;
             drillTime = 200;
             size = 3;
@@ -106,7 +106,7 @@ public class XenDrills{
             consumeLiquid(Liquids.water, 0.1f).boost();
         }};
         detonationDrill = new Drill("detonation-drill"){{
-            requirements(Category.production, with(XenItems.cobalt, 250,XenItems.xenTitanium, 200, XenItems.aluminum, 100,XenItems.xenGraphite, 80));
+            requirements(Category.production, with(XenItems.cobalt, 250,Items.titanium, 200, XenItems.aluminum, 100,Items.graphite, 80));
             health = 1100;
             drillTime = 180;
             size = 5;
@@ -125,7 +125,7 @@ public class XenDrills{
         }};
         titanicDrill = new BurstDrill("titanic-drill"){{
             buildVisibility = BuildVisibility.hidden;
-            requirements(Category.production, with(XenItems.volcrite, 350, XenItems.cobalt, 200,XenItems.xenTitanium, 200,XenItems.xenSilicon, 200));
+            requirements(Category.production, with(XenItems.volcrite, 350, XenItems.cobalt, 200,Items.titanium, 200,Items.silicon, 200));
             drillTime = 0;
             size = 7;
             hasPower = true;
