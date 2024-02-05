@@ -2110,7 +2110,7 @@ public class XenUnitTypes {
             legMinLength = 1f;
             allowLegStep = false;
 
-            legMoveSpace = 0.5f;
+            legMoveSpace = 2f;
             hovering = false;
             shadowElevation = 0.1f;
             groundLayer = Layer.legUnit - 1f;
@@ -2162,7 +2162,7 @@ public class XenUnitTypes {
             lockLegBase = true;
             legContinuousMove = true;
             legExtension = -3f;
-            legBaseOffset = 2.5f;
+            legBaseOffset = 4f;
             legMaxLength = 1.1f;
             legMinLength = 0.2f;
             legLengthScl = 0.95f;
