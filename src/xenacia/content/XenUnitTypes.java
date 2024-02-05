@@ -2101,7 +2101,7 @@ public class XenUnitTypes {
             legForwardScl = 5f;
             legContinuousMove = true;
             legCount = 4;
-            legGroupSize = 2;
+            legGroupSize = 1;
             legLength = 7.5f;
             legExtension = 1f;
             legBaseOffset = 1f;
