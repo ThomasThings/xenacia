@@ -2110,6 +2110,12 @@ public class XenUnitTypes {
             legMinLength = 1f;
             allowLegStep = false;
 
+            legMoveSpace = 0.5f;
+            hovering = false;
+            shadowElevation = 0.1f;
+            groundLayer = Layer.legUnit - 1f;
+            drownTimeMultiplier = 0.5f;
+
             range = 40f;
 
             weapons.add(new Weapon() {{
@@ -2150,19 +2156,18 @@ public class XenUnitTypes {
             useUnitCap = false;
             itemCapacity = 0;
 
-            aiController = SuicideAI::new;
-
             legCount = 6;
             legGroupSize = 2;
             legLength = 14f;
             lockLegBase = true;
             legContinuousMove = true;
             legExtension = -3f;
-            legBaseOffset = 5f;
+            legBaseOffset = 2.5f;
             legMaxLength = 1.1f;
             legMinLength = 0.2f;
             legLengthScl = 0.95f;
             legForwardScl = 0.7f;
+            stepShake = 0;
 
             legMoveSpace = 1f;
             hovering = true;
