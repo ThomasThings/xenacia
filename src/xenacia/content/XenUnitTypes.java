@@ -2104,7 +2104,7 @@ public class XenUnitTypes {
             legLength = 7.5f;
             legExtension = 1f;
             legBaseOffset = 1f;
-            legStraightness = 0.7f;
+            legStraightness = 0.3f;
             rippleScale = 0.1f;
             legMaxLength = 1f;
             legMinLength = 1f;
@@ -2153,17 +2153,16 @@ public class XenUnitTypes {
             aiController = SuicideAI::new;
 
             legCount = 6;
-            legLength = 16f;
             legGroupSize = 2;
+            legLength = 14f;
             lockLegBase = true;
             legContinuousMove = true;
-            legExtension = -5f;
-            legBaseOffset = 1.5f;
-            legMaxLength = 0.8f;
-            legMinLength = 0.5f;
-            legLengthScl = 0.65f;
+            legExtension = -3f;
+            legBaseOffset = 5f;
+            legMaxLength = 1.1f;
+            legMinLength = 0.2f;
+            legLengthScl = 0.95f;
             legForwardScl = 0.7f;
-            allowLegStep = true;
 
             legMoveSpace = 1f;
             hovering = true;
