@@ -2089,7 +2089,7 @@ public class XenUnitTypes {
             health = 110f;
             armor = 0f;
             hitSize = 6f;
-            speed = 0.6f;
+            speed = 0.8f;
             rotateSpeed = 8f;
             drag = 0.11f;
 
@@ -2117,7 +2117,7 @@ public class XenUnitTypes {
             groundLayer = Layer.legUnit - 1f;
             drownTimeMultiplier = 0.5f;
 
-            range = 40f;
+            range = 20f;
 
             weapons.add(new Weapon() {{
                 shootOnDeath = true;
@@ -2150,7 +2150,7 @@ public class XenUnitTypes {
             health = 650f;
             armor = 0f;
             hitSize = 16f;
-            speed = 0.8f;
+            speed = 0.6f;
             rotateSpeed = 4f;
             drag = 0.11f;
 
@@ -2176,7 +2176,7 @@ public class XenUnitTypes {
             groundLayer = Layer.legUnit - 1f;
             drownTimeMultiplier = 0.5f;
 
-            abilities.add(new UnitSpawnAbility(coreMite, 60 * 5, 0f, 2.5f));
+            abilities.add(new UnitSpawnAbility(coreMite, 60 * 5, 0f, 5f));
         }};
 
         assaultMite = new UnitType("assault-mite") {{
@@ -2185,7 +2185,7 @@ public class XenUnitTypes {
             health = 100f;
             armor = 0f;
             hitSize = 6f;
-            speed = 0.9f;
+            speed = 0.8f;
             rotateSpeed = 8f;
             drag = 0.11f;
 
@@ -2198,12 +2198,18 @@ public class XenUnitTypes {
             legGroupSize = 1;
             legLength = 7.5f;
             legExtension = 1f;
-            legBaseOffset = 0f;
-            legStraightness = 0.5f;
+            legBaseOffset = 1f;
+            legStraightness = 0.3f;
             rippleScale = 0.1f;
             legMaxLength = 1f;
             legMinLength = 1f;
             allowLegStep = false;
+
+            legMoveSpace = 0.8f;
+            hovering = false;
+            shadowElevation = 0.1f;
+            groundLayer = Layer.legUnit - 1f;
+            drownTimeMultiplier = 0.5f;
 
             weapons.add(new Weapon("assault-mite-weapon") {{
                 x = 0f;
@@ -2219,6 +2225,40 @@ public class XenUnitTypes {
                 ejectEffect = Fx.none;
             }});
         }};
+        assaultParasite = new UnitType("assault-parasite") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("231b25");
+            health = 650f;
+            armor = 0f;
+            hitSize = 16f;
+            speed = 0.6f;
+            rotateSpeed = 4f;
+            drag = 0.11f;
+
+            useUnitCap = false;
+            itemCapacity = 0;
+
+            legCount = 6;
+            legGroupSize = 2;
+            legLength = 14f;
+            lockLegBase = true;
+            legContinuousMove = true;
+            legExtension = -3f;
+            legBaseOffset = 4f;
+            legMaxLength = 1.1f;
+            legMinLength = 0.2f;
+            legLengthScl = 0.95f;
+            legForwardScl = 0.7f;
+            stepShake = 0;
+
+            legMoveSpace = 1f;
+            hovering = true;
+            shadowElevation = 0.1f;
+            groundLayer = Layer.legUnit - 1f;
+            drownTimeMultiplier = 0.5f;
+
+            abilities.add(new UnitSpawnAbility(assaultMite, 60 * 5, 0f, -5f));
+        }};
 
         supportMite = new UnitType("support-mite") {{
             constructor = LegsUnit::create;
@@ -2226,7 +2266,7 @@ public class XenUnitTypes {
             health = 100f;
             armor = 0f;
             hitSize = 6f;
-            speed = 0.9f;
+            speed = 0.8f;
             rotateSpeed = 8f;
             drag = 0.11f;
 
@@ -2239,12 +2279,18 @@ public class XenUnitTypes {
             legGroupSize = 1;
             legLength = 7.5f;
             legExtension = 1f;
-            legBaseOffset = 0f;
-            legStraightness = 0.5f;
+            legBaseOffset = 1f;
+            legStraightness = 0.3f;
             rippleScale = 0.1f;
             legMaxLength = 1f;
             legMinLength = 1f;
             allowLegStep = false;
+
+            legMoveSpace = 0.8f;
+            hovering = false;
+            shadowElevation = 0.1f;
+            groundLayer = Layer.legUnit - 1f;
+            drownTimeMultiplier = 0.5f;
 
             weapons.add(new Weapon("bolt-mite-weapon") {{
                 x = 0f;
@@ -2267,6 +2313,40 @@ public class XenUnitTypes {
                 ejectEffect = Fx.none;
             }});
         }};
+        supportParasite = new UnitType("support-parasite") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("231b25");
+            health = 650f;
+            armor = 0f;
+            hitSize = 16f;
+            speed = 0.6f;
+            rotateSpeed = 4f;
+            drag = 0.11f;
+
+            useUnitCap = false;
+            itemCapacity = 0;
+
+            legCount = 6;
+            legGroupSize = 2;
+            legLength = 14f;
+            lockLegBase = true;
+            legContinuousMove = true;
+            legExtension = -3f;
+            legBaseOffset = 4f;
+            legMaxLength = 1.1f;
+            legMinLength = 0.2f;
+            legLengthScl = 0.95f;
+            legForwardScl = 0.7f;
+            stepShake = 0;
+
+            legMoveSpace = 1f;
+            hovering = true;
+            shadowElevation = 0.1f;
+            groundLayer = Layer.legUnit - 1f;
+            drownTimeMultiplier = 0.5f;
+
+            abilities.add(new UnitSpawnAbility(supportMite, 60 * 5, 0f, 4f));
+        }};
 
         specialistMite = new UnitType("specialist-mite") {{
             constructor = LegsUnit::create;
@@ -2274,7 +2354,7 @@ public class XenUnitTypes {
             health = 85f;
             armor = 0f;
             hitSize = 6f;
-            speed = 0.9f;
+            speed = 0.8f;
             rotateSpeed = 8f;
             drag = 0.11f;
 
@@ -2287,12 +2367,18 @@ public class XenUnitTypes {
             legGroupSize = 1;
             legLength = 7.5f;
             legExtension = 1f;
-            legBaseOffset = 0f;
-            legStraightness = 0.5f;
+            legBaseOffset = 1f;
+            legStraightness = 0.3f;
             rippleScale = 0.1f;
             legMaxLength = 1f;
             legMinLength = 1f;
             allowLegStep = false;
+
+            legMoveSpace = 0.8f;
+            hovering = false;
+            shadowElevation = 0.1f;
+            groundLayer = Layer.legUnit - 1f;
+            drownTimeMultiplier = 0.5f;
 
             weapons.add(new Weapon("sap-mite-weapon") {{
                 x = 0f;
@@ -2315,6 +2401,40 @@ public class XenUnitTypes {
                 shootSound = Sounds.sap;
                 ejectEffect = Fx.none;
             }});
+        }};
+        specialistParasite = new UnitType("specialist-parasite") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("231b25");
+            health = 650f;
+            armor = 0f;
+            hitSize = 16f;
+            speed = 0.6f;
+            rotateSpeed = 4f;
+            drag = 0.11f;
+
+            useUnitCap = false;
+            itemCapacity = 0;
+
+            legCount = 6;
+            legGroupSize = 2;
+            legLength = 14f;
+            lockLegBase = true;
+            legContinuousMove = true;
+            legExtension = -3f;
+            legBaseOffset = 4f;
+            legMaxLength = 1.1f;
+            legMinLength = 0.2f;
+            legLengthScl = 0.95f;
+            legForwardScl = 0.7f;
+            stepShake = 0;
+
+            legMoveSpace = 1f;
+            hovering = true;
+            shadowElevation = 0.1f;
+            groundLayer = Layer.legUnit - 1f;
+            drownTimeMultiplier = 0.5f;
+
+            abilities.add(new UnitSpawnAbility(specialistMite, 60 * 5, 0f, -5f));
         }};
 
         //endregion
