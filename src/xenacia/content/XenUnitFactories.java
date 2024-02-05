@@ -25,8 +25,8 @@ public class XenUnitFactories{
             plans = Seq.with(
                     new UnitPlan(XenUnitTypes.coreMite, 60f * 8, with(Items.silicon, 5, XenItems.aluminum, 3)),
                     new UnitPlan(XenUnitTypes.assaultMite, 60f * 8, with(Items.silicon, 5, XenItems.iron, 3)),
-                    new UnitPlan(XenUnitTypes.boltMite, 60f * 8, with(Items.silicon, 5, XenItems.iron, 2, XenItems.aluminum, 2)),
-                    new UnitPlan(XenUnitTypes.sapMite, 60f * 8, with(Items.silicon, 5, XenItems.aluminum, 3))
+                    new UnitPlan(XenUnitTypes.supportMite, 60f * 8, with(Items.silicon, 5, XenItems.iron, 2, XenItems.aluminum, 2)),
+                    new UnitPlan(XenUnitTypes.specialistMite, 60f * 8, with(Items.silicon, 5, XenItems.aluminum, 3))
             );
             size = 2;
             consumePower(0.8f);

@@ -27,7 +27,7 @@ public class XenUnitTypes {
     public static UnitType
     //region key
     //core units
-    periodDrone, period, momentDrone, moment, duskDrone, dusk, dawnDrone, dawn,
+    periodDrone, period, moment, dusk, dawn,
     //seeds
     mechacraftHull, aircraftHull, polycraftHull, watercraftHull, treadcraftHull, hovercraftHull, arthocraftHull,
     //terrestrial assault
@@ -49,10 +49,10 @@ public class XenUnitTypes {
     kyre, yriek,
     tie, link,
     //mites and parasites
-    coreMite,
-    assaultMite,
-    boltMite,
-    sapMite;
+    coreMite, coreParasite,
+    assaultMite, assaultParasite,
+    supportMite, supportParasite,
+    specialistMite, specialistParasite;
 
     //endregion
 
@@ -2101,9 +2101,64 @@ public class XenUnitTypes {
             legContinuousMove = true;
             legCount = 4;
             legGroupSize = 1;
-            legLength = 6f;
+            legLength = 7.5f;
             legExtension = 1f;
-            legBaseOffset = 0.5f;
+            legBaseOffset = 1f;
+            legStraightness = 0.5f;
+            rippleScale = 0.1f;
+            legMaxLength = 1f;
+            legMinLength = 1f;
+            allowLegStep = false;
+
+            range = 40f;
+
+            weapons.add(new Weapon() {{
+                shootOnDeath = true;
+                reload = 24f;
+                shootCone = 180f;
+                ejectEffect = Fx.none;
+                shootSound = Sounds.explosion;
+                x = shootY = 0f;
+                mirror = false;
+                bullet = new BulletType() {{
+                    collidesTiles = false;
+                    collides = false;
+                    hitSound = Sounds.explosion;
+
+                    rangeOverride = 12f;
+                    hitEffect = Fx.pulverize;
+                    speed = 0f;
+                    splashDamageRadius = 24f;
+                    instantDisappear = true;
+                    splashDamage = 100f;
+                    killShooter = true;
+                    hittable = false;
+                    collidesAir = true;
+                }};
+            }});
+        }};
+        coreParasite = new UnitType("core-parasite") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("231b25");
+            health = 110f;
+            armor = 0f;
+            hitSize = 6f;
+            speed = 1f;
+            rotateSpeed = 8f;
+            drag = 0.11f;
+
+            useUnitCap = false;
+            itemCapacity = 0;
+
+            aiController = SuicideAI::new;
+
+            legForwardScl = 5f;
+            legContinuousMove = true;
+            legCount = 6;
+            legGroupSize = 1;
+            legLength = 22f;
+            legExtension = 1f;
+            legBaseOffset = 3f;
             legStraightness = 0.5f;
             rippleScale = 0.1f;
             legMaxLength = 1f;
@@ -2155,7 +2210,7 @@ public class XenUnitTypes {
             legContinuousMove = true;
             legCount = 4;
             legGroupSize = 1;
-            legLength = 6f;
+            legLength = 7.5f;
             legExtension = 1f;
             legBaseOffset = 0f;
             legStraightness = 0.5f;
@@ -2179,7 +2234,7 @@ public class XenUnitTypes {
             }});
         }};
 
-        boltMite = new UnitType("bolt-mite") {{
+        supportMite = new UnitType("support-mite") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("231b25");
             health = 100f;
@@ -2196,7 +2251,7 @@ public class XenUnitTypes {
             legContinuousMove = true;
             legCount = 4;
             legGroupSize = 1;
-            legLength = 6f;
+            legLength = 7.5f;
             legExtension = 1f;
             legBaseOffset = 0f;
             legStraightness = 0.5f;
@@ -2227,7 +2282,7 @@ public class XenUnitTypes {
             }});
         }};
 
-        sapMite = new UnitType("sap-mite") {{
+        specialistMite = new UnitType("specialist-mite") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("231b25");
             health = 85f;
@@ -2244,7 +2299,7 @@ public class XenUnitTypes {
             legContinuousMove = true;
             legCount = 4;
             legGroupSize = 1;
-            legLength = 6f;
+            legLength = 7.5f;
             legExtension = 1f;
             legBaseOffset = 0f;
             legStraightness = 0.5f;
