@@ -2176,7 +2176,7 @@ public class XenUnitTypes {
             groundLayer = Layer.legUnit - 1f;
             drownTimeMultiplier = 0.5f;
 
-            abilities.add(new UnitSpawnAbility(coreMite, 60, 0f, 2.5f));
+            abilities.add(new UnitSpawnAbility(coreMite, 60 * 5, 0f, 2.5f));
         }};
 
         assaultMite = new UnitType("assault-mite") {{
