@@ -2434,7 +2434,7 @@ public class XenUnitTypes {
             groundLayer = Layer.legUnit - 1f;
             drownTimeMultiplier = 0.5f;
 
-            abilities.add(new UnitSpawnAbility(specialistMite, 60 * 5, 0f, -5f));
+            abilities.add(new UnitSpawnAbility(specialistMite, 60 * 5, 0f, -3f));
         }};
 
         //endregion
