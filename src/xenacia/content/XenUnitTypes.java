@@ -2176,7 +2176,7 @@ public class XenUnitTypes {
             groundLayer = Layer.legUnit - 1f;
             drownTimeMultiplier = 0.5f;
 
-            abilities.add(new UnitSpawnAbility(coreMite, 60 * 5, 0f, 5f));
+            abilities.add(new UnitSpawnAbility(coreMite, 60 * 5, 0f, 5.75f));
         }};
 
         assaultMite = new UnitType("assault-mite") {{
@@ -2257,7 +2257,7 @@ public class XenUnitTypes {
             groundLayer = Layer.legUnit - 1f;
             drownTimeMultiplier = 0.5f;
 
-            abilities.add(new UnitSpawnAbility(assaultMite, 60 * 5, 0f, -5f));
+            abilities.add(new UnitSpawnAbility(assaultMite, 60 * 5, 0f, -4.5f));
         }};
 
         supportMite = new UnitType("support-mite") {{
@@ -2345,7 +2345,7 @@ public class XenUnitTypes {
             groundLayer = Layer.legUnit - 1f;
             drownTimeMultiplier = 0.5f;
 
-            abilities.add(new UnitSpawnAbility(supportMite, 60 * 5, 0f, 4f));
+            abilities.add(new UnitSpawnAbility(supportMite, 60 * 5, 0f, 3f));
         }};
 
         specialistMite = new UnitType("specialist-mite") {{
