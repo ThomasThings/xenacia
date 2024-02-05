@@ -2142,9 +2142,9 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("231b25");
             health = 110f;
             armor = 0f;
-            hitSize = 6f;
+            hitSize = 12f;
             speed = 1f;
-            rotateSpeed = 8f;
+            rotateSpeed = 4f;
             drag = 0.11f;
 
             useUnitCap = false;
@@ -2152,45 +2152,25 @@ public class XenUnitTypes {
 
             aiController = SuicideAI::new;
 
-            legForwardScl = 5f;
-            legContinuousMove = true;
             legCount = 6;
-            legGroupSize = 1;
-            legLength = 22f;
-            legExtension = 1f;
-            legBaseOffset = 3f;
-            legStraightness = 0.5f;
-            rippleScale = 0.1f;
-            legMaxLength = 1f;
-            legMinLength = 1f;
-            allowLegStep = false;
+            legLength = 18f;
+            legGroupSize = 3;
+            lockLegBase = true;
+            legContinuousMove = true;
+            legExtension = -3f;
+            legBaseOffset = 7f;
+            legMaxLength = 1.1f;
+            legMinLength = 0.2f;
+            legLengthScl = 0.95f;
+            legForwardScl = 0.9f;
+            allowLegStep = true;
+
+            legMoveSpace = 1f;
+            hovering = true;
+            shadowElevation = 0.2f;
+            groundLayer = Layer.legUnit - 1f;
 
             range = 40f;
-
-            weapons.add(new Weapon() {{
-                shootOnDeath = true;
-                reload = 24f;
-                shootCone = 180f;
-                ejectEffect = Fx.none;
-                shootSound = Sounds.explosion;
-                x = shootY = 0f;
-                mirror = false;
-                bullet = new BulletType() {{
-                    collidesTiles = false;
-                    collides = false;
-                    hitSound = Sounds.explosion;
-
-                    rangeOverride = 12f;
-                    hitEffect = Fx.pulverize;
-                    speed = 0f;
-                    splashDamageRadius = 24f;
-                    instantDisappear = true;
-                    splashDamage = 100f;
-                    killShooter = true;
-                    hittable = false;
-                    collidesAir = true;
-                }};
-            }});
         }};
 
         assaultMite = new UnitType("assault-mite") {{
