@@ -2100,11 +2100,11 @@ public class XenUnitTypes {
             legForwardScl = 5f;
             legContinuousMove = true;
             legCount = 4;
-            legGroupSize = 1;
+            legGroupSize = 2;
             legLength = 7.5f;
             legExtension = 1f;
             legBaseOffset = 1f;
-            legStraightness = 0.5f;
+            legStraightness = 0.7f;
             rippleScale = 0.1f;
             legMaxLength = 1f;
             legMinLength = 1f;
@@ -2142,8 +2142,8 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("231b25");
             health = 110f;
             armor = 0f;
-            hitSize = 12f;
-            speed = 1f;
+            hitSize = 16f;
+            speed = 0.8f;
             rotateSpeed = 4f;
             drag = 0.11f;
 
@@ -2153,22 +2153,23 @@ public class XenUnitTypes {
             aiController = SuicideAI::new;
 
             legCount = 6;
-            legLength = 18f;
-            legGroupSize = 3;
+            legLength = 16f;
+            legGroupSize = 2;
             lockLegBase = true;
             legContinuousMove = true;
-            legExtension = -3f;
-            legBaseOffset = 7f;
-            legMaxLength = 1.1f;
-            legMinLength = 0.2f;
-            legLengthScl = 0.95f;
-            legForwardScl = 0.9f;
+            legExtension = -5f;
+            legBaseOffset = 1.5f;
+            legMaxLength = 0.8f;
+            legMinLength = 0.5f;
+            legLengthScl = 0.65f;
+            legForwardScl = 0.7f;
             allowLegStep = true;
 
             legMoveSpace = 1f;
             hovering = true;
-            shadowElevation = 0.2f;
+            shadowElevation = 0.1f;
             groundLayer = Layer.legUnit - 1f;
+            drownTimeMultiplier = 0.5f;
 
             range = 40f;
         }};
