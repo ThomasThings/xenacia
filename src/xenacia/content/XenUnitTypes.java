@@ -10,6 +10,7 @@ import mindustry.content.Liquids;
 import mindustry.content.StatusEffects;
 import mindustry.entities.abilities.EnergyFieldAbility;
 import mindustry.entities.abilities.RepairFieldAbility;
+import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.entities.bullet.*;
 import mindustry.entities.part.HoverPart;
 import mindustry.entities.part.RegionPart;
@@ -2088,7 +2089,7 @@ public class XenUnitTypes {
             health = 110f;
             armor = 0f;
             hitSize = 6f;
-            speed = 1f;
+            speed = 0.6f;
             rotateSpeed = 8f;
             drag = 0.11f;
 
@@ -2146,7 +2147,7 @@ public class XenUnitTypes {
         coreParasite = new UnitType("core-parasite") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("231b25");
-            health = 110f;
+            health = 650f;
             armor = 0f;
             hitSize = 16f;
             speed = 0.8f;
@@ -2175,7 +2176,7 @@ public class XenUnitTypes {
             groundLayer = Layer.legUnit - 1f;
             drownTimeMultiplier = 0.5f;
 
-            range = 40f;
+            abilities.add(new UnitSpawnAbility(coreMite, 60, 0f, 2.5f));
         }};
 
         assaultMite = new UnitType("assault-mite") {{
