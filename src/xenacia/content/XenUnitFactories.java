@@ -1,18 +1,19 @@
 package xenacia.content;
 
 import arc.struct.Seq;
-import mindustry.type.*;
-import mindustry.world.*;
-import mindustry.content.*;
+import mindustry.content.Items;
+import mindustry.type.Category;
+import mindustry.type.UnitType;
+import mindustry.world.Block;
+import mindustry.world.blocks.units.UnitFactory;
 import mindustry.world.meta.BuildVisibility;
 import xenacia.world.blocks.units.BaseTeamReconstructor;
-import xenacia.world.blocks.units.BaseTeamUnitFactory;
 
-import static mindustry.type.ItemStack.*;
+import static mindustry.type.ItemStack.with;
 
 public class XenUnitFactories{
     public static Block
-            miteFactory,
+            miteFactory, parasiteFactory,
             unitHullConstructor,
             assaultTranstructor, supportTranstructor, specialistTranstructor,
             assaultReconstructor, supportReconstructor, specialistReconstructor,
@@ -20,7 +21,7 @@ public class XenUnitFactories{
 
     public static void load() {
         //mite
-        miteFactory = new BaseTeamUnitFactory("mite-factory"){{
+        miteFactory = new UnitFactory("mite-factory"){{
             requirements(Category.units, BuildVisibility.sandboxOnly, with(XenItems.iron, 50,Items.silicon, 40));
             plans = Seq.with(
                     new UnitPlan(XenUnitTypes.coreMite, 60f * 8, with(Items.silicon, 5, XenItems.aluminum, 3)),
@@ -31,7 +32,19 @@ public class XenUnitFactories{
             size = 2;
             consumePower(0.8f);
         }};
-        unitHullConstructor = new BaseTeamUnitFactory("unit-hull-constructor"){{
+
+        parasiteFactory = new UnitFactory("parasite-factory"){{
+            requirements(Category.units, BuildVisibility.sandboxOnly, with(Items.silicon, 150, XenItems.iron, 100, Items.graphite, 80, XenItems.aluminum, 60));
+            plans = Seq.with(
+                    new UnitPlan(XenUnitTypes.coreParasite, 60f * 24, with(Items.silicon, 80, Items.graphite, 35, XenItems.aluminum, 30)),
+                    new UnitPlan(XenUnitTypes.assaultParasite, 60f * 24, with(Items.silicon, 65, Items.graphite, 55, XenItems.iron, 50)),
+                    new UnitPlan(XenUnitTypes.supportParasite, 60f * 24, with(Items.silicon, 75, Items.graphite, 45, XenItems.iron, 30, XenItems.aluminum, 35)),
+                    new UnitPlan(XenUnitTypes.specialistParasite, 60f * 24, with(Items.silicon, 70, Items.graphite, 40, XenItems.aluminum, 45))
+            );
+            size = 2;
+            consumePower(0.8f);
+        }};
+        unitHullConstructor = new UnitFactory("unit-hull-constructor"){{
             requirements(Category.units, with( XenItems.aluminum, 100,Items.silicon, 80, XenItems.iron, 80));
             plans = Seq.with(
                     new UnitPlan(XenUnitTypes.mechacraftHull, 60f * 15, with(Items.silicon, 15, XenItems.iron, 15, XenItems.aluminum, 5)),
