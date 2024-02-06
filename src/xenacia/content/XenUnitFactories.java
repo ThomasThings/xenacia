@@ -32,7 +32,6 @@ public class XenUnitFactories{
             size = 2;
             consumePower(0.8f);
         }};
-
         parasiteFactory = new UnitFactory("parasite-factory"){{
             requirements(Category.units, BuildVisibility.sandboxOnly, with(Items.silicon, 150, XenItems.iron, 100, Items.graphite, 80, XenItems.aluminum, 60));
             plans = Seq.with(
@@ -41,9 +40,10 @@ public class XenUnitFactories{
                     new UnitPlan(XenUnitTypes.supportParasite, 60f * 24, with(Items.silicon, 75, Items.graphite, 45, XenItems.iron, 30, XenItems.aluminum, 35)),
                     new UnitPlan(XenUnitTypes.specialistParasite, 60f * 24, with(Items.silicon, 70, Items.graphite, 40, XenItems.aluminum, 45))
             );
-            size = 2;
+            size = 3;
             consumePower(0.8f);
         }};
+
         unitHullConstructor = new UnitFactory("unit-hull-constructor"){{
             requirements(Category.units, with( XenItems.aluminum, 100,Items.silicon, 80, XenItems.iron, 80));
             plans = Seq.with(
