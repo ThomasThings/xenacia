@@ -5,9 +5,9 @@ import mindustry.content.Items;
 import mindustry.type.Category;
 import mindustry.type.UnitType;
 import mindustry.world.Block;
+import mindustry.world.blocks.units.Reconstructor;
 import mindustry.world.blocks.units.UnitFactory;
 import mindustry.world.meta.BuildVisibility;
-import xenacia.world.blocks.units.BaseTeamReconstructor;
 
 import static mindustry.type.ItemStack.with;
 
@@ -59,7 +59,7 @@ public class XenUnitFactories{
             consumePower(1.2f);
         }};
 
-        assaultTranstructor = new BaseTeamReconstructor("assault-transtructor"){{
+        assaultTranstructor = new Reconstructor("assault-transtructor"){{
             requirements(Category.units, with(XenItems.iron, 150, XenItems.aluminum, 130,Items.silicon, 100));
 
             size = 3;
@@ -76,7 +76,7 @@ public class XenUnitFactories{
                     new UnitType[]{XenUnitTypes.treadcraftHull, XenUnitTypes.tack}
             );
         }};
-        supportTranstructor = new BaseTeamReconstructor("support-transtructor"){{
+        supportTranstructor = new Reconstructor("support-transtructor"){{
             requirements(Category.units, with(XenItems.iron, 180, XenItems.aluminum, 100,Items.silicon, 100));
 
             size = 3;
@@ -93,7 +93,7 @@ public class XenUnitFactories{
                     new UnitType[]{XenUnitTypes.treadcraftHull, XenUnitTypes.aid}
             );
         }};
-        specialistTranstructor = new BaseTeamReconstructor("specialist-transtructor"){{
+        specialistTranstructor = new Reconstructor("specialist-transtructor"){{
             requirements(Category.units, with(XenItems.aluminum, 150, XenItems.iron, 120,Items.silicon, 80, XenItems.lithium, 60));
 
             size = 3;
@@ -111,7 +111,7 @@ public class XenUnitFactories{
             );
         }};
 
-        assaultReconstructor = new BaseTeamReconstructor("assault-reconstructor"){{
+        assaultReconstructor = new Reconstructor("assault-reconstructor"){{
             requirements(Category.units, with(XenItems.iron, 750, XenItems.aluminum, 600,Items.graphite, 350,Items.silicon, 650,Items.titanium, 400));
 
             size = 5;
@@ -125,7 +125,7 @@ public class XenUnitFactories{
                     new UnitType[]{XenUnitTypes.shif, XenUnitTypes.kreeg}
             );
         }};
-        supportReconstructor = new BaseTeamReconstructor("support-reconstructor"){{
+        supportReconstructor = new Reconstructor("support-reconstructor"){{
             requirements(Category.units, with(XenItems.iron, 750, XenItems.aluminum, 550,Items.graphite, 400,Items.silicon, 650,Items.titanium, 450));
 
             size = 5;
@@ -139,7 +139,7 @@ public class XenUnitFactories{
                     new UnitType[]{XenUnitTypes.natuon, XenUnitTypes.enavo}
             );
         }};
-        specialistReconstructor = new BaseTeamReconstructor("specialist-reconstructor"){{
+        specialistReconstructor = new Reconstructor("specialist-reconstructor"){{
             requirements(Category.units, with(XenItems.iron, 650, XenItems.aluminum, 500,Items.graphite, 300,Items.silicon, 550,Items.titanium, 400, XenItems.lithium, 300));
 
             size = 5;
@@ -154,7 +154,7 @@ public class XenUnitFactories{
             );
         }};
 
-        convergentReconstructor = new BaseTeamReconstructor("convergent-reconstructor"){{
+        convergentReconstructor = new Reconstructor("convergent-reconstructor"){{
             requirements(Category.units, with(XenItems.iron, 2000,Items.graphite, 1500,Items.silicon, 1000, XenItems.lithium, 800,Items.titanium, 1000, XenItems.cobalt, 800));
 
             size = 7;
