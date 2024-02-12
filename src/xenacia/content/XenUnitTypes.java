@@ -1282,9 +1282,9 @@ public class XenUnitTypes {
             drag = 0.05f;
 
             setEnginesMirror(
-                    new UnitEngine(16.75f, -20f, 3f, 315f),
-                    new UnitEngine(21f, -13.5f, 2.5f, 315f),
-                    new UnitEngine(21f, 0.75f, 2.2f, 315f)
+                    new UnitEngine(15.75f, -19f, 3f, 315f),
+                    new UnitEngine(20.5f, -13f, 2.5f, 315f),
+                    new UnitEngine(20.5f, 1.25f, 2.2f, 315f)
             );
             engineSize = 4.5f;
             engineOffset = 22f;
