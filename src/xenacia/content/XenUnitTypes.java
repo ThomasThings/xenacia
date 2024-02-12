@@ -1249,7 +1249,7 @@ public class XenUnitTypes {
             drag = 0.05f;
 
             setEnginesMirror(
-                    new UnitEngine(5f, -12f, 3f, 22.5f),
+                    new UnitEngine(5f, -12f, 3f, 0f),
                     new UnitEngine(14f, -1f, 3f, 90f)
             );
             engineSize = 0f;
@@ -1282,12 +1282,12 @@ public class XenUnitTypes {
             drag = 0.05f;
 
             setEnginesMirror(
-                    new UnitEngine(15f, -15f, 3f, 135f),
-                    new UnitEngine(20f, -8f, 3f, 135f),
-                    new UnitEngine(20f, 3f, 3f, 135f)
+                    new UnitEngine(15f, -15f, 3f, 315f),
+                    new UnitEngine(20f, -8f, 3f, 315f),
+                    new UnitEngine(20f, 3f, 3f, 315f)
             );
             engineSize = 4.5f;
-            engineOffset = 20f;
+            engineOffset = 22f;
 
             mineTier = 2;
             mineSpeed = 2f;
