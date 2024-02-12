@@ -1208,19 +1208,19 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("231b25");
             defaultCommand = UnitCommand.rebuildCommand;
 
-            health = 650f;
+            health = 450f;
             armor = 0f;
             hitSize = 12f;
 
-            speed = 2f;
-            rotateSpeed = 10f;
+            speed = 1.4f;
+            rotateSpeed = 8f;
 
             flying = true;
             lowAltitude = true;
             accel = 0.1f;
             drag = 0.05f;
-            engineSize = 3f;
-            engineOffset = 5.5f;
+            engineSize = 2.5f;
+            engineOffset = 7.5f;
 
             mineTier = 2;
             mineSpeed = 2f;
@@ -1229,19 +1229,19 @@ public class XenUnitTypes {
 
             buildSpeed = 0.8f;
 
-            abilities.add(new RepairFieldAbility(5f, 45, 55f));
+            abilities.add(new RepairFieldAbility(5f, 120, 55f));
         }};
         haul = new UnitType("haul") {{
             constructor = PayloadUnit::create;
             outlineColor = Color.valueOf("231b25");
             defaultCommand = UnitCommand.rebuildCommand;
 
-            health = 2800f;
-            armor = 7f;
-            hitSize = 25f;
+            health = 1800f;
+            armor = 6f;
+            hitSize = 30f;
 
             speed = 1f;
-            rotateSpeed = 10f;
+            rotateSpeed = 4f;
 
             flying = true;
             lowAltitude = true;
@@ -1249,17 +1249,20 @@ public class XenUnitTypes {
             drag = 0.05f;
 
             setEnginesMirror(
-                    new UnitEngine(3f, -8f, 3f, 22.5f)
+                    new UnitEngine(5f, -10f, 3f, 22.5f),
+                    new UnitEngine(12f, -1f, 3f, 90f)
             );
+            engineSize = 0f;
+            engineOffset = 7.5f;
 
             mineTier = 2;
             mineSpeed = 2f;
             itemCapacity = 100;
             payloadCapacity = 576;
 
-            buildSpeed = 0.8f;
+            buildSpeed = 1f;
 
-            abilities.add(new RepairFieldAbility(12f, 120, 80f));
+            abilities.add(new RepairFieldAbility(10f, 120, 80f));
         }};
         envoy = new UnitType("envoy") {{
             constructor = PayloadUnit::create;
@@ -1270,8 +1273,8 @@ public class XenUnitTypes {
             armor = 7f;
             hitSize = 45f;
 
-            speed = 0.9f;
-            rotateSpeed = 10f;
+            speed = 0.8f;
+            rotateSpeed = 3f;
 
             flying = true;
             lowAltitude = true;
@@ -1279,8 +1282,12 @@ public class XenUnitTypes {
             drag = 0.05f;
 
             setEnginesMirror(
-                    new UnitEngine(3f, -8f, 3f, 22.5f)
+                    new UnitEngine(15f, -17f, 3f, 45f),
+                    new UnitEngine(20f, -10f, 3f, 45f),
+                    new UnitEngine(20f, 5f, 3f, 45f)
             );
+            engineSize = 4.5f;
+            engineOffset = 20f;
 
             mineTier = 2;
             mineSpeed = 2f;
