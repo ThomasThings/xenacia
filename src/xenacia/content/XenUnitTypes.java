@@ -1273,8 +1273,8 @@ public class XenUnitTypes {
             armor = 7f;
             hitSize = 45f;
 
-            speed = 0.8f;
-            rotateSpeed = 3f;
+            speed = 1f;
+            rotateSpeed = 4f;
 
             flying = true;
             lowAltitude = true;
@@ -1283,8 +1283,8 @@ public class XenUnitTypes {
 
             setEnginesMirror(
                     new UnitEngine(15f, -19f, 3f, 315f),
-                    new UnitEngine(20f, -13f, 3f, 315f),
-                    new UnitEngine(20f, 3f, 3f, 315f)
+                    new UnitEngine(20f, -12f, 2.5f, 315f),
+                    new UnitEngine(20f, 2f, 2.2f, 315f)
             );
             engineSize = 4.5f;
             engineOffset = 22f;
