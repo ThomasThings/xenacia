@@ -242,7 +242,7 @@ public class XenUnitTypes {
                     lifetime = 60f;
 
                     collidesTeam = true;
-                    healAmount = 50;
+                    healAmount = 100;
 
                     buildingDamageMultiplier = 0.1f;
 
@@ -1269,9 +1269,9 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("231b25");
             defaultCommand = UnitCommand.rebuildCommand;
 
-            health = 2800f;
+            health = 5800f;
             armor = 7f;
-            hitSize = 45f;
+            hitSize = 40f;
 
             speed = 1f;
             rotateSpeed = 3.2f;
@@ -1292,7 +1292,7 @@ public class XenUnitTypes {
             mineTier = 2;
             mineSpeed = 2f;
             itemCapacity = 100;
-            payloadCapacity = 576;
+            payloadCapacity = 1024;
 
             buildSpeed = 0.8f;
 
