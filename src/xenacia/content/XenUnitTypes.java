@@ -1400,19 +1400,19 @@ public class XenUnitTypes {
                     backColor = Color.valueOf("98ffa9");
                     mixColorTo = Color.valueOf("ffffff");
                     hitEffect = despawnEffect = new MultiEffect(
-                            new Effect(180f, e -> {
-                                color(Pal.heal);
-                                stroke(e.fin() * 0.5f);
-                                Lines.circle(e.x, e.y, 0f + e.fout() * 5f);
-                            }),
-                            new Effect(120f, e -> {
-                                color(Pal.heal);
-                                stroke(e.fin() * 0.5f);
-                                Lines.circle(e.x, e.y, 0f + e.fout() * 10f);
-                            }),
                             new Effect(60f, e -> {
                                 color(Pal.heal);
-                                stroke(e.fin() * 0.5f);
+                                stroke(e.fin() * 0.8f);
+                                Lines.circle(e.x, e.y, 0f + e.fout() * 5f);
+                            }),
+                            new Effect(45f, e -> {
+                                color(Pal.heal);
+                                stroke(e.fin() * 0.8f);
+                                Lines.circle(e.x, e.y, 0f + e.fout() * 10f);
+                            }),
+                            new Effect(30f, e -> {
+                                color(Pal.heal);
+                                stroke(e.fin() * 0.8f);
                                 Lines.circle(e.x, e.y, 0f + e.fout() * 15f);
                             })
                             /*
