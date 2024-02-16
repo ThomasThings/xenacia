@@ -1414,7 +1414,9 @@ public class XenUnitTypes {
                                 color(Pal.heal);
                                 stroke(e.fin() * 0.8f);
                                 Lines.circle(e.x, e.y, 0f + e.fout() * 15f);
-                            }).startDelay(-20)
+                            }).startDelay(-20),
+                            Fx.smoke,
+                            Fx.hitBulletColor
                             /*
                             new Effect(60f, e -> {
                                 color(Pal.heal);
