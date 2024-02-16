@@ -1402,19 +1402,31 @@ public class XenUnitTypes {
                     hitEffect = despawnEffect = new MultiEffect(
                             new Effect(180f, e -> {
                                 color(Pal.heal);
-                                stroke(e.fin() * 2f);
-                                Lines.circle(e.x, e.y, 4f + e.fout() * 5f);
+                                stroke(e.fin() * 0.5f);
+                                Lines.circle(e.x, e.y, 0f + e.fout() * 5f);
                             }),
                             new Effect(120f, e -> {
                                 color(Pal.heal);
-                                stroke(e.fin() * 2f);
-                                Lines.circle(e.x, e.y, 4f + e.fout() * 5f);
+                                stroke(e.fin() * 0.5f);
+                                Lines.circle(e.x, e.y, 0f + e.fout() * 10f);
                             }),
-                            new Effect(120f, e -> {
+                            new Effect(60f, e -> {
                                 color(Pal.heal);
-                                stroke(e.fin() * 2f);
-                                Lines.circle(e.x, e.y, 4f + e.fout() * 5f);
+                                stroke(e.fin() * 0.5f);
+                                Lines.circle(e.x, e.y, 0f + e.fout() * 15f);
                             })
+                            /*
+                            new Effect(60f, e -> {
+                                color(Pal.heal);
+                                stroke(e.fin() * 0.5f);
+                                Lines.circle(e.x, e.y, 0f + e.fout() * 15f);
+                            })
+                            new Effect(DURATIONf, e -> {
+                                color(COLOR);
+                                stroke(e.fin() * 0.5f);
+                                Lines.circle(e.x, e.y, STARTf + e.fout() * ENDf);
+                            })
+                            */
                     );
                 }};
 
