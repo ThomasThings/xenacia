@@ -1,6 +1,7 @@
 package xenacia.content;
 
 import arc.graphics.Color;
+import arc.graphics.g2d.Fill;
 import arc.math.geom.Rect;
 import mindustry.ai.UnitCommand;
 import mindustry.ai.types.BuilderAI;
@@ -8,6 +9,7 @@ import mindustry.ai.types.SuicideAI;
 import mindustry.content.Fx;
 import mindustry.content.Liquids;
 import mindustry.content.StatusEffects;
+import mindustry.entities.Effect;
 import mindustry.entities.abilities.EnergyFieldAbility;
 import mindustry.entities.abilities.RepairFieldAbility;
 import mindustry.entities.abilities.UnitSpawnAbility;
@@ -22,6 +24,9 @@ import mindustry.type.UnitType;
 import mindustry.type.Weapon;
 import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.world.meta.BlockFlag;
+
+import static arc.graphics.g2d.Draw.color;
+import static arc.math.Angles.randLenVectors;
 
 
 public class XenUnitTypes {
@@ -1393,6 +1398,12 @@ public class XenUnitTypes {
                     frontColor = Color.valueOf("ffffff");
                     backColor = Color.valueOf("98ffa9");
                     mixColorTo = Color.valueOf("ffffff");
+                    hitEffect = despawnEffect = new Effect(30, e -> {
+                        color(Color.white, Pal.accent, e.fin());
+                        randLenVectors(e.id, 12, 7f + e.fin() * 13f, (x, y) -> {
+                            Fill.square(e.x + x, e.y + y, e.fout() * 2.1f + 0.5f, 45);
+                        });
+                    });
                 }};
 
             }});
