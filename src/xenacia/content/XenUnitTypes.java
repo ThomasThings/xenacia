@@ -1404,17 +1404,17 @@ public class XenUnitTypes {
                                 color(Pal.heal);
                                 stroke(e.fin() * 0.8f);
                                 Lines.circle(e.x, e.y, 0f + e.fout() * 5f);
-                            }),
+                            }).startDelay(-20),
                             new Effect(45f, e -> {
                                 color(Pal.heal);
                                 stroke(e.fin() * 0.8f);
                                 Lines.circle(e.x, e.y, 0f + e.fout() * 10f);
-                            }),
+                            }).startDelay(-20),
                             new Effect(30f, e -> {
                                 color(Pal.heal);
                                 stroke(e.fin() * 0.8f);
                                 Lines.circle(e.x, e.y, 0f + e.fout() * 15f);
-                            })
+                            }).startDelay(-20)
                             /*
                             new Effect(60f, e -> {
                                 color(Pal.heal);
