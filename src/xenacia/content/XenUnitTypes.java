@@ -1399,6 +1399,7 @@ public class XenUnitTypes {
                     frontColor = Color.valueOf("ffffff");
                     backColor = Color.valueOf("98ffa9");
                     mixColorTo = Color.valueOf("ffffff");
+                    hitColor = Pal.heal;
                     hitEffect = despawnEffect = new MultiEffect(
                             new Effect(60f, e -> {
                                 color(Pal.heal);
@@ -1415,20 +1416,7 @@ public class XenUnitTypes {
                                 stroke(e.fin() * 0.8f);
                                 Lines.circle(e.x, e.y, 0f + e.fout() * 15f);
                             }).startDelay(-20),
-                            Fx.smoke,
                             Fx.hitBulletColor
-                            /*
-                            new Effect(60f, e -> {
-                                color(Pal.heal);
-                                stroke(e.fin() * 0.5f);
-                                Lines.circle(e.x, e.y, 0f + e.fout() * 15f);
-                            })
-                            new Effect(DURATIONf, e -> {
-                                color(COLOR);
-                                stroke(e.fin() * 0.5f);
-                                Lines.circle(e.x, e.y, STARTf + e.fout() * ENDf);
-                            })
-                            */
                     );
                 }};
 
