@@ -1,7 +1,7 @@
 package xenacia.content;
 
 import arc.graphics.Color;
-import arc.graphics.g2d.Fill;
+import arc.graphics.g2d.Lines;
 import arc.math.geom.Rect;
 import mindustry.ai.UnitCommand;
 import mindustry.ai.types.BuilderAI;
@@ -14,6 +14,7 @@ import mindustry.entities.abilities.EnergyFieldAbility;
 import mindustry.entities.abilities.RepairFieldAbility;
 import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.entities.bullet.*;
+import mindustry.entities.effect.MultiEffect;
 import mindustry.entities.part.HoverPart;
 import mindustry.entities.part.RegionPart;
 import mindustry.entities.pattern.ShootBarrel;
@@ -26,7 +27,7 @@ import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.world.meta.BlockFlag;
 
 import static arc.graphics.g2d.Draw.color;
-import static arc.math.Angles.randLenVectors;
+import static arc.graphics.g2d.Lines.stroke;
 
 
 public class XenUnitTypes {
@@ -1398,12 +1399,18 @@ public class XenUnitTypes {
                     frontColor = Color.valueOf("ffffff");
                     backColor = Color.valueOf("98ffa9");
                     mixColorTo = Color.valueOf("ffffff");
-                    hitEffect = despawnEffect = new Effect(30, e -> {
-                        color(Color.white, Pal.accent, e.fin());
-                        randLenVectors(e.id, 12, 7f + e.fin() * 13f, (x, y) -> {
-                            Fill.square(e.x + x, e.y + y, e.fout() * 2.1f + 0.5f, 45);
-                        });
-                    });
+                    hitEffect = despawnEffect = new MultiEffect(
+                            new Effect(180f, e -> {
+                                color(Pal.heal);
+                                stroke(e.fin() * 2f);
+                                Lines.circle(e.x, e.y, 4f + e.fout() * 100f);
+                            }),
+                            new Effect(180f, e -> {
+                                color(Pal.heal);
+                                stroke(e.fin() * -2f);
+                                Lines.circle(e.x, e.y, 4f + e.fout() * 100f);
+                            })
+                    );
                 }};
 
             }});
