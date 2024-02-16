@@ -1403,12 +1403,17 @@ public class XenUnitTypes {
                             new Effect(180f, e -> {
                                 color(Pal.heal);
                                 stroke(e.fin() * 2f);
-                                Lines.circle(e.x, e.y, 4f + e.fout() * 100f);
+                                Lines.circle(e.x, e.y, 4f + e.fout() * 5f);
                             }),
-                            new Effect(180f, e -> {
+                            new Effect(120f, e -> {
                                 color(Pal.heal);
-                                stroke(e.fin() * -2f);
-                                Lines.circle(e.x, e.y, 4f + e.fout() * 100f);
+                                stroke(e.fin() * 2f);
+                                Lines.circle(e.x, e.y, 4f + e.fout() * 5f);
+                            }),
+                            new Effect(120f, e -> {
+                                color(Pal.heal);
+                                stroke(e.fin() * 2f);
+                                Lines.circle(e.x, e.y, 4f + e.fout() * 5f);
                             })
                     );
                 }};
