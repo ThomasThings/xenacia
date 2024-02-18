@@ -103,7 +103,7 @@ public class XenFluidBlocks{
             researchCostMultiplier = 1f;
         }};
         fluidPayloadTransportTank = new TeamLiquidRouter("fluid-payload-transport-tank"){{
-            requirements(Category.liquid, with(XenItems.aluminum, 1000,Items.graphite, 800, XenItems.cobalt, 800, XenItems.volcrite, 1000));
+            requirements(Category.liquid, with(XenItems.aluminum, 1000,Items.graphite, 800, XenItems.cobalt, 1000));
             health = 7000;
             size = 7;
             liquidCapacity = 30000f;

@@ -125,7 +125,7 @@ public class XenDrills{
         }};
         titanicDrill = new BurstDrill("titanic-drill"){{
             buildVisibility = BuildVisibility.hidden;
-            requirements(Category.production, with(XenItems.volcrite, 350, XenItems.cobalt, 200,Items.titanium, 200,Items.silicon, 200));
+            requirements(Category.production, with(XenItems.cobalt, 200,Items.titanium, 200,Items.silicon, 200));
             drillTime = 0;
             size = 7;
             hasPower = true;
