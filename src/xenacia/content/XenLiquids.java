@@ -8,12 +8,10 @@ import mindustry.type.Liquid;
 
 public class XenLiquids{
     public static Liquid
-            magma, liquidNitrogen, volatlite, steam;
+            magma, liquidNitrogen, vurtux, steam;
 
     public static void load(){
         magma = new Liquid("magma", Color.valueOf("db7448")){{
-            gasColor = Color.valueOf("db7448");
-            barColor = Color.valueOf("db7448");
             lightColor = Color.valueOf("db7448");
 
             flammability = 0;
@@ -29,79 +27,48 @@ public class XenLiquids{
             effect = XenStatusEffects.magmaCoated;
             particleEffect = Fx.fuelburn;
             particleSpacing = 60f;
-            capPuddles = true;
-            vaporEffect = Fx.vapor;
-            hidden = false;
-            canStayOn = new ObjectSet<>();
         }};
         liquidNitrogen = new Liquid("liquid-nitrogen", Color.valueOf("e4d6f6")){{
-            gas = false;
-            gasColor = Color.valueOf("db7448");
-            barColor = Color.valueOf("db7448");
-            lightColor = Color.valueOf("db7448");
-            flammability = 0;
-            temperature = 0.5f;
-            heatCapacity = 0.8f;
-            viscosity = 1f;
-            explosiveness = 1;
-            blockReactive = true;
-            coolant = false;
+            lightColor = Color.valueOf("e4d6f6");
+
+            temperature = -2f;
+            heatCapacity = 1.5f;
+            viscosity = 0.1f;
+
+            coolant = true;
             moveThroughBlocks = false;
             incinerable = true;
-            effect = StatusEffects.none;
-            particleEffect = Fx.none;
-            particleSpacing = 60f;
-            boilPoint = 2f;
-            capPuddles = true;
-            vaporEffect = Fx.vapor;
-            hidden = false;
-            canStayOn = new ObjectSet<>();
+            effect = StatusEffects.freezing;
+            boilPoint = 0.1f;
         }};
-        volatlite = new Liquid("volatlite", Color.valueOf("7480c3")){{
-            gas = false;
-            gasColor = Color.valueOf("db7448");
-            barColor = Color.valueOf("db7448");
+        vurtux = new Liquid("vurtux", Color.valueOf("7480c3")){{
             lightColor = Color.valueOf("db7448");
+
             flammability = 0;
             temperature = 0.5f;
-            heatCapacity = 0.8f;
-            viscosity = 1f;
             explosiveness = 1;
+
             blockReactive = true;
             coolant = false;
-            moveThroughBlocks = false;
-            incinerable = true;
-            effect = StatusEffects.none;
-            particleEffect = Fx.none;
-            particleSpacing = 60f;
-            boilPoint = 2f;
-            capPuddles = true;
+            incinerable = false;
+            effect = XenStatusEffects.volatileEffect;
+            boilPoint = 1.5f;
             vaporEffect = Fx.vapor;
             hidden = false;
             canStayOn = new ObjectSet<>();
         }};
         steam = new Liquid("steam", Color.valueOf("e9f8f9")){{
-            gas = false;
-            gasColor = Color.valueOf("db7448");
-            barColor = Color.valueOf("db7448");
+            gas = true;
             lightColor = Color.valueOf("db7448");
-            flammability = 0;
             temperature = 0.5f;
             heatCapacity = 0.8f;
             viscosity = 1f;
-            explosiveness = 1;
-            blockReactive = true;
+            explosiveness = 0.3f;
             coolant = false;
-            moveThroughBlocks = false;
             incinerable = true;
             effect = StatusEffects.none;
-            particleEffect = Fx.none;
-            particleSpacing = 60f;
-            boilPoint = 2f;
             capPuddles = true;
             vaporEffect = Fx.vapor;
-            hidden = false;
-            canStayOn = new ObjectSet<>();
         }};
     }
 }

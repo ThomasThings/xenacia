@@ -9,7 +9,7 @@ import static mindustry.content.Items.*;
 public class XenItems{
     public static Item
             aluminum, iron, stone, biomass, cobalt, metallicOxides, lithium, neodymium, chronatintilium, alterite,
-            ferricCompound, torrentAlloy, myaclide, gammasteel, braienasine, crystalineTherius, imparixFiber, spectraglass;
+            ferricCompound, torrentAlloy, myaclide, gammasteel, braienasine, crystalineQuaran, imparixFiber, spectraglass;
 
     public static final Seq<Item> xenaciaItems = new Seq<>(), xenaciaOnlyItems = new Seq<>();
 
@@ -120,7 +120,7 @@ public class XenItems{
 
             healthScaling = 1f;
         }};
-        crystalineTherius = new Item("crystaline-therius", Color.valueOf("c4c1ee")){{
+        crystalineQuaran = new Item("crystaline-quaran", Color.valueOf("c4c1ee")){{
             explosiveness = 0.25f;
             radioactivity = 0.3f;
             charge = 0.4f;
@@ -153,7 +153,7 @@ public class XenItems{
                 silicon, titanium, beryllium, cobalt, tungsten, metallicOxides,
                 lithium, neodymium, chronatintilium, alterite, ferricCompound,
                 carbide, torrentAlloy, myaclide, gammasteel, braienasine,
-                crystalineTherius, imparixFiber, spectraglass);
+                crystalineQuaran, imparixFiber, spectraglass);
 
         xenaciaOnlyItems.addAll(xenaciaItems).removeAll(serpuloItems);
         xenaciaOnlyItems.removeAll(erekirItems);
