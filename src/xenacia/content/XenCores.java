@@ -50,7 +50,7 @@ public class XenCores{
             unitCapModifier = 24;
         }};
         coreBreakpoint = new CoreBlock("core-breakpoint"){{
-            requirements(Category.effect, with(XenItems.iron, 9000, XenItems.aluminum, 9000,Items.titanium, 7000,Items.graphite, 5000,Items.silicon, 5000,  XenItems.polonium, 3000));
+            requirements(Category.effect, with(XenItems.iron, 9000, XenItems.aluminum, 9000,Items.titanium, 7000,Items.graphite, 5000,Items.silicon, 5000,  XenItems.chronatintilium, 3000));
 
             unitType = XenUnitTypes.dusk;
             health = 68000;

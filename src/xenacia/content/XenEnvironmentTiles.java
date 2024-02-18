@@ -18,11 +18,11 @@ public class XenEnvironmentTiles{
             //marsh
             deepMarsh, wetMarsh, marsh, marshWall,
             //misc env
-            ash, ashWall, pumice, pumiceWall, meteor, meteorWall,
+            ash, ashWall, pumice, pumiceWall,
             //lunar
             lunarRegolith, lunarRegolithWall, lunarCraters, lunarCratersWall,
             //ores
-            oreIron, oreAluminum, orePeat, oreLithium, oreAmethyst, orePolonium, oreNeodymium, oreCobalt;
+            oreIron, oreAluminum, orePeat, oreLithium, oreNeodymium, oreCobalt, oreChronatintilium;
     public static void load(){
         //volcanic
         magmaFloor = new Floor("magma-floor"){{
@@ -159,14 +159,6 @@ public class XenEnvironmentTiles{
              mapColor = Color.valueOf("50565A");
         }};
         pumiceWall = new StaticWall("pumice-wall");
-        meteor = new Floor("meteor"){{
-            itemDrop = XenItems.meteorFragment;
-            playerUnmineable = true;
-        }};
-        meteorWall = new StaticWall("meteor-wall"){{
-            itemDrop = XenItems.meteorFragment;
-            playerUnmineable = true;
-        }};
 
         //lunar
         lunarRegolith = new Floor("lunar-regolith-floor"){{
@@ -186,9 +178,8 @@ public class XenEnvironmentTiles{
         oreAluminum = new OreBlock(XenItems.aluminum);
         orePeat = new OreBlock(XenItems.biomass);
         oreLithium = new OreBlock(XenItems.lithium);
-        oreAmethyst = new OreBlock(XenItems.amethyst);
-        orePolonium = new OreBlock(XenItems.polonium);
         oreNeodymium = new OreBlock(XenItems.neodymium);
         oreCobalt = new OreBlock(XenItems.cobalt);
+        oreChronatintilium = new OreBlock(XenItems.chronatintilium);
     }
 }
