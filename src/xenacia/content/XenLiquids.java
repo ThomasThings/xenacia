@@ -32,7 +32,7 @@ public class XenLiquids{
             lightColor = Color.valueOf("e4d6f6");
 
             temperature = -2f;
-            heatCapacity = 1.5f;
+            heatCapacity = 2f;
             viscosity = 0.1f;
 
             coolant = true;

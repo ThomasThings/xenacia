@@ -8,8 +8,8 @@ import static mindustry.content.Items.*;
 
 public class XenItems{
     public static Item
-            aluminum, iron, stone, biomass, cobalt, metallicOxides, lithium, neodymium, chronatintilium, alterite,
-            ferricCompound, torrentAlloy, myaclide, gammasteel, braienasine, crystalineQuaran, imparixFiber, spectraglass;
+            aluminum, iron, stone, biomass, cobalt, metallicOxides, lithium, neodymium, chronatintilium, alterinite,
+            ferricCompound, torrentAlloy, myaclide, gammasteel, braienasine, crystallineMotallite, imparixFiber, spectraglass;
 
     public static final Seq<Item> xenaciaItems = new Seq<>(), xenaciaOnlyItems = new Seq<>();
 
@@ -75,7 +75,7 @@ public class XenItems{
 
             healthScaling = 0.2f;
         }};
-        alterite = new Item("alternite", Color.valueOf("8f999b")){{
+        alterinite = new Item("alterinite", Color.valueOf("8f999b")){{
             charge = 0.2f;
 
             cost = 1.3f;
@@ -120,7 +120,7 @@ public class XenItems{
 
             healthScaling = 1f;
         }};
-        crystalineQuaran = new Item("crystaline-quaran", Color.valueOf("c4c1ee")){{
+        crystallineMotallite = new Item("crystalline-motallite", Color.valueOf("c4c1ee")){{
             explosiveness = 0.25f;
             radioactivity = 0.3f;
             charge = 0.4f;
@@ -129,7 +129,7 @@ public class XenItems{
 
             healthScaling = 1.5f;
         }};
-        imparixFiber = new Item("imparic-fiber", Color.valueOf("cf9666")){{
+        imparixFiber = new Item("imparix-fiber", Color.valueOf("cf9666")){{
             explosiveness = 0.1f;
             flammability = 0.85f;
             radioactivity = 0.5f;
@@ -151,9 +151,9 @@ public class XenItems{
 
         xenaciaItems.addAll(aluminum, iron, sand, stone, biomass, coal, graphite,
                 silicon, titanium, beryllium, cobalt, tungsten, metallicOxides,
-                lithium, neodymium, chronatintilium, alterite, ferricCompound,
+                lithium, neodymium, chronatintilium, alterinite, ferricCompound,
                 carbide, torrentAlloy, myaclide, gammasteel, braienasine,
-                crystalineQuaran, imparixFiber, spectraglass);
+                crystallineMotallite, imparixFiber, spectraglass);
 
         xenaciaOnlyItems.addAll(xenaciaItems).removeAll(serpuloItems);
         xenaciaOnlyItems.removeAll(erekirItems);
