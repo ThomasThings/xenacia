@@ -119,7 +119,7 @@ public class XenDrills{
             warmupSpeed = 0.01f;
 
             consumePower(2f);
-            consumeLiquid(XenLiquids.volatlite, 0.2f);
+            consumeLiquid(XenLiquids.vurtux, 0.2f);
 
             consumeLiquid(Liquids.hydrogen, 0.2f).boost();
         }};
@@ -147,7 +147,7 @@ public class XenDrills{
             rotateSpeed = 6f;
 
             consumePower(6f);
-            consumeLiquids(LiquidStack.with(XenLiquids.volatlite, 4f / 60f));
+            consumeLiquids(LiquidStack.with(XenLiquids.vurtux, 4f / 60f));
 
             consumeLiquid(Liquids.water, 0.5f).boost();
         }};
