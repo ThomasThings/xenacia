@@ -1509,7 +1509,7 @@ public class XenUnitTypes {
                 mirror = true;
 
                 shootCone = 25f;
-                reload = 45f;
+                reload = 30f;
                 shootY = 3.25f;
                 rotate = true;
                 rotateSpeed = 2.5f;
@@ -1518,19 +1518,19 @@ public class XenUnitTypes {
 
                 shootSound = Sounds.missile;
 
-                bullet = new MissileBulletType(5f, 35){{
+                bullet = new MissileBulletType(5f, 30){{
                     homingPower = 0.08f;
                     weaveMag = 4;
                     weaveScale = 4;
                     lifetime = 50f;
-                    keepVelocity = false;
+                    velocityRnd = 0.5f;
                     shootEffect = Fx.shootHeal;
                     smokeEffect = Fx.hitLaser;
                     hitEffect = despawnEffect = Fx.hitLaser;
                     frontColor = Color.white;
                     hitSound = Sounds.none;
 
-                    healAmount = 85f;
+                    healAmount = 75f;
                     collidesTeam = true;
                     backColor = trailColor = Color.valueOf("98ffa9");
                 }};
