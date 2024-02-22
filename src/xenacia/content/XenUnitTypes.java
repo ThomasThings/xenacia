@@ -1567,12 +1567,16 @@ public class XenUnitTypes {
                 rotate = true;
                 rotateSpeed = 4f;
 
-                shootSound = Sounds.missile;
+                shootSound = Sounds.tractorbeam;
+
+                continuous = true;
 
                 bullet = new PointLaserBulletType(){{
                     damage = 15f;
+                    range = 30f;
                     buildingDamageMultiplier = 0.5f;
-                    knockback = -1.5f;
+                    knockback = -0.5f;
+                    healAmount = 1;
                     color = Color.valueOf("98ffa9");
                     hitColor = Color.valueOf("98ffa9");
                 }};
