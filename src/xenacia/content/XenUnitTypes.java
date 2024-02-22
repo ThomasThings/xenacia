@@ -47,7 +47,7 @@ public class XenUnitTypes {
     elementary,
     lug, haul, envoy, halecarry,
     tick,
-    natuon, enavo,
+    natuon, enavo, eurig,
     aid, guard,
     //terrestrial specialist
     erode,
@@ -1427,7 +1427,7 @@ public class XenUnitTypes {
         enavo = new UnitType("enavo") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("231b25");
-            health = 3100f;
+            health = 2100f;
             armor = 7f;
             hitSize = 30f;
             speed = 0.6f;
@@ -1505,7 +1505,7 @@ public class XenUnitTypes {
             }});
             weapons.add(new Weapon("xenacia-enavo-missiles"){{
                 x = 7.75f;
-                y = -9.75f;
+                y = -7f;
                 mirror = true;
 
                 shootCone = 25f;
@@ -1537,7 +1537,49 @@ public class XenUnitTypes {
 
             }});
 
-            abilities.add(new RepairFieldAbility(15f, 120, 120f));
+            abilities.add(new RepairFieldAbility(20f, 240, 120f));
+        }};
+        eurig = new UnitType("eurig") {{
+            constructor = UnitWaterMove::create;
+            outlineColor = Color.valueOf("231b25");
+            health = 6200f;
+            armor = 7f;
+            hitSize = 30f;
+            speed = 0.6f;
+            rotateSpeed = 2.5f;
+
+            itemCapacity = 40;
+
+            trailLength = 40;
+            waveTrailX = 11.25f;
+            waveTrailY = -12f;
+            trailScl = 1.5f;
+
+            buildSpeed = 0.5f;
+
+            faceTarget = false;
+            weapons.add(new Weapon("xenacia-eurig-small-tractor-beam"){{
+                x = 12f;
+                y = 5f;
+                mirror = true;
+                
+                shootY = 3.25f;
+                rotate = true;
+                rotateSpeed = 4f;
+
+                shootSound = Sounds.missile;
+
+                bullet = new PointLaserBulletType(){{
+                    damage = 15f;
+                    buildingDamageMultiplier = 0.5f;
+                    knockback = -1.5f;
+                    hitColor = Color.valueOf("fda981");
+                    Color.valueOf("98ffa9");
+                }};
+
+            }});
+
+            abilities.add(new RepairFieldAbility(20f, 240, 120f));
         }};
 
         aid = new UnitType("aid") {{
