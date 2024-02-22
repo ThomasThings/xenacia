@@ -47,7 +47,7 @@ public class XenUnitTypes {
     elementary,
     lug, haul, envoy, halecarry,
     tick,
-    natuon, enavo, eurig,
+    natuon, enavo, eurgi,
     aid, guard,
     //terrestrial specialist
     erode,
@@ -1539,7 +1539,7 @@ public class XenUnitTypes {
 
             abilities.add(new RepairFieldAbility(20f, 240, 120f));
         }};
-        eurig = new UnitType("eurig") {{
+        eurgi = new UnitType("eurgi") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("231b25");
             health = 6200f;
@@ -1558,11 +1558,11 @@ public class XenUnitTypes {
             buildSpeed = 0.5f;
 
             faceTarget = false;
-            weapons.add(new Weapon("xenacia-eurig-small-tractor-beam"){{
+            weapons.add(new Weapon("xenacia-eurgi-small-tractor-beam"){{
                 x = 12f;
                 y = 5f;
                 mirror = true;
-                
+
                 shootY = 3.25f;
                 rotate = true;
                 rotateSpeed = 4f;
@@ -1573,8 +1573,8 @@ public class XenUnitTypes {
                     damage = 15f;
                     buildingDamageMultiplier = 0.5f;
                     knockback = -1.5f;
-                    hitColor = Color.valueOf("fda981");
-                    Color.valueOf("98ffa9");
+                    color = Color.valueOf("98ffa9");
+                    hitColor = Color.valueOf("98ffa9");
                 }};
 
             }});
