@@ -1503,6 +1503,40 @@ public class XenUnitTypes {
                 }};
 
             }});
+            weapons.add(new Weapon("enavo-missiles"){{
+                top = true;
+                x = 7.75f;
+                y = -9.75f;
+                mirror = true;
+
+                shootCone = 25f;
+                reload = 45f;
+                shootY = 3.25f;
+                rotateSpeed = 2.5f;
+                minShootVelocity = 0.01f;
+                shoot.shots = 3;
+                inaccuracy = 5;
+
+                shootSound = Sounds.missile;
+
+                bullet = new MissileBulletType(5f, 35){{
+                    homingPower = 0.08f;
+                    weaveMag = 4;
+                    weaveScale = 4;
+                    lifetime = 50f;
+                    keepVelocity = false;
+                    shootEffect = Fx.shootHeal;
+                    smokeEffect = Fx.hitLaser;
+                    hitEffect = despawnEffect = Fx.hitLaser;
+                    frontColor = Color.white;
+                    hitSound = Sounds.none;
+
+                    healAmount = 85f;
+                    collidesTeam = true;
+                    backColor = trailColor = Color.valueOf("98ffa9");
+                }};
+
+            }});
 
             abilities.add(new RepairFieldAbility(15f, 120, 120f));
         }};
