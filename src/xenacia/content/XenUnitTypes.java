@@ -1574,10 +1574,10 @@ public class XenUnitTypes {
 
                 bullet = new PointLaserBulletType(){{
                     damage = 15f;
-                    range = 30f;
                     buildingDamageMultiplier = 0.5f;
                     knockback = -0.5f;
                     healAmount = 1;
+                    maxRange = 40f;
 
                     color = Color.valueOf("ffffff");
                     hitColor = Color.valueOf("98ffa9");
