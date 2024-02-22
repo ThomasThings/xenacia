@@ -1570,6 +1570,7 @@ public class XenUnitTypes {
                 shootSound = Sounds.tractorbeam;
 
                 continuous = true;
+                parentizeEffects = true;
 
                 bullet = new PointLaserBulletType(){{
                     damage = 15f;
@@ -1577,7 +1578,8 @@ public class XenUnitTypes {
                     buildingDamageMultiplier = 0.5f;
                     knockback = -0.5f;
                     healAmount = 1;
-                    color = Color.valueOf("98ffa9");
+
+                    color = Color.valueOf("ffffff");
                     hitColor = Color.valueOf("98ffa9");
                 }};
 
