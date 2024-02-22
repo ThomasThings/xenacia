@@ -1503,8 +1503,7 @@ public class XenUnitTypes {
                 }};
 
             }});
-            weapons.add(new Weapon("enavo-missiles"){{
-                top = true;
+            weapons.add(new Weapon("xenacia-enavo-missiles"){{
                 x = 7.75f;
                 y = -9.75f;
                 mirror = true;
@@ -1512,8 +1511,8 @@ public class XenUnitTypes {
                 shootCone = 25f;
                 reload = 45f;
                 shootY = 3.25f;
+                rotate = true;
                 rotateSpeed = 2.5f;
-                minShootVelocity = 0.01f;
                 shoot.shots = 3;
                 inaccuracy = 5;
 
