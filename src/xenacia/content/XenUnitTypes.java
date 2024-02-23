@@ -56,10 +56,10 @@ public class XenUnitTypes {
     kyre, yriek,
     tie, link,
     //mites and parasites
-    coreMite, coreParasite,
-    assaultMite, assaultParasite,
-    supportMite, supportParasite,
-    specialistMite, specialistParasite;
+    coreMite, coreParasite, navalCoreMite,
+    assaultMite, assaultParasite, navalAssaultMite,
+    supportMite, supportParasite, navalSupportMite,
+    specialistMite, specialistParasite, navalSpecialistMite;
 
     //endregion
 
@@ -2405,6 +2405,38 @@ public class XenUnitTypes {
             drownTimeMultiplier = 0.5f;
 
             abilities.add(new UnitSpawnAbility(assaultMite, 60 * 5, 0f, -4.5f));
+        }};
+        navalAssaultMite = new UnitType("naval-assault-mite") {{
+            constructor = UnitWaterMove::create;
+            outlineColor = Color.valueOf("231b25");
+            health = 100f;
+            armor = 0f;
+            hitSize = 7f;
+            speed = 0.8f;
+            rotateSpeed = 8f;
+            drag = 0.11f;
+
+            trailLength = 15;
+            waveTrailX = 1f;
+            waveTrailY = -1f;
+            trailScl = 1f;
+
+            useUnitCap = false;
+            itemCapacity = 0;
+
+            weapons.add(new Weapon("xenaica-naval-assault-mite-weapon") {{
+                x = 0f;
+                y = 0f;
+                rotate = false;
+                mirror = false;
+                reload = 30f;
+                bullet = new BasicBulletType(3.5f, 9) {{
+                    width = 5f;
+                    height = 7f;
+                    lifetime = 30f;
+                }};
+                ejectEffect = Fx.none;
+            }});
         }};
 
         supportMite = new UnitType("support-mite") {{
