@@ -1397,7 +1397,7 @@ public class XenUnitTypes {
                     shrinkX = 0.5f;
                     shrinkY = 0.5f;
                     frontColor = Color.valueOf("ffffff");
-                    backColor = Color.valueOf("62ae7f");
+                    backColor = Color.valueOf("98ffa9");
                     mixColorTo = Color.valueOf("ffffff");
                     hitColor = Pal.heal;
                     hitEffect = despawnEffect = new MultiEffect(
@@ -1481,7 +1481,7 @@ public class XenUnitTypes {
                     shrinkX = 0.5f;
                     shrinkY = 0.5f;
                     frontColor = Color.valueOf("ffffff");
-                    backColor = Color.valueOf("62ae7f");
+                    backColor = Color.valueOf("98ffa9");
                     mixColorTo = Color.valueOf("ffffff");
 
                     fragBullets = 6;
@@ -1493,7 +1493,7 @@ public class XenUnitTypes {
                         height = 10f;
 
                         frontColor = Color.valueOf("ffffff");
-                        backColor = Color.valueOf("62ae7f");
+                        backColor = Color.valueOf("98ffa9");
 
                         lifetime = 45f;
                         hitSound = Sounds.plasmaboom;
@@ -1532,7 +1532,7 @@ public class XenUnitTypes {
 
                     healAmount = 75f;
                     collidesTeam = true;
-                    backColor = trailColor = Color.valueOf("62ae7f");
+                    backColor = trailColor = Color.valueOf("98ffa9");
                 }};
 
             }});
@@ -1584,8 +1584,8 @@ public class XenUnitTypes {
                     sprite = "xenacia-heal-point-laser-small";
 
                     color = Color.valueOf("ffffff");
-                    trailColor = Color.valueOf("62ae7f");
-                    hitColor = Color.valueOf("62ae7f");
+                    trailColor = Color.valueOf("98ffa9");
+                    hitColor = Color.valueOf("98ffa9");
                     hitEffect = Fx.pointHit;
                 }};
             }});
@@ -1615,8 +1615,8 @@ public class XenUnitTypes {
                     sprite = "xenacia-heal-point-laser";
 
                     color = Color.valueOf("ffffff");
-                    trailColor = Color.valueOf("62ae7f");
-                    hitColor = Color.valueOf("62ae7f");
+                    trailColor = Color.valueOf("98ffa9");
+                    hitColor = Color.valueOf("98ffa9");
                     hitEffect = Fx.pointHit;
                 }};
             }});
@@ -1676,8 +1676,8 @@ public class XenUnitTypes {
                     collidesTeam = true;
                     healPercent = 3f;
 
-                    trailColor = Color.valueOf("62ae7f");
-                    backColor = Color.valueOf("62ae7f");
+                    trailColor = Color.valueOf("98ffa9");
+                    backColor = Color.valueOf("98ffa9");
                     frontColor = Color.valueOf("ffffff");
 
                     shootEffect = Fx.shootHeal;
@@ -1750,8 +1750,8 @@ public class XenUnitTypes {
                     collidesTeam = true;
                     healPercent = 3f;
 
-                    trailColor = Color.valueOf("62ae7f");
-                    backColor = Color.valueOf("62ae7f");
+                    trailColor = Color.valueOf("98ffa9");
+                    backColor = Color.valueOf("98ffa9");
                     frontColor = Color.valueOf("ffffff");
 
                     shootEffect = Fx.shootHeal;
