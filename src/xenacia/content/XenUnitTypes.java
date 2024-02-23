@@ -2,6 +2,7 @@ package xenacia.content;
 
 import arc.graphics.Color;
 import arc.graphics.g2d.Lines;
+import arc.math.Interp;
 import arc.math.geom.Rect;
 import mindustry.ai.UnitCommand;
 import mindustry.ai.types.BuilderAI;
@@ -12,6 +13,7 @@ import mindustry.content.StatusEffects;
 import mindustry.entities.Effect;
 import mindustry.entities.abilities.EnergyFieldAbility;
 import mindustry.entities.abilities.RepairFieldAbility;
+import mindustry.entities.abilities.SpawnDeathAbility;
 import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.MultiEffect;
@@ -23,6 +25,7 @@ import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
 import mindustry.type.UnitType;
 import mindustry.type.Weapon;
+import mindustry.type.unit.MissileUnitType;
 import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.world.meta.BlockFlag;
 
@@ -47,7 +50,7 @@ public class XenUnitTypes {
     elementary,
     lug, haul, envoy,
     tick,
-    natuon, enavo, eurgi,
+    natuon, enavo, eurgiSentry, eurgiSentryCarrierMissile, eurgi,
     aid, guard,
     //terrestrial specialist
     erode,
@@ -1539,6 +1542,58 @@ public class XenUnitTypes {
 
             abilities.add(new RepairFieldAbility(20f, 240, 120f));
         }};
+        eurgiSentry = new UnitType("eurgi-sentry") {{
+            constructor = UnitEntity::create;
+            outlineColor = Color.valueOf("231b25");
+            health = 550f;
+            armor = 5f;
+            hitSize = 10f;
+            speed = 0f;
+            rotateSpeed = 0f;
+            hovering = true;
+            shadowElevation = 0.05f;
+            useEngineElevation = false;
+            lowAltitude = true;
+
+            itemCapacity = 0;
+
+            engineSize = 0f;
+            engineOffset = 0f;
+
+            parts.add(new HoverPart(){{
+                x = 0f;
+                y = 0f;
+                mirror = false;
+                radius = 5f;
+                phase = 90f;
+                stroke = 1.5f;
+                layerOffset = -0.001f;
+                color = Color.valueOf("98ffa9");
+            }});
+        }};
+        eurgiSentryCarrierMissile = new MissileUnitType("eurgi-sentry-carrier-missile"){{
+            targetAir = false;
+            speed = 3f;
+            maxRange = 6f;
+            lifetime = 60f * 1.4f;
+            outlineColor = Color.valueOf("231b25");
+            engineColor = trailColor = Color.valueOf("98ffa9");
+            engineLayer = Layer.effect;
+            health = 150;
+            loopSoundVolume = 0.1f;
+
+            weapons.add(new Weapon(){{
+                shootCone = 360f;
+                mirror = false;
+                reload = 1f;
+                shootOnDeath = true;
+                bullet = new ExplosionBulletType(110f, 25f){{
+                    shootEffect = Fx.massiveExplosion;
+                    collidesAir = false;
+                }};
+                abilities.add(new SpawnDeathAbility(eurgiSentry, 5, 11f));
+            }});
+        }};
         eurgi = new UnitType("eurgi") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("231b25");
@@ -1557,12 +1612,13 @@ public class XenUnitTypes {
 
             buildSpeed = 0.5f;
 
-            faceTarget = false;
+            faceTarget = true;
             weapons.add(new Weapon("xenacia-eurgi-small-tractor-beam"){{
                 x = 12f;
                 y = 5.5f;
                 mirror = true;
                 alternate = false;
+                controllable = false;
 
                 shootY = 3.25f;
                 rotate = true;
@@ -1576,11 +1632,11 @@ public class XenUnitTypes {
                 parentizeEffects = true;
 
                 bullet = new PointLaserBulletType(){{
-                    damage = 4f;
+                    damage = 3f;
                     buildingDamageMultiplier = 0.1f;
-                    knockback = -1f;
-                    healAmount = 2f;
-                    maxRange = 100f;
+                    knockback = -4f;
+                    healAmount = 4f;
+                    maxRange = 80f;
                     sprite = "xenacia-heal-point-laser-small";
 
                     color = Color.valueOf("ffffff");
@@ -1594,6 +1650,7 @@ public class XenUnitTypes {
                 y = -10.875f;
                 mirror = true;
                 alternate = false;
+                controllable = false;
 
                 shootY = 5f;
                 rotate = true;
@@ -1618,6 +1675,39 @@ public class XenUnitTypes {
                     trailColor = Color.valueOf("98ffa9");
                     hitColor = Color.valueOf("98ffa9");
                     hitEffect = Fx.pointHit;
+                }};
+            }});
+            weapons.add(new Weapon("eurgi-sentry-carrier-missile-weapon"){{
+                shootSound = Sounds.missileSmall;
+                x = 0f;
+                y = 10f;
+                rotate = false;
+                reload = 1800f;
+                layerOffset = -0.001f;
+                parts.add(
+                        new RegionPart("-missile"){{
+                            progress = PartProgress.reload.curve(Interp.pow2In);
+
+                            colorTo = new Color(1f, 1f, 1f, 0f);
+                            color = Color.white;
+                            mixColorTo = Pal.accent;
+                            mixColor = new Color(1f, 1f, 1f, 0f);
+                            outline = false;
+                            under = true;
+
+                            layerOffset = -0.01f;
+
+                            moves.add(new PartMove(PartProgress.warmup.inv(), 0f, 0f, 0f));
+                        }}
+                );
+
+                bullet = new BulletType(){{
+                    shootEffect = Fx.shootBig;
+                    smokeEffect = Fx.shootBigSmoke2;
+                    keepVelocity = false;
+                    collidesAir = false;
+
+                    spawnUnit = eurgiSentryCarrierMissile;
                 }};
             }});
         }};
@@ -2469,7 +2559,7 @@ public class XenUnitTypes {
 
             weapons.add(new Weapon("xenacia-naval-assault-mite-weapon") {{
                 x = 0f;
-                y = 0f;
+                y = -3f;
                 rotate = true;
                 mirror = false;
                 reload = 30f;
@@ -2589,7 +2679,7 @@ public class XenUnitTypes {
 
             weapons.add(new Weapon("xenacia-naval-support-mite-weapon") {{
                 x = 0f;
-                y = 0f;
+                y = -2.5f;
                 rotate = true;
                 mirror = false;
                 reload = 30f;
@@ -2717,7 +2807,7 @@ public class XenUnitTypes {
 
             weapons.add(new Weapon("xenacia-naval-specialist-mite-weapon") {{
                 x = 0f;
-                y = 0f;
+                y = -2.25f;
                 rotate = true;
                 mirror = false;
                 reload = 15f;
