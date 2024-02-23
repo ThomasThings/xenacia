@@ -1275,7 +1275,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("231b25");
             defaultCommand = UnitCommand.rebuildCommand;
 
-            health = 5800f;
+            health = 5900f;
             armor = 7f;
             hitSize = 40f;
 
@@ -1578,11 +1578,13 @@ public class XenUnitTypes {
                 bullet = new PointLaserBulletType(){{
                     damage = 15f;
                     buildingDamageMultiplier = 0.5f;
-                    knockback = -0.5f;
+                    knockback = -0.75f;
                     healAmount = 1;
                     maxRange = 120f;
+                    sprite = "xenacia-heal-point-laser";
 
                     color = Color.valueOf("ffffff");
+                    trailColor = Color.valueOf("98ffa9");
                     hitColor = Color.valueOf("98ffa9");
                 }};
 
