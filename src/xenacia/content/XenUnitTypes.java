@@ -1276,7 +1276,7 @@ public class XenUnitTypes {
             defaultCommand = UnitCommand.rebuildCommand;
 
             health = 5900f;
-            armor = 7f;
+            armor = 9f;
             hitSize = 40f;
 
             speed = 1f;
@@ -1505,7 +1505,7 @@ public class XenUnitTypes {
             }});
             weapons.add(new Weapon("xenacia-enavo-missiles"){{
                 x = 7.75f;
-                y = -6.825f;
+                y = -6.875f;
                 mirror = true;
 
                 shootCone = 25f;
@@ -1542,11 +1542,11 @@ public class XenUnitTypes {
         eurgi = new UnitType("eurgi") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("231b25");
-            health = 6200f;
-            armor = 7f;
+            health = 6600f;
+            armor = 12f;
             hitSize = 50f;
-            speed = 0.6f;
-            rotateSpeed = 2.5f;
+            speed = 0.4f;
+            rotateSpeed = 1.8f;
 
             itemCapacity = 40;
 
@@ -1576,10 +1576,10 @@ public class XenUnitTypes {
                 parentizeEffects = true;
 
                 bullet = new PointLaserBulletType(){{
-                    damage = 2f;
+                    damage = 4f;
                     buildingDamageMultiplier = 0.1f;
                     knockback = -1f;
-                    healAmount = 1.5f;
+                    healAmount = 2f;
                     maxRange = 100f;
                     sprite = "xenacia-heal-point-laser-small";
 
@@ -1607,10 +1607,10 @@ public class XenUnitTypes {
                 parentizeEffects = true;
 
                 bullet = new PointLaserBulletType(){{
-                    damage = 4f;
+                    damage = 6f;
                     buildingDamageMultiplier = 0.1f;
                     knockback = -1.5f;
-                    healAmount = 1.5f;
+                    healAmount = 2.5f;
                     maxRange = 180f;
                     sprite = "xenacia-heal-point-laser";
 
@@ -1620,8 +1620,6 @@ public class XenUnitTypes {
                     hitEffect = Fx.pointHit;
                 }};
             }});
-
-            abilities.add(new RepairFieldAbility(20f, 240, 120f));
         }};
 
         aid = new UnitType("aid") {{
