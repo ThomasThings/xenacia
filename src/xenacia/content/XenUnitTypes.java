@@ -2325,7 +2325,7 @@ public class XenUnitTypes {
 
             abilities.add(new UnitSpawnAbility(coreMite, 60 * 5, 0f, 5.75f));
         }};
-        navalCoreMite = new UnitType("naval-assault-mite") {{
+        navalCoreMite = new UnitType("naval-core-mite") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("231b25");
             health = 100f;
