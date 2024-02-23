@@ -1587,10 +1587,10 @@ public class XenUnitTypes {
                     trailColor = Color.valueOf("98ffa9");
                     hitColor = Color.valueOf("98ffa9");
                     hitEffect = Fx.pointHit;
-                    drawSize = 500f;
+                    beamEffectSize = 2.5f;
                 }};
             }});
-            weapons.add(new Weapon("xenacia-eurgi-small-tractor-beam"){{
+            weapons.add(new Weapon("xenacia-eurgi-tractor-beam"){{
                 x = 15.75f;
                 y = -11f;
                 mirror = true;
@@ -1619,6 +1619,7 @@ public class XenUnitTypes {
                     trailColor = Color.valueOf("98ffa9");
                     hitColor = Color.valueOf("98ffa9");
                     hitEffect = Fx.pointHit;
+                    beamEffectSize = 3.5f;
                 }};
             }});
 
