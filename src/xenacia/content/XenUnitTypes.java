@@ -2417,7 +2417,7 @@ public class XenUnitTypes {
             drag = 0.11f;
 
             trailLength = 15;
-            waveTrailX = 1f;
+            waveTrailX = 1.5f;
             waveTrailY = -1f;
             trailScl = 1f;
 
@@ -2427,7 +2427,7 @@ public class XenUnitTypes {
             weapons.add(new Weapon("xenaica-naval-assault-mite-weapon") {{
                 x = 0f;
                 y = 0f;
-                rotate = false;
+                rotate = true;
                 mirror = false;
                 reload = 30f;
                 bullet = new BasicBulletType(3.5f, 9) {{
