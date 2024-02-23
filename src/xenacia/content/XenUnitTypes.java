@@ -1264,7 +1264,7 @@ public class XenUnitTypes {
             engineSize = 0f;
             engineOffset = 7.5f;
 
-            mineTier = 2;
+            mineTier = 3;
             mineSpeed = 2f;
             itemCapacity = 100;
             payloadCapacity = 576;
@@ -1298,9 +1298,9 @@ public class XenUnitTypes {
             engineSize = 4.5f;
             engineOffset = 22f;
 
-            mineTier = 2;
+            mineTier = 4;
             mineSpeed = 2f;
-            itemCapacity = 100;
+            itemCapacity = 230;
             payloadCapacity = 1024;
 
             buildSpeed = 0.8f;
@@ -1494,8 +1494,8 @@ public class XenUnitTypes {
                     fragBullet = new BasicBulletType(3f, 20){{
                         width = 10f;
                         height = 10f;
-                        homingRange = 20;
-                        homingPower = 5;
+                        homingRange = 100;
+                        homingPower = 0.5f;
 
                         frontColor = Color.valueOf("ffffff");
                         backColor = Color.valueOf("98ffa9");
@@ -1593,7 +1593,7 @@ public class XenUnitTypes {
                     shootEffect = Fx.massiveExplosion;
                     collidesAir = false;
                 }};
-                abilities.add(new SpawnDeathAbility(eurgiSentry, 1, 0f));
+                abilities.add(new SpawnDeathAbility(eurgiSentry, 1, 2f));
             }});
         }};
         eurgi = new UnitType("eurgi") {{
@@ -1602,10 +1602,10 @@ public class XenUnitTypes {
             health = 6600f;
             armor = 12f;
             hitSize = 50f;
-            speed = 0.4f;
-            rotateSpeed = 1.8f;
+            speed = 0.6f;
+            rotateSpeed = 0.6f;
 
-            itemCapacity = 40;
+            itemCapacity = 110;
 
             trailLength = 40;
             waveTrailX = 11.25f;
@@ -1620,7 +1620,6 @@ public class XenUnitTypes {
                 y = 5.5f;
                 mirror = true;
                 alternate = false;
-                controllable = false;
 
                 shootY = 3.25f;
                 rotate = true;
@@ -1652,9 +1651,6 @@ public class XenUnitTypes {
                 y = -10.875f;
                 mirror = true;
                 alternate = false;
-                controllable = false;
-                targetGround = true;
-                targetAir = true;
 
                 shootY = 5f;
                 rotate = true;
@@ -1688,22 +1684,6 @@ public class XenUnitTypes {
                 rotate = false;
                 reload = 900f;
                 layerOffset = -0.001f;
-                parts.add(
-                        new RegionPart("-missile"){{
-                            progress = PartProgress.reload.curve(Interp.pow2In);
-
-                            colorTo = new Color(1f, 1f, 1f, 0f);
-                            color = Color.white;
-                            mixColorTo = Pal.accent;
-                            mixColor = new Color(1f, 1f, 1f, 0f);
-                            outline = false;
-                            under = true;
-
-                            layerOffset = -0.01f;
-
-                            moves.add(new PartMove(PartProgress.warmup.inv(), 0f, 0f, 0f));
-                        }}
-                );
 
                 bullet = new BulletType(){{
                     shootEffect = Fx.shootBig;
