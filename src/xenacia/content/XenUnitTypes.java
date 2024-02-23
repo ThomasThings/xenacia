@@ -1547,7 +1547,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("231b25");
             health = 550f;
             armor = 5f;
-            hitSize = 10f;
+            hitSize = 8f;
             speed = 0f;
             rotateSpeed = 0f;
             hovering = true;
@@ -1564,7 +1564,7 @@ public class XenUnitTypes {
                 x = 0f;
                 y = 0f;
                 mirror = false;
-                radius = 5f;
+                radius = 8f;
                 phase = 90f;
                 stroke = 1.5f;
                 layerOffset = -0.001f;
@@ -1591,7 +1591,7 @@ public class XenUnitTypes {
                     shootEffect = Fx.massiveExplosion;
                     collidesAir = false;
                 }};
-                abilities.add(new SpawnDeathAbility(eurgiSentry, 5, 11f));
+                abilities.add(new SpawnDeathAbility(eurgiSentry, 1, 0f));
             }});
         }};
         eurgi = new UnitType("eurgi") {{
@@ -1612,7 +1612,7 @@ public class XenUnitTypes {
 
             buildSpeed = 0.5f;
 
-            faceTarget = true;
+            faceTarget = false;
             weapons.add(new Weapon("xenacia-eurgi-small-tractor-beam"){{
                 x = 12f;
                 y = 5.5f;
@@ -1680,7 +1680,7 @@ public class XenUnitTypes {
             weapons.add(new Weapon("eurgi-sentry-carrier-missile-weapon"){{
                 shootSound = Sounds.missileSmall;
                 x = 0f;
-                y = 10f;
+                y = 15f;
                 rotate = false;
                 reload = 1800f;
                 layerOffset = -0.001f;
