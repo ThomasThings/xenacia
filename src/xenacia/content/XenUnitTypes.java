@@ -1505,7 +1505,7 @@ public class XenUnitTypes {
             }});
             weapons.add(new Weapon("xenacia-enavo-missiles"){{
                 x = 7.75f;
-                y = -7f;
+                y = -6.825f;
                 mirror = true;
 
                 shootCone = 25f;
@@ -1591,7 +1591,7 @@ public class XenUnitTypes {
             }});
             weapons.add(new Weapon("xenacia-eurgi-tractor-beam"){{
                 x = 15.75f;
-                y = -10.75f;
+                y = -10.875f;
                 mirror = true;
                 alternate = false;
 
