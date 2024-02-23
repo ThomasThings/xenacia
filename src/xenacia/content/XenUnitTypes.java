@@ -1562,6 +1562,7 @@ public class XenUnitTypes {
                 x = 12f;
                 y = 5f;
                 mirror = true;
+                alternate = false;
 
                 shootY = 3.25f;
                 rotate = true;
@@ -1579,7 +1580,7 @@ public class XenUnitTypes {
                     buildingDamageMultiplier = 0.5f;
                     knockback = -0.5f;
                     healAmount = 1;
-                    maxRange = 40f;
+                    maxRange = 120f;
 
                     color = Color.valueOf("ffffff");
                     hitColor = Color.valueOf("98ffa9");
