@@ -1494,6 +1494,8 @@ public class XenUnitTypes {
                     fragBullet = new BasicBulletType(3f, 20){{
                         width = 10f;
                         height = 10f;
+                        homingRange = 20;
+                        homingPower = 5;
 
                         frontColor = Color.valueOf("ffffff");
                         backColor = Color.valueOf("98ffa9");
@@ -1651,6 +1653,8 @@ public class XenUnitTypes {
                 mirror = true;
                 alternate = false;
                 controllable = false;
+                targetGround = true;
+                targetAir = true;
 
                 shootY = 5f;
                 rotate = true;
@@ -1680,9 +1684,9 @@ public class XenUnitTypes {
             weapons.add(new Weapon("eurgi-sentry-carrier-missile-weapon"){{
                 shootSound = Sounds.missileSmall;
                 x = 0f;
-                y = 15f;
+                y = 25f;
                 rotate = false;
-                reload = 1800f;
+                reload = 900f;
                 layerOffset = -0.001f;
                 parts.add(
                         new RegionPart("-missile"){{
