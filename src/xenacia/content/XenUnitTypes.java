@@ -1578,21 +1578,20 @@ public class XenUnitTypes {
                 bullet = new PointLaserBulletType(){{
                     damage = 2f;
                     buildingDamageMultiplier = 0.1f;
-                    knockback = -0.8f;
+                    knockback = -1f;
                     healAmount = 1.5f;
-                    maxRange = 65f;
+                    maxRange = 100f;
                     sprite = "xenacia-heal-point-laser-small";
 
                     color = Color.valueOf("ffffff");
                     trailColor = Color.valueOf("62ae7f");
                     hitColor = Color.valueOf("62ae7f");
                     hitEffect = Fx.pointHit;
-                    beamEffectSize = 2.5f;
                 }};
             }});
             weapons.add(new Weapon("xenacia-eurgi-tractor-beam"){{
                 x = 15.75f;
-                y = -11f;
+                y = -10.75f;
                 mirror = true;
                 alternate = false;
 
@@ -1610,16 +1609,15 @@ public class XenUnitTypes {
                 bullet = new PointLaserBulletType(){{
                     damage = 4f;
                     buildingDamageMultiplier = 0.1f;
-                    knockback = -0.6f;
+                    knockback = -1.5f;
                     healAmount = 1.5f;
-                    maxRange = 120f;
+                    maxRange = 180f;
                     sprite = "xenacia-heal-point-laser";
 
                     color = Color.valueOf("ffffff");
                     trailColor = Color.valueOf("62ae7f");
                     hitColor = Color.valueOf("62ae7f");
                     hitEffect = Fx.pointHit;
-                    beamEffectSize = 3.5f;
                 }};
             }});
 
