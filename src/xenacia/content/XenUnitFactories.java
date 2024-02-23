@@ -13,7 +13,7 @@ import static mindustry.type.ItemStack.with;
 
 public class XenUnitFactories{
     public static Block
-            miteFactory, parasiteFactory,
+            miteFactory, navalMiteReconstructor, parasiteFactory,
             unitHullConstructor,
             assaultTranstructor, supportTranstructor, specialistTranstructor,
             assaultReconstructor, supportReconstructor, specialistReconstructor,
@@ -31,6 +31,22 @@ public class XenUnitFactories{
             );
             size = 2;
             consumePower(0.8f);
+        }};
+        navalMiteReconstructor = new Reconstructor("naval-mite-reconstructor"){{
+            requirements(Category.units, with(XenItems.iron, 90, XenItems.aluminum, 30,Items.silicon, 100));
+
+            size = 2;
+            consumePower(1.2f);
+            consumeItems(with(Items.silicon, 10, XenItems.iron, 5, XenItems.aluminum, 10));
+
+            constructTime = 60f * 5f;
+
+            upgrades.addAll(
+                    new UnitType[]{XenUnitTypes.coreMite, XenUnitTypes.navalCoreMite},
+                    new UnitType[]{XenUnitTypes.assaultMite, XenUnitTypes.navalAssaultMite},
+                    new UnitType[]{XenUnitTypes.supportMite, XenUnitTypes.navalSupportMite},
+                    new UnitType[]{XenUnitTypes.specialistMite, XenUnitTypes.navalSpecialistMite}
+            );
         }};
         parasiteFactory = new UnitFactory("parasite-factory"){{
             requirements(Category.units, BuildVisibility.sandboxOnly, with(Items.silicon, 150, XenItems.iron, 100, Items.graphite, 80, XenItems.aluminum, 60));
