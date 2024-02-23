@@ -45,7 +45,7 @@ public class XenUnitTypes {
     tack, nail,
     //terrestrial support
     elementary,
-    lug, haul, envoy, halecarry,
+    lug, haul, envoy,
     tick,
     natuon, enavo, eurgi,
     aid, guard,
@@ -1566,10 +1566,12 @@ public class XenUnitTypes {
                 shootY = 3.25f;
                 rotate = true;
                 rotateSpeed = 4f;
+                recoil = 0;
 
                 shootSound = Sounds.tractorbeam;
 
                 continuous = true;
+                alwaysContinuous = true;
                 parentizeEffects = true;
 
                 bullet = new PointLaserBulletType(){{
