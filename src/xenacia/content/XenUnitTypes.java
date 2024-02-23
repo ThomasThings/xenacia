@@ -1544,7 +1544,7 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("231b25");
             health = 6200f;
             armor = 7f;
-            hitSize = 45f;
+            hitSize = 50f;
             speed = 0.6f;
             rotateSpeed = 2.5f;
 
