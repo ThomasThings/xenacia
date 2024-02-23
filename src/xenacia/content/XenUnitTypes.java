@@ -1560,7 +1560,7 @@ public class XenUnitTypes {
             faceTarget = false;
             weapons.add(new Weapon("xenacia-eurgi-small-tractor-beam"){{
                 x = 12f;
-                y = 5f;
+                y = 5.5f;
                 mirror = true;
                 alternate = false;
 
@@ -1576,18 +1576,50 @@ public class XenUnitTypes {
                 parentizeEffects = true;
 
                 bullet = new PointLaserBulletType(){{
-                    damage = 15f;
-                    buildingDamageMultiplier = 0.5f;
-                    knockback = -0.75f;
-                    healAmount = 1;
+                    damage = 2f;
+                    buildingDamageMultiplier = 0.1f;
+                    knockback = -0.8f;
+                    healAmount = 1.5f;
+                    maxRange = 65f;
+                    sprite = "xenacia-heal-point-laser";
+
+                    color = Color.valueOf("ffffff");
+                    trailColor = Color.valueOf("98ffa9");
+                    hitColor = Color.valueOf("98ffa9");
+                    hitEffect = Fx.pointHit;
+                    drawSize = 500f;
+                }};
+            }});
+            weapons.add(new Weapon("xenacia-eurgi-small-tractor-beam"){{
+                x = 15.75f;
+                y = -11f;
+                mirror = true;
+                alternate = false;
+
+                shootY = 5f;
+                rotate = true;
+                rotateSpeed = 2f;
+                recoil = 0;
+
+                shootSound = Sounds.tractorbeam;
+
+                continuous = true;
+                alwaysContinuous = true;
+                parentizeEffects = true;
+
+                bullet = new PointLaserBulletType(){{
+                    damage = 4f;
+                    buildingDamageMultiplier = 0.1f;
+                    knockback = -0.6f;
+                    healAmount = 1.5f;
                     maxRange = 120f;
                     sprite = "xenacia-heal-point-laser";
 
                     color = Color.valueOf("ffffff");
                     trailColor = Color.valueOf("98ffa9");
                     hitColor = Color.valueOf("98ffa9");
+                    hitEffect = Fx.pointHit;
                 }};
-
             }});
 
             abilities.add(new RepairFieldAbility(20f, 240, 120f));

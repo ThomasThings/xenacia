@@ -34,7 +34,7 @@ public class XenTurrets{
                         height = 9f;
                         lifetime = 60f;
                         ammoMultiplier = 2;
-                        hitColor = backColor = trailColor = Color.valueOf("9d8e8e");
+                        hitColor = backColor = trailColor = Color.valueOf("d6c3be");
                         frontColor = Color.valueOf("ffffff");
                         trailWidth = 1f;
                         trailLength = 3;
@@ -44,7 +44,7 @@ public class XenTurrets{
                         width = 7f;
                         height = 9f;
                         lifetime = 90f;
-                        hitColor = backColor = trailColor = Color.valueOf("a8a8bd");
+                        hitColor = backColor = trailColor = Color.valueOf("c8c9d7");
                         frontColor = Color.valueOf("ffffff");
                         trailWidth = 1f;
                         trailLength = 4;
