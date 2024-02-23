@@ -2325,6 +2325,49 @@ public class XenUnitTypes {
 
             abilities.add(new UnitSpawnAbility(coreMite, 60 * 5, 0f, 5.75f));
         }};
+        navalCoreMite = new UnitType("naval-assault-mite") {{
+            constructor = UnitWaterMove::create;
+            outlineColor = Color.valueOf("231b25");
+            health = 100f;
+            armor = 0f;
+            hitSize = 8f;
+            speed = 1f;
+            rotateSpeed = 8f;
+            drag = 0.11f;
+
+            trailLength = 15;
+            waveTrailX = 1.5f;
+            waveTrailY = -1f;
+            trailScl = 1f;
+
+            useUnitCap = false;
+            itemCapacity = 0;
+
+            weapons.add(new Weapon() {{
+                shootOnDeath = true;
+                reload = 24f;
+                shootCone = 180f;
+                ejectEffect = Fx.none;
+                shootSound = Sounds.explosion;
+                x = shootY = 0f;
+                mirror = false;
+                bullet = new BulletType() {{
+                    collidesTiles = false;
+                    collides = false;
+                    hitSound = Sounds.explosion;
+
+                    rangeOverride = 12f;
+                    hitEffect = Fx.pulverize;
+                    speed = 0f;
+                    splashDamageRadius = 24f;
+                    instantDisappear = true;
+                    splashDamage = 100f;
+                    killShooter = true;
+                    hittable = false;
+                    collidesAir = true;
+                }};
+            }});
+        }};
 
         assaultMite = new UnitType("assault-mite") {{
             constructor = LegsUnit::create;
@@ -2411,8 +2454,8 @@ public class XenUnitTypes {
             outlineColor = Color.valueOf("231b25");
             health = 100f;
             armor = 0f;
-            hitSize = 7f;
-            speed = 0.8f;
+            hitSize = 8f;
+            speed = 1f;
             rotateSpeed = 8f;
             drag = 0.11f;
 
@@ -2424,7 +2467,7 @@ public class XenUnitTypes {
             useUnitCap = false;
             itemCapacity = 0;
 
-            weapons.add(new Weapon("xenaica-naval-assault-mite-weapon") {{
+            weapons.add(new Weapon("xenacia-naval-assault-mite-weapon") {{
                 x = 0f;
                 y = 0f;
                 rotate = true;
@@ -2471,7 +2514,7 @@ public class XenUnitTypes {
             groundLayer = Layer.legUnit - 1f;
             drownTimeMultiplier = 0.5f;
 
-            weapons.add(new Weapon("bolt-mite-weapon") {{
+            weapons.add(new Weapon("support-mite-weapon") {{
                 x = 0f;
                 y = 0f;
                 rotate = false;
@@ -2525,6 +2568,45 @@ public class XenUnitTypes {
             drownTimeMultiplier = 0.5f;
 
             abilities.add(new UnitSpawnAbility(supportMite, 60 * 5, 0f, 3f));
+        }};
+        navalSupportMite = new UnitType("naval-support-mite") {{
+            constructor = UnitWaterMove::create;
+            outlineColor = Color.valueOf("231b25");
+            health = 100f;
+            armor = 0f;
+            hitSize = 8f;
+            speed = 1f;
+            rotateSpeed = 8f;
+            drag = 0.11f;
+
+            trailLength = 15;
+            waveTrailX = 1.5f;
+            waveTrailY = -1f;
+            trailScl = 1f;
+
+            useUnitCap = false;
+            itemCapacity = 0;
+
+            weapons.add(new Weapon("xenacia-naval-support-mite-weapon") {{
+                x = 0f;
+                y = 0f;
+                rotate = true;
+                mirror = false;
+                reload = 30f;
+                bullet = new LaserBoltBulletType(3.5f, 9) {{
+                    width = 1.5f;
+                    height = 5f;
+                    lifetime = 30f;
+
+                    collidesTeam = true;
+                    healPercent = 0.5f;
+
+                    backColor = Pal.heal;
+                    frontColor = Color.white;
+                }};
+                shootSound = Sounds.lasershoot;
+                ejectEffect = Fx.none;
+            }});
         }};
 
         specialistMite = new UnitType("specialist-mite") {{
@@ -2614,6 +2696,46 @@ public class XenUnitTypes {
             drownTimeMultiplier = 0.5f;
 
             abilities.add(new UnitSpawnAbility(specialistMite, 60 * 5, 0f, -3f));
+        }};
+        navalSpecialistMite = new UnitType("naval-specialist-mite") {{
+            constructor = UnitWaterMove::create;
+            outlineColor = Color.valueOf("231b25");
+            health = 100f;
+            armor = 0f;
+            hitSize = 8f;
+            speed = 1f;
+            rotateSpeed = 8f;
+            drag = 0.11f;
+
+            trailLength = 15;
+            waveTrailX = 1.5f;
+            waveTrailY = -1f;
+            trailScl = 1f;
+
+            useUnitCap = false;
+            itemCapacity = 0;
+
+            weapons.add(new Weapon("xenacia-naval-specialist-mite-weapon") {{
+                x = 0f;
+                y = 0f;
+                rotate = true;
+                mirror = false;
+                reload = 15f;
+                bullet = new SapBulletType() {{
+                    damage = 2;
+                    sapStrength = 1f;
+                    length = 25f;
+                    width = 0.5f;
+                    lifetime = 25f;
+                    knockback = -0.2f;
+
+                    shootEffect = Fx.shootSmall;
+                    despawnEffect = Fx.none;
+                    hitColor = color = Color.valueOf("bf92f9");
+                }};
+                shootSound = Sounds.sap;
+                ejectEffect = Fx.none;
+            }});
         }};
 
         //endregion
