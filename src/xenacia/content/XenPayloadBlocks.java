@@ -9,8 +9,8 @@ import static mindustry.type.ItemStack.*;
 
 public class XenPayloadBlocks{
     public static Block
-            smallPayloadConveyor, largePayloadConveyor,
-            smallPayloadRouter, largePayloadRouter,
+            mitePayloadConveyor, smallPayloadConveyor, largePayloadConveyor,
+            mitePayloadRouter, smallPayloadRouter, largePayloadRouter,
             smallPayloadConstructor, largePayloadConstructor,
             smallPayloadLoader, largePayloadLoader,
             smallPayloadLaunchTower, largePayloadLaunchTower,
@@ -18,13 +18,21 @@ public class XenPayloadBlocks{
             smallPayloadDeconstructor, largePayloadDeconstructor;
 
     public static void load() {
+        mitePayloadConveyor = new PayloadConveyor("mite-payload-conveyor"){{
+            requirements(Category.units, with(XenItems.iron, 5,Items.graphite, 5));
+            health = 500;
+            size = 2;
+            payloadLimit = 3f;
+            canOverdrive = true;
+            moveTime = 30f;
+        }};
         smallPayloadConveyor = new PayloadConveyor("small-payload-conveyor"){{
             requirements(Category.units, with(XenItems.iron, 10,Items.graphite, 10,Items.silicon, 5));
             health = 900;
             size = 3;
             payloadLimit = 3f;
             canOverdrive = true;
-            moveTime = 30f;
+            moveTime = 60f;
         }};
         largePayloadConveyor = new PayloadConveyor("large-payload-conveyor"){{
             requirements(Category.units, with(XenItems.neodymium, 40,Items.graphite, 30,Items.silicon, 30));
@@ -32,16 +40,24 @@ public class XenPayloadBlocks{
             size = 5;
             payloadLimit = 5.5f;
             canOverdrive = true;
-            moveTime = 60f;
+            moveTime = 120f;
         }};
 
+        mitePayloadRouter = new PayloadRouter("mite-payload-router"){{
+            requirements(Category.units, with(XenItems.iron, 10,Items.graphite, 5));
+            health = 500;
+            size = 2;
+            payloadLimit = 3f;
+            canOverdrive = true;
+            moveTime = 30f;
+        }};
         smallPayloadRouter = new PayloadRouter("small-payload-router"){{
             requirements(Category.units, with(XenItems.iron, 15,Items.graphite, 10,Items.silicon, 10));
             health = 900;
             size = 3;
             payloadLimit = 3f;
             canOverdrive = true;
-            moveTime = 30f;
+            moveTime = 60f;
         }};
         largePayloadRouter = new PayloadRouter("large-payload-router"){{
             requirements(Category.units, with(XenItems.neodymium, 50,Items.graphite, 30,Items.silicon, 40));
@@ -49,7 +65,7 @@ public class XenPayloadBlocks{
             size = 5;
             payloadLimit = 5.5f;
             canOverdrive = true;
-            moveTime = 60f;
+            moveTime = 120f;
         }};
 
         smallPayloadConstructor = new Constructor("small-payload-constructor"){{
