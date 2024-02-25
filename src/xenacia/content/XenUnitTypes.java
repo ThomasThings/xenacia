@@ -1566,6 +1566,7 @@ public class XenUnitTypes {
                 y = 5.5f;
                 mirror = true;
                 alternate = false;
+                controllable = false;
 
                 shootY = 3.25f;
                 rotate = true;
@@ -1687,11 +1688,12 @@ public class XenUnitTypes {
                                     weapons.add(new Weapon("xenacia-eurgi-sentry-tractor-beam"){{
                                         x = 0f;
                                         y = 0f;
-                                        mirror = false;
+                                        mirror = true;
+                                        alternate = false;
 
-                                        shootY = 5f;
+                                        shootY = 3.25f;
                                         rotate = true;
-                                        rotateSpeed = 3f;
+                                        rotateSpeed = 4f;
                                         recoil = 0;
 
                                         shootSound = Sounds.tractorbeam;
@@ -1701,12 +1703,12 @@ public class XenUnitTypes {
                                         parentizeEffects = true;
 
                                         bullet = new PointLaserBulletType(){{
-                                            damage = 6f;
+                                            damage = 3f;
                                             buildingDamageMultiplier = 0.1f;
-                                            knockback = -1.5f;
-                                            healAmount = 2.5f;
-                                            maxRange = 180f;
-                                            sprite = "xenacia-heal-point-laser";
+                                            knockback = -4f;
+                                            healAmount = 4f;
+                                            maxRange = 80f;
+                                            sprite = "xenacia-heal-point-laser-small";
 
                                             color = Color.valueOf("ffffff");
                                             trailColor = Color.valueOf("98ffa9");
