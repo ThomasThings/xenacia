@@ -1583,6 +1583,7 @@ public class XenUnitTypes {
                     buildingDamageMultiplier = 0.1f;
                     knockback = -4f;
                     healAmount = 4f;
+                    range = 0;
                     maxRange = 80f;
                     sprite = "xenacia-heal-point-laser-small";
 
