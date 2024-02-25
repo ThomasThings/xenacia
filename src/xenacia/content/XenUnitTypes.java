@@ -2,7 +2,6 @@ package xenacia.content;
 
 import arc.graphics.Color;
 import arc.graphics.g2d.Lines;
-import arc.math.Interp;
 import arc.math.geom.Rect;
 import mindustry.ai.UnitCommand;
 import mindustry.ai.types.BuilderAI;
@@ -13,7 +12,6 @@ import mindustry.content.StatusEffects;
 import mindustry.entities.Effect;
 import mindustry.entities.abilities.EnergyFieldAbility;
 import mindustry.entities.abilities.RepairFieldAbility;
-import mindustry.entities.abilities.SpawnDeathAbility;
 import mindustry.entities.abilities.UnitSpawnAbility;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.MultiEffect;
@@ -1544,58 +1542,6 @@ public class XenUnitTypes {
 
             abilities.add(new RepairFieldAbility(20f, 240, 120f));
         }};
-        eurgiSentry = new UnitType("eurgi-sentry") {{
-            constructor = UnitEntity::create;
-            outlineColor = Color.valueOf("231b25");
-            health = 550f;
-            armor = 5f;
-            hitSize = 8f;
-            speed = 0f;
-            rotateSpeed = 0f;
-            hovering = true;
-            shadowElevation = 0.05f;
-            useEngineElevation = false;
-            lowAltitude = true;
-
-            itemCapacity = 0;
-
-            engineSize = 0f;
-            engineOffset = 0f;
-
-            parts.add(new HoverPart(){{
-                x = 0f;
-                y = 0f;
-                mirror = false;
-                radius = 8f;
-                phase = 90f;
-                stroke = 1.5f;
-                layerOffset = -0.001f;
-                color = Color.valueOf("98ffa9");
-            }});
-        }};
-        eurgiSentryCarrierMissile = new MissileUnitType("eurgi-sentry-carrier-missile"){{
-            targetAir = false;
-            speed = 3f;
-            maxRange = 6f;
-            lifetime = 60f * 1.4f;
-            outlineColor = Color.valueOf("231b25");
-            engineColor = trailColor = Color.valueOf("98ffa9");
-            engineLayer = Layer.effect;
-            health = 150;
-            loopSoundVolume = 0.1f;
-
-            weapons.add(new Weapon(){{
-                shootCone = 360f;
-                mirror = false;
-                reload = 1f;
-                shootOnDeath = true;
-                bullet = new ExplosionBulletType(110f, 25f){{
-                    shootEffect = Fx.massiveExplosion;
-                    collidesAir = false;
-                }};
-                abilities.add(new SpawnDeathAbility(eurgiSentry, 1, 2f));
-            }});
-        }};
         eurgi = new UnitType("eurgi") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("231b25");
@@ -1683,15 +1629,106 @@ public class XenUnitTypes {
                 y = 25f;
                 rotate = false;
                 reload = 900f;
-                layerOffset = -0.001f;
 
                 bullet = new BulletType(){{
                     shootEffect = Fx.shootBig;
                     smokeEffect = Fx.shootBigSmoke2;
                     keepVelocity = false;
                     collidesAir = false;
+                    shootCone = 180;
 
-                    spawnUnit = eurgiSentryCarrierMissile;
+                    spawnUnit = eurgiSentryCarrierMissile = new MissileUnitType("eurgi-sentry-carrier-missile"){{
+                        targetAir = false;
+                        speed = 3f;
+                        maxRange = 6f;
+                        lifetime = 60f * 1.4f;
+                        outlineColor = Color.valueOf("231b25");
+                        engineColor = trailColor = Color.valueOf("98ffa9");
+                        engineLayer = Layer.effect;
+                        health = 150;
+                        loopSoundVolume = 0.1f;
+
+                        weapons.add(new Weapon(){{
+                            shootCone = 360f;
+                            mirror = false;
+                            reload = 1f;
+                            shootOnDeath = true;
+                            bullet = new ExplosionBulletType(110f, 25f){{
+                                shootEffect = Fx.massiveExplosion;
+                                collidesAir = false;
+                            }};
+                        }});
+                        weapons.add(new Weapon(){{
+                            shootCone = 360f;
+                            mirror = false;
+                            reload = 1f;
+                            shootOnDeath = true;
+                            bullet = new ExplosionBulletType(110f, 25f){{
+                                spawnUnit = eurgiSentry = new UnitType("eurgi-sentry") {{
+                                    constructor = UnitEntity::create;
+                                    outlineColor = Color.valueOf("231b25");
+                                    playerControllable = false;
+                                    logicControllable = false;
+                                    health = 300f;
+                                    armor = 1f;
+                                    hitSize = 8f;
+                                    speed = 0f;
+                                    rotateSpeed = 0f;
+                                    hovering = true;
+                                    shadowElevation = 0.05f;
+                                    useEngineElevation = false;
+                                    lowAltitude = true;
+
+                                    itemCapacity = 0;
+
+                                    engineSize = 0f;
+                                    engineOffset = 0f;
+
+                                    weapons.add(new Weapon("xenacia-eurgi-sentry-tractor-beam"){{
+                                        x = 0f;
+                                        y = 0f;
+                                        mirror = false;
+
+                                        shootY = 5f;
+                                        rotate = true;
+                                        rotateSpeed = 3f;
+                                        recoil = 0;
+
+                                        shootSound = Sounds.tractorbeam;
+
+                                        continuous = true;
+                                        alwaysContinuous = true;
+                                        parentizeEffects = true;
+
+                                        bullet = new PointLaserBulletType(){{
+                                            damage = 6f;
+                                            buildingDamageMultiplier = 0.1f;
+                                            knockback = -1.5f;
+                                            healAmount = 2.5f;
+                                            maxRange = 180f;
+                                            sprite = "xenacia-heal-point-laser";
+
+                                            color = Color.valueOf("ffffff");
+                                            trailColor = Color.valueOf("98ffa9");
+                                            hitColor = Color.valueOf("98ffa9");
+                                            hitEffect = Fx.pointHit;
+                                        }};
+                                    }});
+
+                                    parts.add(new HoverPart(){{
+                                        x = 0f;
+                                        y = 0f;
+                                        mirror = false;
+                                        radius = 8f;
+                                        phase = 90f;
+                                        stroke = 1.5f;
+                                        layerOffset = -0.001f;
+                                        color = Color.valueOf("98ffa9");
+                                    }});
+                                }};
+                            }};
+                        }});
+                    }};
                 }};
             }});
         }};
