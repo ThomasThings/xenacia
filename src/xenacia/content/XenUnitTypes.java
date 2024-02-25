@@ -1566,7 +1566,6 @@ public class XenUnitTypes {
                 y = 5.5f;
                 mirror = true;
                 alternate = false;
-                controllable = false;
 
                 shootY = 3.25f;
                 rotate = true;
