@@ -1616,6 +1616,7 @@ public class XenUnitTypes {
                     knockback = -1.5f;
                     healAmount = 2.5f;
                     maxRange = 180f;
+                    range = 0;
                     sprite = "xenacia-heal-point-laser";
 
                     color = Color.valueOf("ffffff");
