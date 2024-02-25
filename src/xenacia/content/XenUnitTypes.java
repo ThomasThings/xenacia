@@ -1706,7 +1706,7 @@ public class XenUnitTypes {
                                         bullet = new PointLaserBulletType(){{
                                             damage = 3f;
                                             buildingDamageMultiplier = 0.1f;
-                                            knockback = -4f;
+                                            knockback = -2f;
                                             healAmount = 4f;
                                             maxRange = 80f;
                                             sprite = "xenacia-heal-point-laser-small";
