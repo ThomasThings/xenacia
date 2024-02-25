@@ -1671,6 +1671,8 @@ public class XenUnitTypes {
                                     outlineColor = Color.valueOf("231b25");
                                     playerControllable = false;
                                     logicControllable = false;
+                                    aiControllable = false;
+                                    controllable = false;
                                     health = 300f;
                                     armor = 1f;
                                     hitSize = 8f;
