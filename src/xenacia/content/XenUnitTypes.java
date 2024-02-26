@@ -1674,6 +1674,8 @@ public class XenUnitTypes {
                                 spawnUnit = eurgiSentry = new UnitType("eurgi-sentry") {{
                                     constructor = UnitEntity::create;
                                     outlineColor = Color.valueOf("231b25");
+                                    playerControllable = false;
+                                    logicControllable = false;
                                     hidden = true;
                                     health = 300f;
                                     armor = 1f;
@@ -1738,12 +1740,12 @@ public class XenUnitTypes {
                     }};
                 }};
             }});
+
+            playerControllable = true;
+            logicControllable = true;
+            aiController = enavo.aiController;
         }};
-        eurgiSentry.playerControllable = false;
-        eurgiSentry.logicControllable = false;
-        eurgi.playerControllable = true;
-        eurgi.logicControllable = true;
-        eurgi.aiController = enavo.aiController;
+
 
         aid = new UnitType("aid") {{
             constructor = TankUnit::create;
