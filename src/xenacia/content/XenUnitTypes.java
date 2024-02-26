@@ -1566,6 +1566,7 @@ public class XenUnitTypes {
                 y = 5.5f;
                 mirror = true;
                 alternate = false;
+                playerControllable = false;
 
                 shootY = 3.25f;
                 rotate = true;
@@ -1598,6 +1599,7 @@ public class XenUnitTypes {
                 y = -10.875f;
                 mirror = true;
                 alternate = false;
+                playerControllable = false;
 
                 shootY = 5f;
                 rotate = true;
