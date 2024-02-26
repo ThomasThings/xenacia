@@ -1667,7 +1667,7 @@ public class XenUnitTypes {
                             mirror = false;
                             reload = 1f;
                             shootOnDeath = true;
-                            bullet = new ExplosionBulletType(110f, 25f){{
+                            bullet = new ExplosionBulletType(0f, 0f){{
                                 spawnUnit = eurgiSentry = new UnitType("eurgi-sentry") {{
                                     constructor = UnitEntity::create;
                                     outlineColor = Color.valueOf("231b25");
@@ -1675,6 +1675,7 @@ public class XenUnitTypes {
                                     logicControllable = false;
                                     aiControllable = false;
                                     controllable = false;
+                                    hidden = true;
                                     health = 300f;
                                     armor = 1f;
                                     hitSize = 8f;
