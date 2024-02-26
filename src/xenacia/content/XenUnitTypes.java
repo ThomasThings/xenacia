@@ -1545,6 +1545,7 @@ public class XenUnitTypes {
         eurgi = new UnitType("eurgi") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("231b25");
+            playerControllable = true;
             health = 6600f;
             armor = 12f;
             hitSize = 50f;
