@@ -1548,8 +1548,8 @@ public class XenUnitTypes {
             health = 6600f;
             armor = 12f;
             hitSize = 50f;
-            speed = 0.6f;
-            rotateSpeed = 0.6f;
+            speed = 0.7f;
+            rotateSpeed = 0.8f;
 
             itemCapacity = 110;
 
