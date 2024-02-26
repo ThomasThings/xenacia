@@ -1344,7 +1344,7 @@ public class XenUnitTypes {
         natuon = new UnitType("natuon") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("231b25");
-            health = 650f;
+            health = 550f;
             armor = 0f;
             hitSize = 14f;
             speed = 0.7f;
@@ -1432,8 +1432,8 @@ public class XenUnitTypes {
             health = 2100f;
             armor = 7f;
             hitSize = 30f;
-            speed = 0.6f;
-            rotateSpeed = 2.5f;
+            speed = 0.7f;
+            rotateSpeed = 2f;
 
             itemCapacity = 40;
 
@@ -1544,6 +1544,7 @@ public class XenUnitTypes {
 
             abilities.add(new RepairFieldAbility(20f, 240, 120f));
         }};
+        //in the future, add a "counter" similar to erekir drills to indicate reload status of missile launcher
         eurgi = new UnitType("eurgi") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("231b25");
@@ -1551,7 +1552,7 @@ public class XenUnitTypes {
             armor = 12f;
             hitSize = 50f;
             speed = 0.7f;
-            rotateSpeed = 0.8f;
+            rotateSpeed = 0.95f;
 
             itemCapacity = 110;
 

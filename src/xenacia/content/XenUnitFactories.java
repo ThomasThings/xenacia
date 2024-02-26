@@ -177,7 +177,7 @@ public class XenUnitFactories{
             consumePower(6f);
             consumeItems(with(Items.silicon, 800, XenItems.iron, 600, XenItems.aluminum, 600,Items.graphite, 500,Items.titanium, 250));
 
-            constructTime = 60f * 25f;
+            constructTime = 60f * 75f;
 
             upgrades.addAll(
                     new UnitType[]{XenUnitTypes.haul, XenUnitTypes.envoy},
