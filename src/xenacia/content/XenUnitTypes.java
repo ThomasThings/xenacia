@@ -1743,8 +1743,7 @@ public class XenUnitTypes {
         eurgiSentry.logicControllable = false;
         eurgi.playerControllable = true;
         eurgi.logicControllable = true;
-        eurgi.aiController = null;
-        eurgi.controller = null;
+        eurgi.aiController = enavo.aiController;
 
         aid = new UnitType("aid") {{
             constructor = TankUnit::create;
