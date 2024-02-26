@@ -1360,6 +1360,7 @@ public class XenUnitTypes {
             buildSpeed = 0.5f;
 
             faceTarget = false;
+            rotateToBuilding = false;
             weapons.add(new Weapon("natuon-mine"){{
                 top = false;
                 x = 0f;
@@ -1444,6 +1445,7 @@ public class XenUnitTypes {
             buildSpeed = 0.5f;
 
             faceTarget = false;
+            rotateToBuilding = false;
             weapons.add(new Weapon("enavo-mine"){{
                 top = false;
                 x = 0f;
@@ -1545,7 +1547,6 @@ public class XenUnitTypes {
         eurgi = new UnitType("eurgi") {{
             constructor = UnitWaterMove::create;
             outlineColor = Color.valueOf("231b25");
-            playerControllable = true;
             health = 6600f;
             armor = 12f;
             hitSize = 50f;
@@ -1562,6 +1563,7 @@ public class XenUnitTypes {
             buildSpeed = 0.5f;
 
             faceTarget = false;
+            rotateToBuilding = false;
             weapons.add(new Weapon("xenacia-eurgi-small-tractor-beam"){{
                 x = 12f;
                 y = 5.5f;
@@ -1672,10 +1674,6 @@ public class XenUnitTypes {
                                 spawnUnit = eurgiSentry = new UnitType("eurgi-sentry") {{
                                     constructor = UnitEntity::create;
                                     outlineColor = Color.valueOf("231b25");
-                                    playerControllable = false;
-                                    logicControllable = false;
-                                    aiControllable = false;
-                                    controllable = false;
                                     hidden = true;
                                     health = 300f;
                                     armor = 1f;
@@ -1741,6 +1739,8 @@ public class XenUnitTypes {
                 }};
             }});
         }};
+        eurgiSentry.playerControllable = false;
+        eurgiSentry.logicControllable = false;
 
         aid = new UnitType("aid") {{
             constructor = TankUnit::create;
