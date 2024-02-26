@@ -180,6 +180,8 @@ public class XenUnitFactories{
             constructTime = 60f * 25f;
 
             upgrades.addAll(
+                    new UnitType[]{XenUnitTypes.haul, XenUnitTypes.envoy},
+                    new UnitType[]{XenUnitTypes.enavo, XenUnitTypes.eurgi}
             );
         }};
     }
