@@ -9,6 +9,8 @@ import mindustry.content.*;
 
 public class XenEnvironmentTiles{
     public static Block
+            //bankstone
+            bankstoneFloor, bankstoneWall,
             //volcanic
             magmaFloor, magmaRock, magmaCrack, volcanicRock, volcanicBoulder, volcanicRockWall, magmaVent, volcanicVent,
             //scorched soil
@@ -24,6 +26,15 @@ public class XenEnvironmentTiles{
             //ores
             oreIron, oreAluminum, orePeat, oreLithium, oreNeodymium, oreCobalt, oreChronatintilium;
     public static void load(){
+        //bankstone
+        bankstoneFloor = new Floor("bankstone-floor"){{
+            variants = 6;
+            mapColor = Color.valueOf("b3b8c4");
+        }};
+        bankstoneWall = new StaticWall("bankstone-wall"){{
+            variants = 4;
+            mapColor = Color.valueOf("d1d6e0");
+        }};
         //volcanic
         magmaFloor = new Floor("magma-floor"){{
             variants = 4;
