@@ -1,4 +1,4 @@
-displayName: "Xenacia"
+displayName: "Legacy Xenacia"
 
 name: "xenacia"
 
@@ -6,7 +6,7 @@ author: "Thomas's Things"
 
 main: "xenacia.XenaciaMod"
 
-description: "A mod that adds an entire new campaign, larger than serpulo. Still in Pre-Aplha stages. Currently being Re-worked from the ground up."
+description: "The legacy version of xenacia. No current plans to resume development."
 
 version: 0.1.3.24
 
