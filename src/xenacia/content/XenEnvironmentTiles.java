@@ -1,16 +1,20 @@
 package xenacia.content;
 
-import arc.graphics.*;
-import mindustry.graphics.*;
-import mindustry.world.*;
+import arc.graphics.Color;
+import mindustry.content.Liquids;
+import mindustry.content.StatusEffects;
+import mindustry.gen.Sounds;
+import mindustry.graphics.CacheLayer;
+import mindustry.world.Block;
 import mindustry.world.blocks.environment.*;
-import mindustry.world.meta.*;
-import mindustry.content.*;
+import mindustry.world.meta.Attribute;
 
 public class XenEnvironmentTiles{
     public static Block
             //bankstone
             bankstoneFloor, bankstoneWall,
+            //lush grass
+            lushGrass, lushGrassWall, lushDirt, lushDirtWall, lushMud,
             //volcanic
             magmaFloor, magmaRock, magmaCrack, volcanicRock, volcanicBoulder, volcanicRockWall, magmaVent, volcanicVent,
             //scorched soil
@@ -26,9 +30,38 @@ public class XenEnvironmentTiles{
             //ores
             oreIron, oreAluminum, orePeat, oreLithium, oreNeodymium, oreCobalt, oreChronatintilium;
     public static void load(){
+        //lush grass
+        lushGrass = new Floor("lush-grass"){{
+            variants = 4;
+            mapColor = Color.valueOf("7bc077");
+        }};
+        lushGrassWall = new StaticWall("lush-grass-wall"){{
+            variants = 3;
+            mapColor = Color.valueOf("5ba164");
+        }};
+        lushDirt = new Floor("lush-dirt"){{
+            variants = 4;
+            mapColor = Color.valueOf("7bc077");
+        }};
+        lushDirtWall = new StaticWall("lush-grass-wall"){{
+            variants = 3;
+            mapColor = Color.valueOf("5ba164");
+        }};
+        lushMud = new Floor("lush-mud"){{
+            speedMultiplier = 0.6f;
+            variants = 3;
+            status = StatusEffects.muddy;
+            statusDuration = 30f;
+            attributes.set(Attribute.water, 1f);
+            cacheLayer = CacheLayer.mud;
+            walkSound = Sounds.mud;
+            walkSoundVolume = 0.08f;
+            walkSoundPitchMin = 0.4f;
+            walkSoundPitchMax = 0.5f;
+        }};
         //bankstone
         bankstoneFloor = new Floor("bankstone-floor"){{
-            variants = 6;
+            variants = 4;
             mapColor = Color.valueOf("b3b8c4");
         }};
         bankstoneWall = new StaticWall("bankstone-wall"){{
