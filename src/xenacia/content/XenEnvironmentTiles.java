@@ -11,7 +11,7 @@ import mindustry.world.meta.Attribute;
 
 public class XenEnvironmentTiles{
     public static Block
-            lushGrass,
+            lushGrass;
     public static void load(){
         lushGrass = new Floor("lush-grass"){{
             variants = 4;
