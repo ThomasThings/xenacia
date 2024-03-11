@@ -43,7 +43,7 @@ public class XenEnvironmentTiles{
             variants = 4;
             mapColor = Color.valueOf("7bc077");
         }};
-        lushDirtWall = new StaticWall("lush-grass-wall"){{
+        lushDirtWall = new StaticWall("lush-dirt-wall"){{
             variants = 3;
             mapColor = Color.valueOf("5ba164");
         }};
