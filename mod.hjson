@@ -1,4 +1,4 @@
-displayName: "Legacy Xenacia"
+displayName: "Xenacia"
 
 name: "xenacia"
 
@@ -6,9 +6,9 @@ author: "Thomas's Things"
 
 main: "xenacia.XenaciaMod"
 
-description: "The legacy version of xenacia. No current plans to resume development."
+description: "A mod with ambitious goals, and a fresh start."
 
-version: 0.1.3.24
+version: nv0.0
 
 minGameVersion: 146
 
