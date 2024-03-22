@@ -14,7 +14,7 @@ public class XenEnvironmentTiles{
     public static Block
             hydrex, deepHydrex,
             lushGrass, wetLushGrass, lushGrassWall,
-            silicateSand, wetSilicateSand,
+            silicateSandFloor, wetSilicateSand,
             lushDirt, lushDirtWall, lushMud, deepLushMud, lushMuddyWall,
             bankstone, bankstoneWall;
 
@@ -65,7 +65,7 @@ public class XenEnvironmentTiles{
             mapColor = Color.valueOf("73c688");
         }};
 
-        silicateSand = new Floor("silicate-sand"){{
+        silicateSandFloor = new Floor("silicate-sand-floor"){{
             variants = 4;
             mapColor = Color.valueOf("dab798");
             itemDrop = XenItems.silicateSand;
@@ -115,7 +115,7 @@ public class XenEnvironmentTiles{
             mapColor = Color.valueOf("473e50");
         }};
         lushMuddyWall = new StaticWall("lush-muddy-wall"){{
-            variants = 4;
+            variants = 2;
             mapColor = Color.valueOf("5d3b2e");
         }};
 
