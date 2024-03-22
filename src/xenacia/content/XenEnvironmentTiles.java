@@ -71,7 +71,6 @@ public class XenEnvironmentTiles{
             itemDrop = XenItems.silicateSand;
         }};
         wetSilicateSand = new ShallowLiquid("wet-silicate-sand"){{
-            variants = 4;
             speedMultiplier = 0.8f;
             statusDuration = 50f;
             albedo = 0.9f;
