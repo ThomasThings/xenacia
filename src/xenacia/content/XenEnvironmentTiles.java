@@ -47,7 +47,7 @@ public class XenEnvironmentTiles{
         }};
 
         lushGrass = new Floor("lush-grass"){{
-            variants = 4;
+            variants = 5;
             mapColor = Color.valueOf("63a774");
         }};
         wetLushGrass = new ShallowLiquid("wet-lush-grass"){{
@@ -58,6 +58,7 @@ public class XenEnvironmentTiles{
             liquidMultiplier = 0.5f;
             albedo = 0.9f;
             supportsOverlay = true;
+            cacheLayer = CacheLayer.water;
             mapColor = Color.valueOf("5e909c");
         }};
         lushGrassWall = new StaticWall("lush-grass-wall"){{
@@ -110,6 +111,7 @@ public class XenEnvironmentTiles{
             liquidMultiplier = 0.4f;
             albedo = 0.9f;
             supportsOverlay = true;
+            cacheLayer = CacheLayer.water;
             mapColor = Color.valueOf("473e50");
         }};
         lushMuddyWall = new StaticWall("lush-muddy-wall"){{
@@ -120,6 +122,7 @@ public class XenEnvironmentTiles{
         bankstone = new Floor("bankstone"){{
             variants = 4;
             mapColor = Color.valueOf("a4a8b6");
+            blendGroup = hydrex;
         }};
         bankstoneWall = new StaticWall("bankstone-wall"){{
             variants = 3;
