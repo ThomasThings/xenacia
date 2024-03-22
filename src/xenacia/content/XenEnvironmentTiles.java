@@ -74,8 +74,6 @@ public class XenEnvironmentTiles{
             variants = 4;
             speedMultiplier = 0.8f;
             statusDuration = 50f;
-            liquidDrop = XenLiquids.hydrex;
-            liquidMultiplier = 0.5f;
             albedo = 0.9f;
             supportsOverlay = true;
             mapColor = Color.valueOf("8e96aa");
