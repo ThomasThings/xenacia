@@ -75,6 +75,7 @@ public class XenEnvironmentTiles{
             statusDuration = 50f;
             albedo = 0.9f;
             supportsOverlay = true;
+            cacheLayer = CacheLayer.water;
             mapColor = Color.valueOf("8e96aa");
         }};
 
