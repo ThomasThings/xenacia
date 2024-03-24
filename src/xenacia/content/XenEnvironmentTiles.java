@@ -12,16 +12,16 @@ import mindustry.world.meta.Attribute;
 
 public class XenEnvironmentTiles{
     public static Block
-            hydrex, deepHydrex,
+            shallowHydrex, deepHydrex,
             lushGrass, wetLushGrass, lushGrassWall,
             silicateSandFloor, wetSilicateSand,
             lushDirt, lushDirtWall, lushMud, deepLushMud, lushMuddyWall,
             bankstone, bankstoneWall;
 
     public static void load(){
-        hydrex = new Floor("hydrex"){{
+        shallowHydrex = new Floor("shallow-hydrex"){{
             speedMultiplier = 0.5f;
-            variants = 0;
+            variants = 2;
             status = StatusEffects.wet;
             statusDuration = 90f;
             liquidDrop = XenLiquids.hydrex;
@@ -33,7 +33,7 @@ public class XenEnvironmentTiles{
         }};
         deepHydrex = new Floor("deep-hydrex"){{
             speedMultiplier = 0.2f;
-            variants = 0;
+            variants = 2;
             liquidDrop = XenLiquids.hydrex;
             liquidMultiplier = 1.5f;
             isLiquid = true;
@@ -51,7 +51,7 @@ public class XenEnvironmentTiles{
             mapColor = Color.valueOf("63a774");
         }};
         wetLushGrass = new ShallowLiquid("wet-lush-grass"){{
-            variants = 0;
+            variants = 4;
             speedMultiplier = 0.8f;
             statusDuration = 50f;
             liquidDrop = XenLiquids.hydrex;
@@ -72,6 +72,7 @@ public class XenEnvironmentTiles{
             itemDrop = XenItems.silicateSand;
         }};
         wetSilicateSand = new ShallowLiquid("wet-silicate-sand"){{
+            variants = 4;
             speedMultiplier = 0.8f;
             statusDuration = 50f;
             albedo = 0.9f;
@@ -106,7 +107,7 @@ public class XenEnvironmentTiles{
             mapColor = Color.valueOf("462924");
         }};
         deepLushMud = new ShallowLiquid("deep-lush-mud"){{
-            variants = 0;
+            variants = 4;
             speedMultiplier = 0.4f;
             statusDuration = 50f;
             liquidDrop = XenLiquids.hydrex;
