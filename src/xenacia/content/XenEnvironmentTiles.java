@@ -75,6 +75,8 @@ public class XenEnvironmentTiles{
             speedMultiplier = 0.8f;
             statusDuration = 50f;
             albedo = 0.9f;
+            liquidDrop = XenLiquids.hydrex;
+            liquidMultiplier = 0.5f;
             supportsOverlay = true;
             cacheLayer = CacheLayer.water;
             mapColor = Color.valueOf("8e96aa");
@@ -122,7 +124,6 @@ public class XenEnvironmentTiles{
         bankstone = new Floor("bankstone"){{
             variants = 4;
             mapColor = Color.valueOf("a4a8b6");
-            blendGroup = hydrex;
         }};
         bankstoneWall = new StaticWall("bankstone-wall"){{
             variants = 3;
