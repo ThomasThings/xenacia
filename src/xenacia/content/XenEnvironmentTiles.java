@@ -50,8 +50,10 @@ public class XenEnvironmentTiles{
             variants = 5;
             mapColor = Color.valueOf("63a774");
         }};
-        wetLushGrass = new ShallowLiquid("wet-lush-grass"){{
-            variants = 4;
+        wetLushGrass = new Floor("wet-lush-grass"){{
+            variants = 5;
+            isLiquid = true;
+            shallow = true;
             speedMultiplier = 0.8f;
             statusDuration = 50f;
             liquidDrop = XenLiquids.hydrex;
