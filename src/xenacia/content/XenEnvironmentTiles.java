@@ -6,7 +6,6 @@ import mindustry.gen.Sounds;
 import mindustry.graphics.CacheLayer;
 import mindustry.world.Block;
 import mindustry.world.blocks.environment.Floor;
-import mindustry.world.blocks.environment.ShallowLiquid;
 import mindustry.world.blocks.environment.StaticWall;
 import mindustry.world.meta.Attribute;
 
@@ -73,8 +72,10 @@ public class XenEnvironmentTiles{
             mapColor = Color.valueOf("dab798");
             itemDrop = XenItems.silicateSand;
         }};
-        wetSilicateSand = new ShallowLiquid("wet-silicate-sand"){{
+        wetSilicateSand = new Floor("wet-silicate-sand"){{
             variants = 4;
+            isLiquid = true;
+            shallow = true;
             speedMultiplier = 0.8f;
             statusDuration = 50f;
             albedo = 0.9f;
@@ -108,7 +109,9 @@ public class XenEnvironmentTiles{
             walkSoundPitchMax = 0.5f;
             mapColor = Color.valueOf("462924");
         }};
-        deepLushMud = new ShallowLiquid("deep-lush-mud"){{
+        deepLushMud = new Floor("deep-lush-mud"){{
+            isLiquid = true;
+            shallow = true;
             variants = 4;
             speedMultiplier = 0.4f;
             statusDuration = 50f;
