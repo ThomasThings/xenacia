@@ -3,13 +3,15 @@ package xenacia.content;
 import arc.struct.Seq;
 import mindustry.type.Category;
 import mindustry.world.Block;
+import mindustry.world.blocks.payloads.PayloadConveyor;
 import mindustry.world.blocks.units.UnitFactory;
 
 import static mindustry.type.ItemStack.with;
 
 public class XenUnitBlocks{
     public static Block
-            assistantConstructor;
+            assistantConstructor,
+            payloadMover;
 
     public static void load(){
         assistantConstructor = new UnitFactory("assistant-constructor"){{
@@ -19,6 +21,13 @@ public class XenUnitBlocks{
             );
             size = 2;
             consumePower(0.5f);
+        }};
+        payloadMover = new PayloadConveyor("payload-mover"){{
+            requirements(Category.units, with(XenItems.alamex, 10, XenItems.torren, 5));
+            moveTime = 60f;
+            health = 450;
+            underBullets = true;
+            size = 2;
         }};
     }
 }
