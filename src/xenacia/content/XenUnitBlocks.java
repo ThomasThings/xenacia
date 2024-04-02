@@ -12,7 +12,7 @@ public class XenUnitBlocks{
             assistantConstructor;
 
     public static void load(){
-        assistantConstructor = new UnitFactory("ground-factory"){{
+        assistantConstructor = new UnitFactory("asistant-constructor"){{
             requirements(Category.units, with(XenItems.alamex, 50, XenItems.silicium, 80));
             plans = Seq.with(
                     new UnitPlan(XenUnitTypes.awren, 60f * 25, with(XenItems.silicium, 25, XenItems.alamex, 20))
