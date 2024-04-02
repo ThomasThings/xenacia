@@ -44,13 +44,13 @@ public class XenUnitTypes{
             mineSpeed = 6f;
             mineTier = 1;
             buildSpeed = 0.2f;
-            buildBeamOffset = 2f;
+            buildBeamOffset = 4f;
 
             itemCapacity = 20;
             isEnemy = false;
 
             engineSize = 1.5f;
-            engineOffset = 2.5f;
+            engineOffset = 3.5f;
         }};
 
         awren = new UnitType("awren") {{
