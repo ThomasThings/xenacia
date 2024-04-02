@@ -31,7 +31,7 @@ public class XenUnitTypes{
             armor = 1f;
             hitSize = 6f;
             speed = 3f;
-            rotateSpeed = 5f;
+            rotateSpeed = 15f;
             flying = true;
             lowAltitude = true;
             accel = 0.2f;
@@ -49,8 +49,8 @@ public class XenUnitTypes{
             itemCapacity = 20;
             isEnemy = false;
 
-            engineSize = 1.5f;
-            engineOffset = 3.5f;
+            engineSize = 1.8f;
+            engineOffset = 5.5f;
         }};
 
         awren = new UnitType("awren") {{
