@@ -4,6 +4,7 @@ import arc.graphics.Color;
 import arc.math.geom.Rect;
 import mindustry.ai.types.BuilderAI;
 import mindustry.gen.TankUnit;
+import mindustry.gen.UnitEntity;
 import mindustry.type.UnitType;
 
 public class XenUnitTypes{
@@ -22,6 +23,7 @@ public class XenUnitTypes{
     public static void load(){
 
         radix = new UnitType("radix") {{
+            constructor = UnitEntity::create;
             outlineColor = Color.valueOf("40435a");
             controller = u -> new BuilderAI(true, 500);
             coreUnitDock = true;
