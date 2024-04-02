@@ -3,6 +3,7 @@ package xenacia.content;
 import arc.graphics.Color;
 import arc.math.geom.Rect;
 import mindustry.ai.types.BuilderAI;
+import mindustry.ai.types.MinerAI;
 import mindustry.gen.TankUnit;
 import mindustry.gen.UnitEntity;
 import mindustry.type.UnitType;
@@ -56,6 +57,7 @@ public class XenUnitTypes{
         awren = new UnitType("awren") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("40435a");
+            controller = u -> new MinerAI();
             health = 350f;
             armor = 2f;
             hitSize = 10f;
@@ -63,6 +65,12 @@ public class XenUnitTypes{
             rotateSpeed = 3.5f;
             omniMovement = false;
             rotateMoveFirst = true;
+
+            mineWalls = true;
+            mineFloor = true;
+            mineSpeed = 6f;
+            mineTier = 2;
+            mineRange = 40f;
 
             itemCapacity = 50;
             isEnemy = false;
