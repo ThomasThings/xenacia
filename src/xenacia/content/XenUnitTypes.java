@@ -50,7 +50,7 @@ public class XenUnitTypes{
             isEnemy = false;
 
             engineSize = 1.8f;
-            engineOffset = 5.5f;
+            engineOffset = 4.75f;
         }};
 
         awren = new UnitType("awren") {{
