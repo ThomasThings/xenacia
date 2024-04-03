@@ -6,6 +6,7 @@ import mindustry.gen.Sounds;
 import mindustry.graphics.CacheLayer;
 import mindustry.world.Block;
 import mindustry.world.blocks.environment.Floor;
+import mindustry.world.blocks.environment.OreBlock;
 import mindustry.world.blocks.environment.StaticWall;
 import mindustry.world.meta.Attribute;
 
@@ -15,7 +16,8 @@ public class XenEnvironmentTiles{
             lushGrass, wetLushGrass, lushGrassWall,
             silicateSandFloor, wetSilicateSand,
             lushDirt, lushDirtWall, lushMud, deepLushMud, lushMuddyWall,
-            bankstone, bankstoneWall;
+            bankstone, bankstoneWall,
+            oreAlamex, oreTorren;
 
     public static void load(){
         shallowHydrex = new Floor("shallow-hydrex"){{
@@ -134,6 +136,11 @@ public class XenEnvironmentTiles{
         bankstoneWall = new StaticWall("bankstone-wall"){{
             variants = 3;
             mapColor = Color.valueOf("c7ccd7");
+        }};
+
+        oreAlamex = new OreBlock(XenItems.alamex){{
+        }};
+        oreTorren = new OreBlock(XenItems.torren){{
         }};
     }
 }
