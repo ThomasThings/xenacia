@@ -138,11 +138,13 @@ public class XenEnvironmentTiles{
             mapColor = Color.valueOf("c7ccd7");
         }};
 
-        oreAlamex = new OreBlock(XenItems.alamex){{
+        oreAlamex = new OreBlock("ore-alamex"){{
+            itemDrop = XenItems.alamex;
             oreDefault = true;
             variants = 4;
         }};
-        oreTorren = new OreBlock(XenItems.torren){{
+        oreTorren = new OreBlock("ore-torren"){{
+            itemDrop = XenItems.torren;
             oreDefault = true;
             variants = 4;
         }};
