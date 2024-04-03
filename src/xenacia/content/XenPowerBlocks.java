@@ -54,7 +54,7 @@ public class XenPowerBlocks{
         }};
         smallBioBurner = new ConsumeGenerator("small-bio-burner"){{
             requirements(Category.power, with(XenItems.alamex, 15));
-            powerProduction = 5f;
+            powerProduction = 1f;
             itemDuration = 60f;
 
             ambientSound = Sounds.smelter;
@@ -72,7 +72,7 @@ public class XenPowerBlocks{
         bioBurner = new ConsumeGenerator("bio-burner"){{
             requirements(Category.power, with(XenItems.alamex, 35, XenItems.torren, 20, XenItems.silicium, 20));
             size = 2;
-            powerProduction = 10f;
+            powerProduction = 2.5f;
             itemDuration = 120f;
 
             ambientSound = Sounds.smelter;
@@ -90,7 +90,7 @@ public class XenPowerBlocks{
         solarCollecter = new SolarGenerator("solar-collector"){{
             requirements(Category.power, with(XenItems.alamex, 35, XenItems.silicium, 55));
             size = 2;
-            powerProduction = 1.5f;
+            powerProduction = 1f;
         }};
     }
 }
