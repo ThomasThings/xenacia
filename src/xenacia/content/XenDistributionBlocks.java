@@ -2,7 +2,6 @@ package xenacia.content;
 
 import mindustry.type.Category;
 import mindustry.world.Block;
-import mindustry.world.blocks.distribution.Conveyor;
 import mindustry.world.blocks.distribution.Duct;
 import mindustry.world.blocks.distribution.Junction;
 import mindustry.world.blocks.distribution.Router;
@@ -29,7 +28,6 @@ public class XenDistributionBlocks{
             speed = 30;
             capacity = 5;
             health = 80;
-            ((Conveyor)itemTunnel).junctionReplacement = this;
         }};
     }
 }
