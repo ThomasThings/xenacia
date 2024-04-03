@@ -16,7 +16,7 @@ public class XenDistributionBlocks{
         itemTunnel = new Duct("item-tunnel"){{
             requirements(Category.distribution, with(XenItems.alamex, 1));
             health = 70;
-            speed = 8f;
+            speed = 6f;
         }};
         itemTunnelRouter = new Router("item-tunnel-router"){{
             requirements(Category.distribution, with(XenItems.alamex, 5));
