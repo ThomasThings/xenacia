@@ -43,7 +43,7 @@ public class XenPowerBlocks{
         }};
         largeLinkBattery = new Battery("large-link-battery"){{
             requirements(Category.power, with(XenItems.alamex, 35, XenItems.torren, 40, XenItems.silicium, 30));
-            size = 2;
+            size = 3;
             consumePowerBuffered(80000f);
             baseExplosiveness = 8f;
             emptyLightColor = Color.valueOf("747a9d");

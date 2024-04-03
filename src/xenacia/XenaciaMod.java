@@ -16,6 +16,8 @@ public class XenaciaMod extends Mod{
         XenUnitBlocks.load();
         XenPowerBlocks.load();
         XenFactoryBlocks.load();
+        XenDistributionBlocks.load();
+        XenDrills.load();
     }
 
 }
