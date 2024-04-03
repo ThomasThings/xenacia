@@ -139,9 +139,11 @@ public class XenEnvironmentTiles{
         }};
 
         oreAlamex = new OreBlock(XenItems.alamex){{
+            oreDefault = true;
             variants = 4;
         }};
         oreTorren = new OreBlock(XenItems.torren){{
+            oreDefault = true;
             variants = 4;
         }};
     }
