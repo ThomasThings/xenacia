@@ -2,6 +2,7 @@ package xenacia.content;
 
 import arc.graphics.Color;
 import arc.math.geom.Rect;
+import mindustry.ai.UnitCommand;
 import mindustry.ai.types.BuilderAI;
 import mindustry.ai.types.MinerAI;
 import mindustry.gen.TankUnit;
@@ -58,6 +59,7 @@ public class XenUnitTypes{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("40435a");
             controller = u -> new MinerAI();
+            defaultCommand = UnitCommand.mineCommand;
             health = 350f;
             armor = 2f;
             hitSize = 10f;

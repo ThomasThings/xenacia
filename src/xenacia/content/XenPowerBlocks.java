@@ -25,12 +25,15 @@ public class XenPowerBlocks{
             requirements(Category.power, with(XenItems.alamex, 5));
             maxNodes = 5;
             laserRange = 10;
+            laserColor1 = Color.valueOf("ffffff");
             laserColor2 = Color.valueOf("c6cef0");
         }};
         linkNode = new PowerNode("link-node"){{
             requirements(Category.power, with(XenItems.alamex, 25, XenItems.silicium, 10));
+            size = 2;
             maxNodes = 20;
             laserRange = 25;
+            laserColor1 = Color.valueOf("ffffff");
             laserColor2 = Color.valueOf("c6cef0");
         }};
         linkBattery = new Battery("link-battery"){{
