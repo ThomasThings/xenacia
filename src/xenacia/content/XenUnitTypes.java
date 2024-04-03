@@ -5,7 +5,7 @@ import arc.math.geom.Rect;
 import arc.struct.Seq;
 import mindustry.ai.UnitCommand;
 import mindustry.ai.types.BuilderAI;
-import xenacia.ai.types.GroundMinerAI;
+import mindustry.ai.types.GroundAI;
 import mindustry.gen.TankUnit;
 import mindustry.gen.UnitEntity;
 import mindustry.type.UnitType;
@@ -59,7 +59,7 @@ public class XenUnitTypes{
         awren = new UnitType("awren") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("40435a");
-            controller = u -> new GroundMinerAI();
+            controller = u -> new GroundAI();
             defaultCommand = UnitCommand.mineCommand;
             health = 350f;
             armor = 2f;

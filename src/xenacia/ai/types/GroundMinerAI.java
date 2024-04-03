@@ -1,15 +1,14 @@
-package xenacia.ai.types;
+package mindustry.ai.types;
 
-import mindustry.ai.types.GroundAI;
-import mindustry.content.Blocks;
-import mindustry.gen.Building;
-import mindustry.gen.Call;
-import mindustry.type.Item;
-import mindustry.world.Tile;
+import mindustry.content.*;
+import mindustry.entities.units.*;
+import mindustry.gen.*;
+import mindustry.type.*;
+import mindustry.world.*;
 
-import static mindustry.Vars.indexer;
+import static mindustry.Vars.*;
 
-public class GroundMinerAI extends GroundAI {
+public class GroundMinerAI extends AIController{
     public boolean mining = true;
     public Item targetItem;
     public Tile ore;
