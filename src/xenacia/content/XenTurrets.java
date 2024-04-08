@@ -71,10 +71,6 @@ public class XenTurrets{
 
             shootType = new BasicBulletType(){{
                 damage = 0;
-                collidesAir = false;
-                collidesGround = false;
-                collidesTiles = false;
-                collidesTeam = false;
                 collides = false;
 
                 speed = 0.5f;
@@ -85,7 +81,6 @@ public class XenTurrets{
                 shrinkX = -3f;
                 sprite = "circle";
 
-                ammoMultiplier = 1f;
                 pierceCap = 4;
 
                 mixColorFrom = Color.valueOf("c6cef000");
@@ -116,7 +111,7 @@ public class XenTurrets{
             shootSound = Sounds.lasershoot;
 
             drawer = new DrawTurret(){{
-                basePrefix = "xen";
+                basePrefix = "xen-";
                 parts.add(new RegionPart("-cylinder"){{
                     progress = PartProgress.recoil;
                     under = false;
