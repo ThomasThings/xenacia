@@ -40,13 +40,7 @@ public class XenTurrets{
             }};
 
             drawer = new DrawTurret(){{
-                basePrefix = "xen";
-                parts.add(new RegionPart("-cylinder"){{
-                    progress = PartProgress.recoil;
-                    under = false;
-                    mirror = true;
-                    moveY = -2f;
-                }});
+                basePrefix = "xen-";
             }};
 
             shootEffect = Fx.none;
@@ -57,7 +51,6 @@ public class XenTurrets{
             consumePower(2f);
             coolant = consumeCoolant(0.1f);
         }};
-
         beam = new PowerTurret("beam"){{
             requirements(Category.turret, with(XenItems.alamex, 90, XenItems.torren, 30, XenItems.silicium, 25));
             size = 2;
@@ -96,7 +89,6 @@ public class XenTurrets{
                     drawSize = 400f;
                     length = 185f;
 
-                    ammoMultiplier = 1f;
                     pierceCap = 4;
 
                     hitEffect = Fx.hitLancer;
