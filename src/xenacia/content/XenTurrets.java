@@ -32,7 +32,7 @@ public class XenTurrets{
 
             shootType = new LaserBoltBulletType(){{
                 damage = 15;
-                speed = 5.5f;
+                speed = 3f;
                 lifetime = 50f;
                 collidesTeam = false;
                 backColor = Color.valueOf("c6cef0");
@@ -77,6 +77,8 @@ public class XenTurrets{
                 mixColorFrom = Color.valueOf("c6cef000");
                 mixColorTo = Color.valueOf("c6cef0ff");
 
+                fragSpread = 0;
+                fragBullets = 1;
                 fragBullet = new LaserBulletType(){{
                     damage = 150;
                     buildingDamageMultiplier = 0.75f;
