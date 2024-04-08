@@ -2,9 +2,9 @@ package xenacia.content;
 
 import arc.graphics.Color;
 import mindustry.content.Fx;
+import mindustry.entities.bullet.BasicBulletType;
 import mindustry.entities.bullet.LaserBoltBulletType;
 import mindustry.entities.bullet.LaserBulletType;
-import mindustry.entities.effect.MultiEffect;
 import mindustry.entities.part.RegionPart;
 import mindustry.gen.Sounds;
 import mindustry.type.Category;
@@ -39,6 +39,16 @@ public class XenTurrets{
                 frontColor = Color.white;
             }};
 
+            drawer = new DrawTurret(){{
+                basePrefix = "xen";
+                parts.add(new RegionPart("-cylinder"){{
+                    progress = PartProgress.recoil;
+                    under = false;
+                    mirror = true;
+                    moveY = -2f;
+                }});
+            }};
+
             shootEffect = Fx.none;
             heatColor = Color.red;
             recoil = 0.8f;
@@ -59,22 +69,45 @@ public class XenTurrets{
             targetAir = true;
             range =  100f;
 
-            shootType = new LaserBulletType(){{
-                damage = 150;
-                buildingDamageMultiplier = 0.75f;
-                collidesAir = true;
+            shootType = new BasicBulletType(){{
+                damage = 0;
+                collidesAir = false;
+                collidesGround = false;
+                collidesTiles = false;
+                collidesTeam = false;
+                collides = false;
 
-                hitSize = 4;
-                lifetime = 10f;
-                drawSize = 400f;
-                length = 185f;
+                speed = 0.5f;
+                lifetime = 60f;
+                size = 0;
+                width = height = 0;
+                shrinkY = -3f;
+                shrinkX = -3f;
+                sprite = "circle";
 
                 ammoMultiplier = 1f;
                 pierceCap = 4;
 
-                chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
-                hitEffect = Fx.hitLancer;
-                colors = new Color[]{Color.valueOf("c6cef0").cpy().a(0.4f), Color.valueOf("c6cef0"), Color.white};
+                mixColorFrom = Color.valueOf("c6cef000");
+                mixColorTo = Color.valueOf("c6cef0ff");
+
+                fragBullet = new LaserBulletType(){{
+                    damage = 150;
+                    buildingDamageMultiplier = 0.75f;
+                    collidesAir = true;
+
+                    hitSize = 4;
+                    lifetime = 10f;
+                    drawSize = 400f;
+                    length = 185f;
+
+                    ammoMultiplier = 1f;
+                    pierceCap = 4;
+
+                    hitEffect = Fx.hitLancer;
+                    colors = new Color[]{Color.valueOf("c6cef0").cpy().a(0.4f), Color.valueOf("c6cef0"), Color.white};
+                }};
+                despawnEffect = Fx.lancerLaserShoot;
             }};
 
             shootEffect = Fx.none;
@@ -83,6 +116,7 @@ public class XenTurrets{
             shootSound = Sounds.lasershoot;
 
             drawer = new DrawTurret(){{
+                basePrefix = "xen";
                 parts.add(new RegionPart("-cylinder"){{
                     progress = PartProgress.recoil;
                     under = false;
