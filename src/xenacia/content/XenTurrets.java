@@ -68,10 +68,8 @@ public class XenTurrets{
 
                 speed = 0.5f;
                 lifetime = 60f;
-                size = 0;
                 width = height = 0;
-                shrinkY = -3f;
-                shrinkX = -3f;
+                shrinkY = shrinkX = -3f;
                 sprite = "circle";
 
                 pierceCap = 4;
