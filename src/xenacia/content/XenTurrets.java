@@ -20,6 +20,7 @@ public class XenTurrets{
     public static void load(){
         bolt = new PowerTurret("bolt"){{
             requirements(Category.turret, with(XenItems.alamex, 30, XenItems.torren, 5));
+            outlineColor = Color.valueOf("353344");
             size = 1;
             health = 300;
 
@@ -52,6 +53,7 @@ public class XenTurrets{
         }};
         beam = new PowerTurret("beam"){{
             requirements(Category.turret, with(XenItems.alamex, 90, XenItems.torren, 30, XenItems.silicium, 25));
+            outlineColor = Color.valueOf("353344");
             size = 2;
             health = 900;
 
