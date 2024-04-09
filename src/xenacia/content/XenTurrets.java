@@ -2,19 +2,15 @@ package xenacia.content;
 
 import arc.graphics.Color;
 import mindustry.content.Fx;
-import mindustry.entities.Effect;
 import mindustry.entities.bullet.LaserBoltBulletType;
 import mindustry.entities.bullet.LaserBulletType;
 import mindustry.entities.part.RegionPart;
 import mindustry.gen.Sounds;
-import mindustry.graphics.Drawf;
 import mindustry.type.Category;
 import mindustry.world.Block;
 import mindustry.world.blocks.defense.turrets.PowerTurret;
 import mindustry.world.draw.DrawTurret;
 
-import static arc.graphics.g2d.Draw.color;
-import static arc.math.Angles.randLenVectors;
 import static mindustry.type.ItemStack.with;
 
 public class XenTurrets{
@@ -71,9 +67,11 @@ public class XenTurrets{
                 collidesAir = true;
 
                 hitSize = 4;
-                lifetime = 10f;
+                lifetime = 20f;
                 drawSize = 400f;
-                length = 185f;
+                width = 20;
+                length = 155f;
+                shootY = 17f;
 
                 pierceCap = 4;
 
@@ -81,34 +79,13 @@ public class XenTurrets{
                 shootEffect = Fx.lancerLaserShoot;
                 smokeEffect = Fx.none;
 
-                //chargeEffect = new Effect(){{
-                //    particles = 1;
-                //    length = 30;
-                //    sizeFrom = 0;
-                //    sizeTo = 5;
-                //    colorFrom = ffffff00;
-                //    colorTo = ffffff;
-                //    cone = 0;
-                //    baseRotatiion = 90;
-                //    rotWithParent = true;
-                //}};
-
-                chargeEffect = new Effect(60f, 80f, e -> {
-                    color(Color.valueOf("c6cef0"), e.fin());
-
-                    randLenVectors(e.id, 8, e.finpow() * 60f, e.rotation, 10f, (x, y) -> {
-                        Drawf.light(e.x + x, e.y + y, 16f * e.fout(), Color.valueOf("c6cef0"), 0.6f);
-                    });
-                });
-
-
                 colors = new Color[]{Color.valueOf("c6cef0").cpy().a(0.4f), Color.valueOf("c6cef0"), Color.white};
             }};
 
             shootEffect = Fx.none;
             heatColor = Color.red;
             recoil = 0.8f;
-            shootSound = Sounds.lasershoot;
+            shootSound = Sounds.laserbeam;
 
             drawer = new DrawTurret(){{
                 basePrefix = "xen-";
