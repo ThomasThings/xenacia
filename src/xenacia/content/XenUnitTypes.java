@@ -119,8 +119,8 @@ public class XenUnitTypes{
             legContinuousMove = false;
             legCount = 4;
             legGroupSize = 1;
-            legLength = 23f;
-            legExtension = -10;
+            legLength = 14f;
+            legExtension = -3;
             legForwardScl = 0.6f;
             legMoveSpace = 1.4f;
             hovering = true;
