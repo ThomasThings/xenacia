@@ -71,18 +71,17 @@ public class XenTurrets{
                 drawSize = 400f;
                 width = 20;
                 length = 155f;
-                shootY = -10f;
+                shootY = -4.5f;
 
                 pierceCap = 4;
 
                 hitEffect = Fx.hitLancer;
-                shootEffect = Fx.lancerLaserShoot;
-                smokeEffect = Fx.none;
 
                 colors = new Color[]{Color.valueOf("c6cef0").cpy().a(0.4f), Color.valueOf("c6cef0"), Color.white};
             }};
 
-            shootEffect = Fx.none;
+            shootEffect = Fx.lancerLaserShoot;
+            smokeEffect = Fx.none;
             heatColor = Color.red;
             recoil = 1.2f;
             shootSound = Sounds.laserbeam;
