@@ -151,9 +151,8 @@ public class XenUnitTypes{
                     smokeEffect = Fx.shootSmokeDisperse;
                     frontColor = Color.white;
                     backColor = trailColor = hitColor = Color.valueOf("c6cef0");
-                    trailChance = 0.64f;s
-
-                    lifetime = 34f;
+                    trailChance = 0.64f;
+                    lifetime = 35f;
                     rotationOffset = 90f;
                     trailRotation = true;
                     trailEffect = Fx.disperseTrail;
