@@ -94,6 +94,7 @@ public class XenTurrets{
                     under = false;
                     mirror = true;
                     moveY = -2f;
+                    recoilTime = 60f;
                 }});
             }};
 
