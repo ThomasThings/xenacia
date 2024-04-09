@@ -153,7 +153,7 @@ public class XenUnitTypes{
                     smokeEffect = Fx.shootSmokeDisperse;
                     frontColor = Color.white;
                     backColor = trailColor = hitColor = Color.valueOf("c6cef0");
-                    trailChance = 0.44f;
+                    trailChance = 0.64f;
                     ammoMultiplier = 3f;
 
                     lifetime = 34f;
