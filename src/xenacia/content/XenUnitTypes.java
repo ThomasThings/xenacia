@@ -136,12 +136,12 @@ public class XenUnitTypes{
                 reload = 150f;
                 inaccuracy = 0f;
                 velocityRnd = 0f;
-                shootSound = Sounds.missile;
+                shootSound = Sounds.shootBig;
                 shootY = 0f;
 
                 bullet = new MissileBulletType() {{
                     damage = 65;
-                    speed = 8.5f;
+                    speed = 5.5f;
                     width = height = 12;
                     shrinkY = 0.3f;
                     backSprite = "large-bomb-back";
