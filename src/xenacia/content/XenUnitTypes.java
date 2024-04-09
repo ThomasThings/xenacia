@@ -133,14 +133,14 @@ public class XenUnitTypes{
                 top = false;
                 layerOffset = 0f;
                 rotate = false;
-                reload = 150f;
+                reload = 60f;
                 inaccuracy = 0f;
                 velocityRnd = 0f;
                 shootSound = Sounds.shootBig;
                 shootY = 0f;
 
                 bullet = new MissileBulletType() {{
-                    damage = 65;
+                    damage = 30;
                     speed = 5.5f;
                     width = height = 12;
                     shrinkY = 0.3f;
