@@ -84,7 +84,7 @@ public class XenTurrets{
             smokeEffect = Fx.none;
             heatColor = Color.red;
             recoil = 1.2f;
-            shootSound = Sounds.laserbeam;
+            shootSound = Sounds.laser;
 
             drawer = new DrawTurret(){{
                 basePrefix = "xen-";
