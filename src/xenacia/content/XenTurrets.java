@@ -24,14 +24,14 @@ public class XenTurrets{
             size = 1;
             health = 300;
 
-            reload = 40f;
+            reload = 20f;
             shootCone = 8f;
             rotateSpeed = 6.5f;
             targetAir = true;
             range =  100f;
 
             shootType = new LaserBoltBulletType(){{
-                damage = 15;
+                damage = 10;
                 speed = 3f;
                 lifetime = 40f;
                 collidesTeam = false;
