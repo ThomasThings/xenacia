@@ -1,7 +1,6 @@
 package xenacia.content;
 
 import arc.graphics.Color;
-import arc.graphics.g2d.Fill;
 import mindustry.content.Fx;
 import mindustry.entities.Effect;
 import mindustry.entities.bullet.LaserBoltBulletType;
@@ -9,7 +8,6 @@ import mindustry.entities.bullet.LaserBulletType;
 import mindustry.entities.part.RegionPart;
 import mindustry.gen.Sounds;
 import mindustry.graphics.Drawf;
-import mindustry.graphics.Pal;
 import mindustry.type.Category;
 import mindustry.world.Block;
 import mindustry.world.blocks.defense.turrets.PowerTurret;
@@ -83,27 +81,26 @@ public class XenTurrets{
                 shootEffect = Fx.lancerLaserShoot;
                 smokeEffect = Fx.none;
 
-                chargeEffect = new Effect(){{
-                    particles = 1;
-                    length = 30;
-                    sizeFrom = 0;
-                    sizeTo = 5;
-                    colorFrom = ffffff00;
-                    colorTo = ffffff;
-                    cone = 0;
-                    baseRotatiion = 90;
-                    rotWithParent = true;
-                }};
+                //chargeEffect = new Effect(){{
+                //    particles = 1;
+                //    length = 30;
+                //    sizeFrom = 0;
+                //    sizeTo = 5;
+                //    colorFrom = ffffff00;
+                //    colorTo = ffffff;
+                //    cone = 0;
+                //    baseRotatiion = 90;
+                //    rotWithParent = true;
+                //}};
 
                 chargeEffect = new Effect(60f, 80f, e -> {
-                    color(Color.white, Pal.heal, Color.gray, e.fin());
+                    color(Color.valueOf("c6cef0"), e.fin());
 
                     randLenVectors(e.id, 8, e.finpow() * 60f, e.rotation, 10f, (x, y) -> {
-                        Fill.circle(e.x + x, e.y + y, 0.65f + e.fout() * 1.5f);
-                        Drawf.light(e.x + x, e.y + y, 16f * e.fout(), Pal.heal, 0.6f);
+                        Drawf.light(e.x + x, e.y + y, 16f * e.fout(), Color.valueOf("c6cef0"), 0.6f);
                     });
                 });
-]
+
 
                 colors = new Color[]{Color.valueOf("c6cef0").cpy().a(0.4f), Color.valueOf("c6cef0"), Color.white};
             }};
