@@ -71,7 +71,7 @@ public class XenTurrets{
                 drawSize = 400f;
                 width = 20;
                 length = 155f;
-                shootY = 17f;
+                shootY = -10f;
 
                 pierceCap = 4;
 
@@ -84,7 +84,7 @@ public class XenTurrets{
 
             shootEffect = Fx.none;
             heatColor = Color.red;
-            recoil = 0.8f;
+            recoil = 1.2f;
             shootSound = Sounds.laserbeam;
 
             drawer = new DrawTurret(){{
@@ -94,7 +94,6 @@ public class XenTurrets{
                     under = false;
                     mirror = true;
                     moveY = -2f;
-                    recoilTime = 60f;
                 }});
             }};
 
