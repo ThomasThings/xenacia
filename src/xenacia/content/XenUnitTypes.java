@@ -119,8 +119,10 @@ public class XenUnitTypes{
             legContinuousMove = false;
             legCount = 4;
             legGroupSize = 1;
-            legLength = 18f;
-            rippleScale = 0.1f;
+            legLength = 23f;
+            legExtension = -10;
+            legForwardScl = 0.6f;
+            legMoveSpace = 1.4f;
             hovering = true;
             shadowElevation = 0.1f;
             groundLayer = Layer.legUnit - 1f;
