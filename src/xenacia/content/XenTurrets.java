@@ -33,7 +33,7 @@ public class XenTurrets{
             shootType = new LaserBoltBulletType(){{
                 damage = 15;
                 speed = 3f;
-                lifetime = 50f;
+                lifetime = 40f;
                 collidesTeam = false;
                 backColor = Color.valueOf("c6cef0");
                 frontColor = Color.white;
@@ -61,7 +61,7 @@ public class XenTurrets{
             shootCone = 3f;
             rotateSpeed = 6.5f;
             targetAir = true;
-            range =  100f;
+            range =  120f;
 
             shootType = new LaserBulletType(){{
                 damage = 150;
@@ -72,8 +72,8 @@ public class XenTurrets{
                 lifetime = 20f;
                 drawSize = 400f;
                 width = 20;
-                length = 155f;
-                shootY = -2.5f;
+                length = 125f;
+                shootY = 2.5f;
 
                 pierceCap = 4;
 
