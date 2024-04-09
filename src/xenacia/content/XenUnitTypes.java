@@ -6,14 +6,23 @@ import arc.struct.Seq;
 import mindustry.ai.UnitCommand;
 import mindustry.ai.types.BuilderAI;
 import mindustry.ai.types.GroundAI;
+import mindustry.content.Fx;
+import mindustry.entities.bullet.MissileBulletType;
+import mindustry.gen.LegsUnit;
+import mindustry.gen.Sounds;
 import mindustry.gen.TankUnit;
 import mindustry.gen.UnitEntity;
+import mindustry.graphics.Layer;
 import mindustry.type.UnitType;
+import mindustry.type.Weapon;
 
 public class XenUnitTypes{
     public static UnitType
     radix,
-    awren;
+    awren,
+    barrier,
+    soer,
+    avison;
 
     //payload capacity is ((X*8)^2), X is desired side length of payload capacity square
     //unit size = (X x 8), X being the side of
@@ -94,6 +103,65 @@ public class XenUnitTypes{
                             16
                     )
             };
+        }};
+
+        avison = new UnitType("avison") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("40435a");
+            health = 400f;
+            armor = 2f;
+            hitSize = 15f;
+            speed = 1f;
+            rotateSpeed = 5f;
+
+            itemCapacity = 10;
+
+            legContinuousMove = false;
+            legCount = 4;
+            legGroupSize = 1;
+            legLength = 18f;
+            rippleScale = 0.1f;
+            hovering = true;
+            shadowElevation = 0.1f;
+            groundLayer = Layer.legUnit - 1f;
+
+            weapons.add(new Weapon("avison-launcher") {{
+                x = 0f;
+                y = 2.5f;
+                top = false;
+                layerOffset = 0f;
+                rotate = false;
+                reload = 150f;
+                inaccuracy = 0f;
+                velocityRnd = 0f;
+                shootSound = Sounds.missile;
+                shootY = 0f;
+
+                bullet = new MissileBulletType() {{
+                    damage = 65;
+                    speed = 8.5f;
+                    width = height = 12;
+                    shrinkY = 0.3f;
+                    backSprite = "large-bomb-back";
+                    sprite = "mine-bullet";
+                    velocityRnd = 0.11f;
+                    collidesGround = false;
+                    collidesTiles = false;
+                    shootEffect = Fx.shootBig2;
+                    smokeEffect = Fx.shootSmokeDisperse;
+                    frontColor = Color.white;
+                    backColor = trailColor = hitColor = Color.valueOf("c6cef0");
+                    trailChance = 0.44f;
+                    ammoMultiplier = 3f;
+
+                    lifetime = 34f;
+                    rotationOffset = 90f;
+                    trailRotation = true;
+                    trailEffect = Fx.disperseTrail;
+
+                    hitEffect = despawnEffect = Fx.hitBulletColor;
+                }};
+            }});
         }};
     }
 }
