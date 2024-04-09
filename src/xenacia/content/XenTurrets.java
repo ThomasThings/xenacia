@@ -71,7 +71,7 @@ public class XenTurrets{
                 drawSize = 400f;
                 width = 20;
                 length = 155f;
-                shootY = -4.5f;
+                shootY = -2.5f;
 
                 pierceCap = 4;
 
