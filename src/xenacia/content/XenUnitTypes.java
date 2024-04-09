@@ -147,8 +147,6 @@ public class XenUnitTypes{
                     backSprite = "large-bomb-back";
                     sprite = "mine-bullet";
                     velocityRnd = 0.11f;
-                    collidesGround = false;
-                    collidesTiles = false;
                     shootEffect = Fx.shootBig2;
                     smokeEffect = Fx.shootSmokeDisperse;
                     frontColor = Color.white;
