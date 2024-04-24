@@ -105,12 +105,41 @@ public class XenUnitTypes{
             };
         }};
 
+        soer = new UnitType("soer") {{
+            constructor = UnitEntity::create;
+            outlineColor = Color.valueOf("40435a");
+            health = 250f;
+            armor = 1f;
+            hitSize = 12f;
+            speed = 2f;
+            rotateSpeed = 15f;
+            flying = true;
+            lowAltitude = true;
+            accel = 0.2f;
+            drag = 0.1f;
+
+            targetPriority = -2;
+
+            mineWalls = true;
+            mineFloor = true;
+            mineSpeed = 6f;
+            mineTier = 1;
+            buildSpeed = 0.2f;
+            buildBeamOffset = 4f;
+
+            itemCapacity = 20;
+            isEnemy = false;
+
+            engineSize = 1.8f;
+            engineOffset = 4.75f;
+        }};
+
         avison = new UnitType("avison") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("40435a");
             health = 400f;
             armor = 2f;
-            hitSize = 15f;
+            hitSize = 14f;
             speed = 1f;
             rotateSpeed = 5f;
 
