@@ -7,7 +7,9 @@ import mindustry.ai.UnitCommand;
 import mindustry.ai.types.BuilderAI;
 import mindustry.ai.types.GroundAI;
 import mindustry.content.Fx;
+import mindustry.entities.bullet.BulletType;
 import mindustry.entities.bullet.MissileBulletType;
+import mindustry.entities.part.RegionPart;
 import mindustry.gen.LegsUnit;
 import mindustry.gen.Sounds;
 import mindustry.gen.TankUnit;
@@ -15,6 +17,7 @@ import mindustry.gen.UnitEntity;
 import mindustry.graphics.Layer;
 import mindustry.type.UnitType;
 import mindustry.type.Weapon;
+import mindustry.type.weapons.PointDefenseWeapon;
 
 public class XenUnitTypes{
     public static UnitType
@@ -39,7 +42,7 @@ public class XenUnitTypes{
             outlineColor = Color.valueOf("40435a");
             controller = u -> new BuilderAI(true, 500);
             coreUnitDock = true;
-            health = 250f;
+            health = 300f;
             armor = 1f;
             hitSize = 6f;
             speed = 3f;
@@ -70,7 +73,7 @@ public class XenUnitTypes{
             outlineColor = Color.valueOf("40435a");
             controller = u -> new GroundAI();
             defaultCommand = UnitCommand.mineCommand;
-            health = 350f;
+            health = 450f;
             armor = 2f;
             hitSize = 10f;
             speed = 0.8f;
@@ -104,6 +107,60 @@ public class XenUnitTypes{
                     )
             };
         }};
+        awren = new UnitType("mryre") {{
+            constructor = TankUnit::create;
+            outlineColor = Color.valueOf("40435a");
+            controller = u -> new GroundAI();
+            defaultCommand = UnitCommand.mineCommand;
+            health = 1000f;
+            armor = 5f;
+            hitSize = 19f;
+            speed = 0.8f;
+            rotateSpeed = 3f;
+            omniMovement = false;
+            rotateMoveFirst = true;
+
+            mineWalls = true;
+            mineFloor = true;
+            mineSpeed = 10f;
+            mineTier = 4;
+            mineRange = 40f;
+            mineItems = Seq.with(XenItems.alamex, XenItems.torren);
+
+            itemCapacity = 200;
+            isEnemy = false;
+
+            treadFrames = 8;
+            treadRects = new Rect[]{
+                    new Rect(
+                            13 - 45,
+                            3 - 47f,
+                            14,
+                            24
+                    ),
+                    new Rect(
+                            13 - 45,
+                            57 - 47f,
+                            14,
+                            24
+                    )
+            };
+
+            weapons.add(new PointDefenseWeapon("xenacia-mryer-point-defense"){{
+                x = 5.5f + 0.125f;
+                y = -2.5f;
+                mirror = true;
+                reload = 5f;
+                targetInterval = 10f;
+                targetSwitchInterval = 10f;
+                bullet = new BulletType(){{
+                   shootEffect = Fx.sparkShoot;
+                   hitEffect=Fx.pointHit;
+                   maxRange = 100f;
+                   damage = 15;
+                }};
+            }});
+        }};
 
         soer = new UnitType("soer") {{
             constructor = UnitEntity::create;
@@ -132,12 +189,50 @@ public class XenUnitTypes{
 
             engineSize = 1.8f;
             engineOffset = 4.75f;
+
+            parts.add(
+              new RegionPart("-side"){{
+                  x = 3 + 0.125f;
+                  y = 2;
+                  moveRot = 10;
+                  moveX = 2;
+                  progress = PartProgress.warmup;
+                  mirror = true;
+              }}
+            );
+
+            weapons.add(new Weapon("soer-launcher") {{
+                x = 2f;
+                y = 0.5f;
+                top = false;
+                layerOffset = 0f;
+                rotate = false;
+                reload = 30f;
+                inaccuracy = 0f;
+                velocityRnd = 0f;
+                shootSound = Sounds.shootBig;
+                shootY = 0f;
+
+                bullet = new MissileBulletType(){{
+                    damage = 25;
+                    speed = 4.5f;
+                    width = height = 12;
+                    shrinkY = 0.3f;
+                    velocityRnd = 0.05f;
+                    frontColor = Color.white;
+                    backColor = trailColor = hitColor = Color.valueOf("c6cef0");
+                    trailChance = 0.8f;
+                    lifetime = 45f;
+                    homingPower = 0.03f;
+                    hitEffect = despawnEffect = Fx.hitBulletColor;
+                }};
+            }});
         }};
 
         avison = new UnitType("avison") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("40435a");
-            health = 400f;
+            health = 550f;
             armor = 2f;
             hitSize = 14f;
             speed = 1f;
@@ -162,14 +257,14 @@ public class XenUnitTypes{
                 top = false;
                 layerOffset = 0f;
                 rotate = false;
-                reload = 60f;
+                reload = 40f;
                 inaccuracy = 0f;
                 velocityRnd = 0f;
                 shootSound = Sounds.shootBig;
                 shootY = 0f;
 
                 bullet = new MissileBulletType() {{
-                    damage = 30;
+                    damage = 35;
                     speed = 5.5f;
                     width = height = 12;
                     shrinkY = 0.3f;
