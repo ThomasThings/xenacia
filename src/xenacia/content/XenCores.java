@@ -23,6 +23,7 @@ public class XenCores{
             size = 3;
 
             unitCapModifier = 6;
+            squareSprite = false;
         }};
     }
 }

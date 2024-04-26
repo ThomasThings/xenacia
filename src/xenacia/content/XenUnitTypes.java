@@ -194,8 +194,8 @@ public class XenUnitTypes{
               new RegionPart("-side"){{
                   x = 3 + 0.125f;
                   y = 2;
-                  moveRot = 10;
-                  moveX = 2;
+                  moveRot = -45;
+                  moveX = 0.5f;
                   progress = PartProgress.warmup;
                   mirror = true;
               }}
@@ -210,13 +210,13 @@ public class XenUnitTypes{
                 reload = 30f;
                 inaccuracy = 0f;
                 velocityRnd = 0f;
-                shootSound = Sounds.shootBig;
+                shootSound = Sounds.missile;
                 shootY = 0f;
 
                 bullet = new MissileBulletType(){{
                     damage = 25;
                     speed = 4.5f;
-                    width = height = 12;
+                    width = height = 4;
                     shrinkY = 0.3f;
                     velocityRnd = 0.05f;
                     frontColor = Color.white;

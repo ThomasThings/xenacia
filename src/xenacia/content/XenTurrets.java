@@ -37,7 +37,7 @@ public class XenTurrets{
                 collidesTeam = false;
                 backColor = Color.valueOf("c6cef0");
                 frontColor = Color.white;
-                shootEffect = hitEffect = despawnEffect = Fx.hitLaserColor;
+                shootEffect = smokeEffect = hitEffect = despawnEffect = Fx.hitLaserColor;
             }};
 
             drawer = new DrawTurret(){{
