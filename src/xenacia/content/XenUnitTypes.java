@@ -191,15 +191,34 @@ public class XenUnitTypes{
             engineOffset = 5.75f;
 
             parts.add(
-              new RegionPart("-side"){{
-                  x = 3 + 0.125f;
-                  y = 2;
-                  moveRot = -45;
-                  moveX = 0.5f;
-                  progress = PartProgress.warmup;
-                  mirror = true;
-                  layerOffset = -0.01f;
-              }}
+                    new RegionPart("-side"){{
+                         x = 3 + 0.125f;
+                         y = 2;
+                         moveRot = -45;
+                         moveX = 0.5f;
+                         progress = PartProgress.warmup;
+                         mirror = true;
+                         layerOffset = -0.01f;
+                    }}
+            );
+            parts.add(
+                    new RegionPart("-side-outline-part"){{
+                         x = 3 + 0.125f;
+                         y = 2;
+                         moveRot = -45;
+                         moveX = 0.5f;
+                         progress = PartProgress.warmup;
+                         mirror = true;
+                         layerOffset = -0.02f;
+                    }}
+            );
+            parts.add(
+                    new RegionPart("-outline-part"){{
+                        x = 0;
+                        y = 0;
+                        mirror = false;
+                        layerOffset = -0.03f;
+                    }}
             );
 
             weapons.add(new Weapon("soer-launcher") {{
