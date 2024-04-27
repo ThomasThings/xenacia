@@ -187,8 +187,8 @@ public class XenUnitTypes{
             itemCapacity = 20;
             isEnemy = false;
 
-            engineSize = 1.8f;
-            engineOffset = 4.75f;
+            engineSize = 1.9f;
+            engineOffset = 5.75f;
 
             parts.add(
               new RegionPart("-side"){{
@@ -198,12 +198,13 @@ public class XenUnitTypes{
                   moveX = 0.5f;
                   progress = PartProgress.warmup;
                   mirror = true;
+                  layerOffset = -0.01f;
               }}
             );
 
             weapons.add(new Weapon("soer-launcher") {{
-                x = 2f;
-                y = 0.5f;
+                x = 3f;
+                y = 1.5f;
                 top = false;
                 layerOffset = 0f;
                 rotate = false;
