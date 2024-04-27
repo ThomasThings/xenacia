@@ -188,7 +188,7 @@ public class XenUnitTypes{
             isEnemy = false;
 
             engineSize = 1.9f;
-            engineOffset = 5.75f;
+            engineOffset = 5.2f;
 
             parts.add(
                     new RegionPart("-side"){{
@@ -199,7 +199,7 @@ public class XenUnitTypes{
                          moveX = 0.5f;
                          progress = PartProgress.warmup;
                          mirror = true;
-                         layerOffset = -0.01f;
+                         layerOffset = -0.00001f;
                     }}
             );
             parts.add(
@@ -211,7 +211,7 @@ public class XenUnitTypes{
                          moveX = 0.5f;
                          progress = PartProgress.warmup;
                          mirror = true;
-                         layerOffset = -0.02f;
+                         layerOffset = -0.00002f;
                     }}
             );
             parts.add(
@@ -220,7 +220,7 @@ public class XenUnitTypes{
                         x = 0;
                         y = 0;
                         mirror = false;
-                        layerOffset = -0.03f;
+                        layerOffset = -0.00003f;
                     }}
             );
 
