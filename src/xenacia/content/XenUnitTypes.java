@@ -193,8 +193,8 @@ public class XenUnitTypes{
             parts.add(
                     new RegionPart("-side"){{
                         outline = false;
-                         x = 3 + 0.125f;
-                         y = 2;
+                         x = 3.25f + 0.125f;
+                         y = 0.5f;
                          moveRot = -45;
                          moveX = 0.5f;
                          progress = PartProgress.warmup;
@@ -205,8 +205,8 @@ public class XenUnitTypes{
             parts.add(
                     new RegionPart("-side-outline-part"){{
                         outline = false;
-                         x = 3 + 0.125f;
-                         y = 2;
+                         x = 3.25f + 0.125f;
+                         y = 0.5f;
                          moveRot = -45;
                          moveX = 0.5f;
                          progress = PartProgress.warmup;
