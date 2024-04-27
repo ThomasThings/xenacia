@@ -164,7 +164,7 @@ public class XenUnitTypes{
 
         soer = new UnitType("soer") {{
             constructor = UnitEntity::create;
-            outlineColor = Color.valueOf("40435a");
+            outlines = false;
             health = 250f;
             armor = 1f;
             hitSize = 12f;
