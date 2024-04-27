@@ -199,28 +199,8 @@ public class XenUnitTypes{
                          moveX = 0.5f;
                          progress = PartProgress.warmup;
                          mirror = true;
-                         layerOffset = -0.00001f;
-                    }}
-            );
-            parts.add(
-                    new RegionPart("-side-outline-part"){{
-                        outline = false;
-                         x = 3.25f + 0.125f;
-                         y = 0.5f;
-                         moveRot = -45;
-                         moveX = 0.5f;
-                         progress = PartProgress.warmup;
-                         mirror = true;
-                         layerOffset = -0.00002f;
-                    }}
-            );
-            parts.add(
-                    new RegionPart("-outline-part"){{
-                        outline = false;
-                        x = 0;
-                        y = 0;
-                        mirror = false;
-                        layerOffset = -0.00003f;
+                         under = true;
+                         top = false;
                     }}
             );
 
@@ -239,12 +219,13 @@ public class XenUnitTypes{
                 bullet = new MissileBulletType(){{
                     damage = 25;
                     speed = 4.5f;
-                    width = height = 4;
+                    width = height = 6.5f;
                     shrinkY = 0.3f;
-                    velocityRnd = 0.05f;
+                    velocityRnd = 0f;
+                    weaveMag = 0.5f;
+                    weaveScale = 0.5f;
                     frontColor = Color.white;
                     backColor = trailColor = hitColor = Color.valueOf("c6cef0");
-                    trailChance = 0.8f;
                     lifetime = 45f;
                     homingPower = 0.03f;
                     hitEffect = despawnEffect = Fx.hitBulletColor;
