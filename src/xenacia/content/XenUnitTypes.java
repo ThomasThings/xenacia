@@ -192,6 +192,7 @@ public class XenUnitTypes{
 
             parts.add(
                     new RegionPart("-side"){{
+                        outline = false;
                          x = 3 + 0.125f;
                          y = 2;
                          moveRot = -45;
@@ -203,6 +204,7 @@ public class XenUnitTypes{
             );
             parts.add(
                     new RegionPart("-side-outline-part"){{
+                        outline = false;
                          x = 3 + 0.125f;
                          y = 2;
                          moveRot = -45;
@@ -214,6 +216,7 @@ public class XenUnitTypes{
             );
             parts.add(
                     new RegionPart("-outline-part"){{
+                        outline = false;
                         x = 0;
                         y = 0;
                         mirror = false;
