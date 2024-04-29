@@ -287,7 +287,7 @@ public class XenUnitTypes{
                 shootY = 0f;
 
                 bullet = new MissileBulletType() {{
-                    damage = 35;
+                    damage = 30;
                     speed = 5.5f;
                     width = height = 12;
                     shrinkY = 0.3f;
@@ -300,6 +300,8 @@ public class XenUnitTypes{
                     backColor = trailColor = hitColor = Color.valueOf("c6cef0");
                     trailChance = 0.64f;
                     lifetime = 35f;
+                    homingPower = 0.01f;
+                    homingRange = 150f;
                     rotationOffset = 90f;
                     trailRotation = true;
                     trailEffect = Fx.disperseTrail;
