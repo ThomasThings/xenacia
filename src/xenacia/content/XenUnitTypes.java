@@ -22,7 +22,7 @@ import mindustry.type.weapons.PointDefenseWeapon;
 public class XenUnitTypes{
     public static UnitType
     radix,
-    awren,
+    awren, mryre,
     barrier,
     soer,
     avison;
@@ -107,7 +107,7 @@ public class XenUnitTypes{
                     )
             };
         }};
-        awren = new UnitType("mryre") {{
+        mryre = new UnitType("mryre") {{
             constructor = TankUnit::create;
             outlineColor = Color.valueOf("40435a");
             controller = u -> new GroundAI();
