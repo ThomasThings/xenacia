@@ -140,7 +140,7 @@ public class XenUnitTypes{
                     ),
                     new Rect(
                             13 - 45,
-                            45 - 47f,
+                            69 - 47f,
                             14,
                             24
                     )
