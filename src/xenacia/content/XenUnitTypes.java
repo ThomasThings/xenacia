@@ -146,7 +146,7 @@ public class XenUnitTypes{
                     )
             };
 
-            weapons.add(new PointDefenseWeapon("xenacia-mryer-point-defense"){{
+            weapons.add(new PointDefenseWeapon("xenacia-mryre-point-defense"){{
                 x = 5.5f + 0.125f;
                 y = -2.5f;
                 mirror = true;
@@ -191,19 +191,38 @@ public class XenUnitTypes{
             engineOffset = 5.2f;
 
             parts.add(
-                    new RegionPart("-side"){{
+                    new RegionPart("-outline-part"){{
                         outline = false;
-                         x = 3.25f + 0.125f;
-                         y = 0.5f;
-                         moveRot = -45;
-                         moveX = 0.5f;
-                         progress = PartProgress.warmup;
-                         mirror = true;
-                         under = true;
-                         top = false;
+                         x = 0;
+                         y = 0;
+                         mirror = false;
+                         layerOffset = -0.0000001f;
                     }}
             );
-
+            parts.add(
+                    new RegionPart("-side-outline-part"){{
+                        outline = false;
+                        x = 3.25f + 0.125f;
+                        y = 0.5f;
+                        moveRot = -45;
+                        moveX = 0.5f;
+                        progress = PartProgress.warmup;
+                        mirror = true;
+                        layerOffset = -0.0000001f;
+                    }}
+            );
+            parts.add(
+                    new RegionPart("-side"){{
+                        outline = false;
+                        x = 3.25f + 0.125f;
+                        y = 0.5f;
+                        moveRot = -45;
+                        moveX = 0.5f;
+                        progress = PartProgress.warmup;
+                        mirror = true;
+                        layerOffset = -0.0000001f;
+                    }}
+            );
             weapons.add(new Weapon("soer-launcher") {{
                 x = 3f;
                 y = 1.5f;
@@ -219,7 +238,7 @@ public class XenUnitTypes{
                 bullet = new MissileBulletType(){{
                     damage = 25;
                     speed = 4.5f;
-                    width = height = 6.5f;
+                    width = height = 9f;
                     shrinkY = 0.3f;
                     velocityRnd = 0f;
                     weaveMag = 0.5f;
