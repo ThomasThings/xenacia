@@ -46,14 +46,15 @@ public class XenPowerBlocks{
             size = 3;
             consumePowerBuffered(80000f);
             baseExplosiveness = 8f;
-            emptyLightColor = Color.valueOf("747a9d");
-            fullLightColor = Color.valueOf("c6cef0");
 
             drawer = new DrawMulti(
                     new DrawDefault(),
                     new DrawPower("-power"),
                     new DrawRegion("-top")
             );
+
+            emptyLightColor = Color.valueOf("747a9d");
+            fullLightColor = Color.valueOf("c6cef0");
         }};
         smallBioBurner = new ConsumeGenerator("small-bio-burner"){{
             requirements(Category.power, with(XenItems.alamex, 15));
