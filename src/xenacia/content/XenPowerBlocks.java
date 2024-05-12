@@ -49,12 +49,12 @@ public class XenPowerBlocks{
 
             drawer = new DrawMulti(
                     new DrawDefault(),
-                    new DrawPower("-power"),
+                    new DrawPower("-power"){{
+                        emptyLightColor = Color.valueOf("747a9d");
+                        fullLightColor = Color.valueOf("c6cef0");
+                    }},
                     new DrawRegion("-top")
             );
-
-            emptyLightColor = Color.valueOf("747a9d");
-            fullLightColor = Color.valueOf("c6cef0");
         }};
         smallBioBurner = new ConsumeGenerator("small-bio-burner"){{
             requirements(Category.power, with(XenItems.alamex, 15));
