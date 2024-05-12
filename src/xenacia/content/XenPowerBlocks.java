@@ -9,10 +9,7 @@ import mindustry.world.blocks.power.Battery;
 import mindustry.world.blocks.power.ConsumeGenerator;
 import mindustry.world.blocks.power.PowerNode;
 import mindustry.world.blocks.power.SolarGenerator;
-import mindustry.world.draw.DrawDefault;
-import mindustry.world.draw.DrawFlame;
-import mindustry.world.draw.DrawMulti;
-import mindustry.world.draw.DrawWarmupRegion;
+import mindustry.world.draw.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -51,6 +48,12 @@ public class XenPowerBlocks{
             baseExplosiveness = 8f;
             emptyLightColor = Color.valueOf("747a9d");
             fullLightColor = Color.valueOf("c6cef0");
+
+            drawer = new DrawMulti(
+                    new DrawDefault(),
+                    new DrawPower("-power"),
+                    new DrawRegion("-top")
+            );
         }};
         smallBioBurner = new ConsumeGenerator("small-bio-burner"){{
             requirements(Category.power, with(XenItems.alamex, 15));
