@@ -38,11 +38,15 @@ public class XenDrills{
 
             legacyReadWarmup = true;
             drawer = new DrawMulti(
-                    new DrawRegion("-spinner"){{
+                    new DrawRegion("-bottom-spinner"){{
                         rotateSpeed = 1;
                         spinSprite = true;
                     }},
-                    new DrawRegion("-spinner"){{
+                    new DrawRegion("-bottom-spinner"){{
+                        rotateSpeed = 2;
+                        spinSprite = true;
+                    }},
+                    new DrawRegion("-top-spinner"){{
                         rotation = 45;
                         rotateSpeed = -4;
                         spinSprite = true;
