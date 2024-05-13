@@ -35,7 +35,6 @@ public class XenDrills{
             hasItems = true;
 
             craftEffect = Fx.none;
-            attribute = XenAttribute.stone;
 
             legacyReadWarmup = true;
             drawer = new DrawMulti(
