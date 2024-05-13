@@ -65,10 +65,8 @@ public class XenEnvironmentTiles{
         }};
         kryesenBoulder = new Prop("kryesen-boulder"){{
             variants = 2;
-            lendesiteFloor.asFloor().decoration = this;
-            deepLendesiteFloor.asFloor().decoration = this;
-            slashedLendesiteFloor.asFloor().decoration = this;
-            deepSlashedLendesiteFloor.asFloor().decoration = this;
+            kryesenFloor.asFloor().decoration = this;
+            deepKryesenFloor.asFloor().decoration = this;
         }};
 
         shallowHydrex = new Floor("shallow-hydrex"){{
