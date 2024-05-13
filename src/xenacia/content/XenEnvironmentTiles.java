@@ -26,18 +26,22 @@ public class XenEnvironmentTiles{
         lendesiteFloor = new Floor("lendesite-floor"){{
             variants = 4;
             mapColor = Color.valueOf("5a6877");
+            attributes.set(XenAttribute.stone, 0.5f);
         }};
         deepLendesiteFloor = new Floor("deep-lendesite-floor"){{
             variants = 4;
             mapColor = Color.valueOf("4d5c6c");
+            attributes.set(XenAttribute.stone, 0.5f);
         }};
         slashedLendesiteFloor = new Floor("slashed-lendesite-floor"){{
             variants = 4;
             mapColor = Color.valueOf("6c7b8b");
+            attributes.set(XenAttribute.stone, 0.5f);
         }};
         deepSlashedLendesiteFloor = new Floor("deep-slashed-lendesite-floor"){{
             variants = 4;
             mapColor = Color.valueOf("5e6d7d");
+            attributes.set(XenAttribute.stone, 0.5f);
         }};
         lendesiteWall = new StaticWall("lendesite-wall"){{
             variants = 3;
@@ -54,10 +58,12 @@ public class XenEnvironmentTiles{
         kryesenFloor = new Floor("kryesen-floor"){{
             variants = 4;
             mapColor = Color.valueOf("788ac0");
+            attributes.set(XenAttribute.stone, 0.4f);
         }};
         deepKryesenFloor = new Floor("deep-kryesen-floor"){{
             variants = 4;
             mapColor = Color.valueOf("6474a8");
+            attributes.set(XenAttribute.stone, 0.4f);
         }};
         kryesenWall = new StaticWall("kryesen-wall"){{
             variants = 2;
