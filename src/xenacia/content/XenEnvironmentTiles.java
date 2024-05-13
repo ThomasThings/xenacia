@@ -64,7 +64,7 @@ public class XenEnvironmentTiles{
             mapColor = Color.valueOf("a0b6e3");
         }};
         kryesenBoulder = new Prop("kryesen-boulder"){{
-            variants = 5;
+            variants = 2;
             lendesiteFloor.asFloor().decoration = this;
             deepLendesiteFloor.asFloor().decoration = this;
             slashedLendesiteFloor.asFloor().decoration = this;
