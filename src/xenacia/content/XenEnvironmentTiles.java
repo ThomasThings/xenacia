@@ -23,6 +23,8 @@ public class XenEnvironmentTiles{
             oreAlamex, oreTorren;
 
     public static void load(){
+        Attribute.add("stone");
+
         lendesiteFloor = new Floor("lendesite-floor"){{
             variants = 4;
             mapColor = Color.valueOf("5a6877");
