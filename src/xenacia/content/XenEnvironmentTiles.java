@@ -7,11 +7,14 @@ import mindustry.graphics.CacheLayer;
 import mindustry.world.Block;
 import mindustry.world.blocks.environment.Floor;
 import mindustry.world.blocks.environment.OreBlock;
+import mindustry.world.blocks.environment.Prop;
 import mindustry.world.blocks.environment.StaticWall;
 import mindustry.world.meta.Attribute;
 
 public class XenEnvironmentTiles{
     public static Block
+            lendesiteFloor, deepLendesiteFloor, slashedLendesiteFloor, deepSlashedLendesiteFloor, lendesiteWall, lendesiteBoulder,
+            kryesenFloor, deepKryesenFloor, kryesenWall, kryesenBoulder,
             shallowHydrex, deepHydrex,
             lushGrass, wetLushGrass, lushGrassWall,
             silicateSandFloor, wetSilicateSand,
@@ -20,6 +23,54 @@ public class XenEnvironmentTiles{
             oreAlamex, oreTorren;
 
     public static void load(){
+        lendesiteFloor = new Floor("lendesite-floor"){{
+            variants = 4;
+            mapColor = Color.valueOf("5a6877");
+        }};
+        deepLendesiteFloor = new Floor("deep-lendesite-floor"){{
+            variants = 4;
+            mapColor = Color.valueOf("4d5c6c");
+        }};
+        slashedLendesiteFloor = new Floor("slashed-lendesite-floor"){{
+            variants = 4;
+            mapColor = Color.valueOf("6c7b8b");
+        }};
+        deepSlashedLendesiteFloor = new Floor("deep-slashed-lendesite-floor"){{
+            variants = 4;
+            mapColor = Color.valueOf("5e6d7d");
+        }};
+        lendesiteWall = new StaticWall("lendesite-wall"){{
+            variants = 3;
+            mapColor = Color.valueOf("778797");
+        }};
+        lendesiteBoulder = new Prop("lendesite-boulder"){{
+            variants = 5;
+            lendesiteFloor.asFloor().decoration = this;
+            deepLendesiteFloor.asFloor().decoration = this;
+            slashedLendesiteFloor.asFloor().decoration = this;
+            deepSlashedLendesiteFloor.asFloor().decoration = this;
+        }};
+
+        kryesenFloor = new Floor("kryesen-floor"){{
+            variants = 4;
+            mapColor = Color.valueOf("788ac0");
+        }};
+        deepKryesenFloor = new Floor("deep-kryesen-floor"){{
+            variants = 4;
+            mapColor = Color.valueOf("6474a8");
+        }};
+        kryesenWall = new StaticWall("kryesen-wall"){{
+            variants = 2;
+            mapColor = Color.valueOf("a0b6e3");
+        }};
+        kryesenBoulder = new Prop("kryesen-boulder"){{
+            variants = 5;
+            lendesiteFloor.asFloor().decoration = this;
+            deepLendesiteFloor.asFloor().decoration = this;
+            slashedLendesiteFloor.asFloor().decoration = this;
+            deepSlashedLendesiteFloor.asFloor().decoration = this;
+        }};
+
         shallowHydrex = new Floor("shallow-hydrex"){{
             speedMultiplier = 0.5f;
             variants = 2;
