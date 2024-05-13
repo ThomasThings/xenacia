@@ -8,6 +8,7 @@ public class XenaciaMod extends Mod{
     @Override
 
     public void loadContent(){
+        XenAttribute.load();
         XenItems.load();
         XenLiquids.load();
         XenEnvironmentTiles.load();
