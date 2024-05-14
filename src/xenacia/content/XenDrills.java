@@ -60,6 +60,8 @@ public class XenDrills{
         beamDrill = new BeamDrill("beam-drill"){{
             requirements(Category.production, with(XenItems.alamex, 65, XenItems.silicium, 35));
             consumePower(0.20f);
+            
+            optionalBoostIntensity = 0f;
 
             drillTime = 150f;
             tier = 3;
