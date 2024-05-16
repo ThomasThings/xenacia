@@ -19,6 +19,7 @@ public class XenaciaMod extends Mod{
         XenDistributionBlocks.load();
         XenDrills.load();
         XenTurrets.load();
+        XenWalls.load();
     }
 
 }
