@@ -28,8 +28,8 @@ public class XenDrills{
         }};
         stoneCrusher = new AttributeCrafter("stone-crusher"){{
             requirements(Category.production, with(XenItems.alamex, 35, XenItems.torren, 20));
-            outputItem = new ItemStack(XenItems.silicateSand, 3);
-            craftTime = 120;
+            outputItem = new ItemStack(XenItems.silicateSand, 2);
+            craftTime = 160;
             size = 2;
             hasPower = true;
             hasItems = true;
@@ -55,7 +55,7 @@ public class XenDrills{
             );
             maxBoost = 2f;
 
-            consumePower(80f / 60f);
+            consumePower(30f / 60f);
         }};
         beamDrill = new BeamDrill("beam-drill"){{
             requirements(Category.production, with(XenItems.alamex, 65, XenItems.silicium, 35));

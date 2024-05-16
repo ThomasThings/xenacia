@@ -31,7 +31,7 @@ public class XenFactoryBlocks{
             ambientSoundVolume = 0.07f;
 
             consumeItems(with(XenItems.silicateSand, 3));
-            consumePower(0.75f);
+            consumePower(45f / 60f);
         }};
     }
 }
