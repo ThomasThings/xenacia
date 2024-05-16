@@ -9,7 +9,9 @@ import static mindustry.type.ItemStack.with;
 
 public class XenWalls{
     public static Block
-            torrenWall, torrenWallLarge, brightCheckerWall, darkCheckerWall ;
+            torrenWall, torrenWallLarge,
+            placeholderWall, placeholderWallLarge, placeholderWallHuge, placeholderWallGigantic, placeholderWallColossol, placeholderWallMammoth, placeholderWallTitanic, placeholderWallGargantuar, placeholderWallAbsurd,
+            darkPlaceholderWall, darkPlaceholderWallLarge, darkPlaceholderWallHuge, darkPlaceholderWallGigantic, darkPlaceholderWallColossol, darkPlaceholderWallMammoth, darkPlaceholderWallTitanic, darkPlaceholderWallGargantuar, darkPlaceholderWallAbsurd;
 
     public static void load(){
 
@@ -25,11 +27,7 @@ public class XenWalls{
             health = 125 * wallHealthMultiplier;
             researchCostMultiplier = 0.1f;
         }};
-        brightCheckerWall = new Wall("bright-checker-wall"){{
-            requirements(Category.defense, with(XenItems.alamex, 1));
-            health = 5 * wallHealthMultiplier;
-        }};
-        darkCheckerWall = new Wall("dark-checker-wall"){{
+        placeholderWall = new Wall("placeholder-wall"){{
             requirements(Category.defense, with(XenItems.alamex, 1));
             health = 5 * wallHealthMultiplier;
         }};
