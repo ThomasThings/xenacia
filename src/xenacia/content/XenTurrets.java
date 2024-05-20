@@ -110,10 +110,10 @@ public class XenTurrets{
             outlineColor = Color.valueOf("353344");
             size = 1;
             ammo(
-                    XenItems.alamex,  new BasicBulletType(3f, 5){{
+                    XenItems.alamex,  new BasicBulletType(3f, 10){{
                         width = 6f;
                         height = 7.5f;
-                        lifetime = 30f;
+                        lifetime = 15f;
                         ammoMultiplier = 5;
                     }}
             );
@@ -121,7 +121,7 @@ public class XenTurrets{
             recoil = 0.5f;
             shootY = 3f;
             reload = 10f;
-            range = 230;
+            range = 115;
             shootCone = 15f;
             ammoUseEffect = Fx.casing1;
             health = 200;
@@ -136,7 +136,7 @@ public class XenTurrets{
             outlineColor = Color.valueOf("353344");
             size = 2;
             ammo(
-                    XenItems.alamex,  new BasicBulletType(4.5f, 15){{
+                    XenItems.alamex,  new BasicBulletType(4.5f, 45){{
                         width = 10f;
                         height = 12f;
                         lifetime = 60f;
