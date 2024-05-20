@@ -137,8 +137,8 @@ public class XenTurrets{
             size = 2;
             ammo(
                     XenItems.alamex,  new BasicBulletType(4.5f, 15){{
-                        width = 7f;
-                        height = 9f;
+                        width = 10f;
+                        height = 12f;
                         lifetime = 60f;
                         ammoMultiplier = 1;
                     }}
@@ -161,7 +161,7 @@ public class XenTurrets{
 
             recoil = 0.5f;
             shootY = 3f;
-            reload = 25f;
+            reload = 15f;
             range = 230;
             shootCone = 15f;
             ammoUseEffect = Fx.casing1;
@@ -169,6 +169,7 @@ public class XenTurrets{
             inaccuracy = 4f;
             rotateSpeed = 8f;
             coolant = consumeCoolant(0.1f);
+            shootSound = Sounds.shootBig;
 
             limitRange();
         }};
