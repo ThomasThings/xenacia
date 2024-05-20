@@ -110,7 +110,7 @@ public class XenTurrets{
             outlineColor = Color.valueOf("353344");
             size = 1;
             ammo(
-                    XenItems.alamex,  new BasicBulletType(3f, 10){{
+                    XenItems.alamex,  new BasicBulletType(3f, 15){{
                         width = 6f;
                         height = 7.5f;
                         lifetime = 15f;
