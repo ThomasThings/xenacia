@@ -21,7 +21,7 @@ public class XenWalls{
             researchCostMultiplier = 0.1f;
         }};
         alamexWallLarge = new Wall("alamex-wall-large"){{
-            requirements(Category.defense, ItemStack.mult(torrenWall.requirements, 4));
+            requirements(Category.defense, ItemStack.mult(alamexWall.requirements, 4));
             health = 125 * wallHealthMultiplier;
             researchCostMultiplier = 0.1f;
         }};
