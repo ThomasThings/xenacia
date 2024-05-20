@@ -125,7 +125,7 @@ public class XenTurrets{
             shootCone = 15f;
             ammoUseEffect = Fx.casing1;
             health = 200;
-            inaccuracy = 8f;
+            inaccuracy = 5.5f;
             rotateSpeed = 8f;
             coolant = consumeCoolant(0.1f);
 
