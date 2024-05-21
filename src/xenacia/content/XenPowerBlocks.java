@@ -10,13 +10,12 @@ import mindustry.world.blocks.power.ConsumeGenerator;
 import mindustry.world.blocks.power.PowerNode;
 import mindustry.world.blocks.power.SolarGenerator;
 import mindustry.world.draw.*;
-import mindustry.world.meta.BuildVisibility;
 
 import static mindustry.type.ItemStack.with;
 
 public class XenPowerBlocks{
     public static Block
-            smallLinkNode, linkNode, linkBattery, largeLinkBattery, veillaIgniter, bioBurner, solarCollecter;
+            smallLinkNode, linkNode, linkBattery, largeLinkBattery, veillaIgniter, solarCollecter;
 
     public static void load(){
         smallLinkNode = new PowerNode("small-link-node"){{
@@ -58,34 +57,16 @@ public class XenPowerBlocks{
             );
         }};
         veillaIgniter = new ConsumeGenerator("veilla-igniter"){{
-            requirements(Category.power, with(XenItems.alamex, 25));
-            powerProduction = (55f / 60f);
-            itemDuration = 60f;
+            requirements(Category.power, with(XenItems.alamex, 85));
+            size = 2;
+            powerProduction = (70f / 60f);
+            itemDuration = 80f;
 
             ambientSound = Sounds.smelter;
             ambientSoundVolume = 0.03f;
             generateEffect = Fx.generatespark;
 
             consumeItem(XenItems.veilla);
-
-            drawer = new DrawMulti(
-                    new DrawDefault(),
-                    new DrawWarmupRegion(),
-                    new DrawFlame(Color.valueOf("c6cef0"))
-            );
-        }};
-        bioBurner = new ConsumeGenerator("bio-burner"){{
-            isHidden();
-            requirements(Category.power, BuildVisibility.hidden, with(XenItems.alamex, 35, XenItems.torren, 20, XenItems.silicium, 20));
-            size = 2;
-            powerProduction = (55f / 60f);
-            itemDuration = 120f;
-
-            ambientSound = Sounds.smelter;
-            ambientSoundVolume = 0.05f;
-            generateEffect = Fx.generatespark;
-
-            consumeItem(XenItems.carbonFuel, 2);
 
             drawer = new DrawMulti(
                     new DrawDefault(),
