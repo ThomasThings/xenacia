@@ -21,7 +21,8 @@ public class XenWalls{
         }};
         alamexWallLarge = new Wall("alamex-wall-large"){{
             requirements(Category.defense, ItemStack.mult(alamexWall.requirements, 4));
-            health = 125 * wallHealthMultiplier;
+            size = 2;
+            health = 4 * 125 * wallHealthMultiplier;
         }};
         torrenWall = new Wall("torren-wall"){{
             requirements(Category.defense, with(XenItems.torren, 6));
@@ -29,7 +30,8 @@ public class XenWalls{
         }};
         torrenWallLarge = new Wall("torren-wall-large"){{
             requirements(Category.defense, ItemStack.mult(torrenWall.requirements, 4));
-            health = 200 * wallHealthMultiplier;
+            size = 2;
+            health = 4 * 200 * wallHealthMultiplier;
         }};
         veillaWall = new Wall("veilla-wall"){{
             requirements(Category.defense, with(XenItems.veilla, 6));
@@ -38,7 +40,8 @@ public class XenWalls{
         }};
         veillaWallLarge = new Wall("veilla-wall-large"){{
             requirements(Category.defense, ItemStack.mult(veillaWall.requirements, 4));
-            health = 250 * wallHealthMultiplier;
+            size = 2;
+            health = 4 * 250 * wallHealthMultiplier;
             baseExplosiveness = 3f;
         }};
     }
