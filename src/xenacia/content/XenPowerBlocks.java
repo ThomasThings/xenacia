@@ -10,12 +10,13 @@ import mindustry.world.blocks.power.ConsumeGenerator;
 import mindustry.world.blocks.power.PowerNode;
 import mindustry.world.blocks.power.SolarGenerator;
 import mindustry.world.draw.*;
+import mindustry.world.meta.BuildVisibility;
 
 import static mindustry.type.ItemStack.with;
 
 public class XenPowerBlocks{
     public static Block
-            smallLinkNode, linkNode, linkBattery, largeLinkBattery, smallBioBurner, bioBurner, solarCollecter;
+            smallLinkNode, linkNode, linkBattery, largeLinkBattery, veillaIgniter, bioBurner, solarCollecter;
 
     public static void load(){
         smallLinkNode = new PowerNode("small-link-node"){{
@@ -56,8 +57,8 @@ public class XenPowerBlocks{
                     new DrawRegion("-top")
             );
         }};
-        smallBioBurner = new ConsumeGenerator("small-bio-burner"){{
-            requirements(Category.power, with(XenItems.alamex, 15));
+        veillaIgniter = new ConsumeGenerator("veilla-igniter"){{
+            requirements(Category.power, with(XenItems.alamex, 25));
             powerProduction = (55f / 60f);
             itemDuration = 60f;
 
@@ -65,7 +66,7 @@ public class XenPowerBlocks{
             ambientSoundVolume = 0.03f;
             generateEffect = Fx.generatespark;
 
-            consumeItem(XenItems.carbonFuel);
+            consumeItem(XenItems.veilla);
 
             drawer = new DrawMulti(
                     new DrawDefault(),
@@ -74,7 +75,8 @@ public class XenPowerBlocks{
             );
         }};
         bioBurner = new ConsumeGenerator("bio-burner"){{
-            requirements(Category.power, with(XenItems.alamex, 35, XenItems.torren, 20, XenItems.silicium, 20));
+            isHidden();
+            requirements(Category.power, BuildVisibility.hidden, with(XenItems.alamex, 35, XenItems.torren, 20, XenItems.silicium, 20));
             size = 2;
             powerProduction = (55f / 60f);
             itemDuration = 120f;

@@ -24,7 +24,7 @@ public class XenEnvironmentTiles{
             silicateSandFloor, wetSilicateSand,
             lushDirt, lushDirtWall, lushMud, deepLushMud, lushMuddyWall,
             bankstone, bankstoneWall,
-            oreAlamex, oreTorren;
+            oreAlamex, oreTorren, oreVeilla, veillaDolWall;
 
     public static void load(){
         Attribute.add("stone");
@@ -274,6 +274,15 @@ public class XenEnvironmentTiles{
             itemDrop = XenItems.torren;
             oreDefault = true;
             variants = 4;
+        }};
+        oreVeilla = new OreBlock("ore-veilla"){{
+            itemDrop = XenItems.veilla;
+            oreDefault = true;
+            variants = 4;
+        }};
+        veillaDolWall = new StaticWall("graphitic-wall"){{
+            itemDrop = XenItems.veilla;
+            variants = 3;
         }};
     }
 }
