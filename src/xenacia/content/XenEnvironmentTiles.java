@@ -280,7 +280,7 @@ public class XenEnvironmentTiles{
             oreDefault = true;
             variants = 4;
         }};
-        veillaDolWall = new StaticWall("graphitic-wall"){{
+        veillaDolWall = new StaticWall("veilla-dol-wall"){{
             itemDrop = XenItems.veilla;
             variants = 3;
         }};
