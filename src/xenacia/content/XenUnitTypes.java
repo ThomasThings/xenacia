@@ -7,6 +7,7 @@ import mindustry.ai.UnitCommand;
 import mindustry.ai.types.BuilderAI;
 import mindustry.ai.types.GroundAI;
 import mindustry.content.Fx;
+import mindustry.entities.bullet.BasicBulletType;
 import mindustry.entities.bullet.BulletType;
 import mindustry.entities.bullet.MissileBulletType;
 import mindustry.entities.part.RegionPart;
@@ -25,7 +26,8 @@ public class XenUnitTypes{
     awren, mryre,
     barrier,
     soer,
-    avison;
+    avison,
+    serpence;
 
     //payload capacity is ((X*8)^2), X is desired side length of payload capacity square
     //unit size = (X x 8), X being the side of
@@ -308,6 +310,24 @@ public class XenUnitTypes{
                     trailEffect = Fx.disperseTrail;
 
                     hitEffect = despawnEffect = Fx.hitBulletColor;
+                }};
+            }});
+        }};
+
+        serpence = new UnitType("serpence"){{
+            speed = 0.55f;
+            hitSize = 10f;
+            health = 650;
+            weapons.add(new Weapon("serpence-weapon"){{
+                reload = 20f;
+                x = 18f;
+                y = 1.5f;
+                top = false;
+                ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(3.5f, 9){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
                 }};
             }});
         }};
