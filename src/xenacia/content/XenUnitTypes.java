@@ -196,7 +196,8 @@ public class XenUnitTypes{
                          x = 0;
                          y = 0;
                          mirror = false;
-                         layerOffset = -0.0000001f;
+                         under = true;
+                         layerOffset = -0.000001f;
                     }}
             );
             parts.add(
@@ -208,7 +209,7 @@ public class XenUnitTypes{
                         moveX = 0.5f;
                         progress = PartProgress.warmup;
                         mirror = true;
-                        layerOffset = -0.0000001f;
+                        layerOffset = -0.000001f;
                     }}
             );
             parts.add(
@@ -220,7 +221,7 @@ public class XenUnitTypes{
                         moveX = 0.5f;
                         progress = PartProgress.warmup;
                         mirror = true;
-                        layerOffset = -0.0000001f;
+                        layerOffset = -0.000001f;
                     }}
             );
             weapons.add(new Weapon("soer-launcher") {{
