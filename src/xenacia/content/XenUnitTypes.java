@@ -318,7 +318,7 @@ public class XenUnitTypes{
             speed = 0.55f;
             hitSize = 10f;
             health = 650;
-            weapons.add(new Weapon("serpence-weapon"){{
+            weapons.add(new Weapon("xenacia-serpence-weapon"){{
                 reload = 20f;
                 x = 18f;
                 y = 1.5f;
