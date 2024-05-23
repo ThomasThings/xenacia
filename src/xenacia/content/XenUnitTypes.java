@@ -11,10 +11,7 @@ import mindustry.entities.bullet.BasicBulletType;
 import mindustry.entities.bullet.BulletType;
 import mindustry.entities.bullet.MissileBulletType;
 import mindustry.entities.part.RegionPart;
-import mindustry.gen.LegsUnit;
-import mindustry.gen.Sounds;
-import mindustry.gen.TankUnit;
-import mindustry.gen.UnitEntity;
+import mindustry.gen.*;
 import mindustry.graphics.Layer;
 import mindustry.type.UnitType;
 import mindustry.type.Weapon;
@@ -315,6 +312,7 @@ public class XenUnitTypes{
         }};
 
         serpence = new UnitType("serpence"){{
+            constructor = MechUnit::create;
             speed = 0.55f;
             hitSize = 10f;
             health = 650;
