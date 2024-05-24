@@ -321,7 +321,7 @@ public class XenUnitTypes{
             weapons.add(new Weapon("xenacia-serpence-weapon"){{
                 reload = 20f;
                 x = 4.5f;
-                y = 1.5f;
+                y = 0.625f;
                 top = false;
                 ejectEffect = Fx.casing1;
                 bullet = new BasicBulletType(3.5f, 18){{
