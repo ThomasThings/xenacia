@@ -17,21 +17,21 @@ public class XenWalls{
 
         alamexWall = new Wall("alamex-wall"){{
             requirements(Category.defense, with(XenItems.alamex, 6));
-            health = 125 * wallHealthMultiplier;
+            health = 115 * wallHealthMultiplier;
         }};
         alamexWallLarge = new Wall("alamex-wall-large"){{
             requirements(Category.defense, ItemStack.mult(alamexWall.requirements, 4));
             size = 2;
-            health = 4 * 125 * wallHealthMultiplier;
+            health = 4 * 115 * wallHealthMultiplier;
         }};
         torrenWall = new Wall("torren-wall"){{
             requirements(Category.defense, with(XenItems.torren, 6));
-            health = 200 * wallHealthMultiplier;
+            health = 160 * wallHealthMultiplier;
         }};
         torrenWallLarge = new Wall("torren-wall-large"){{
             requirements(Category.defense, ItemStack.mult(torrenWall.requirements, 4));
             size = 2;
-            health = 4 * 200 * wallHealthMultiplier;
+            health = 4 * 160 * wallHealthMultiplier;
         }};
         veillaWall = new Wall("veilla-wall"){{
             requirements(Category.defense, with(XenItems.veilla, 6));
