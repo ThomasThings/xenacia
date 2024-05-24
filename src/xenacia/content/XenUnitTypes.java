@@ -196,7 +196,7 @@ public class XenUnitTypes{
                          y = 0;
                          mirror = false;
                          under = true;
-                         layerOffset = -0.000001f;
+                         layerOffset = -0.001f;
                     }}
             );
             parts.add(
@@ -208,7 +208,7 @@ public class XenUnitTypes{
                         moveX = 0.5f;
                         progress = PartProgress.warmup;
                         mirror = true;
-                        layerOffset = -0.000001f;
+                        layerOffset = -0.001f;
                     }}
             );
             parts.add(
@@ -220,7 +220,7 @@ public class XenUnitTypes{
                         moveX = 0.5f;
                         progress = PartProgress.warmup;
                         mirror = true;
-                        layerOffset = -0.000001f;
+                        layerOffset = -0.001f;
                     }}
             );
             weapons.add(new Weapon("soer-launcher") {{
@@ -244,7 +244,7 @@ public class XenUnitTypes{
                     weaveMag = 0.5f;
                     weaveScale = 0.5f;
                     frontColor = Color.white;
-                    backColor = trailColor = hitColor = Color.valueOf("c6cef0");
+                    backColor = trailColor = hitColor = Color.valueOf("fce198");
                     lifetime = 45f;
                     homingPower = 0.03f;
                     hitEffect = despawnEffect = Fx.hitBulletColor;
@@ -255,6 +255,7 @@ public class XenUnitTypes{
         avison = new UnitType("avison") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("40435a");
+            mechLegColor = Color.valueOf("40435a");
             health = 550f;
             armor = 2f;
             hitSize = 14f;
@@ -297,7 +298,7 @@ public class XenUnitTypes{
                     shootEffect = Fx.shootBig2;
                     smokeEffect = Fx.shootSmokeDisperse;
                     frontColor = Color.white;
-                    backColor = trailColor = hitColor = Color.valueOf("c6cef0");
+                    backColor = trailColor = hitColor = Color.valueOf("fce198");
                     trailChance = 0.64f;
                     lifetime = 35f;
                     homingPower = 0.01f;
@@ -312,13 +313,14 @@ public class XenUnitTypes{
         }};
 
         serpence = new UnitType("serpence"){{
+            outlineColor = Color.valueOf("40435a");
             constructor = MechUnit::create;
             speed = 0.55f;
             hitSize = 10f;
             health = 650;
             weapons.add(new Weapon("xenacia-serpence-weapon"){{
                 reload = 20f;
-                x = 18f;
+                x = 4.5f;
                 y = 1.5f;
                 top = false;
                 ejectEffect = Fx.casing1;
