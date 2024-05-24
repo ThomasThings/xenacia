@@ -53,7 +53,7 @@ public class XenTurrets{
             limitRange();
         }};
         streak = new ItemTurret("streak"){{
-            requirements(Category.turret, (XenItems.alamex, 180, XenItems.torren, 125));
+            requirements(Category.turret, with(XenItems.alamex, 180, XenItems.torren, 125));
             drawer = new DrawTurret(){{
                 basePrefix = "xen-";
             }};
