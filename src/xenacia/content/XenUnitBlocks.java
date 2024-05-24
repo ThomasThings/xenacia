@@ -10,14 +10,22 @@ import static mindustry.type.ItemStack.with;
 
 public class XenUnitBlocks{
     public static Block
-            assistantConstructor,
+            assistantUnitFactory, offensiveUnitFactory,
             payloadMover;
 
     public static void load(){
-        assistantConstructor = new UnitFactory("assistant-constructor"){{
+        assistantUnitFactory = new UnitFactory("assistant-unit-factory"){{
+            requirements(Category.units, with(XenItems.alamex, 50, XenItems.torren, 60, XenItems.silicium, 80));
+            plans = Seq.with(
+                    new UnitPlan(XenUnitTypes.awren, 60f * 25, with(XenItems.silicium, 30, XenItems.alamex, 20))
+            );
+            size = 2;
+            consumePower(0.5f);
+        }};
+        offensiveUnitFactory = new UnitFactory("offensive-unit-factory"){{
             requirements(Category.units, with(XenItems.alamex, 50, XenItems.silicium, 80));
             plans = Seq.with(
-                    new UnitPlan(XenUnitTypes.awren, 60f * 25, with(XenItems.silicium, 25, XenItems.alamex, 20))
+                    new UnitPlan(XenUnitTypes.serpence, 60f * 25, with(XenItems.silicium, 25, XenItems.alamex, 25))
             );
             size = 2;
             consumePower(0.5f);
