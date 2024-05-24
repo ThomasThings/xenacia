@@ -41,7 +41,7 @@ public class XenUnitTypes{
             outlineColor = Color.valueOf("40435a");
             controller = u -> new BuilderAI(true, 500);
             coreUnitDock = true;
-            health = 300f;
+            health = 400f;
             armor = 1f;
             hitSize = 6f;
             speed = 3f;
@@ -72,7 +72,7 @@ public class XenUnitTypes{
             outlineColor = Color.valueOf("40435a");
             controller = u -> new GroundAI();
             defaultCommand = UnitCommand.mineCommand;
-            health = 450f;
+            health = 850f;
             armor = 2f;
             hitSize = 10f;
             speed = 0.8f;
@@ -111,7 +111,7 @@ public class XenUnitTypes{
             outlineColor = Color.valueOf("40435a");
             controller = u -> new GroundAI();
             defaultCommand = UnitCommand.mineCommand;
-            health = 1000f;
+            health = 1950f;
             armor = 5f;
             hitSize = 19f;
             speed = 0.8f;
@@ -164,7 +164,7 @@ public class XenUnitTypes{
         soer = new UnitType("soer") {{
             constructor = UnitEntity::create;
             outlines = false;
-            health = 250f;
+            health = 650f;
             armor = 1f;
             hitSize = 12f;
             speed = 2f;
@@ -256,7 +256,7 @@ public class XenUnitTypes{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("40435a");
             mechLegColor = Color.valueOf("40435a");
-            health = 550f;
+            health = 1200f;
             armor = 2f;
             hitSize = 14f;
             speed = 1f;
@@ -317,17 +317,20 @@ public class XenUnitTypes{
             constructor = MechUnit::create;
             speed = 0.55f;
             hitSize = 10f;
-            health = 650;
+            health = 750;
             weapons.add(new Weapon("xenacia-serpence-weapon"){{
                 reload = 20f;
                 x = 4.5f;
                 y = 1.5f;
                 top = false;
                 ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(3.5f, 9){{
+                bullet = new BasicBulletType(3.5f, 18){{
                     width = 7f;
                     height = 9f;
-                    lifetime = 60f;
+                    lifetime = 40f;
+                    shrinkY = 0f;
+                    frontColor = Color.valueOf("ffffff");
+                    backColor = Color.valueOf("fce198");
                 }};
             }});
         }};
