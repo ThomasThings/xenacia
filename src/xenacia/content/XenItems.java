@@ -16,7 +16,7 @@ public class XenItems{
             hardness = 2;
             cost = 0.6f;
         }};
-        veilla = new Item("veilla", Color.valueOf("c4c1ee")){{
+        veilla = new Item("veilla", Color.valueOf("edf1fd")){{
             hardness = 1;
             cost = 0.2f;
             explosiveness = 0.5f;
