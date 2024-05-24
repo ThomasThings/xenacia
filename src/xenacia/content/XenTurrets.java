@@ -22,7 +22,7 @@ public class XenTurrets{
 
     public static void load(){
         cast = new ItemTurret("cast"){{
-            requirements(Category.turret, with(XenItems.alamex, 55));
+            requirements(Category.turret, buildVisibility.hidden, with(XenItems.alamex, 55));
             drawer = new DrawTurret(){{
                 basePrefix = "xen-";
             }};
@@ -53,18 +53,18 @@ public class XenTurrets{
             limitRange();
         }};
         streak = new ItemTurret("streak"){{
-            requirements(Category.turret, with(XenItems.alamex, 180, XenItems.torren, 125));
+            requirements(Category.turret, (XenItems.alamex, 180, XenItems.torren, 125));
             drawer = new DrawTurret(){{
                 basePrefix = "xen-";
             }};
             outlineColor = Color.valueOf("353344");
             size = 2;
             ammo(
-                    XenItems.alamex,  new BasicBulletType(4.5f, 45){{
+                    XenItems.alamex,  new BasicBulletType(4.5f, 30){{
                         width = 10f;
                         height = 12f;
                         lifetime = 60f;
-                        ammoMultiplier = 1;
+                        ammoMultiplier = 2;
                         frontColor = Color.valueOf("ffffff");
                         backColor = Color.valueOf("cad4d8");
                     }}
