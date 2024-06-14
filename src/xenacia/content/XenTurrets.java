@@ -148,14 +148,14 @@ public class XenTurrets{
             size = 2;
             health = 900;
 
-            reload = 120f;
+            reload = 50f;
             shootCone = 3f;
             rotateSpeed = 6.5f;
             targetAir = true;
             range =  120f;
 
             shootType = new LaserBulletType(){{
-                damage = 150;
+                damage = 110;
                 buildingDamageMultiplier = 0.75f;
                 collidesAir = true;
 

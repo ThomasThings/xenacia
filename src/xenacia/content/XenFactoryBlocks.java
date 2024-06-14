@@ -21,7 +21,7 @@ public class XenFactoryBlocks{
         siliciumRefiner = new GenericCrafter("silicium-refiner"){{
             requirements(Category.crafting, with(XenItems.alamex, 40, XenItems.torren, 35));
             craftEffect = Fx.smeltsmoke;
-            outputItem = new ItemStack(XenItems.silicium, 2);
+            outputItem = new ItemStack(XenItems.silicium, 1);
             craftTime = 120f;
             size = 2;
             hasPower = true;
@@ -30,7 +30,7 @@ public class XenFactoryBlocks{
             ambientSound = Sounds.smelter;
             ambientSoundVolume = 0.07f;
 
-            consumeItems(with(XenItems.silicateSand, 3, XenItems.veilla, 1));
+            consumeItems(with(XenItems.veilla, 3));
             consumePower(45f / 60f);
         }};
     }
