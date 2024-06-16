@@ -15,12 +15,13 @@ public class XenUnitBlocks{
 
     public static void load(){
         assistantUnitFactory = new UnitFactory("assistant-unit-factory"){{
-            requirements(Category.units, with(XenItems.alamex, 50, XenItems.torren, 60, XenItems.vrensteel, 80));
-            plans = Seq.with(
-                    new UnitPlan(XenUnitTypes.awren, 60f * 25, with(XenItems.vrensteel, 30, XenItems.alamex, 20))
-            );
-            size = 2;
-            consumePower(0.5f);
+                requirements(Category.units, with(XenItems.alamex, 50, XenItems.torren, 60, XenItems.vrensteel, 80));
+                plans = Seq.with(
+                        new UnitPlan(XenUnitTypes.awren, 60f * 25, with(XenItems.vrensteel, 30, XenItems.alamex, 20))
+                );
+                size = 2;
+                consumePower(0.5f);
+                squareSprite = false;
         }};
         offensiveUnitFactory = new UnitFactory("offensive-unit-factory"){{
             requirements(Category.units, with(XenItems.alamex, 50, XenItems.vrensteel, 80));
@@ -29,6 +30,7 @@ public class XenUnitBlocks{
             );
             size = 2;
             consumePower(0.5f);
+            squareSprite = false;
         }};
         payloadMover = new PayloadConveyor("payload-mover"){{
             requirements(Category.units, with(XenItems.alamex, 10, XenItems.torren, 5));
