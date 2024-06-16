@@ -26,7 +26,7 @@ public class XenPowerBlocks{
             laserColor2 = Color.valueOf("c6cef0");
         }};
         linkNode = new PowerNode("link-node"){{
-            requirements(Category.power, with(XenItems.alamex, 25, XenItems.silicium, 10));
+            requirements(Category.power, with(XenItems.alamex, 25, XenItems.vrensteel, 10));
             size = 2;
             maxNodes = 20;
             laserRange = 25;
@@ -42,7 +42,7 @@ public class XenPowerBlocks{
             fullLightColor = Color.valueOf("c6cef0");
         }};
         largeLinkBattery = new Battery("large-link-battery"){{
-            requirements(Category.power, with(XenItems.alamex, 35, XenItems.torren, 40, XenItems.silicium, 30));
+            requirements(Category.power, with(XenItems.alamex, 35, XenItems.torren, 40, XenItems.vrensteel, 30));
             size = 3;
             consumePowerBuffered(80000f);
             baseExplosiveness = 8f;
@@ -75,7 +75,7 @@ public class XenPowerBlocks{
             );
         }};
         solarCollecter = new SolarGenerator("solar-collector"){{
-            requirements(Category.power, with(XenItems.alamex, 35, XenItems.silicium, 55));
+            requirements(Category.power, with(XenItems.alamex, 35, XenItems.vrensteel, 55));
             size = 2;
             powerProduction = (55f / 60f);
         }};

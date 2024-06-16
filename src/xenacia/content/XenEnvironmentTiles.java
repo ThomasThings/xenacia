@@ -199,7 +199,6 @@ public class XenEnvironmentTiles{
         silicateSandFloor = new Floor("silicate-sand-floor"){{
             variants = 4;
             mapColor = Color.valueOf("dab798");
-            itemDrop = XenItems.silicateSand;
         }};
         wetSilicateSand = new Floor("wet-silicate-sand"){{
             variants = 4;

@@ -15,13 +15,13 @@ import static mindustry.type.ItemStack.with;
 
 public class XenFactoryBlocks{
     public static Block
-            siliciumRefiner;
+            vrensteelCompressor;
 
     public static void load(){
-        siliciumRefiner = new GenericCrafter("silicium-refiner"){{
+        vrensteelCompressor = new GenericCrafter("vrensteel"){{
             requirements(Category.crafting, with(XenItems.alamex, 40, XenItems.torren, 35));
             craftEffect = Fx.smeltsmoke;
-            outputItem = new ItemStack(XenItems.silicium, 1);
+            outputItem = new ItemStack(XenItems.vrensteel, 1);
             craftTime = 120f;
             size = 2;
             hasPower = true;

@@ -134,7 +134,7 @@ public class XenTurrets{
             coolant = consumeCoolant(0.1f);
         }};
         beam = new PowerTurret("beam"){{
-            requirements(Category.turret, with(XenItems.alamex, 90, XenItems.torren, 30, XenItems.silicium, 25));
+            requirements(Category.turret, with(XenItems.alamex, 90, XenItems.torren, 30, XenItems.vrensteel, 25));
             drawer = new DrawTurret(){{
                 basePrefix = "xen-";
                 parts.add(new RegionPart("-cylinder"){{
