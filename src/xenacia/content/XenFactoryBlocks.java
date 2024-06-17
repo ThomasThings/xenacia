@@ -23,7 +23,7 @@ public class XenFactoryBlocks{
             requirements(Category.crafting, with(XenItems.alamex, 40, XenItems.torren, 35));
 
             craftEffect = new RadialEffect(){{
-                effect = Fx.blockCrash;
+                effect = Fx.disperseTrail;
                 amount = 4;
                 rotationSpacing = 90f;
                 lengthOffset = 5f;
