@@ -1,6 +1,7 @@
 package xenacia.content;
 
 import arc.graphics.Color;
+import mindustry.content.Fx;
 import mindustry.entities.effect.RadialEffect;
 import mindustry.gen.Sounds;
 import mindustry.type.Category;
@@ -22,6 +23,7 @@ public class XenFactoryBlocks{
             requirements(Category.crafting, with(XenItems.alamex, 40, XenItems.torren, 35));
 
             craftEffect = new RadialEffect(){{
+                effect = Fx.blockCrash;
                 amount = 4;
                 rotationSpacing = 90f;
                 lengthOffset = 5f;
