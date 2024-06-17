@@ -28,6 +28,7 @@ public class XenFactoryBlocks{
                 rotationSpacing = 90f;
                 lengthOffset = 20f;
                 rotationOffset = 45f;
+                baseRotation = 90f;
             }};
 
             outputItem = new ItemStack(XenItems.vrensteel, 1);
