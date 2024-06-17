@@ -26,12 +26,12 @@ public class XenFactoryBlocks{
                 effect = Fx.disperseTrail;
                 amount = 4;
                 rotationSpacing = 90f;
-                lengthOffset = 5f;
+                lengthOffset = 20f;
                 rotationOffset = 45f;
             }};
 
             outputItem = new ItemStack(XenItems.vrensteel, 1);
-            craftTime = 120f;
+            craftTime = 10f;
             size = 2;
             hasPower = true;
             hasLiquids = false;
