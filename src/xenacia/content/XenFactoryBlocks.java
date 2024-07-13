@@ -22,7 +22,7 @@ public class XenFactoryBlocks{
 
             craftEffect = new RadialEffect(){{
                 effect = Fx.disperseTrail;
-                amount = 4;
+                amount = 8;
                 rotationSpacing = 90f;
                 lengthOffset = -5f;
                 rotationOffset = 45f;
