@@ -18,7 +18,7 @@ public class XenEnvironmentTiles{
             asuralineFloor, deepAsuralineFloor, asuralineWall, asuralineBoulder,
             asulariteFloor, deepAsulariteFloor, asulariteWall, asulariteBoulder,
             dolstoneFloor, deepDolstoneFloor, dolstoneWall, dolstoneBoulder,
-            veilliteFloor,
+            veillineFloor,
             vidriteFloor, deepVidriteFloor, vidriteWall, vidriteBoulder,
             shallowHydrex, deepHydrex,
             lushGrass, wetLushGrass, lushGrassWall,
@@ -130,7 +130,7 @@ public class XenEnvironmentTiles{
             deepDolstoneFloor.asFloor().decoration = this;
         }};
 
-        veilliteFloor = new Floor("veillite-floor"){{
+        veillineFloor = new Floor("veilline-floor"){{
             variants = 16;
             mapColor = Color.valueOf("c4c1ee");
         }};
