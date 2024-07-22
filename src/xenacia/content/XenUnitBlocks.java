@@ -16,6 +16,7 @@ public class XenUnitBlocks{
     public static void load(){
         offensiveUnitFactory = new UnitFactory("offensive-unit-factory"){{
             requirements(Category.units, with(XenItems.alamex, 50, XenItems.vrensteel, 80));
+            health = 650;
             plans = Seq.with(
                     new UnitPlan(XenUnitTypes.serpence, 60f * 20, with(XenItems.vrensteel, 25, XenItems.alamex, 25))
             );
@@ -24,16 +25,18 @@ public class XenUnitBlocks{
             squareSprite = false;
         }};
         assistantUnitFactory = new UnitFactory("assistant-unit-factory"){{
-                requirements(Category.units, with(XenItems.alamex, 50, XenItems.torren, 60, XenItems.vrensteel, 80));
-                plans = Seq.with(
-                        new UnitPlan(XenUnitTypes.awren, 60f * 25, with(XenItems.vrensteel, 30, XenItems.alamex, 20))
-                );
-                size = 2;
-                consumePower(0.5f);
-                squareSprite = false;
+            requirements(Category.units, with(XenItems.alamex, 50, XenItems.torren, 60, XenItems.vrensteel, 80));
+            health = 650;
+            plans = Seq.with(
+                    new UnitPlan(XenUnitTypes.awren, 60f * 25, with(XenItems.vrensteel, 30, XenItems.alamex, 20))
+            );
+            size = 2;
+            consumePower(0.5f);
+            squareSprite = false;
         }};
         defensiveUnitFactory = new UnitFactory("defensive-unit-factory"){{
             requirements(Category.units, with(XenItems.alamex, 76, XenItems.torren, 50, XenItems.vrensteel, 90));
+            health = 650;
             plans = Seq.with(
                     new UnitPlan(XenUnitTypes.barrier, 60f * 30, with(XenItems.vrensteel, 35, XenItems.alamex, 40))
             );

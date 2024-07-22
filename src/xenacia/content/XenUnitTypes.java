@@ -23,7 +23,7 @@ public class XenUnitTypes{
     avison,
     serpence,
     awren, mryre,
-    barrier;
+    barrier, blockaid;
 
     //payload capacity is ((X*8)^2), X is desired side length of payload capacity square
     //unit size = (X x 8), X being the side of
@@ -154,7 +154,7 @@ public class XenUnitTypes{
             outlineColor = Color.valueOf("40435a");
             controller = u -> new GroundAI();
             defaultCommand = UnitCommand.mineCommand;
-            health = 850f;
+            health = 1000f;
             armor = 2f;
             hitSize = 10f;
             speed = 0.8f;
@@ -193,7 +193,7 @@ public class XenUnitTypes{
             outlineColor = Color.valueOf("40435a");
             controller = u -> new GroundAI();
             defaultCommand = UnitCommand.mineCommand;
-            health = 1950f;
+            health = 3050f;
             armor = 5f;
             hitSize = 19f;
             speed = 0.8f;
@@ -259,6 +259,36 @@ public class XenUnitTypes{
                 max = 1500f;
                 y = -8f;
                 width = 6f;
+                whenShooting = false;
+            }});
+        }};
+        blockaid = new UnitType("blockaid"){{
+            outlineColor = Color.valueOf("40435a");
+            constructor = MechUnit::create;
+            speed = 1f;
+            rotateSpeed = 2f;
+            hitSize = 19f;
+            health = 5200;
+            abilities.add(new ShieldArcAbility(){{
+                region = "xenacia-barrier-shield";
+                radius = 45f;
+                angle = 95f;
+                regen = 0.5f;
+                cooldown = 60f * 8f;
+                max = 4000f;
+                y = -8f;
+                width = 8f;
+                whenShooting = false;
+            }});
+            abilities.add(new ShieldArcAbility(){{
+                region = "xenacia-barrier-shield";
+                radius = 45f;
+                angle = -95f;
+                regen = 0.5f;
+                cooldown = 60f * 8f;
+                max = 4000f;
+                y = -8f;
+                width = 8f;
                 whenShooting = false;
             }});
         }};
