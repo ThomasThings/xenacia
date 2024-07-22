@@ -17,8 +17,6 @@ public class XenDrills{
             tier = 2;
             drillTime = 300;
             size = 2;
-
-            consumeLiquid(XenLiquids.hydrex, 0.05f).boost();
         }};
         beamDrill = new BeamDrill("beam-drill"){{
             requirements(Category.production, with(XenItems.alamex, 65, XenItems.vrensteel, 35));
