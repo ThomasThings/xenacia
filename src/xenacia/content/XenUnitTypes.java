@@ -245,7 +245,7 @@ public class XenUnitTypes{
             }});
         }};
 
-        barrier = new UnitType("serpence"){{
+        barrier = new UnitType("barrier"){{
             outlineColor = Color.valueOf("40435a");
             constructor = MechUnit::create;
             speed = 0.55f;
