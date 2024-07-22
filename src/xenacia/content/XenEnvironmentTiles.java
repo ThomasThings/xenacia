@@ -1,8 +1,6 @@
 package xenacia.content;
 
 import arc.graphics.Color;
-import mindustry.content.StatusEffects;
-import mindustry.graphics.CacheLayer;
 import mindustry.world.Block;
 import mindustry.world.blocks.environment.Floor;
 import mindustry.world.blocks.environment.OreBlock;
@@ -154,33 +152,6 @@ public class XenEnvironmentTiles{
             variants = 2;
             vidriteFloor.asFloor().decoration = this;
             deepVidriteFloor.asFloor().decoration = this;
-        }};
-
-        shallowHydrex = new Floor("shallow-hydrex"){{
-            speedMultiplier = 0.5f;
-            variants = 2;
-            status = StatusEffects.wet;
-            statusDuration = 90f;
-            liquidDrop = XenLiquids.hydrex;
-            isLiquid = true;
-            cacheLayer = CacheLayer.water;
-            albedo = 0.9f;
-            supportsOverlay = true;
-            mapColor = Color.valueOf("597fb8");
-        }};
-        deepHydrex = new Floor("deep-hydrex"){{
-            speedMultiplier = 0.2f;
-            variants = 2;
-            liquidDrop = XenLiquids.hydrex;
-            liquidMultiplier = 1.5f;
-            isLiquid = true;
-            status = StatusEffects.wet;
-            statusDuration = 120f;
-            drownTime = 200f;
-            cacheLayer = CacheLayer.water;
-            albedo = 0.9f;
-            supportsOverlay = true;
-            mapColor = Color.valueOf("4965a2");
         }};
 
         oreAlamex = new OreBlock("ore-alamex"){{
