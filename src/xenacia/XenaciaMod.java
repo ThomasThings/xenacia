@@ -9,7 +9,6 @@ public class XenaciaMod extends Mod{
 
     public void loadContent(){
         XenItems.load();
-        XenLiquids.load();
         XenEnvironmentTiles.load();
         XenUnitTypes.load();
         XenCores.load();
