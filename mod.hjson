@@ -6,9 +6,9 @@ author: "Thomas's Things"
 
 main: "xenacia.XenaciaMod"
 
-description: "A mod with ambitious goals, and a fresh start."
+description: "A mod with ambitious goals, and a fresh start. Incomplete, still in pre-pre-alpha."
 
-version: nv0.0
+version: v0.0.1
 
 minGameVersion: 146
 
