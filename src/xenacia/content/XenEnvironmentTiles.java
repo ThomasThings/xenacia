@@ -47,7 +47,7 @@ public class XenEnvironmentTiles{
             mapColor = Color.valueOf("5a6877");
         }};
         lendesiteWall = new StaticWall("lendesite-wall"){{
-            variants = 3;
+            variants = 4;
             mapColor = Color.valueOf("5a6877");
         }};
         lendesiteBoulder = new Prop("lendesite-boulder"){{
