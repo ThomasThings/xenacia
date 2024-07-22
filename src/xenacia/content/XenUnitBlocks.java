@@ -10,7 +10,7 @@ import static mindustry.type.ItemStack.with;
 
 public class XenUnitBlocks{
     public static Block
-            offensiveUnitFactory, assistantUnitFactory, deffensiveUnitFactory,
+            offensiveUnitFactory, assistantUnitFactory, defensiveUnitFactory,
             payloadMover;
 
     public static void load(){
@@ -32,7 +32,7 @@ public class XenUnitBlocks{
                 consumePower(0.5f);
                 squareSprite = false;
         }};
-        deffensiveUnitFactory = new UnitFactory("deffensive-unit-factory"){{
+        defensiveUnitFactory = new UnitFactory("defensive-unit-factory"){{
             requirements(Category.units, with(XenItems.alamex, 76, XenItems.torren, 50, XenItems.vrensteel, 90));
             plans = Seq.with(
                     new UnitPlan(XenUnitTypes.barrier, 60f * 30, with(XenItems.vrensteel, 35, XenItems.alamex, 40))
