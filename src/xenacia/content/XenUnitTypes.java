@@ -247,17 +247,17 @@ public class XenUnitTypes{
             outlineColor = Color.valueOf("40435a");
             constructor = MechUnit::create;
             speed = 0.3f;
-            rotateSpeed = 1f;
+            rotateSpeed = 1.5f;
             hitSize = 10f;
             health = 950;
             abilities.add(new ShieldArcAbility(){{
-                region = "barrier-shield";
-                radius = 50f;
-                angle = 90f;
+                region = "xenacia-barrier-shield";
+                radius = 25f;
+                angle = 70f;
                 regen = 0.5f;
                 cooldown = 60f * 8f;
                 max = 1000f;
-                y = -20f;
+                y = -8f;
                 width = 6f;
                 whenShooting = false;
             }});
