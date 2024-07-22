@@ -20,11 +20,10 @@ import mindustry.type.weapons.PointDefenseWeapon;
 public class XenUnitTypes{
     public static UnitType
     radix,
-    awren, mryre,
-    barrier,
-    soer,
     avison,
-    serpence;
+    serpence,
+    awren, mryre,
+    barrier;
 
     //payload capacity is ((X*8)^2), X is desired side length of payload capacity square
     //unit size = (X x 8), X being the side of
@@ -246,7 +245,7 @@ public class XenUnitTypes{
             }});
         }};
 
-        serpence = new UnitType("serpence"){{
+        barrier = new UnitType("serpence"){{
             outlineColor = Color.valueOf("40435a");
             constructor = MechUnit::create;
             speed = 0.55f;
