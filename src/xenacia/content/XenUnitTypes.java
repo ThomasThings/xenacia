@@ -66,8 +66,6 @@ public class XenUnitTypes{
             engineOffset = 4.75f;
         }};
 
-
-
         avison = new UnitType("avison") {{
             constructor = LegsUnit::create;
             outlineColor = Color.valueOf("40435a");
@@ -248,7 +246,8 @@ public class XenUnitTypes{
         barrier = new UnitType("barrier"){{
             outlineColor = Color.valueOf("40435a");
             constructor = MechUnit::create;
-            speed = 0.55f;
+            speed = 0.3f;
+            rotateSpeed = 1f;
             hitSize = 10f;
             health = 950;
             abilities.add(new ShieldArcAbility(){{
