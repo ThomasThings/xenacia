@@ -253,7 +253,7 @@ public class XenUnitTypes{
             health = 950;
             abilities.add(new ShieldArcAbility(){{
                 region = "barrier-shield";
-                radius = 20f;
+                radius = 50f;
                 angle = 90f;
                 regen = 0.5f;
                 cooldown = 60f * 8f;
