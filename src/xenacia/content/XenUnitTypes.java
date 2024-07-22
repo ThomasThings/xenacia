@@ -7,10 +7,10 @@ import mindustry.ai.UnitCommand;
 import mindustry.ai.types.BuilderAI;
 import mindustry.ai.types.GroundAI;
 import mindustry.content.Fx;
+import mindustry.entities.abilities.ShieldArcAbility;
 import mindustry.entities.bullet.BasicBulletType;
 import mindustry.entities.bullet.BulletType;
 import mindustry.entities.bullet.MissileBulletType;
-import mindustry.entities.part.RegionPart;
 import mindustry.gen.*;
 import mindustry.graphics.Layer;
 import mindustry.type.UnitType;
@@ -65,6 +65,91 @@ public class XenUnitTypes{
 
             engineSize = 1.8f;
             engineOffset = 4.75f;
+        }};
+
+
+
+        avison = new UnitType("avison") {{
+            constructor = LegsUnit::create;
+            outlineColor = Color.valueOf("40435a");
+            mechLegColor = Color.valueOf("40435a");
+            health = 1200f;
+            armor = 2f;
+            hitSize = 14f;
+            speed = 1f;
+            rotateSpeed = 5f;
+
+            itemCapacity = 10;
+
+            legContinuousMove = false;
+            legCount = 4;
+            legGroupSize = 1;
+            legLength = 16f;
+            legExtension = -3;
+            legForwardScl = 0.6f;
+            legMoveSpace = 1.4f;
+            hovering = true;
+            shadowElevation = 0.1f;
+            groundLayer = Layer.legUnit - 1f;
+
+            weapons.add(new Weapon("avison-launcher") {{
+                x = 0f;
+                y = 2.5f;
+                top = false;
+                layerOffset = 0f;
+                rotate = false;
+                reload = 40f;
+                inaccuracy = 0f;
+                velocityRnd = 0f;
+                shootSound = Sounds.shootBig;
+                shootY = 0f;
+
+                bullet = new MissileBulletType() {{
+                    damage = 30;
+                    speed = 5.5f;
+                    width = height = 12;
+                    shrinkY = 0.3f;
+                    backSprite = "large-bomb-back";
+                    sprite = "mine-bullet";
+                    velocityRnd = 0.05f;
+                    shootEffect = Fx.shootBig2;
+                    smokeEffect = Fx.shootSmokeDisperse;
+                    frontColor = Color.white;
+                    backColor = trailColor = hitColor = Color.valueOf("fce198");
+                    trailChance = 0.64f;
+                    lifetime = 35f;
+                    homingPower = 0.01f;
+                    homingRange = 150f;
+                    rotationOffset = 90f;
+                    trailRotation = true;
+                    trailEffect = Fx.disperseTrail;
+
+                    hitEffect = despawnEffect = Fx.hitBulletColor;
+                }};
+            }});
+        }};
+
+        serpence = new UnitType("serpence"){{
+            outlineColor = Color.valueOf("40435a");
+            constructor = MechUnit::create;
+            speed = 0.55f;
+            hitSize = 10f;
+            health = 750;
+            weapons.add(new Weapon("xenacia-serpence-weapon"){{
+                reload = 20f;
+                x = 4.875f;
+                y = 0.375f;
+                top = false;
+                ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(3.5f, 18){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 40f;
+                    shrinkY = 0f;
+                    frontColor = Color.valueOf("ffffff");
+                    backColor = Color.valueOf("fce198");
+                }};
+            }});
         }};
 
         awren = new UnitType("awren") {{
@@ -153,70 +238,10 @@ public class XenUnitTypes{
                 targetInterval = 10f;
                 targetSwitchInterval = 10f;
                 bullet = new BulletType(){{
-                   shootEffect = Fx.sparkShoot;
-                   hitEffect=Fx.pointHit;
-                   maxRange = 100f;
-                   damage = 15;
-                }};
-            }});
-        }};
-
-        avison = new UnitType("avison") {{
-            constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("40435a");
-            mechLegColor = Color.valueOf("40435a");
-            health = 1200f;
-            armor = 2f;
-            hitSize = 14f;
-            speed = 1f;
-            rotateSpeed = 5f;
-
-            itemCapacity = 10;
-
-            legContinuousMove = false;
-            legCount = 4;
-            legGroupSize = 1;
-            legLength = 16f;
-            legExtension = -3;
-            legForwardScl = 0.6f;
-            legMoveSpace = 1.4f;
-            hovering = true;
-            shadowElevation = 0.1f;
-            groundLayer = Layer.legUnit - 1f;
-
-            weapons.add(new Weapon("avison-launcher") {{
-                x = 0f;
-                y = 2.5f;
-                top = false;
-                layerOffset = 0f;
-                rotate = false;
-                reload = 40f;
-                inaccuracy = 0f;
-                velocityRnd = 0f;
-                shootSound = Sounds.shootBig;
-                shootY = 0f;
-
-                bullet = new MissileBulletType() {{
-                    damage = 30;
-                    speed = 5.5f;
-                    width = height = 12;
-                    shrinkY = 0.3f;
-                    backSprite = "large-bomb-back";
-                    sprite = "mine-bullet";
-                    velocityRnd = 0.05f;
-                    shootEffect = Fx.shootBig2;
-                    smokeEffect = Fx.shootSmokeDisperse;
-                    frontColor = Color.white;
-                    backColor = trailColor = hitColor = Color.valueOf("fce198");
-                    trailChance = 0.64f;
-                    lifetime = 35f;
-                    homingPower = 0.01f;
-                    homingRange = 150f;
-                    rotationOffset = 90f;
-                    trailRotation = true;
-                    trailEffect = Fx.disperseTrail;
-
-                    hitEffect = despawnEffect = Fx.hitBulletColor;
+                    shootEffect = Fx.sparkShoot;
+                    hitEffect=Fx.pointHit;
+                    maxRange = 100f;
+                    damage = 15;
                 }};
             }});
         }};
@@ -226,21 +251,17 @@ public class XenUnitTypes{
             constructor = MechUnit::create;
             speed = 0.55f;
             hitSize = 10f;
-            health = 750;
-            weapons.add(new Weapon("xenacia-serpence-weapon"){{
-                reload = 20f;
-                x = 4.875f;
-                y = 0.375f;
-                top = false;
-                ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(3.5f, 18){{
-                    width = 7f;
-                    height = 9f;
-                    lifetime = 40f;
-                    shrinkY = 0f;
-                    frontColor = Color.valueOf("ffffff");
-                    backColor = Color.valueOf("fce198");
-                }};
+            health = 950;
+            abilities.add(new ShieldArcAbility(){{
+                region = "barrier-shield";
+                radius = 20f;
+                angle = 90f;
+                regen = 0.5f;
+                cooldown = 60f * 8f;
+                max = 1000f;
+                y = -20f;
+                width = 6f;
+                whenShooting = false;
             }});
         }};
     }
