@@ -297,7 +297,7 @@ public class XenUnitTypes{
 
             weapons.add(new Weapon("xenacia-blockaid-weapon"){{
                 top = true;
-                y = -5f + 0.125f;
+                y = -5.25f + 0.125f;
                 x = 4.5f - 0.125f;
                 reload = 45f;
                 ejectEffect = Fx.none;
@@ -333,7 +333,7 @@ public class XenUnitTypes{
                 }};
             }});
             weapons.add(new PointDefenseWeapon("xenacia-blockaid-point-defense"){{
-                x = 8.25f;
+                x = 7.5f + 0.125f;
                 y = -2f;
                 mirror = true;
                 reload = 5f;
