@@ -297,8 +297,8 @@ public class XenUnitTypes{
 
             weapons.add(new Weapon("xenacia-blockaid-weapon"){{
                 top = false;
-                y = 4.5f + 0.125f;
-                x = -5.25f;
+                y = -5f + 0.125f;
+                x = -5.5f;
                 reload = 45f;
                 ejectEffect = Fx.none;
                 recoil = 2f;
