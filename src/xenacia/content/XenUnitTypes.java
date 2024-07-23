@@ -304,10 +304,10 @@ public class XenUnitTypes{
                 recoil = 2f;
                 shootSound = Sounds.missile;
                 velocityRnd = 0.5f;
-                inaccuracy = 25f;
+                inaccuracy = 15f;
                 alternate = true;
-                shoot.shots = 2;
-                shoot.shotDelay = 10f;
+                shoot.shots = 3;
+                shoot.shotDelay = 6f;
 
                 bullet = new MissileBulletType() {{
                     damage = 30;
