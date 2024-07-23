@@ -333,7 +333,7 @@ public class XenUnitTypes{
                 }};
             }});
             weapons.add(new PointDefenseWeapon("xenacia-blockaid-point-defense"){{
-                x = 7.5f + 0.125f;
+                x = 8f + 0.125f;
                 y = -2.75f;
                 mirror = true;
                 reload = 5f;
