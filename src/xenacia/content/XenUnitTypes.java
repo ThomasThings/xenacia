@@ -295,18 +295,41 @@ public class XenUnitTypes{
                 whenShooting = false;
             }});
 
-            weapons.add(new PointDefenseWeapon("xenacia-blockaid-weapon"){{
-                x = 4.5f + 0.125f;
-                y = -5f;
-                mirror = true;
-                reload = 5f;
-                targetInterval = 10f;
-                targetSwitchInterval = 10f;
-                bullet = new BulletType(){{
-                    shootEffect = Fx.sparkShoot;
-                    hitEffect=Fx.pointHit;
-                    maxRange = 100f;
-                    damage = 15;
+            weapons.add(new Weapon("xenacia-blockaid-weapon"){{
+                top = false;
+                y = 4.5f + 0.125f;
+                x = -5.25f;
+                reload = 45f;
+                ejectEffect = Fx.none;
+                recoil = 2f;
+                shootSound = Sounds.missile;
+                velocityRnd = 0.5f;
+                inaccuracy = 25f;
+                alternate = true;
+                shoot.shots = 2;
+                shoot.shotDelay = 10f;
+
+                bullet = new MissileBulletType() {{
+                    damage = 30;
+                    speed = 5.5f;
+                    width = height = 12;
+                    shrinkY = 0.3f;
+                    backSprite = "large-bomb-back";
+                    sprite = "mine-bullet";
+                    velocityRnd = 0.05f;
+                    shootEffect = Fx.shootBig2;
+                    smokeEffect = Fx.shootSmokeDisperse;
+                    frontColor = Color.white;
+                    backColor = trailColor = hitColor = Color.valueOf("bedcf8");
+                    trailChance = 0.64f;
+                    lifetime = 35f;
+                    homingPower = 0.01f;
+                    homingRange = 150f;
+                    rotationOffset = 90f;
+                    trailRotation = true;
+                    trailEffect = Fx.disperseTrail;
+
+                    hitEffect = despawnEffect = Fx.hitBulletColor;
                 }};
             }});
             weapons.add(new PointDefenseWeapon("xenacia-blockaid-point-defense"){{
