@@ -250,6 +250,7 @@ public class XenUnitTypes{
             rotateSpeed = 1.5f;
             hitSize = 10f;
             health = 1200;
+
             abilities.add(new ShieldArcAbility(){{
                 region = "xenacia-barrier-shield";
                 radius = 25f;
@@ -268,6 +269,7 @@ public class XenUnitTypes{
             rotateSpeed = 2f;
             hitSize = 19f;
             health = 5200;
+
             abilities.add(new ShieldArcAbility(){{
                 region = "xenacia-blockaid-shield";
                 radius = 45f;
@@ -288,6 +290,21 @@ public class XenUnitTypes{
                 max = 4000f;
                 y = -8f;
                 width = 8f;
+            }});
+
+            weapons.add(new PointDefenseWeapon("xenacia-mryre-weapon"){{
+                x = 4.5f + 0.125f;
+                y = -5f;
+                mirror = true;
+                reload = 5f;
+                targetInterval = 10f;
+                targetSwitchInterval = 10f;
+                bullet = new BulletType(){{
+                    shootEffect = Fx.sparkShoot;
+                    hitEffect=Fx.pointHit;
+                    maxRange = 100f;
+                    damage = 15;
+                }};
             }});
         }};
     }
