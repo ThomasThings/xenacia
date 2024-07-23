@@ -259,7 +259,6 @@ public class XenUnitTypes{
                 max = 1500f;
                 y = -8f;
                 width = 6f;
-                whenShooting = false;
             }});
         }};
         blockaid = new UnitType("blockaid"){{
@@ -270,7 +269,7 @@ public class XenUnitTypes{
             hitSize = 19f;
             health = 5200;
             abilities.add(new ShieldArcAbility(){{
-                region = "xenacia-barrier-shield";
+                region = "xenacia-blockaid-shield";
                 radius = 45f;
                 angle = 95f;
                 regen = 0.5f;
@@ -278,18 +277,17 @@ public class XenUnitTypes{
                 max = 4000f;
                 y = -8f;
                 width = 8f;
-                whenShooting = false;
             }});
             abilities.add(new ShieldArcAbility(){{
-                region = "xenacia-barrier-shield";
+                region = "xenacia-blockaid-shield";
                 radius = 45f;
-                angle = -95f;
+                angleOffset = 180f;
+                angle = 95f;
                 regen = 0.5f;
                 cooldown = 60f * 8f;
                 max = 4000f;
                 y = -8f;
                 width = 8f;
-                whenShooting = false;
             }});
         }};
     }
