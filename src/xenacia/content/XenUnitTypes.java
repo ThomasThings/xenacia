@@ -238,7 +238,7 @@ public class XenUnitTypes{
                     shootEffect = Fx.sparkShoot;
                     hitEffect=Fx.pointHit;
                     maxRange = 100f;
-                    damage = 15;
+                    damage = 25;
                 }};
             }});
         }};
@@ -342,8 +342,8 @@ public class XenUnitTypes{
                 bullet = new BulletType(){{
                     shootEffect = Fx.sparkShoot;
                     hitEffect=Fx.pointHit;
-                    maxRange = 100f;
-                    damage = 15;
+                    maxRange = 150f;
+                    damage = 20;
                 }};
             }});
         }};
