@@ -295,7 +295,7 @@ public class XenUnitTypes{
                 whenShooting = false;
             }});
 
-            weapons.add(new PointDefenseWeapon("xenacia-mryre-weapon"){{
+            weapons.add(new PointDefenseWeapon("xenacia-blockaid-weapon"){{
                 x = 4.5f + 0.125f;
                 y = -5f;
                 mirror = true;
