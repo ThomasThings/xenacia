@@ -323,7 +323,7 @@ public class XenUnitTypes{
                     backColor = trailColor = hitColor = Color.valueOf("bedcf8");
                     trailChance = 0.64f;
                     lifetime = 35f;
-                    homingPower = 0.01f;
+                    homingPower = 0.03f;
                     homingRange = 150f;
                     rotationOffset = 90f;
                     trailRotation = true;
