@@ -309,6 +309,20 @@ public class XenUnitTypes{
                     damage = 15;
                 }};
             }});
+            weapons.add(new PointDefenseWeapon("xenacia-blockaid-point-defense"){{
+                x = 8.25f;
+                y = -2f;
+                mirror = true;
+                reload = 5f;
+                targetInterval = 10f;
+                targetSwitchInterval = 10f;
+                bullet = new BulletType(){{
+                    shootEffect = Fx.sparkShoot;
+                    hitEffect=Fx.pointHit;
+                    maxRange = 100f;
+                    damage = 15;
+                }};
+            }});
         }};
     }
 }
