@@ -260,6 +260,7 @@ public class XenUnitTypes{
                 max = 1500f;
                 y = -8f;
                 width = 6f;
+                whenShooting = false;
             }});
         }};
         blockaid = new UnitType("blockaid"){{
@@ -279,6 +280,7 @@ public class XenUnitTypes{
                 max = 4000f;
                 y = -8f;
                 width = 8f;
+                whenShooting = false;
             }});
             abilities.add(new ShieldArcAbility(){{
                 region = "xenacia-blockaid-shield";
@@ -288,8 +290,9 @@ public class XenUnitTypes{
                 regen = 0.5f;
                 cooldown = 60f * 8f;
                 max = 4000f;
-                y = -8f;
+                y = 8f;
                 width = 8f;
+                whenShooting = false;
             }});
 
             weapons.add(new PointDefenseWeapon("xenacia-mryre-weapon"){{
