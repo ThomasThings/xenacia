@@ -10,12 +10,17 @@ import mindustry.content.Fx;
 import mindustry.entities.abilities.ShieldArcAbility;
 import mindustry.entities.bullet.BasicBulletType;
 import mindustry.entities.bullet.BulletType;
+import mindustry.entities.bullet.FlakBulletType;
 import mindustry.entities.bullet.MissileBulletType;
+import mindustry.entities.effect.MultiEffect;
+import mindustry.entities.effect.WaveEffect;
+import mindustry.entities.effect.WrapEffect;
 import mindustry.gen.*;
 import mindustry.graphics.Layer;
 import mindustry.type.UnitType;
 import mindustry.type.Weapon;
 import mindustry.type.weapons.PointDefenseWeapon;
+import mindustry.graphics.Pal;
 
 public class XenUnitTypes{
     public static UnitType
@@ -23,7 +28,8 @@ public class XenUnitTypes{
     avison,
     serpence,
     awren, mryre,
-    barrier, blockaid;
+    barrier, blockaid,
+    glaive;
 
     //payload capacity is ((X*8)^2), X is desired side length of payload capacity square
     //unit size = (X x 8), X being the side of
@@ -33,7 +39,7 @@ public class XenUnitTypes{
     //tread width = ( @-treads#-# sprite width )
     //tread height = ( @-treads#-# sprite height )
 
-    public static void load(){
+    public static void load() {
 
         radix = new UnitType("radix") {{
             constructor = UnitEntity::create;
@@ -126,19 +132,19 @@ public class XenUnitTypes{
             }});
         }};
 
-        serpence = new UnitType("serpence"){{
+        serpence = new UnitType("serpence") {{
             outlineColor = Color.valueOf("40435a");
             constructor = MechUnit::create;
             speed = 0.55f;
             hitSize = 10f;
             health = 750;
-            weapons.add(new Weapon("xenacia-serpence-weapon"){{
+            weapons.add(new Weapon("xenacia-serpence-weapon") {{
                 reload = 20f;
                 x = 4.875f;
                 y = 0.375f;
                 top = false;
                 ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(3.5f, 18){{
+                bullet = new BasicBulletType(3.5f, 18) {{
                     width = 7f;
                     height = 9f;
                     lifetime = 40f;
@@ -227,23 +233,23 @@ public class XenUnitTypes{
                     )
             };
 
-            weapons.add(new PointDefenseWeapon("xenacia-mryre-point-defense"){{
+            weapons.add(new PointDefenseWeapon("xenacia-mryre-point-defense") {{
                 x = 5.5f + 0.125f;
                 y = -2.5f;
                 mirror = true;
                 reload = 5f;
                 targetInterval = 10f;
                 targetSwitchInterval = 10f;
-                bullet = new BulletType(){{
+                bullet = new BulletType() {{
                     shootEffect = Fx.sparkShoot;
-                    hitEffect=Fx.pointHit;
+                    hitEffect = Fx.pointHit;
                     maxRange = 100f;
                     damage = 25;
                 }};
             }});
         }};
 
-        barrier = new UnitType("barrier"){{
+        barrier = new UnitType("barrier") {{
             outlineColor = Color.valueOf("40435a");
             constructor = MechUnit::create;
             speed = 0.6f;
@@ -251,7 +257,7 @@ public class XenUnitTypes{
             hitSize = 10f;
             health = 1200;
 
-            abilities.add(new ShieldArcAbility(){{
+            abilities.add(new ShieldArcAbility() {{
                 region = "xenacia-barrier-shield";
                 radius = 25f;
                 angle = 115f;
@@ -263,7 +269,7 @@ public class XenUnitTypes{
                 whenShooting = false;
             }});
         }};
-        blockaid = new UnitType("blockaid"){{
+        blockaid = new UnitType("blockaid") {{
             outlineColor = Color.valueOf("40435a");
             constructor = MechUnit::create;
             speed = 1f;
@@ -271,7 +277,7 @@ public class XenUnitTypes{
             hitSize = 19f;
             health = 5200;
 
-            abilities.add(new ShieldArcAbility(){{
+            abilities.add(new ShieldArcAbility() {{
                 region = "xenacia-blockaid-shield";
                 radius = 45f;
                 angle = 95f;
@@ -282,7 +288,7 @@ public class XenUnitTypes{
                 width = 8f;
                 whenShooting = false;
             }});
-            abilities.add(new ShieldArcAbility(){{
+            abilities.add(new ShieldArcAbility() {{
                 region = "xenacia-blockaid-shield";
                 radius = 45f;
                 angleOffset = 180f;
@@ -295,7 +301,7 @@ public class XenUnitTypes{
                 whenShooting = false;
             }});
 
-            weapons.add(new Weapon("xenacia-blockaid-weapon"){{
+            weapons.add(new Weapon("xenacia-blockaid-weapon") {{
                 top = true;
                 y = -5.25f + 0.125f;
                 x = 4.5f - 0.125f;
@@ -332,18 +338,49 @@ public class XenUnitTypes{
                     hitEffect = despawnEffect = Fx.hitBulletColor;
                 }};
             }});
-            weapons.add(new PointDefenseWeapon("xenacia-blockaid-point-defense"){{
+            weapons.add(new PointDefenseWeapon("xenacia-blockaid-point-defense") {{
                 x = 8f + 0.125f;
                 y = -2.75f;
                 mirror = true;
                 reload = 5f;
                 targetInterval = 10f;
                 targetSwitchInterval = 10f;
-                bullet = new BulletType(){{
+                bullet = new BulletType() {{
                     shootEffect = Fx.sparkShoot;
-                    hitEffect=Fx.pointHit;
+                    hitEffect = Fx.pointHit;
                     maxRange = 150f;
                     damage = 20;
+                }};
+            }});
+        }};
+
+        glaive = new UnitType("excalibur") {{
+            speed = 0.25f;
+            hitSize = 26f;
+            health = 14000;
+            weapons.add(new Weapon("ex-cyclone") {{
+                reload = 10f;
+                x = 4f;
+                top = false;
+                ejectEffect = Fx.casing2;
+                bullet = new FlakBulletType(4f, 8) {{
+                    width = 11f;
+                    height = 22f;
+                    lifetime = 60f;
+                    sprite = "shell";
+
+                    splashDamage = 38f;
+                    splashDamageRadius = 24f;
+                    trailLength = 14;
+                    collidesGround = true;
+                    explodeRange = 12f;
+                    trailColor = Pal.bulletYellowBack;
+                    hitEffect = new MultiEffect(Fx.massiveExplosion, new WrapEffect(Fx.dynamicSpikes, Pal.bulletYellow, 24), new WaveEffect() {{
+                        colorFrom = colorTo = Pal.bulletYellow;
+                        sizeTo = 40f;
+                        lifetime = 12f;
+                        strokeFrom = 12f;
+                    }});
                 }};
             }});
         }};
