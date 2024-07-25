@@ -355,6 +355,7 @@ public class XenUnitTypes{
         }};
 
         glaive = new UnitType("excalibur") {{
+            constructor = MechUnit::create;
             speed = 0.25f;
             hitSize = 26f;
             health = 14000;
