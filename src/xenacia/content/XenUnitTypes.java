@@ -10,17 +10,12 @@ import mindustry.content.Fx;
 import mindustry.entities.abilities.ShieldArcAbility;
 import mindustry.entities.bullet.BasicBulletType;
 import mindustry.entities.bullet.BulletType;
-import mindustry.entities.bullet.FlakBulletType;
 import mindustry.entities.bullet.MissileBulletType;
-import mindustry.entities.effect.MultiEffect;
-import mindustry.entities.effect.WaveEffect;
-import mindustry.entities.effect.WrapEffect;
 import mindustry.gen.*;
 import mindustry.graphics.Layer;
 import mindustry.type.UnitType;
 import mindustry.type.Weapon;
 import mindustry.type.weapons.PointDefenseWeapon;
-import mindustry.graphics.Pal;
 
 public class XenUnitTypes{
     public static UnitType
@@ -354,7 +349,7 @@ public class XenUnitTypes{
             }});
         }};
 
-        glaive = new UnitType("excalibur") {{
+        /*glaive = new UnitType("excalibur") {{
             constructor = MechUnit::create;
             speed = 0.25f;
             hitSize = 26f;
@@ -384,6 +379,6 @@ public class XenUnitTypes{
                     }});
                 }};
             }});
-        }};
+        }};*/
     }
 }
