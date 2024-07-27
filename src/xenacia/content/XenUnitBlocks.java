@@ -2,8 +2,11 @@ package xenacia.content;
 
 import arc.struct.Seq;
 import mindustry.type.Category;
+import mindustry.type.ItemStack;
+import mindustry.type.PayloadStack;
 import mindustry.world.Block;
 import mindustry.world.blocks.payloads.PayloadConveyor;
+import mindustry.world.blocks.units.UnitAssembler;
 import mindustry.world.blocks.units.UnitFactory;
 
 import static mindustry.type.ItemStack.with;
@@ -11,6 +14,7 @@ import static mindustry.type.ItemStack.with;
 public class XenUnitBlocks{
     public static Block
             offensiveUnitFactory, assistantUnitFactory, defensiveUnitFactory,
+            testAssembler,
             payloadMover;
 
     public static void load(){
@@ -43,6 +47,17 @@ public class XenUnitBlocks{
             size = 2;
             consumePower(0.5f);
             squareSprite = false;
+        }};
+        testAssembler = new UnitAssembler("tank-assembler"){{
+            requirements(Category.units, with(XenItems.alamex, 50));
+            regionSuffix = "-dark";
+            size = 3;
+            plans.add(
+                    new AssemblerUnitPlan(XenUnitTypes.blockaid, 60f * 50f, PayloadStack.list(XenUnitTypes.barrier, 4, XenWalls.alamexWallLarge, 2), ItemStack.list(XenItems.torren, 30))
+            );
+            areaSize = 3;
+
+            consumePower(3f);
         }};
         payloadMover = new PayloadConveyor("payload-mover"){{
             requirements(Category.units, with(XenItems.alamex, 10, XenItems.torren, 5));
