@@ -53,7 +53,7 @@ public class XenUnitBlocks{
             regionSuffix = "-dark";
             size = 3;
             plans.add(
-                    new AssemblerUnitPlan(XenUnitTypes.blockaid, 60f * 50f, PayloadStack.list(XenUnitTypes.barrier, 4, XenWalls.alamexWallLarge, 2), ItemStack.list(XenItems.torren, 30))
+                    new AssemblerUnitPlan(XenUnitTypes.blockaid, 60f * 50f, PayloadStack.list(XenUnitTypes.barrier, 4, XenWalls.alamexWallLarge, 2))
             );
             areaSize = 3;
 
