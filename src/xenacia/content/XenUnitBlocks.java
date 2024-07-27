@@ -2,7 +2,6 @@ package xenacia.content;
 
 import arc.struct.Seq;
 import mindustry.type.Category;
-import mindustry.type.ItemStack;
 import mindustry.type.PayloadStack;
 import mindustry.world.Block;
 import mindustry.world.blocks.payloads.PayloadConveyor;
