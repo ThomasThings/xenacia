@@ -48,14 +48,13 @@ public class XenUnitBlocks{
             consumePower(0.5f);
             squareSprite = false;
         }};
-        testAssembler = new UnitAssembler("tank-assembler"){{
+        testAssembler = new UnitAssembler("test-assembler"){{
             requirements(Category.units, with(XenItems.alamex, 50));
-            regionSuffix = "-dark";
             size = 3;
             plans.add(
                     new AssemblerUnitPlan(XenUnitTypes.blockaid, 60f * 50f, PayloadStack.list(XenUnitTypes.barrier, 4, XenWalls.alamexWallLarge, 2))
             );
-            areaSize = 3;
+            areaSize = 5;
 
             consumePower(3f);
         }};
