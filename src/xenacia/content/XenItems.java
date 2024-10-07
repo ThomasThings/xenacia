@@ -5,7 +5,7 @@ import mindustry.type.Item;
 
 public class XenItems{
     public static Item
-    alamex, torren, veilla, vrensteel;
+    alamex, torren, veilla, lenora, vrensteel;
     public static void load(){
 
         alamex = new Item("alamex", Color.valueOf("bfbfcf")){{
@@ -20,6 +20,10 @@ public class XenItems{
             hardness = 1;
             cost = 0.2f;
             explosiveness = 0.5f;
+        }};
+        lenora = new Item("lenora", Color.valueOf("7c6873")){{
+            hardness = 2;
+            cost = 0.8f;
         }};
         vrensteel = new Item("vrensteel", Color.valueOf("546569")){{
             cost = 1;

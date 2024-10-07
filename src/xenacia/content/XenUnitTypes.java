@@ -19,12 +19,12 @@ import mindustry.type.weapons.PointDefenseWeapon;
 
 public class XenUnitTypes{
     public static UnitType
-    radix,
+    radix, refine,
     avison,
     serpence,
     awren, mryre,
     barrier, blockaid,
-    glaive;
+    daul, beaure;
 
     //payload capacity is ((X*8)^2), X is desired side length of payload capacity square
     //unit size = (X x 8), X being the side of
@@ -38,7 +38,6 @@ public class XenUnitTypes{
 
         radix = new UnitType("radix") {{
             constructor = UnitEntity::create;
-            outlineColor = Color.valueOf("40435a");
             controller = u -> new BuilderAI(true, 500);
             coreUnitDock = true;
             health = 400f;
@@ -66,10 +65,38 @@ public class XenUnitTypes{
             engineSize = 1.8f;
             engineOffset = 4.75f;
         }};
+        refine = new UnitType("refine") {{
+            constructor = UnitEntity::create;
+            controller = u -> new BuilderAI(true, 700);
+            coreUnitDock = true;
+            health = 600f;
+            armor = 1f;
+            hitSize = 6f;
+            speed = 4f;
+            rotateSpeed = 15f;
+            flying = true;
+            lowAltitude = true;
+            accel = 0.2f;
+            drag = 0.1f;
+
+            targetPriority = -2;
+
+            mineWalls = true;
+            mineFloor = true;
+            mineSpeed = 10f;
+            mineTier = 2;
+            buildSpeed = 0.4f;
+            buildBeamOffset = 5f;
+
+            itemCapacity = 20;
+            isEnemy = false;
+
+            engineSize = 2f;
+            engineOffset = 4.75f;
+        }};
 
         avison = new UnitType("avison") {{
             constructor = LegsUnit::create;
-            outlineColor = Color.valueOf("40435a");
             mechLegColor = Color.valueOf("40435a");
             health = 1200f;
             armor = 2f;
@@ -128,7 +155,6 @@ public class XenUnitTypes{
         }};
 
         serpence = new UnitType("serpence") {{
-            outlineColor = Color.valueOf("40435a");
             constructor = MechUnit::create;
             speed = 0.55f;
             hitSize = 10f;
@@ -152,7 +178,6 @@ public class XenUnitTypes{
 
         awren = new UnitType("awren") {{
             constructor = TankUnit::create;
-            outlineColor = Color.valueOf("40435a");
             controller = u -> new GroundAI();
             defaultCommand = UnitCommand.mineCommand;
             health = 1000f;
@@ -191,7 +216,7 @@ public class XenUnitTypes{
         }};
         mryre = new UnitType("mryre") {{
             constructor = TankUnit::create;
-            outlineColor = Color.valueOf("40435a");
+
             controller = u -> new GroundAI();
             defaultCommand = UnitCommand.mineCommand;
             health = 3050f;
@@ -245,7 +270,6 @@ public class XenUnitTypes{
         }};
 
         barrier = new UnitType("barrier") {{
-            outlineColor = Color.valueOf("40435a");
             constructor = MechUnit::create;
             speed = 0.6f;
             rotateSpeed = 1.5f;
@@ -265,7 +289,6 @@ public class XenUnitTypes{
             }});
         }};
         blockaid = new UnitType("blockaid") {{
-            outlineColor = Color.valueOf("40435a");
             constructor = MechUnit::create;
             speed = 1f;
             rotateSpeed = 2f;
@@ -349,36 +372,43 @@ public class XenUnitTypes{
             }});
         }};
 
-        /*glaive = new UnitType("excalibur") {{
-            constructor = MechUnit::create;
-            speed = 0.25f;
-            hitSize = 26f;
-            health = 14000;
-            weapons.add(new Weapon("ex-cyclone") {{
-                reload = 10f;
-                x = 4f;
-                top = false;
-                ejectEffect = Fx.casing2;
-                bullet = new FlakBulletType(4f, 8) {{
-                    width = 11f;
-                    height = 22f;
-                    lifetime = 60f;
-                    sprite = "shell";
+        daul = new UnitType("daul") {{
+            constructor = LegsUnit::create;
+            mechLegColor = Color.valueOf("40435a");
+            health = 1200f;
+            armor = 2f;
+            hitSize = 14f;
+            speed = 1f;
+            rotateSpeed = 5f;
 
-                    splashDamage = 38f;
-                    splashDamageRadius = 24f;
-                    trailLength = 14;
-                    collidesGround = true;
-                    explodeRange = 12f;
-                    trailColor = Pal.bulletYellowBack;
-                    hitEffect = new MultiEffect(Fx.massiveExplosion, new WrapEffect(Fx.dynamicSpikes, Pal.bulletYellow, 24), new WaveEffect() {{
-                        colorFrom = colorTo = Pal.bulletYellow;
-                        sizeTo = 40f;
-                        lifetime = 12f;
-                        strokeFrom = 12f;
-                    }});
+            itemCapacity = 10;
+
+            legContinuousMove = false;
+            legCount = 6;
+            legGroupSize = 2;
+            legLength = 11f;
+            legExtension = -3;
+            legForwardScl = 0.6f;
+            legMoveSpace = 1.4f;
+            hovering = true;
+            shadowElevation = 0.1f;
+            groundLayer = Layer.legUnit - 1f;
+
+            weapons.add(new Weapon("daul-weapon") {{
+                reload = 30f;
+                x = 0f;
+                y = 3.5f;
+                top = false;
+                ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(2f, 10) {{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 90f;
+                    shrinkY = 0f;
+                    frontColor = Color.valueOf("ffffff");
+                    backColor = Color.valueOf("dcced5");
                 }};
             }});
-        }};*/
+        }};
     }
 }

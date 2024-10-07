@@ -14,7 +14,8 @@ public class XenUnitBlocks{
     public static Block
             offensiveUnitFactory, assistantUnitFactory, defensiveUnitFactory,
             testAssembler,
-            payloadMover;
+            payloadMover,
+            mageConstructor;
 
     public static void load(){
         offensiveUnitFactory = new UnitFactory("offensive-unit-factory"){{
@@ -38,7 +39,7 @@ public class XenUnitBlocks{
             squareSprite = false;
         }};
         defensiveUnitFactory = new UnitFactory("defensive-unit-factory"){{
-            requirements(Category.units, with(XenItems.alamex, 76, XenItems.torren, 50, XenItems.vrensteel, 90));
+            requirements(Category.units, with(XenItems.alamex, 75, XenItems.torren, 50, XenItems.vrensteel, 90));
             health = 650;
             plans = Seq.with(
                     new UnitPlan(XenUnitTypes.barrier, 60f * 30, with(XenItems.vrensteel, 35, XenItems.alamex, 40))
@@ -64,6 +65,16 @@ public class XenUnitBlocks{
             health = 450;
             underBullets = true;
             size = 2;
+        }};
+        mageConstructor = new UnitFactory("mage-constructor"){{
+            requirements(Category.units, with(XenItems.alamex, 125, XenItems.torren, 50, XenItems.lenora, 100, XenItems.vrensteel, 90));
+            health = 650;
+            plans = Seq.with(
+                    new UnitPlan(XenUnitTypes.barrier, 60f * 30, with(XenItems.vrensteel, 45, XenItems.alamex, 70, XenItems.lenora, 80))
+            );
+            size = 3;
+            consumePower(1.4f);
+            squareSprite = false;
         }};
     }
 }
