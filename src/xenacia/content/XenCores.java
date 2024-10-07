@@ -52,7 +52,7 @@ public class XenCores{
             unitCapModifier = 6;
             squareSprite = false;
         }};
-        coreContrive = new CoreBlock("core-contrive"){{
+        coreOcculyt = new CoreBlock("core-occulyt"){{
             requirements(Category.effect, BuildVisibility.editorOnly, with(XenItems.alamex, 1000, XenItems.torren, 400, XenItems.lenora, 600));
             alwaysUnlocked = true;
 
