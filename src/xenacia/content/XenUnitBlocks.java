@@ -1,6 +1,10 @@
 package xenacia.content;
 
 import arc.struct.Seq;
+import mindustry.content.Blocks;
+import mindustry.content.Items;
+import mindustry.content.Liquids;
+import mindustry.content.UnitTypes;
 import mindustry.type.Category;
 import mindustry.type.PayloadStack;
 import mindustry.world.Block;
@@ -49,14 +53,17 @@ public class XenUnitBlocks{
             squareSprite = false;
         }};
         testAssembler = new UnitAssembler("test-assembler"){{
-            requirements(Category.units, with(XenItems.alamex, 50));
-            size = 3;
+            requirements(Category.units, with(Items.carbide, 100, Items.oxide, 200, Items.tungsten, 500, Items.silicon, 800, Items.thorium, 400));
+            regionSuffix = "-dark";
+            size = 5;
             plans.add(
-                    new AssemblerUnitPlan(XenUnitTypes.blockaid, 60f * 50f, PayloadStack.list(XenUnitTypes.barrier, 4, XenWalls.alamexWallLarge, 2))
+                    new AssemblerUnitPlan(UnitTypes.quell, 60f * 60f, PayloadStack.list(UnitTypes.elude, 4, Blocks.berylliumWallLarge, 12)),
+                    new AssemblerUnitPlan(UnitTypes.disrupt, 60f * 60f * 3f, PayloadStack.list(UnitTypes.avert, 6, Blocks.carbideWallLarge, 20))
             );
-            areaSize = 5;
+            areaSize = 13;
 
             consumePower(3f);
+            consumeLiquid(Liquids.cyanogen, 12f / 60f);
         }};
         payloadMover = new PayloadConveyor("payload-mover"){{
             requirements(Category.units, with(XenItems.alamex, 10, XenItems.torren, 5));
