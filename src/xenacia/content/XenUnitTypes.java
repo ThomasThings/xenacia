@@ -74,7 +74,7 @@ public class XenUnitTypes{
             health = 600f;
             armor = 1f;
             hitSize = 6f;
-            speed = 4f;
+            speed = 3.5f;
             rotateSpeed = 15f;
             flying = true;
             lowAltitude = true;
@@ -165,7 +165,7 @@ public class XenUnitTypes{
             health = 750;
             weapons.add(new Weapon("xenacia-serpence-weapon") {{
                 reload = 20f;
-                x = 4.875f;
+                x = 4.625f;
                 y = 0.375f;
                 top = false;
                 ejectEffect = Fx.casing1;
@@ -374,7 +374,7 @@ public class XenUnitTypes{
                 bullet = new BulletType() {{
                     shootEffect = Fx.sparkShoot;
                     hitEffect = Fx.pointHit;
-                    maxRange = 150f;
+                    maxRange = 100f;
                     damage = 20;
                 }};
             }});
@@ -415,7 +415,7 @@ public class XenUnitTypes{
                     lifetime = 90f;
                     shrinkY = 0f;
                     frontColor = Color.valueOf("ffffff");
-                    backColor = Color.valueOf("dcced5");
+                    backColor = Color.valueOf("b8a9b1");
                 }};
             }});
         }};
