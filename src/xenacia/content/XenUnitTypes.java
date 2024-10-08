@@ -64,7 +64,7 @@ public class XenUnitTypes{
             isEnemy = false;
 
             engineSize = 1.8f;
-            engineOffset = 4.75f;
+            engineOffset = 4.25f;
         }};
         refine = new UnitType("refine") {{
             constructor = UnitEntity::create;
@@ -94,7 +94,7 @@ public class XenUnitTypes{
             isEnemy = false;
 
             engineSize = 2f;
-            engineOffset = 4.75f;
+            engineOffset = 5.75f;
         }};
 
         avison = new UnitType("avison") {{
@@ -386,7 +386,7 @@ public class XenUnitTypes{
             outlines = false;
             health = 800f;
             armor = 2f;
-            hitSize = 14f;
+            hitSize = 8f;
             speed = 0.75f;
             rotateSpeed = 5f;
 
