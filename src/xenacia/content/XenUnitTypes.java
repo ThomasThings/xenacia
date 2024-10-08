@@ -384,10 +384,10 @@ public class XenUnitTypes{
             constructor = LegsUnit::create;
             mechLegColor = Color.valueOf("40435a");
             outlines = false;
-            health = 1200f;
+            health = 800f;
             armor = 2f;
             hitSize = 14f;
-            speed = 1f;
+            speed = 0.75f;
             rotateSpeed = 5f;
 
             itemCapacity = 10;
@@ -404,7 +404,7 @@ public class XenUnitTypes{
             groundLayer = Layer.legUnit - 1f;
 
             weapons.add(new Weapon("daul-weapon") {{
-                reload = 30f;
+                reload = 15f;
                 x = 0f;
                 y = 3.5f;
                 top = false;
