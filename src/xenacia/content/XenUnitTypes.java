@@ -39,6 +39,7 @@ public class XenUnitTypes{
         radix = new UnitType("radix") {{
             constructor = UnitEntity::create;
             controller = u -> new BuilderAI(true, 500);
+            outlines = false;
             coreUnitDock = true;
             health = 400f;
             armor = 1f;
@@ -68,6 +69,7 @@ public class XenUnitTypes{
         refine = new UnitType("refine") {{
             constructor = UnitEntity::create;
             controller = u -> new BuilderAI(true, 700);
+            outlines = false;
             coreUnitDock = true;
             health = 600f;
             armor = 1f;
@@ -98,6 +100,7 @@ public class XenUnitTypes{
         avison = new UnitType("avison") {{
             constructor = LegsUnit::create;
             mechLegColor = Color.valueOf("40435a");
+            outlines = false;
             health = 1200f;
             armor = 2f;
             hitSize = 14f;
@@ -156,6 +159,7 @@ public class XenUnitTypes{
 
         serpence = new UnitType("serpence") {{
             constructor = MechUnit::create;
+            outlines = false;
             speed = 0.55f;
             hitSize = 10f;
             health = 750;
@@ -178,6 +182,7 @@ public class XenUnitTypes{
 
         awren = new UnitType("awren") {{
             constructor = TankUnit::create;
+            outlines = false;
             controller = u -> new GroundAI();
             defaultCommand = UnitCommand.mineCommand;
             health = 1000f;
@@ -216,6 +221,7 @@ public class XenUnitTypes{
         }};
         mryre = new UnitType("mryre") {{
             constructor = TankUnit::create;
+            outlines = false;
 
             controller = u -> new GroundAI();
             defaultCommand = UnitCommand.mineCommand;
@@ -271,6 +277,7 @@ public class XenUnitTypes{
 
         barrier = new UnitType("barrier") {{
             constructor = MechUnit::create;
+            outlines = false;
             speed = 0.6f;
             rotateSpeed = 1.5f;
             hitSize = 10f;
@@ -290,6 +297,7 @@ public class XenUnitTypes{
         }};
         blockaid = new UnitType("blockaid") {{
             constructor = MechUnit::create;
+            outlines = false;
             speed = 1f;
             rotateSpeed = 2f;
             hitSize = 19f;
@@ -375,6 +383,7 @@ public class XenUnitTypes{
         daul = new UnitType("daul") {{
             constructor = LegsUnit::create;
             mechLegColor = Color.valueOf("40435a");
+            outlines = false;
             health = 1200f;
             armor = 2f;
             hitSize = 14f;
