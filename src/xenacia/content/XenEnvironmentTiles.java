@@ -21,7 +21,6 @@ public class XenEnvironmentTiles{
             vidriteFloor, deepVidriteFloor, vidriteWall, vidriteBoulder,
             derilectFloor, damagedDerilectFloor, deepDerilectFloor, damagedDeepDerilectFloor, studdedDerilectFloor, platedDerilectFloor,
             markedDerilectFloor, damagedMarkedDerilectFloor, deepMarkedDerilectFloor, damagedDeepMarkedDerilectFloor, studdedMarkedDerilectFloor, platedMarkedDerilectFloor,
-
             hazardDerilectFloor, damagedHazardDerilectFloor, deepHazardDerilectFloor, damagedDeepHazardDerilectFloor, studdedHazardDerilectFloor, platedHazardDerilectFloor,
             oreAlamex, oreTorren, oreVeilla, veillaDolWall, wallOreAlamex, wallOreTorren;
 
@@ -202,7 +201,7 @@ public class XenEnvironmentTiles{
         deepMarkedDerilectFloor = new Floor("deep-marked-derilect-floor"){{
             mapColor = Color.valueOf("514656");
         }};
-        damagedDeepMarkedDerilectFloor = new Floor("deep-damaged-marked-derilect-floor"){{
+        damagedDeepMarkedDerilectFloor = new Floor("damaged-deep-marked-derilect-floor"){{
             variants = 3;
             mapColor = Color.valueOf("514656");
         }};
@@ -223,7 +222,7 @@ public class XenEnvironmentTiles{
         deepHazardDerilectFloor = new Floor("deep-hazard-derilect-floor"){{
             mapColor = Color.valueOf("514656");
         }};
-        damagedDeepHazardDerilectFloor = new Floor("deep-damaged-hazard-derilect-floor"){{
+        damagedDeepHazardDerilectFloor = new Floor("damaged-deep-hazard-derilect-floor"){{
             variants = 3;
             mapColor = Color.valueOf("514656");
         }};
