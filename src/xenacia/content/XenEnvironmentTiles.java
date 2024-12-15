@@ -22,7 +22,8 @@ public class XenEnvironmentTiles{
             derilectFloor, damagedDerilectFloor, deepDerilectFloor, damagedDeepDerilectFloor, studdedDerilectFloor, platedDerilectFloor,
             markedDerilectFloor, damagedMarkedDerilectFloor, deepMarkedDerilectFloor, damagedDeepMarkedDerilectFloor, studdedMarkedDerilectFloor, platedMarkedDerilectFloor,
             hazardMarkedDerilectFloor, damagedHazardMarkedDerilectFloor, deepHazardMarkedDerilectFloor, damagedDeepHazardMarkedDerilectFloor, studdedHazardMarkedDerilectFloor, platedHazardMarkedDerilectFloor,
-            oreAlamex, oreTorren, oreVeilla, veillaDolWall, wallOreAlamex, wallOreTorren;
+            derilectWall, damagedDerilectWall, markedDerilectWall, damagedMarkedDerilectWall, hazardMarkedDerilectWall, damagedHazardMarkedDerilectWall,
+    oreAlamex, oreTorren, oreVeilla, veillaDolWall, wallOreAlamex, wallOreTorren;
 
     public static void load(){
         Attribute.add("stone");
@@ -244,6 +245,32 @@ public class XenEnvironmentTiles{
             variants = 0;
             mapColor = Color.valueOf("514656");
         }};
+
+        derilectWall = new StaticWall("derilect-wall"){{
+            variants = 4;
+            mapColor = Color.valueOf("746978");
+        }};
+        damagedDerilectWall = new StaticWall("damaged-derilect-wall"){{
+            variants = 4;
+            mapColor = Color.valueOf("746978");
+        }};
+        markedDerilectWall = new StaticWall("derilect-wall"){{
+            variants = 4;
+            mapColor = Color.valueOf("bfbfcf");
+        }};
+        damagedDerilectWall = new StaticWall("damaged-derilect-wall"){{
+            variants = 4;
+            mapColor = Color.valueOf("bfbfcf");
+        }};
+        hazardMarkedDerilectWall = new StaticWall("derilect-wall"){{
+            variants = 4;
+            mapColor = Color.valueOf("cf8d58");
+        }};
+        damagedHazardMarkedDerilectWall = new StaticWall("damaged-derilect-wall"){{
+            variants = 4;
+            mapColor = Color.valueOf("cf8d58");
+        }};
+
 
         oreAlamex = new OreBlock("ore-alamex"){{
             itemDrop = XenItems.alamex;
