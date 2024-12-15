@@ -171,6 +171,7 @@ public class XenEnvironmentTiles{
         }};
 
         derilectFloor = new Floor("derilect-floor"){{
+            variants = 0;
             mapColor = Color.valueOf("514656");
         }};
         damagedDerilectFloor = new Floor("damaged-derilect-floor"){{
