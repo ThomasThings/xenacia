@@ -179,6 +179,7 @@ public class XenEnvironmentTiles{
             mapColor = Color.valueOf("514656");
         }};
         deepDerilectFloor = new Floor("deep-derilect-floor"){{
+            variants = 0;
             mapColor = Color.valueOf("514656");
         }};
         damagedDeepDerilectFloor = new Floor("deep-damaged-derilect-floor"){{
@@ -186,9 +187,11 @@ public class XenEnvironmentTiles{
             mapColor = Color.valueOf("514656");
         }};
         studdedDerilectFloor = new Floor("studded-derilect-floor"){{
+            variants = 0;
             mapColor = Color.valueOf("514656");
         }};
         platedDerilectFloor = new Floor("plated-derilect-floor"){{
+            variants = 0;
             mapColor = Color.valueOf("514656");
         }};
 
