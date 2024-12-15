@@ -21,7 +21,7 @@ public class XenEnvironmentTiles{
             vidriteFloor, deepVidriteFloor, vidriteWall, vidriteBoulder,
             derilectFloor, damagedDerilectFloor, deepDerilectFloor, damagedDeepDerilectFloor, studdedDerilectFloor, platedDerilectFloor,
             markedDerilectFloor, damagedMarkedDerilectFloor, deepMarkedDerilectFloor, damagedDeepMarkedDerilectFloor, studdedMarkedDerilectFloor, platedMarkedDerilectFloor,
-            hazardDerilectFloor, damagedHazardDerilectFloor, deepHazardDerilectFloor, damagedDeepHazardDerilectFloor, studdedHazardDerilectFloor, platedHazardDerilectFloor,
+            hazardMarkedDerilectFloor, damagedHazardMarkedDerilectFloor, deepHazardMarkedDerilectFloor, damagedDeepHazardMarkedDerilectFloor, studdedHazardMarkedDerilectFloor, platedHazardMarkedDerilectFloor,
             oreAlamex, oreTorren, oreVeilla, veillaDolWall, wallOreAlamex, wallOreTorren;
 
     public static void load(){
@@ -196,6 +196,7 @@ public class XenEnvironmentTiles{
         }};
 
         markedDerilectFloor = new Floor("marked-derilect-floor"){{
+            variants = 0;
             mapColor = Color.valueOf("514656");
         }};
         damagedMarkedDerilectFloor = new Floor("damaged-marked-derilect-floor"){{
@@ -203,6 +204,7 @@ public class XenEnvironmentTiles{
             mapColor = Color.valueOf("514656");
         }};
         deepMarkedDerilectFloor = new Floor("deep-marked-derilect-floor"){{
+            variants = 0;
             mapColor = Color.valueOf("514656");
         }};
         damagedDeepMarkedDerilectFloor = new Floor("damaged-deep-marked-derilect-floor"){{
@@ -210,30 +212,36 @@ public class XenEnvironmentTiles{
             mapColor = Color.valueOf("514656");
         }};
         studdedMarkedDerilectFloor = new Floor("studded-marked-derilect-floor"){{
+            variants = 0;
             mapColor = Color.valueOf("514656");
         }};
         platedMarkedDerilectFloor = new Floor("plated-marked-derilect-floor"){{
+            variants = 0;
             mapColor = Color.valueOf("514656");
         }};
 
-        hazardDerilectFloor = new Floor("hazard-derilect-floor"){{
+        hazardMarkedDerilectFloor = new Floor("hazard-marked-derilect-floor"){{
+            variants = 0;
             mapColor = Color.valueOf("514656");
         }};
-        damagedHazardDerilectFloor = new Floor("damaged-hazard-derilect-floor"){{
+        damagedHazardMarkedDerilectFloor = new Floor("damaged-hazard-marked-marked-derilect-floor"){{
             variants = 3;
             mapColor = Color.valueOf("514656");
         }};
-        deepHazardDerilectFloor = new Floor("deep-hazard-derilect-floor"){{
+        deepHazardMarkedDerilectFloor = new Floor("deep-hazard-marked-derilect-floor"){{
+            variants = 0;
             mapColor = Color.valueOf("514656");
         }};
-        damagedDeepHazardDerilectFloor = new Floor("damaged-deep-hazard-derilect-floor"){{
+        damagedDeepHazardMarkedDerilectFloor = new Floor("damaged-deep-hazard-marked-derilect-floor"){{
             variants = 3;
             mapColor = Color.valueOf("514656");
         }};
-        studdedHazardDerilectFloor = new Floor("studded-hazard-derilect-floor"){{
+        studdedHazardMarkedDerilectFloor = new Floor("studded-hazard-marked-derilect-floor"){{
+            variants = 0;
             mapColor = Color.valueOf("514656");
         }};
-        platedHazardDerilectFloor = new Floor("plated-hazard-derilect-floor"){{
+        platedHazardMarkedDerilectFloor = new Floor("plated-hazard-marked-derilect-floor"){{
+            variants = 0;
             mapColor = Color.valueOf("514656");
         }};
 
