@@ -13,7 +13,7 @@ public class XenDrills{
 
     public static void load(){
         basicDrill = new Drill("basic-drill"){{
-            requirements(Category.production, with(XenItems.alamex, 15));
+            requirements(Category.production, with(XenItems.alamex, 25));
             tier = 2;
             drillTime = 300;
             size = 2;

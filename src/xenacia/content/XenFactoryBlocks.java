@@ -18,7 +18,7 @@ public class XenFactoryBlocks{
 
     public static void load(){
         vrensteelCompressor = new GenericCrafter("vrensteel-compressor"){{
-            requirements(Category.crafting, with(XenItems.alamex, 40, XenItems.torren, 35));
+            requirements(Category.crafting, with(XenItems.alamex, 90, XenItems.torren, 75));
 
             craftEffect = new RadialEffect(){{
                 effect = Fx.disperseTrail;

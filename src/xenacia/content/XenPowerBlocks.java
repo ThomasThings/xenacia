@@ -34,7 +34,7 @@ public class XenPowerBlocks{
             laserColor2 = Color.valueOf("c6cef0");
         }};
         linkBattery = new Battery("link-battery"){{
-            requirements(Category.power, with(XenItems.alamex, 25, XenItems.torren, 10));
+            requirements(Category.power, with(XenItems.alamex, 45, XenItems.torren, 15));
             size = 2;
             consumePowerBuffered(10000f);
             baseExplosiveness = 5f;
@@ -42,7 +42,7 @@ public class XenPowerBlocks{
             fullLightColor = Color.valueOf("c6cef0");
         }};
         largeLinkBattery = new Battery("large-link-battery"){{
-            requirements(Category.power, with(XenItems.alamex, 35, XenItems.torren, 40, XenItems.vrensteel, 30));
+            requirements(Category.power, with(XenItems.alamex, 120, XenItems.torren, 55, XenItems.vrensteel, 35 ));
             size = 3;
             consumePowerBuffered(80000f);
             baseExplosiveness = 8f;

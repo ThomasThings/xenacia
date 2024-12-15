@@ -29,7 +29,7 @@ public class XenTurrets{
             outlineColor = Color.valueOf("353344");
             size = 1;
             ammo(
-                    XenItems.alamex,  new BasicBulletType(3f, 15){{
+                    XenItems.alamex,  new BasicBulletType(3f, 10){{
                         width = 6f;
                         height = 7.5f;
                         lifetime = 15f;
@@ -45,7 +45,7 @@ public class XenTurrets{
             range = 115;
             shootCone = 15f;
             ammoUseEffect = Fx.casing1;
-            health = 200;
+            health = 450;
             inaccuracy = 5.5f;
             rotateSpeed = 8f;
             coolant = consumeCoolant(0.1f);
@@ -60,7 +60,7 @@ public class XenTurrets{
             outlineColor = Color.valueOf("353344");
             size = 2;
             ammo(
-                    XenItems.alamex,  new BasicBulletType(4.5f, 30){{
+                    XenItems.alamex,  new BasicBulletType(4.5f, 25){{
                         width = 10f;
                         height = 12f;
                         lifetime = 60f;
@@ -87,11 +87,11 @@ public class XenTurrets{
 
             recoil = 0.5f;
             shootY = 3f;
-            reload = 15f;
+            reload = 10f;
             range = 230;
             shootCone = 15f;
             ammoUseEffect = Fx.casing1;
-            health = 600;
+            health = 1200;
             inaccuracy = 4f;
             rotateSpeed = 8f;
             coolant = consumeCoolant(0.1f);
@@ -100,10 +100,10 @@ public class XenTurrets{
             limitRange();
         }};
         bolt = new PowerTurret("bolt"){{
-            requirements(Category.turret, with(XenItems.alamex, 30, XenItems.torren, 5));
+            requirements(Category.turret, with(XenItems.alamex, 40, XenItems.torren, 10));
             outlineColor = Color.valueOf("353344");
             size = 1;
-            health = 300;
+            health = 600;
 
             reload = 20f;
             shootCone = 8f;
@@ -134,7 +134,7 @@ public class XenTurrets{
             coolant = consumeCoolant(0.1f);
         }};
         beam = new PowerTurret("beam"){{
-            requirements(Category.turret, with(XenItems.alamex, 90, XenItems.torren, 30, XenItems.vrensteel, 25));
+            requirements(Category.turret, with(XenItems.alamex, 140, XenItems.torren, 70, XenItems.vrensteel, 35));
             drawer = new DrawTurret(){{
                 basePrefix = "xen-";
                 parts.add(new RegionPart("-cylinder"){{
@@ -146,7 +146,7 @@ public class XenTurrets{
             }};
             outlineColor = Color.valueOf("353344");
             size = 2;
-            health = 900;
+            health = 1500;
 
             reload = 50f;
             shootCone = 3f;
