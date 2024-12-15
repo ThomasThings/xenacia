@@ -1,6 +1,7 @@
 package xenacia.content;
 
 import arc.graphics.Color;
+import mindustry.graphics.CacheLayer;
 import mindustry.world.Block;
 import mindustry.world.blocks.environment.Floor;
 import mindustry.world.blocks.environment.OreBlock;
@@ -13,11 +14,15 @@ public class XenEnvironmentTiles{
             lendesiteFloor, deepLendesiteFloor, slashedLendesiteFloor, deepSlashedLendesiteFloor, lendesiteWall, lendesiteBoulder,
             kryesenFloor, deepKryesenFloor, kryesenWall, kryesenBoulder,
             asuralineFloor, deepAsuralineFloor, asuralineWall, asuralineBoulder,
+            azureFloor,
             asulariteFloor, deepAsulariteFloor, asulariteWall, asulariteBoulder,
             dolstoneFloor, deepDolstoneFloor, dolstoneWall, dolstoneBoulder,
             veillineFloor, deepVeillineFloor, veillineWall,
             vidriteFloor, deepVidriteFloor, vidriteWall, vidriteBoulder,
-            shallowHydrex, deepHydrex,
+            derilectFloor, damagedDerilectFloor, deepDerilectFloor, damagedDeepDerilectFloor, studdedDerilectFloor, platedDerilectFloor,
+            markedDerilectFloor, damagedMarkedDerilectFloor, deepMarkedDerilectFloor, damagedDeepMarkedDerilectFloor, studdedMarkedDerilectFloor, platedMarkedDerilectFloor,
+
+            hazardDerilectFloor, damagedHazardDerilectFloor, deepHazardDerilectFloor, damagedDeepHazardDerilectFloor, studdedHazardDerilectFloor, platedHazardDerilectFloor,
             oreAlamex, oreTorren, oreVeilla, veillaDolWall, wallOreAlamex, wallOreTorren;
 
     public static void load(){
@@ -87,6 +92,18 @@ public class XenEnvironmentTiles{
             deepAsuralineFloor.asFloor().decoration = this;
         }};
 
+        azureFloor = new Floor("azure-floor"){{
+            speedMultiplier = 0.5f;
+            variants = 0;
+            status = XenStatusEffects.doubleclock;
+            statusDuration = 90f;
+            liquidDrop = XenLiquids.azure;
+            isLiquid = true;
+            cacheLayer = CacheLayer.water;
+            albedo = 0.9f;
+            supportsOverlay = true;
+        }};
+
         asulariteFloor = new Floor("asularite-floor"){{
             variants = 4;
             mapColor = Color.valueOf("3a314b");
@@ -152,6 +169,81 @@ public class XenEnvironmentTiles{
             variants = 2;
             vidriteFloor.asFloor().decoration = this;
             deepVidriteFloor.asFloor().decoration = this;
+        }};
+
+        derilectFloor = new Floor("derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
+        }};
+        damagedDerilectFloor = new Floor("damaged-derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
+        }};
+        deepDerilectFloor = new Floor("deep-derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
+        }};
+        damagedDeepDerilectFloor = new Floor("deep-damaged-derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
+        }};
+        studdedDerilectFloor = new Floor("studded-derilect-floor"){{
+            variants = 1;
+            mapColor = Color.valueOf("514656");
+        }};
+        platedDerilectFloor = new Floor("plated-derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
+        }};
+
+        markedDerilectFloor = new Floor("marked-derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
+        }};
+        damagedMarkedDerilectFloor = new Floor("damaged-marked-derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
+        }};
+        deepMarkedDerilectFloor = new Floor("deep-marked-derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
+        }};
+        damagedDeepMarkedDerilectFloor = new Floor("deep-damaged-marked-derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
+        }};
+        studdedMarkedDerilectFloor = new Floor("studded-marked-derilect-floor"){{
+            variants = 1;
+            mapColor = Color.valueOf("514656");
+        }};
+        platedMarkedDerilectFloor = new Floor("plated-marked-derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
+        }};
+
+        hazardDerilectFloor = new Floor("hazard-derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
+        }};
+        damagedHazardDerilectFloor = new Floor("damaged-hazard-derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
+        }};
+        deepHazardDerilectFloor = new Floor("deep-hazard-derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
+        }};
+        damagedDeepHazardDerilectFloor = new Floor("deep-damaged-hazard-derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
+        }};
+        studdedHazardDerilectFloor = new Floor("studded-hazard-derilect-floor"){{
+            variants = 1;
+            mapColor = Color.valueOf("514656");
+        }};
+        platedHazardDerilectFloor = new Floor("plated-hazard-derilect-floor"){{
+            variants = 3;
+            mapColor = Color.valueOf("514656");
         }};
 
         oreAlamex = new OreBlock("ore-alamex"){{
