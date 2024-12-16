@@ -254,19 +254,19 @@ public class XenEnvironmentTiles{
             variants = 4;
             mapColor = Color.valueOf("746978");
         }};
-        markedDerilectWall = new StaticWall("derilect-wall"){{
+        markedDerilectWall = new StaticWall("marked-derilect-wall"){{
             variants = 4;
             mapColor = Color.valueOf("bfbfcf");
         }};
-        damagedDerilectWall = new StaticWall("damaged-derilect-wall"){{
+        damagedDerilectWall = new StaticWall("damaged-marked-derilect-wall"){{
             variants = 4;
             mapColor = Color.valueOf("bfbfcf");
         }};
-        hazardMarkedDerilectWall = new StaticWall("derilect-wall"){{
+        hazardMarkedDerilectWall = new StaticWall("hazard-marked-derilect-wall"){{
             variants = 4;
             mapColor = Color.valueOf("cf8d58");
         }};
-        damagedHazardMarkedDerilectWall = new StaticWall("damaged-derilect-wall"){{
+        damagedHazardMarkedDerilectWall = new StaticWall("damaged-hazard-marked-derilect-wall"){{
             variants = 4;
             mapColor = Color.valueOf("cf8d58");
         }};
