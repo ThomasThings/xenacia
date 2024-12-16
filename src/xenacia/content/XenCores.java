@@ -14,7 +14,7 @@ public class XenCores{
 
     public static void load(){
         coreDevise = new CoreBlock("core-devise"){{
-            requirements(Category.effect, BuildVisibility.editorOnly, with(XenItems.alamex, 850));
+            requirements(Category.effect, with(XenItems.alamex, 850));
             alwaysUnlocked = true;
 
             isFirstTier = true;
@@ -27,7 +27,7 @@ public class XenCores{
             squareSprite = false;
         }};
         coreContrive = new CoreBlock("core-contrive"){{
-            requirements(Category.effect, BuildVisibility.editorOnly, with(XenItems.alamex, 1200, XenItems.torren, 500));
+            requirements(Category.effect, with(XenItems.alamex, 1200, XenItems.torren, 500));
             alwaysUnlocked = true;
 
             isFirstTier = false;
