@@ -10,7 +10,7 @@ import static mindustry.type.ItemStack.with;
 public class XenCores{
     public static Block
             coreDevise, coreContrive,
-            coreDoctrin, coreOcculyt;
+            coreDoctrine, coreOccult;
 
     public static void load(){
         coreDevise = new CoreBlock("core-devise"){{
@@ -39,7 +39,7 @@ public class XenCores{
             unitCapModifier = 8;
             squareSprite = false;
         }};
-        coreDoctrin = new CoreBlock("core-doctrin"){{
+        coreDoctrine = new CoreBlock("core-doctrine"){{
             requirements(Category.effect, BuildVisibility.editorOnly, with(XenItems.alamex, 550, XenItems.lenora, 350));
             alwaysUnlocked = true;
 
@@ -52,7 +52,7 @@ public class XenCores{
             unitCapModifier = 6;
             squareSprite = false;
         }};
-        coreOcculyt = new CoreBlock("core-occulyt"){{
+        coreOccult = new CoreBlock("core-occult"){{
             requirements(Category.effect, BuildVisibility.editorOnly, with(XenItems.alamex, 1000, XenItems.torren, 400, XenItems.lenora, 600));
             alwaysUnlocked = true;
 
