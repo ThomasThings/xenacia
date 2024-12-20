@@ -6,7 +6,7 @@ import mindustry.entities.bullet.ArtilleryBulletType;
 import mindustry.entities.bullet.BasicBulletType;
 import mindustry.type.Category;
 import mindustry.world.Block;
-import mindustry.world.blocks.defense.turrets.ItemTurret;
+import mindustry.world.blocks.defense.turrets.PowerTurret;
 import mindustry.world.blocks.storage.CoreBlock;
 import mindustry.world.draw.DrawTurret;
 import mindustry.world.meta.BuildVisibility;
@@ -72,7 +72,7 @@ public class XenCores{
             unitCapModifier = 12;
             squareSprite = false;
         }};
-        healBombTest = new ItemTurret("test"){{
+        healBombTest = new PowerTurret("test"){{
             requirements(Category.turret, buildVisibility.hidden, with(XenItems.alamex, 1));
             drawer = new DrawTurret(){{
                 basePrefix = "xen-";
@@ -97,6 +97,22 @@ public class XenCores{
                         }};
                     }}
             );
+            shootType = new BasicBulletType(){{
+                    killShooter = true;
+                    lifetime = 0f;
+                    fragBullets = 5;
+                    fragBullet = new ArtilleryBulletType(3f, 0) {{
+                        width = 4f;
+                        height = 4f;
+                        shrinkY = 1f;
+                        lifetime = 45f;
+                        backColor = Color.valueOf("71d299");
+                        frontColor = Color.white;
+                        collidesTeam = true;
+                        healAmount = 15;
+                        splashDamageRadius = 1500;
+                    }};
+                }};
             range = 115;
             shootCone = 15f;
             ammoUseEffect = Fx.casing1;
