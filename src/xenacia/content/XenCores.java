@@ -72,7 +72,7 @@ public class XenCores{
             squareSprite = false;
         }};
         healBombTest = new PowerTurret("test"){{
-            requirements(Category.turret, buildVisibility.hidden, with(XenItems.alamex, 1));
+            requirements(Category.turret, with(XenItems.alamex, 1));
             drawer = new DrawTurret(){{
                 basePrefix = "xen-";
             }};
@@ -93,7 +93,6 @@ public class XenCores{
                     healAmount = 15;
                     splashDamageRadius = 1500;}};
             }};
-            consumePower(0f);
             alwaysShooting = true;
             range = 115;
             shootCone = 180f;
