@@ -1,7 +1,6 @@
 package xenacia.content;
 
 import arc.graphics.Color;
-import mindustry.content.Fx;
 import mindustry.entities.bullet.ArtilleryBulletType;
 import mindustry.entities.bullet.BasicBulletType;
 import mindustry.type.Category;
@@ -78,47 +77,27 @@ public class XenCores{
                 basePrefix = "xen-";
             }};
             outlineColor = Color.valueOf("353344");
-            size = 1;
-            ammo(
-                    XenItems.alamex,  new BasicBulletType(){{
-                        killShooter = true;
-                        lifetime = 0f;
-                        fragBullets = 5;
-                        fragBullet = new ArtilleryBulletType(3f, 0){{
-                            width = 4f;
-                            height = 4f;
-                            shrinkY = 1f;
-                            lifetime = 45f;
-                            backColor = Color.valueOf("71d299");
-                            frontColor = Color.white;
-                            collidesTeam = true;
-                            healAmount = 15;
-                            splashDamageRadius = 1500;
-                        }};
-                    }}
-            );
+            size = 2;
             shootType = new BasicBulletType(){{
-                    killShooter = true;
-                    lifetime = 0f;
-                    fragBullets = 5;
-                    fragBullet = new ArtilleryBulletType(3f, 0) {{
-                        width = 4f;
-                        height = 4f;
-                        shrinkY = 1f;
-                        lifetime = 45f;
-                        backColor = Color.valueOf("71d299");
-                        frontColor = Color.white;
-                        collidesTeam = true;
-                        healAmount = 15;
-                        splashDamageRadius = 1500;
-                    }};
-                }};
+                killShooter = true;
+                lifetime = 0f;
+                fragBullets = 5;
+                fragBullet = new ArtilleryBulletType(3f, 0) {{
+                    width = 4f;
+                    height = 4f;
+                    shrinkY = 1f;
+                    lifetime = 45f;
+                    backColor = Color.valueOf("71d299");
+                    frontColor = Color.white;
+                    collidesTeam = true;
+                    healAmount = 15;
+                    splashDamageRadius = 1500;}};
+            }};
+            consumePower(0f);
+            alwaysShooting = true;
             range = 115;
-            shootCone = 15f;
-            ammoUseEffect = Fx.casing1;
-            health = 450;
-            inaccuracy = 5.5f;
-            rotateSpeed = 8f;
+            shootCone = 180f;
+            rotateSpeed = 0f;
         }};
     }
 }
