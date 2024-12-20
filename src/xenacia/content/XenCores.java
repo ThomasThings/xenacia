@@ -2,6 +2,7 @@ package xenacia.content;
 
 import arc.graphics.Color;
 import mindustry.content.Fx;
+import mindustry.entities.bullet.ArtilleryBulletType;
 import mindustry.entities.bullet.BasicBulletType;
 import mindustry.type.Category;
 import mindustry.world.Block;
@@ -82,12 +83,20 @@ public class XenCores{
                     XenItems.alamex,  new BasicBulletType(){{
                         killShooter = true;
                         lifetime = 0f;
+                        fragBullets = 5;
+                        fragBullet = new ArtilleryBulletType(3f, 0){{
+                            width = 4f;
+                            height = 4f;
+                            shrinkY = 1f;
+                            lifetime = 45f;
+                            backColor = Color.valueOf("71d299");
+                            frontColor = Color.white;
+                            collidesTeam = true;
+                            healAmount = 15;
+                            splashDamageRadius = 1500;
+                        }};
                     }}
             );
-
-            recoil = 0.5f;
-            shootY = 3f;
-            reload = 10f;
             range = 115;
             shootCone = 15f;
             ammoUseEffect = Fx.casing1;
