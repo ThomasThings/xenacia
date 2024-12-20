@@ -75,6 +75,7 @@ public class XenCores{
             requirements(Category.effect, with(XenItems.alamex, 1));
             drawer = new DrawTurret(){{
                 basePrefix = "xen-";
+                hasShadow = false;
             }};
             outlineColor = Color.valueOf("353344");
             size = 2;
