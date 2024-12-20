@@ -1,8 +1,13 @@
 package xenacia.content;
 
+import arc.graphics.Color;
+import mindustry.content.Fx;
+import mindustry.entities.bullet.BasicBulletType;
 import mindustry.type.Category;
 import mindustry.world.Block;
+import mindustry.world.blocks.defense.turrets.ItemTurret;
 import mindustry.world.blocks.storage.CoreBlock;
+import mindustry.world.draw.DrawTurret;
 import mindustry.world.meta.BuildVisibility;
 
 import static mindustry.type.ItemStack.with;
@@ -10,7 +15,8 @@ import static mindustry.type.ItemStack.with;
 public class XenCores{
     public static Block
             coreDevise, coreContrive,
-            coreDoctrine, coreOccult;
+            coreDoctrine, coreOccult,
+            healBombTest;
 
     public static void load(){
         coreDevise = new CoreBlock("core-devise"){{
@@ -64,6 +70,30 @@ public class XenCores{
 
             unitCapModifier = 12;
             squareSprite = false;
+        }};
+        healBombTest = new ItemTurret("test"){{
+            requirements(Category.turret, buildVisibility.hidden, with(XenItems.alamex, 1));
+            drawer = new DrawTurret(){{
+                basePrefix = "xen-";
+            }};
+            outlineColor = Color.valueOf("353344");
+            size = 1;
+            ammo(
+                    XenItems.alamex,  new BasicBulletType(){{
+                        killShooter = true;
+                        lifetime = 0f;
+                    }}
+            );
+
+            recoil = 0.5f;
+            shootY = 3f;
+            reload = 10f;
+            range = 115;
+            shootCone = 15f;
+            ammoUseEffect = Fx.casing1;
+            health = 450;
+            inaccuracy = 5.5f;
+            rotateSpeed = 8f;
         }};
     }
 }
