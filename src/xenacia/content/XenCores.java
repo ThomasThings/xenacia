@@ -83,7 +83,7 @@ public class XenCores{
                 killShooter = true;
                 lifetime = 0f;
                 fragBullets = 5;
-                fragBullet = new ArtilleryBulletType(0.5f, 0) {{
+                fragBullet = new ArtilleryBulletType(1.5f, 0) {{
                     width = 4f;
                     height = 4f;
                     shrinkY = 1f;
@@ -91,7 +91,7 @@ public class XenCores{
                     backColor = Color.valueOf("71d299");
                     frontColor = Color.white;
                     collidesTeam = true;
-                    healAmount = 15;
+                    healAmount = 50;
                     splashDamageRadius = 24;}};
             }};
             alwaysShooting = true;
