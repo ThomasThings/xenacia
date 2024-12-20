@@ -72,7 +72,7 @@ public class XenCores{
             squareSprite = false;
         }};
         healBombTest = new PowerTurret("test"){{
-            requirements(Category.turret, with(XenItems.alamex, 1));
+            requirements(Category.effect, with(XenItems.alamex, 1));
             drawer = new DrawTurret(){{
                 basePrefix = "xen-";
             }};
