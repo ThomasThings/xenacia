@@ -72,7 +72,7 @@ public class XenCores{
             squareSprite = false;
         }};
         healBombTest = new PowerTurret("test"){{
-            requirements(Category.effect, with(XenItems.alamex, 1));
+            requirements(Category.effect, with(XenItems.alamex, 35, XenItems.veilla, 25));
             drawer = new DrawTurret(){{
                 basePrefix = "xen-";
                 hasShadow = false;
@@ -91,8 +91,8 @@ public class XenCores{
                     backColor = Color.valueOf("71d299");
                     frontColor = Color.white;
                     collidesTeam = true;
-                    healAmount = 50;
-                    splashDamageRadius = 24;}};
+                    healAmount = 85;
+                    splashDamageRadius = 32;}};
             }};
             alwaysShooting = true;
             range = 115;
