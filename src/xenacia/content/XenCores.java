@@ -125,6 +125,7 @@ public class XenCores{
                     }};
                 }};
             }};
+            shoot.firstShotDelay = 45;
             alwaysShooting = true;
             range = 115;
             shootCone = 180f;
