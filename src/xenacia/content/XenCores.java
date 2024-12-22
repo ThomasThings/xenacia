@@ -1,8 +1,8 @@
 package xenacia.content;
 
 import arc.graphics.Color;
-import mindustry.entities.bullet.ArtilleryBulletType;
 import mindustry.entities.bullet.BasicBulletType;
+import mindustry.entities.bullet.EmpBulletType;
 import mindustry.type.Category;
 import mindustry.world.Block;
 import mindustry.world.blocks.defense.turrets.PowerTurret;
@@ -82,17 +82,48 @@ public class XenCores{
             shootType = new BasicBulletType(){{
                 killShooter = true;
                 lifetime = 0f;
-                fragBullets = 5;
-                fragBullet = new ArtilleryBulletType(1.5f, 0) {{
+                fragBullets = 1;
+                fragBullet = new EmpBulletType() {{
                     width = 4f;
                     height = 4f;
-                    shrinkY = 1f;
+                    shrinkY = 2f;
+                    shrinkX = 2f;
                     lifetime = 45f;
                     backColor = Color.valueOf("71d299");
                     frontColor = Color.white;
                     collidesTeam = true;
-                    healAmount = 85;
-                    splashDamageRadius = 32;}};
+                    healAmount = 120;
+                    splashDamage = 60;
+                    splashDamageRadius = 64;
+                    fragBullets = 1;
+                    fragBullet = new EmpBulletType() {{
+                        width = 4f;
+                        height = 4f;
+                        shrinkY = 2f;
+                        shrinkX = 2f;
+                        lifetime = 45f;
+                        backColor = Color.valueOf("71d299");
+                        frontColor = Color.white;
+                        collidesTeam = true;
+                        healAmount = 70;
+                        splashDamage = 60;
+                        splashDamageRadius = 48;
+                        fragBullets = 1;
+                        fragBullet = new EmpBulletType() {{
+                            width = 4f;
+                            height = 4f;
+                            shrinkY = 2f;
+                            shrinkX = 2f;
+                            lifetime = 45f;
+                            backColor = Color.valueOf("71d299");
+                            frontColor = Color.white;
+                            collidesTeam = true;
+                            healAmount = 50;
+                            splashDamage = 60;
+                            splashDamageRadius = 32;
+                        }};
+                    }};
+                }};
             }};
             alwaysShooting = true;
             range = 115;
