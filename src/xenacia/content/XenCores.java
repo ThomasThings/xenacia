@@ -5,6 +5,7 @@ import mindustry.entities.bullet.ArtilleryBulletType;
 import mindustry.entities.bullet.BasicBulletType;
 import mindustry.type.Category;
 import mindustry.world.Block;
+import mindustry.world.blocks.defense.MendProjector;
 import mindustry.world.blocks.defense.turrets.PowerTurret;
 import mindustry.world.blocks.storage.CoreBlock;
 import mindustry.world.draw.DrawTurret;
@@ -16,7 +17,7 @@ public class XenCores{
     public static Block
             coreDevise, coreContrive,
             coreDoctrine, coreOccult,
-            healBombTest;
+            healBombTest, placeholdHealer;
 
     public static void load(){
         coreDevise = new CoreBlock("core-devise"){{
@@ -98,6 +99,16 @@ public class XenCores{
             range = 115;
             shootCone = 180f;
             rotateSpeed = 0f;
+        }};
+        placeholdHealer = new MendProjector("mender"){{
+            requirements(Category.effect, with(XenItems.alamex, 60, XenItems.veilla, 45));
+            size = 2;
+            reload = 240f;
+            range = 80f;
+            healPercent = 5f;
+            phaseBoost = 4f;
+            phaseRangeBoost = 20f;
+            health = 360;
         }};
     }
 }
